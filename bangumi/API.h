@@ -20,4 +20,4 @@
 #define setCollectionURL @"http://api.bgm.tv/collection/%@/update"
 #define setProgressURL @"http://api.bgm.tv/ep/%@/status/%@"
 
-#define dailysub @"http://api.bgm.tv/calendar"
+#define dayBGMListURL @"http://api.bgm.tv/calendar"

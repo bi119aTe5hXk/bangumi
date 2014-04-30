@@ -30,5 +30,7 @@
 -(void)setCollectionWithColID:(NSString *)colid WithRating:(NSString *)rating WithStatus:(NSString *)status;
 -(void)setProgressWithEPID:(NSString *)epid WithStatus:(NSString *)status;
 
+-(void)getDayBGMList;
+
 - (void)cancelConnection;
 @end

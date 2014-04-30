@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollview;
 
+@property (nonatomic, strong) IBOutlet UIButton *statusmanabtn;
 @property (nonatomic, strong) IBOutlet UIButton *progressmanabtn;
 @property (nonatomic, strong) IBOutlet UIImageView *cover;
 @property (nonatomic, strong) IBOutlet UILabel *titlelabel;

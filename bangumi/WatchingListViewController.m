@@ -157,7 +157,7 @@
     [cell.prgoressbar setProgress:percent animated:YES];
     
     
-    NSString *iconurl = [[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
+    NSString *iconurl = [[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"small"];
     [cell.icon setImageWithURL:[NSURL URLWithString:iconurl] placeholderImage:nil];
     
     ep_status=0;

@@ -35,6 +35,7 @@
     request_type = @"BGMDetail";
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.progressmanabtn setHidden:YES];
+    [self.statusmanabtn setHidden:YES];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -55,10 +56,11 @@
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.progressmanabtn setHidden:NO];
+    [self.statusmanabtn setHidden:NO];
     if ([request_type isEqualToString:@"BGMDetail"]) {
         self.titlelabel.text = [list valueForKey:@"name"];
         self.titlelabel_cn.text = [list valueForKey:@"name_cn"];
-        [self.cover setImageWithURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"large"]]];
+        [self.cover setImageWithURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
         
         self.bgmsummary.text = [list valueForKey:@"summary"];
         
@@ -69,7 +71,7 @@
         
         
         [self.bgmsummary setFrame:CGRectMake(20, 212, 280, stringSize.height+200)];
-        [self.scrollview setContentSize:CGSizeMake(320, stringSize.height + 400)];
+        [self.scrollview setContentSize:CGSizeMake(320, stringSize.height + 300)];
         [self.scrollview setScrollEnabled:YES];
         
         

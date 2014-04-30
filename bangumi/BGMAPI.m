@@ -76,6 +76,11 @@
     [self createPOSTConnectionWithURL:url WithPOSTData:dic];
 }
 
+-(void)getDayBGMList{
+    NSString *url = dayBGMListURL;
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
+    [self createGETConnectionWithURL:url];
+}
 
 #pragma mark - NSURLConnection
 -(BOOL)createPOSTConnectionWithURL:(NSString *)urlstr WithPOSTData:(NSDictionary *)post_data{
