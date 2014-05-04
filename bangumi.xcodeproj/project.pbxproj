@@ -12,7 +12,8 @@
 		47A5DC58190AA7F10086A14B /* README in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DC57190AA7F10086A14B /* README */; };
 		47A5DD25191127150086A14B /* DaliyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD24191127150086A14B /* DaliyListViewController.m */; };
 		47A5DD29191135BB0086A14B /* bgm38a1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DD28191135BB0086A14B /* bgm38a1024.png */; };
-		47A5DD2C19113CAE0086A14B /* DayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD2B19113CAE0086A14B /* DayCell.m */; };
+		47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD2B19113CAE0086A14B /* NormalCell.m */; };
+		47A923FE1916723600B3D10A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A923FD1916723600B3D10A /* SearchViewController.m */; };
 		47E271531900043300304DED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271521900043300304DED /* Foundation.framework */; };
 		47E271551900043300304DED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271541900043300304DED /* CoreGraphics.framework */; };
 		47E271571900043300304DED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271561900043300304DED /* UIKit.framework */; };
@@ -54,8 +55,10 @@
 		47A5DD23191127150086A14B /* DaliyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaliyListViewController.h; sourceTree = "<group>"; };
 		47A5DD24191127150086A14B /* DaliyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaliyListViewController.m; sourceTree = "<group>"; };
 		47A5DD28191135BB0086A14B /* bgm38a1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgm38a1024.png; sourceTree = "<group>"; };
-		47A5DD2A19113CAE0086A14B /* DayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayCell.h; sourceTree = "<group>"; };
-		47A5DD2B19113CAE0086A14B /* DayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayCell.m; sourceTree = "<group>"; };
+		47A5DD2A19113CAE0086A14B /* NormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCell.h; sourceTree = "<group>"; };
+		47A5DD2B19113CAE0086A14B /* NormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCell.m; sourceTree = "<group>"; };
+		47A923FC1916723600B3D10A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		47A923FD1916723600B3D10A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		47E2714F1900043300304DED /* bangumi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bangumi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E271521900043300304DED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		47E271541900043300304DED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,10 +169,12 @@
 				47E271A119015D9300304DED /* WatchingListViewController.m */,
 				47E271A319015DBA00304DED /* BGMCell.h */,
 				47E271A419015DBA00304DED /* BGMCell.m */,
+				47A923FC1916723600B3D10A /* SearchViewController.h */,
+				47A923FD1916723600B3D10A /* SearchViewController.m */,
 				47A5DD23191127150086A14B /* DaliyListViewController.h */,
 				47A5DD24191127150086A14B /* DaliyListViewController.m */,
-				47A5DD2A19113CAE0086A14B /* DayCell.h */,
-				47A5DD2B19113CAE0086A14B /* DayCell.m */,
+				47A5DD2A19113CAE0086A14B /* NormalCell.h */,
+				47A5DD2B19113CAE0086A14B /* NormalCell.m */,
 				478B3B861902A2A1006C6E67 /* BGMDetailViewController.h */,
 				478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */,
 				47E271AF1901666800304DED /* SettingsViewController.h */,
@@ -312,8 +317,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				47E2719C19014ECE00304DED /* LoginViewController.m in Sources */,
+				47A923FE1916723600B3D10A /* SearchViewController.m in Sources */,
 				47E271A219015D9300304DED /* WatchingListViewController.m in Sources */,
-				47A5DD2C19113CAE0086A14B /* DayCell.m in Sources */,
+				47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */,
 				47E2718D190009E100304DED /* BGMAPI.m in Sources */,
 				47E271631900043300304DED /* AppDelegate.m in Sources */,
 				47E271B4190166C400304DED /* TabbarViewController.m in Sources */,

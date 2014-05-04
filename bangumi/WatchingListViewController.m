@@ -168,6 +168,9 @@
     
     return cell;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 96;
+}
 
 -(void)updatebtnpressd:(id)sender{
     

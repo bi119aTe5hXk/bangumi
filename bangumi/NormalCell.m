@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 HT&L. All rights reserved.
 //
 
-#import "DayCell.h"
+#import "NormalCell.h"
 
-@implementation DayCell
+@implementation NormalCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

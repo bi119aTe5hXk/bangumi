@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D45a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="c0g-T8-Y24">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="c0g-T8-Y24">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -85,11 +85,11 @@
             </objects>
             <point key="canvasLocation" x="342" y="-620"/>
         </scene>
-        <!--Table View Controller - 搜索-->
+        <!--Search View Controller - 搜索-->
         <scene sceneID="y5j-0k-EJV">
             <objects>
-                <tableViewController id="bJ7-1j-2Mi" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OtB-1Z-5I0">
+                <tableViewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bJ7-1j-2Mi" customClass="SearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="OtB-1Z-5I0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,27 +97,43 @@
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>全部</string>
-                                <string>书籍</string>
-                                <string>Title</string>
-                                <string>Title</string>
-                                <string>Title</string>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="bJ7-1j-2Mi" id="WJ7-8A-Ffc"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9Cd-na-10X">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="NormalCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" rowHeight="68" id="i6A-7M-ndd" customClass="NormalCell">
+                                <rect key="frame" x="0.0" y="130" width="320" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Cd-na-10X" id="0bQ-8e-qCO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i6A-7M-ndd" id="1qp-pw-Tw4">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cfD-og-S8b">
+                                            <rect key="frame" x="0.0" y="0.0" width="68" height="67"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ub4-w6-JZf">
+                                            <rect key="frame" x="76" y="6" width="211" height="42"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NjR-ou-902">
+                                            <rect key="frame" x="76" y="49" width="211" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="cfD-og-S8b" id="kyS-VU-sT3"/>
+                                    <outlet property="sublabel" destination="NjR-ou-902" id="xSL-Kx-ekM"/>
+                                    <outlet property="titlelabel" destination="Ub4-w6-JZf" id="s2J-ap-hyI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -127,19 +143,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="搜索" id="cny-Jc-ALg"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="fba-Pj-rh2" id="3tE-bw-PAh"/>
+                        <outlet property="seachbar" destination="jHE-g0-cqq" id="t8p-4K-3xh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBh-dF-PDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="fba-Pj-rh2">
-                    <connections>
-                        <outlet property="delegate" destination="bJ7-1j-2Mi" id="wvn-Ko-Mca"/>
-                        <outlet property="searchBar" destination="jHE-g0-cqq" id="JpD-8Q-PQg"/>
-                        <outlet property="searchContentsController" destination="bJ7-1j-2Mi" id="wb6-vZ-fer"/>
-                        <outlet property="searchResultsDataSource" destination="bJ7-1j-2Mi" id="i97-op-7jW"/>
-                        <outlet property="searchResultsDelegate" destination="bJ7-1j-2Mi" id="j9y-CA-0EZ"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1414" y="-658"/>
         </scene>
@@ -424,7 +431,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DayCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DayCell" rowHeight="69" id="vX6-AL-4Yp" customClass="DayCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="NormalCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DayCell" rowHeight="69" id="vX6-AL-4Yp" customClass="NormalCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vX6-AL-4Yp" id="2OX-Qb-ZLv">
@@ -452,9 +459,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="icon" destination="FDw-WV-7gQ" id="ZvF-nh-yRX"/>
-                                    <outlet property="sublabel" destination="eTe-Gn-Kzw" id="c4V-ru-3Zc"/>
-                                    <outlet property="titlelabel" destination="3pH-qK-je4" id="8wT-BE-7Ea"/>
+                                    <outlet property="icon" destination="FDw-WV-7gQ" id="SVz-yG-dtT"/>
+                                    <outlet property="sublabel" destination="eTe-Gn-Kzw" id="i6D-r8-gds"/>
+                                    <outlet property="titlelabel" destination="3pH-qK-je4" id="vPf-7r-74M"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

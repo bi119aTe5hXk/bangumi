@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DayCell : UITableViewCell
+@interface NormalCell : UITableViewCell
 
 @property (nonatomic ,retain) IBOutlet UILabel *titlelabel;
 @property (nonatomic ,retain) IBOutlet UIImageView *icon;

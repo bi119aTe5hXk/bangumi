@@ -81,7 +81,11 @@
     url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
     [self createGETConnectionWithURL:url];
 }
-
+-(void)searchWithKeyword:(NSString *)keyword startWithCount:(NSInteger)count{
+    NSString *url = [NSString stringWithFormat:SearchURL,keyword];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&start=%ld&max_results=20",appName,authString,count]];
+    [self createGETConnectionWithURL:url];
+}
 #pragma mark - NSURLConnection
 -(BOOL)createPOSTConnectionWithURL:(NSString *)urlstr WithPOSTData:(NSDictionary *)post_data{
     

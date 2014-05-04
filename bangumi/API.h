@@ -21,3 +21,5 @@
 #define setProgressURL @"http://api.bgm.tv/ep/%@/status/%@"
 
 #define dayBGMListURL @"http://api.bgm.tv/calendar"
+
+#define SearchURL @"http://api.bgm.tv/search/subject/%@"

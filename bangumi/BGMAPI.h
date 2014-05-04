@@ -32,5 +32,7 @@
 
 -(void)getDayBGMList;
 
+-(void)searchWithKeyword:(NSString *)keyword startWithCount:(NSInteger)count;
+
 - (void)cancelConnection;
 @end

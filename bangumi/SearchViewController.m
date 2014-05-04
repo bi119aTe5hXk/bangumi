@@ -1,18 +1,18 @@
 //
-//  DaliyListViewController.m
+//  SearchViewController.m
 //  bangumi
 //
-//  Created by bi119aTe5hXk on 2014/04/30.
+//  Created by bi119aTe5hXk on 2014/05/04.
 //  Copyright (c) 2014年 HT&L. All rights reserved.
 //
 
-#import "DaliyListViewController.h"
+#import "SearchViewController.h"
 
-@interface DaliyListViewController ()
+@interface SearchViewController ()
 
 @end
 
-@implementation DaliyListViewController
+@implementation SearchViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,79 +32,80 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
-    [refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refreshControl;
-    
     userdefaults = [NSUserDefaults standardUserDefaults];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth"]];
-    [bgmapi getDayBGMList];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-}
-- (void)onRefresh:(id)sender{
-    [bgmapi getDayBGMList];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //[self.tableView registerClass: [NormalCell class] forCellReuseIdentifier:@"SearchCell"];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [bgmapi cancelConnection];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillDisappear:(BOOL)animated{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [bgmapi cancelConnection];
+}
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [self.refreshControl endRefreshing];
-    daylist = list;
+    resultlist = list;
     [self.tableView reloadData];
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [self.refreshControl endRefreshing];
+    
 }
+
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
 //#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return [daylist count];
-}
+//    // Return the number of sections.
+//    return 0;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[[daylist objectAtIndex:section] objectForKey:@"items"] count];
+    NSLog(@"listcount:%ld",[[resultlist valueForKey:@"list"] count]);
+    NSInteger count = [[resultlist valueForKey:@"list"] count];
+    if (count == 20) {
+        return [[resultlist valueForKey:@"list"] count] + 1;
+    }else{
+        return [[resultlist valueForKey:@"list"] count];
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
-    NSUInteger row = [indexPath row];
-    NSArray *arr = daylist[indexPath.section][@"items"][row];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    cell.titlelabel.text = [arr valueForKey:@"name"];
-    cell.sublabel.text = [arr valueForKey:@"name_cn"];
-    [cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
-    //[cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    // Configure the cell...
+    static NSString *CellIdentifier = @"SearchCell";
+    NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    NSUInteger row = [indexPath row];
+    
+    if (row == [[resultlist valueForKey:@"list"] count]) {
+        cell.titlelabel.text = [resultlist valueForKey:@"results"];
+        cell.sublabel.text = @"";
+        cell.icon.image = nil;
+    }else{
+        NSArray *arr = [[resultlist valueForKey:@"list"] objectAtIndex:row];
+        cell.titlelabel.text = [arr valueForKey:@"name"];
+        cell.sublabel.text = [arr valueForKey:@"name_cn"];
+        [cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
+    }
     
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 68;
 }
-
--(UIView *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [[[daylist objectAtIndex:section] valueForKey:@"weekday"] valueForKey:@"cn"];
-}
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -156,7 +157,59 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BGMDetailViewController *detailview = [self.storyboard instantiateViewControllerWithIdentifier:@"BGMDetailViewController"];
-    detailview.bgmid = [daylist[indexPath.section][@"items"][indexPath.row] valueForKey:@"id"];
+    detailview.bgmid = [[[resultlist valueForKey:@"list"] objectAtIndex:indexPath.row] valueForKey:@"id"];
     [self.navigationController pushViewController:detailview animated:YES];
 }
+
+#pragma mark Search Bar Delegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:YES animated:YES];
+	return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar{
+    [searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+	if ([searchText length] > 0){
+        
+	}else{
+        resultlist = nil;
+        resultlist = [[NSArray alloc] init];
+        [self.tableView reloadData];
+        [searchBar setShowsCancelButton:YES animated:YES];
+        //isLoading = NO;
+        [bgmapi cancelConnection];
+		//[searchBar resignFirstResponder];
+	}
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:YES animated:YES];
+	[searchBar resignFirstResponder];
+    if ([searchBar.text length] != 0){
+        //start search
+        
+        //resultlist = nil;
+        resultlist = [[NSArray alloc] init];
+        [self.tableView reloadData];
+        
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
+    }
+}
+-(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope{
+    if ([searchBar.text length] != 0) {
+        //page = 1;
+        [bgmapi cancelConnection];
+        resultlist = [[NSArray alloc] init];
+        [self.tableView reloadData];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
+    }
+}
+
 @end
