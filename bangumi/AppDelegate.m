@@ -13,6 +13,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    if (debugmode == YES) {
+        NSLog(@"Your system version is:%@",[[UIDevice currentDevice] systemVersion]);
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"欢迎使用番组计划+测试版"
+                                                            message:@"这是测试版app，如果有任何问题请找@bi119aTe5hXk。谢谢。"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"好的"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+    
     return YES;
 }
 							

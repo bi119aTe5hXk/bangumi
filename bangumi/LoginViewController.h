@@ -13,6 +13,7 @@
     NSArray *resultarr;
     NSUserDefaults *userdefaults;
     NSString *auth;
+    NSString *auth_urlencoded;
     NSString *userid;
     
 }

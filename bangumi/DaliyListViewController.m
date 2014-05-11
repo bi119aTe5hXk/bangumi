@@ -37,9 +37,9 @@
     self.refreshControl = refreshControl;
     
     userdefaults = [NSUserDefaults standardUserDefaults];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth"]];
-    [bgmapi getDayBGMList];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
+    //[bgmapi getDayBGMList];
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 - (void)onRefresh:(id)sender{
     [bgmapi getDayBGMList];
@@ -49,6 +49,14 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    if (daylist.count <= 0) {
+        userdefaults = [NSUserDefaults standardUserDefaults];
+        bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
+        [bgmapi getDayBGMList];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
 }
 - (void)didReceiveMemoryWarning
 {
@@ -90,8 +98,8 @@
     NSUInteger row = [indexPath row];
     NSArray *arr = daylist[indexPath.section][@"items"][row];
     
-    cell.titlelabel.text = [arr valueForKey:@"name"];
-    cell.sublabel.text = [arr valueForKey:@"name_cn"];
+    cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name"]];
+    cell.sublabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name_cn"]];
     [cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
     //[cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
     

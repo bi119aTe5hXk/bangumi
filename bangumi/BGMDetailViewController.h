@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProgressListViewController.h"
 @interface BGMDetailViewController : UIViewController<BGMAPIDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSString *request_type;
+    
+    NSArray *progresslist;
 }
 
 @property (nonatomic, strong) NSString *bgmid;
@@ -26,5 +28,8 @@
 
 @property (nonatomic, strong) IBOutlet UITextView *bgmsummary;
 
+
+-(IBAction)PorgressViewBTN:(id)sender;
+-(IBAction)BGMStatuesBTN:(id)sender;
 
 @end

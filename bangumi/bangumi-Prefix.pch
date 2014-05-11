@@ -17,4 +17,5 @@
     #import "BGMAPI.h"
     #import <SDWebImage/UIImageView+WebCache.h>
     #import "MBProgressHUD.h"
+#import "HTMLEntityDecode.h"
 #endif

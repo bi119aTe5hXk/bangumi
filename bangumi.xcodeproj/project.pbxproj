@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4751E628191F648E004143D3 /* ProgressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E627191F648E004143D3 /* ProgressListViewController.m */; };
+		4751E630191F84DA004143D3 /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
+		4751E633191F9209004143D3 /* RakuenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E632191F9209004143D3 /* RakuenViewController.m */; };
 		478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */; };
 		47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DC55190940340086A14B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		47A5DC58190AA7F10086A14B /* README in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DC57190AA7F10086A14B /* README */; };
@@ -47,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4751E626191F648E004143D3 /* ProgressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressListViewController.h; sourceTree = "<group>"; };
+		4751E627191F648E004143D3 /* ProgressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressListViewController.m; sourceTree = "<group>"; };
+		4751E62E191F84DA004143D3 /* HTMLEntityDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLEntityDecode.h; sourceTree = "<group>"; };
+		4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLEntityDecode.m; sourceTree = "<group>"; };
+		4751E631191F9209004143D3 /* RakuenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RakuenViewController.h; sourceTree = "<group>"; };
+		4751E632191F9209004143D3 /* RakuenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RakuenViewController.m; sourceTree = "<group>"; };
 		478B3B861902A2A1006C6E67 /* BGMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMDetailViewController.h; sourceTree = "<group>"; };
 		478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMDetailViewController.m; sourceTree = "<group>"; };
 		47A5DC54190940340086A14B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -177,8 +186,12 @@
 				47A5DD2B19113CAE0086A14B /* NormalCell.m */,
 				478B3B861902A2A1006C6E67 /* BGMDetailViewController.h */,
 				478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */,
+				4751E626191F648E004143D3 /* ProgressListViewController.h */,
+				4751E627191F648E004143D3 /* ProgressListViewController.m */,
 				47E271AF1901666800304DED /* SettingsViewController.h */,
 				47E271B01901666800304DED /* SettingsViewController.m */,
+				4751E631191F9209004143D3 /* RakuenViewController.h */,
+				4751E632191F9209004143D3 /* RakuenViewController.m */,
 				47E2719119001AE000304DED /* Main.storyboard */,
 				47E2716D1900043300304DED /* Images.xcassets */,
 				47E271591900043300304DED /* Supporting Files */,
@@ -191,6 +204,8 @@
 			children = (
 				47A5DC54190940340086A14B /* MBProgressHUD.h */,
 				47A5DC55190940340086A14B /* MBProgressHUD.m */,
+				4751E62E191F84DA004143D3 /* HTMLEntityDecode.h */,
+				4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */,
 				47E2715A1900043300304DED /* bangumi-Info.plist */,
 				47E2715E1900043300304DED /* main.m */,
 				47E271601900043300304DED /* bangumi-Prefix.pch */,
@@ -317,9 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				47E2719C19014ECE00304DED /* LoginViewController.m in Sources */,
+				4751E630191F84DA004143D3 /* HTMLEntityDecode.m in Sources */,
+				4751E628191F648E004143D3 /* ProgressListViewController.m in Sources */,
 				47A923FE1916723600B3D10A /* SearchViewController.m in Sources */,
 				47E271A219015D9300304DED /* WatchingListViewController.m in Sources */,
 				47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */,
+				4751E633191F9209004143D3 /* RakuenViewController.m in Sources */,
 				47E2718D190009E100304DED /* BGMAPI.m in Sources */,
 				47E271631900043300304DED /* AppDelegate.m in Sources */,
 				47E271B4190166C400304DED /* TabbarViewController.m in Sources */,

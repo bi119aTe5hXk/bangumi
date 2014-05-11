@@ -30,10 +30,15 @@
     bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:nil];
     userdefaults = [NSUserDefaults standardUserDefaults];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth",nil]];
+    [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth_urlencoded",nil]];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"userid",nil]];
+    
+    auth_urlencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     auth = [userdefaults stringForKey:@"auth"];
     userid = [userdefaults stringForKey:@"userid"];
-    NSLog(@"auth:%@",auth);
+    if (debugmode == YES) {
+        NSLog(@"auth:%@",auth);
+    }
     
     if ([auth length] > 0) {
         self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
@@ -70,7 +75,8 @@
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     resultarr = list;
-    auth = [list valueForKey:@"auth_encode"];
+    auth_urlencoded = [list valueForKey:@"auth_encode"];
+    auth = [list valueForKey:@"auth"];
     userid = [list valueForKey:@"id"];
     if ([auth length] > 0) {
         [userdefaults setObject:auth forKey:@"auth"];

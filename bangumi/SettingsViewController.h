@@ -11,5 +11,6 @@
 @interface SettingsViewController : UITableViewController{
     NSUserDefaults *userdefault;
 }
+
 -(IBAction)logout:(id)sender;
 @end

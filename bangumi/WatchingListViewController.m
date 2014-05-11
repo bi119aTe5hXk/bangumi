@@ -37,7 +37,7 @@
     self.refreshControl = refreshControl;
     bgmlist = [[NSArray alloc] init];
     userdefault = [NSUserDefaults standardUserDefaults];
-    [self loadList];
+    //[self loadList];
 }
 - (void)onRefresh:(id)sender{
     [self loadList];
@@ -46,11 +46,16 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
+-(void)viewDidAppear:(BOOL)animated{
+    if (bgmlist.count <= 0) {
+        [self loadList];
+    }
+}
 -(void)loadList{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSString *auth = [userdefault stringForKey:@"auth"];
+    NSString *auth_urlencoded = [userdefault stringForKey:@"auth_urlencoded"];
     NSString *userid = [userdefault stringForKey:@"userid"];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:auth];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:auth_urlencoded];
     [bgmapi cancelConnection];
     [bgmapi getWatchingListWithUID:userid];
     request_type = @"WatchingList";
@@ -70,13 +75,23 @@
         [self.tableView reloadData];
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功标记为已看过～"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"了解"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-        [self loadList];
+        if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
+                                                            message:[list valueForKey:@"error"]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"了解"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            [self loadList];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
+                                                            message:[list valueForKey:@"error"]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"了解"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
     }
     if ([request_type isEqualToString:@"EPList"]) {
         NSInteger ep_countindex = ep_count - 1;
@@ -128,7 +143,9 @@
     NSUInteger row = [indexPath row];
     [cell.prgoressbar setProgress:0 animated:YES];
     NSArray *arr = [bgmlist objectAtIndex:row];
-    cell.titlelabel.text = [arr valueForKey:@"name"];
+    cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name"]];
+    
+    
     NSInteger ep_status = [[arr valueForKey:@"ep_status"] integerValue];//已看
     NSInteger eps = [[[arr valueForKey:@"subject"] valueForKey:@"eps"] integerValue];//总共
     

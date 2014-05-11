@@ -33,7 +33,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     userdefaults = [NSUserDefaults standardUserDefaults];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth"]];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
     //[self.tableView registerClass: [NormalCell class] forCellReuseIdentifier:@"SearchCell"];
 }
 
@@ -70,7 +70,6 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"listcount:%ld",[[resultlist valueForKey:@"list"] count]);
     NSInteger count = [[resultlist valueForKey:@"list"] count];
     if (count == 20) {
         return [[resultlist valueForKey:@"list"] count] + 1;
@@ -95,8 +94,8 @@
         cell.icon.image = nil;
     }else{
         NSArray *arr = [[resultlist valueForKey:@"list"] objectAtIndex:row];
-        cell.titlelabel.text = [arr valueForKey:@"name"];
-        cell.sublabel.text = [arr valueForKey:@"name_cn"];
+        cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name"]];
+        cell.sublabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name_cn"]];
         [cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
     }
     

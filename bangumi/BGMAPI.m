@@ -66,8 +66,9 @@
 -(void)setCollectionWithColID:(NSString *)colid WithRating:(NSString *)rating WithStatus:(NSString *)status{
     NSString *url = [NSString stringWithFormat:setCollectionURL,colid];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:authString,@"auth",rating,@"rating",status,@"status", nil];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&status=%@",appName,authString,status]];
     [self createPOSTConnectionWithURL:url WithPOSTData:dic];
+    
 }
 -(void)setProgressWithEPID:(NSString *)epid WithStatus:(NSString *)status{
     NSString *url = [NSString stringWithFormat:setProgressURL,epid,status];
