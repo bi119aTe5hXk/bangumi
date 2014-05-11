@@ -10,12 +10,11 @@
 #import "TabbarViewController.h"
 @interface LoginViewController : UIViewController<BGMAPIDelegate>{
     BGMAPI *bgmapi;
-    NSArray *resultarr;
     NSUserDefaults *userdefaults;
     NSString *auth;
     NSString *auth_urlencoded;
     NSString *userid;
-    
+    NSString *request_type;
 }
 @property (nonatomic, strong) IBOutlet UITextField *usernamefield;
 @property (nonatomic, strong) IBOutlet UITextField *passwordfield;

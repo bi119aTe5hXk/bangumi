@@ -101,6 +101,12 @@
     url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&start=%ld&max_results=20",appName,authURLencoded,count]];
     [self createGETConnectionWithURL:url];
 }
+
+-(void)getNotifyCount{
+    NSString *url = notifyURL;
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
+    [self createGETConnectionWithURL:url];
+}
 #pragma mark - NSURLConnection
 -(BOOL)createPOSTConnectionWithURL:(NSString *)urlstr WithPOSTData:(NSDictionary *)post_data{
     

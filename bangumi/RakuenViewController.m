@@ -30,23 +30,27 @@
     self.title = @"超展开 Mobile";
     userdefault = [NSUserDefaults standardUserDefaults];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:rakuenURL]];
-    [request setValue:[userdefault stringForKey:@"auth"] forHTTPHeaderField:@"chii_auth"];
+    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:rakuenURL]];
     
-//    NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                rakuenURL, NSHTTPCookieOriginURL,
-//                                @"chii_auth", NSHTTPCookieName,
-//                                [userdefault stringForKey:@"auth"], NSHTTPCookieValue,
-//                                nil];
-//    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:properties];
-//    NSArray* cookies = [NSArray arrayWithObjects: cookie, nil];
-//    NSDictionary * headers = [NSHTTPCookie requestHeaderFieldsWithCookies:cookies];
-//    [request setAllHTTPHeaderFields:headers];
+    //[request setValue:[userdefault stringForKey:@"auth"] forHTTPHeaderField:@"chii_auth"];
+    
+    NSMutableDictionary *cookiePropertiesUser = [NSMutableDictionary dictionary];
+    [cookiePropertiesUser setObject:@".bgm.tv" forKey:NSHTTPCookieDomain];
+    [cookiePropertiesUser setObject:@"chii_auth" forKey:NSHTTPCookieName];
+    [cookiePropertiesUser setObject:@"/" forKey:NSHTTPCookiePath];
+    [cookiePropertiesUser setObject:[userdefault stringForKey:@"auth"] forKey:NSHTTPCookieValue];
+    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookiePropertiesUser];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
     
     
+    NSURL *url = [NSURL URLWithString:rakuenURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60];
+
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     [self.webview loadRequest:request];
     [self.webview setDelegate:self];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -56,6 +60,14 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [cookieJar cookies]) {
+        //[self.cookies addObject:cookie];
+        if (debugmode == YES) {
+            NSLog(@"cookie:%@",cookie);
+        }
+    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{

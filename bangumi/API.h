@@ -27,3 +27,5 @@
 #define dayBGMListURL @"http://api.bgm.tv/calendar"
 
 #define SearchURL @"http://api.bgm.tv/search/subject/%@"
+
+#define notifyURL @"http://api.bgm.tv/notify/count"

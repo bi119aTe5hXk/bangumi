@@ -45,6 +45,7 @@
     if ([auth length] > 0) {
         self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
         [self.navigationController presentViewController:self.tabbarview animated:NO completion:nil];
+        
     }
     
 }
@@ -52,7 +53,10 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    self.usernamefield.text = @"";
+    self.passwordfield.text = @"";
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -63,6 +67,7 @@
     if ([self.usernamefield.text length] > 0 && [self.passwordfield.text length] > 0) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [bgmapi userLoginWithUserName:self.usernamefield.text WithPassword:self.passwordfield.text];
+        request_type = @"login";
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入用户名密码！"
                                                         message:nil
@@ -76,24 +81,26 @@
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    resultarr = list;
-    auth_urlencoded = [list valueForKey:@"auth_encode"];
-    auth = [list valueForKey:@"auth"];
-    userid = [list valueForKey:@"id"];
-    if ([auth length] > 0) {
-        [userdefaults setObject:auth forKey:@"auth"];
-        [userdefaults setObject:userid forKey:@"userid"];
-        [userdefaults setObject:auth_urlencoded forKey:@"auth_urlencoded"];
-        [userdefaults synchronize];
-        self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
-        [self.navigationController presentViewController:self.tabbarview animated:YES completion:nil];
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+    if ([request_type isEqualToString:@"login"]) {
+        auth_urlencoded = [list valueForKey:@"auth_encode"];
+        auth = [list valueForKey:@"auth"];
+        userid = [list valueForKey:@"id"];
+        if ([auth length] > 0) {
+            [userdefaults setObject:auth forKey:@"auth"];
+            [userdefaults setObject:userid forKey:@"userid"];
+            [userdefaults setObject:auth_urlencoded forKey:@"auth_urlencoded"];
+            [userdefaults synchronize];
+            self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
+            [self.navigationController presentViewController:self.tabbarview animated:YES completion:nil];
+            
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
+                                                            message:nil
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+        }
     }
     
     

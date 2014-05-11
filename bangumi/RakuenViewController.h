@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RakuenViewController : UIViewController<UIWebViewDelegate>{
+@interface RakuenViewController : UIViewController<UIWebViewDelegate,NSURLConnectionDelegate>{
     NSUserDefaults *userdefault;
 }
-@property (nonatomic, retain) IBOutlet UIWebView *webview;
+@property (nonatomic, strong) IBOutlet UIWebView *webview;
+@property (strong, nonatomic) NSURLConnection *theConnection;
+@property (strong, nonatomic) NSMutableData *receivedData;
 @end

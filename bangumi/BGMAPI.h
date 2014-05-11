@@ -13,7 +13,7 @@
 - (void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error;
 @end
 
-@interface BGMAPI : NSObject{
+@interface BGMAPI : NSObject<NSURLConnectionDelegate>{
     NSUserDefaults *userdefaults;
     NSString *authString;
     NSString *authURLencoded;
@@ -35,6 +35,8 @@
 -(void)getDayBGMList;
 
 -(void)searchWithKeyword:(NSString *)keyword startWithCount:(NSInteger)count;
+
+-(void)getNotifyCount;
 
 - (void)cancelConnection;
 @end

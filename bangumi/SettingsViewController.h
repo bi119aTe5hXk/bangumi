@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UITableViewController{
+@interface SettingsViewController : UITableViewController<BGMAPIDelegate>{
     NSUserDefaults *userdefault;
+    BGMAPI *bgmapi;
 }
 
+@property (nonatomic, strong) IBOutlet UIButton *rakuenbtn;
 -(IBAction)logout:(id)sender;
 @end

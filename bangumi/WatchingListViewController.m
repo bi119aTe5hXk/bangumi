@@ -72,6 +72,9 @@
     if ([request_type isEqualToString:@"WatchingList"]) {
         bgmlist = list;
         [self.tableView reloadData];
+        
+        [bgmapi getNotifyCount];
+        request_type = @"notifycount";
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
         if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
@@ -111,11 +114,23 @@
         
     }
     
+    if ([request_type isEqualToString:@"notifycount"]) {
+        NSString *count = [NSString stringWithFormat:@"%@",[list valueForKey:@"count"]];
+        if ([count integerValue] >= 1) {
+            [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%@",[list valueForKey:@"count"]]];
+        }else{
+            [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
+        }
+    }
+    
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
-    
+    if ([request_type isEqualToString:@"WatchingList"]) {
+        [bgmapi getNotifyCount];
+        request_type = @"notifycount";
+    }
 }
 #pragma mark - Table view data source
 

@@ -33,6 +33,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     userdefault = [NSUserDefaults standardUserDefaults];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
+    [bgmapi getNotifyCount];
+
 }
 -(IBAction)logout:(id)sender{
     [userdefault setObject:nil forKey:@"auth_urlencoded"];
@@ -41,11 +44,26 @@
     [userdefault synchronize];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+-(void)viewWillDisappear:(BOOL)animated{
+    [bgmapi cancelConnection];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
+    NSString *count = [NSString stringWithFormat:@"%@",[list valueForKey:@"count"]];
+    if ([count integerValue] >= 1) {
+        [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%@",[list valueForKey:@"count"]]];
+        [self.rakuenbtn setTitle:[NSString stringWithFormat:@"超展开: %@条新信息",[list valueForKey:@"count"]] forState:UIControlStateNormal];
+    }else{
+        [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
+        [self.rakuenbtn setTitle:@"超展开 Mobile" forState:UIControlStateNormal];
+    }
+}
+-(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
+    
 }
 
 #pragma mark - Table view data source
