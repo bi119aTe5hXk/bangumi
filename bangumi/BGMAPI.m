@@ -14,8 +14,16 @@
 @property (retain, nonatomic) NSMutableData *receivedData;
 -(BOOL)createPOSTConnectionWithURL:(NSString *)urlstr WithPOSTData:(NSDictionary *)post_data;
 - (BOOL)createGETConnectionWithURL:(NSString *)urlstr;
-@end
 
+@end
+@implementation NSString (URLEncoding)
+
+- (NSString *)urlEncodedUTF8String {
+    return (id)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(0, (CFStringRef)self, 0,
+                                                       (CFStringRef)@";/?:@&=$+{}<>,", kCFStringEncodingUTF8));
+}
+
+@end
 @implementation BGMAPI
 -(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate{
     self = [super init];
@@ -72,7 +80,7 @@
         url = [NSString stringWithFormat:setCollectionURL,colid,@"update"];
     }
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:authString,@"auth",status,@"status",rating,@"rating", nil];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&status=%@",appName,authURLencoded,status]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&status=%@&auth=%@",appName,status,authURLencoded]];
     [self createPOSTConnectionWithURL:url WithPOSTData:dic];
     
 }
@@ -119,16 +127,25 @@
 //        }
 //    }
     
-    NSError *jsonError;
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:post_data options:NSJSONWritingPrettyPrinted error:&jsonError];
+//    NSError *jsonError;
+//    NSData *postData = [NSJSONSerialization dataWithJSONObject:post_data options:NSJSONWritingPrettyPrinted error:&jsonError];
+    NSMutableString *body = [NSMutableString string];
+    for (NSString *key in post_data) {
+        NSString *val = [post_data objectForKey:key];
+        if ([body length])
+            [body appendString:@"&"];
+        [body appendFormat:@"%@=%@", [[key description] urlEncodedUTF8String
+                                      ],
+         [[val description] urlEncodedUTF8String]];
+    }
     
     
     
     //NSData *postData = [post_string dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    //NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
     if (debugmode == YES) {
-        NSLog(@"Post Data: %@",[[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
+        NSLog(@"Post Data: %@",body);
     }
     
     request = [NSMutableURLRequest requestWithURL:url
@@ -137,12 +154,15 @@
     
     //[request setURL:url];
     [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    //[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
+    //[request setHTTPBody:postData];
+    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:YES];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    
 	self.theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	if (self.theConnection) {
 		self.receivedData = [NSMutableData data];
