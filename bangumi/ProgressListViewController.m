@@ -29,7 +29,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     userdefaults = [NSUserDefaults standardUserDefaults];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getProgressListWithUID:[userdefaults stringForKey:@"userid"] WithSubID:self.subid];
     request_type = @"getProgressList";
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -224,23 +224,24 @@
 }
 -(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (actionSheet.tag == 233) {
-        NSString *epid = [[self.progresslist objectAtIndex:selectrow] valueForKey:@"id"];
-        if(buttonIndex == 1){
-            //看过
-            [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
-        }else if (buttonIndex == 2){
-            //想看
-            [bgmapi setProgressWithEPID:epid WithStatus:@"queue"];
-        }else if (buttonIndex == 3){
-            //抛弃
-            [bgmapi setProgressWithEPID:epid WithStatus:@"drop"];
-        }else if (buttonIndex == 4){
-            //撤销
-            [bgmapi setProgressWithEPID:epid WithStatus:@"remove"];
+        if (buttonIndex >0) {
+            NSString *epid = [[self.progresslist objectAtIndex:selectrow] valueForKey:@"id"];
+            if(buttonIndex == 1){
+                //看过
+                [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
+            }else if (buttonIndex == 2){
+                //想看
+                [bgmapi setProgressWithEPID:epid WithStatus:@"queue"];
+            }else if (buttonIndex == 3){
+                //抛弃
+                [bgmapi setProgressWithEPID:epid WithStatus:@"drop"];
+            }else if (buttonIndex == 4){
+                //撤销
+                [bgmapi setProgressWithEPID:epid WithStatus:@"remove"];
+            }
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            request_type = @"updateProgress";
         }
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        request_type = @"updateProgress";
     }
-    
 }
 @end

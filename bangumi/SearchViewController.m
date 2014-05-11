@@ -32,8 +32,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    userdefaults = [NSUserDefaults standardUserDefaults];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self ];
     //[self.tableView registerClass: [NormalCell class] forCellReuseIdentifier:@"SearchCell"];
 }
 

@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:nil];
+    
     userdefaults = [NSUserDefaults standardUserDefaults];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth",nil]];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth_urlencoded",nil]];
@@ -36,8 +36,10 @@
     auth_urlencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     auth = [userdefaults stringForKey:@"auth"];
     userid = [userdefaults stringForKey:@"userid"];
+    
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     if (debugmode == YES) {
-        NSLog(@"auth:%@",auth);
+        NSLog(@"auth:%@,auth_URLencoded:%@",auth,auth_urlencoded);
     }
     
     if ([auth length] > 0) {
@@ -81,6 +83,7 @@
     if ([auth length] > 0) {
         [userdefaults setObject:auth forKey:@"auth"];
         [userdefaults setObject:userid forKey:@"userid"];
+        [userdefaults setObject:auth_urlencoded forKey:@"auth_urlencoded"];
         [userdefaults synchronize];
         self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
         [self.navigationController presentViewController:self.tabbarview animated:YES completion:nil];
@@ -97,8 +100,6 @@
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    
 }
 
 

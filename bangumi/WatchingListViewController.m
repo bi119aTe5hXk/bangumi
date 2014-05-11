@@ -53,9 +53,8 @@
 }
 -(void)loadList{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSString *auth_urlencoded = [userdefault stringForKey:@"auth_urlencoded"];
     NSString *userid = [userdefault stringForKey:@"userid"];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:auth_urlencoded];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi cancelConnection];
     [bgmapi getWatchingListWithUID:userid];
     request_type = @"WatchingList";

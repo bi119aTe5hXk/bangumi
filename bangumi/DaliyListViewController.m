@@ -36,8 +36,7 @@
     [refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
-    userdefaults = [NSUserDefaults standardUserDefaults];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     //[bgmapi getDayBGMList];
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
@@ -52,8 +51,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     if (daylist.count <= 0) {
-        userdefaults = [NSUserDefaults standardUserDefaults];
-        bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
+        bgmapi = [[BGMAPI alloc] initWithdelegate:self];
         [bgmapi getDayBGMList];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }

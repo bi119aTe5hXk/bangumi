@@ -14,9 +14,11 @@
 @end
 
 @interface BGMAPI : NSObject{
+    NSUserDefaults *userdefaults;
     NSString *authString;
+    NSString *authURLencoded;
 }
--(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate WithAuthString:(NSString *)auth;
+-(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate;
 
 -(void)userLoginWithUserName:(NSString *)username WithPassword:(NSString *)password;
 

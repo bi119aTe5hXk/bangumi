@@ -30,7 +30,7 @@
     
     
     userdefaults = [NSUserDefaults standardUserDefaults];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self WithAuthString:[userdefaults stringForKey:@"auth_urlencoded"]];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getSubjectInfoWithSubID:self.bgmid];
     request_type = @"BGMDetail";
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -79,22 +79,12 @@
     }
     
     if ([request_type isEqualToString:@"updateStatus"]) {
-        if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
-                                                            message:[list valueForKey:@"error"]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"了解"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-            
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
-                                                            message:[list valueForKey:@"error"]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"了解"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
+                                                        message:[[list valueForKey:@"status"] valueForKey:@"type"]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"了解"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
     }
     
 }
@@ -138,23 +128,26 @@
 }
 -(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (actionSheet.tag == 998) {
-        if (buttonIndex == 1) {
-            //想看
-            [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"wish"];
-        }else if (buttonIndex == 2){
-            //在看
-            [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"do"];
-        }else if (buttonIndex == 3){
-            //看过
-            [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"collect"];
-        }else if (buttonIndex == 4){
-            //搁置
-            [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"on_hold"];
-        }else if (buttonIndex == 5){
-            //抛弃
-            [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"dropped"];
+        if (buttonIndex >0) {
+            if (buttonIndex == 1) {
+                //想看
+                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"wish"];
+            }else if (buttonIndex == 2){
+                //在看
+                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"do"];
+            }else if (buttonIndex == 3){
+                //看过
+                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"collect"];
+            }else if (buttonIndex == 4){
+                //搁置
+                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"on_hold"];
+            }else if (buttonIndex == 5){
+                //抛弃
+                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"dropped"];
+            }
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            request_type = @"updateStatus";
         }
-        request_type = @"updateStatus";
     }
 }
 @end

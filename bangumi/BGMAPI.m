@@ -17,11 +17,12 @@
 @end
 
 @implementation BGMAPI
--(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate WithAuthString:(NSString *)auth{
+-(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate{
     self = [super init];
     
-    authString = auth;
-    
+    userdefaults = [NSUserDefaults standardUserDefaults];
+    authString = [userdefaults stringForKey:@"auth"];
+    authURLencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     self.delegate = delegate;
     return self;
 }
@@ -39,17 +40,17 @@
 
 -(void)getWatchingListWithUID:(NSString *)uid{
     NSString *url = [NSString stringWithFormat:WatchingListURL,uid];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
     [self createGETConnectionWithURL:url];
 }
 -(void)getProgressListWithUID:(NSString *)uid WithSubID:(NSString *)subid{
     NSString *url = [NSString stringWithFormat:ProgressListURL,uid,subid];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"&source=%@&auth=%@",appName,authString]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"&source=%@&auth=%@",appName,authURLencoded]];
     [self createGETConnectionWithURL:url];
 }
 -(void)getEPListWithSubID:(NSString *)subid{
     NSString *url = [NSString stringWithFormat:SubjectEPlistURL,subid];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
      [self createGETConnectionWithURL:url];
 }
 -(void)getSubjectInfoWithSubID:(NSString *)subid{
@@ -59,32 +60,37 @@
 }
 -(void)getCollectionInfoWithColID:(NSString *)colid{
     NSString *url = [NSString stringWithFormat:CollectionInfoURL,colid];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
     [self createGETConnectionWithURL:url];
 }
 
 -(void)setCollectionWithColID:(NSString *)colid WithRating:(NSString *)rating WithStatus:(NSString *)status{
-    NSString *url = [NSString stringWithFormat:setCollectionURL,colid];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:authString,@"auth",rating,@"rating",status,@"status", nil];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&status=%@",appName,authString,status]];
+    NSString *url = @"";
+    if ([status isEqualToString:@"do"]) {
+        url = [NSString stringWithFormat:setCollectionURL,colid,@"create"];
+    }else{
+        url = [NSString stringWithFormat:setCollectionURL,colid,@"update"];
+    }
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:authString,@"auth",status,@"status",rating,@"rating", nil];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&status=%@",appName,authURLencoded,status]];
     [self createPOSTConnectionWithURL:url WithPOSTData:dic];
     
 }
 -(void)setProgressWithEPID:(NSString *)epid WithStatus:(NSString *)status{
     NSString *url = [NSString stringWithFormat:setProgressURL,epid,status];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:authString,@"auth",epid,@"ep_id", nil];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
     [self createPOSTConnectionWithURL:url WithPOSTData:dic];
 }
 
 -(void)getDayBGMList{
     NSString *url = dayBGMListURL;
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authString]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
     [self createGETConnectionWithURL:url];
 }
 -(void)searchWithKeyword:(NSString *)keyword startWithCount:(NSInteger)count{
     NSString *url = [NSString stringWithFormat:SearchURL,keyword];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&start=%ld&max_results=20",appName,authString,count]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&start=%ld&max_results=20",appName,authURLencoded,count]];
     [self createGETConnectionWithURL:url];
 }
 #pragma mark - NSURLConnection
@@ -103,28 +109,26 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     
-    NSMutableString *post_string =[NSMutableString string];
-    NSString *k;
-    for (k in post_data) {
-        if ([[post_data objectForKey:k] isKindOfClass:[NSString class]]) {
-            [post_string appendFormat:@"%@=%@", k, [[post_data objectForKey:k] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        } else {
-            [post_string appendFormat:@"%@=%@", k, [post_data objectForKey:k]];
-        }
-    }
-    
-//    NSError *jsonError;
-//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:post_data options:NSJSONWritingPrettyPrinted error:&jsonError];
-//    
-//    if (debugmode == YES) {
-//        NSLog(@"Post Data: %@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+//    NSMutableString *post_string =[NSMutableString string];
+//    NSString *k;
+//    for (k in post_data) {
+//        if ([[post_data objectForKey:k] isKindOfClass:[NSString class]]) {
+//            [post_string appendFormat:@"%@=%@", k, [[post_data objectForKey:k] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+//        } else {
+//            [post_string appendFormat:@"%@=%@", k, [post_data objectForKey:k]];
+//        }
 //    }
     
-    NSData *postData = [post_string dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSError *jsonError;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:post_data options:NSJSONWritingPrettyPrinted error:&jsonError];
+    
+    
+    
+    //NSData *postData = [post_string dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
-    for (int i = 0; i<[post_data count]; i++) {
-        
+    if (debugmode == YES) {
+        NSLog(@"Post Data: %@",[[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
     }
     
     request = [NSMutableURLRequest requestWithURL:url

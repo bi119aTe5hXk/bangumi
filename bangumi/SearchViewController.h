@@ -10,7 +10,6 @@
 #import "NormalCell.h"
 #import "BGMDetailViewController.h"
 @interface SearchViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UISearchBarDelegate>{
-    NSUserDefaults *userdefaults;
     BGMAPI *bgmapi;
     NSArray *resultlist;
 }

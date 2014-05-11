@@ -20,7 +20,8 @@
 #define SubjectEPlistURL @"http://api.bgm.tv/subject/%@/ep"
 #define CollectionInfoURL @"http://api.bgm.tv/collection/%@"
 
-#define setCollectionURL @"http://api.bgm.tv/collection/%@/update"
+
+#define setCollectionURL @"http://api.bgm.tv/collection/%@/%@"
 #define setProgressURL @"http://api.bgm.tv/ep/%@/status/%@"
 
 #define dayBGMListURL @"http://api.bgm.tv/calendar"
