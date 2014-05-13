@@ -9,6 +9,7 @@
         <scene sceneID="Sbp-Y5-S1w">
             <objects>
                 <navigationController definesPresentationContext="YES" id="c0g-T8-Y24" sceneMemberID="viewController">
+                    <size key="freeformSize" width="320" height="568"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5bp-d4-oZv">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -26,26 +27,26 @@
                 <viewController id="kKC-iY-qY7" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mVr-zg-tbj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" id="Ppf-hw-l59">
-                                <rect key="frame" x="20" y="98" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" clearButtonMode="whileEditing" id="Ppf-hw-l59">
+                                <rect key="frame" x="20" y="114" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" id="5PL-fj-vxr">
-                                <rect key="frame" x="20" y="153" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" id="5PL-fj-vxr">
+                                <rect key="frame" x="20" y="171" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fOB-EK-eQt">
-                                <rect key="frame" x="20" y="216" width="280" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="登陆">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="160" y="233" width="140" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="登录"/>
                                 <connections>
                                     <action selector="loginbtnpressd:" destination="kKC-iY-qY7" eventType="touchUpInside" id="mts-yQ-sa6"/>
                                 </connections>
@@ -76,8 +77,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="J7o-xs-qwP" kind="relationship" relationship="viewControllers" id="A3Z-ay-k7g"/>
-                        <segue destination="q0E-Rj-Fn4" kind="relationship" relationship="viewControllers" id="PdT-yD-qwi"/>
                         <segue destination="O7w-ZY-zKI" kind="relationship" relationship="viewControllers" id="atu-Z9-sdd"/>
+                        <segue destination="q0E-Rj-Fn4" kind="relationship" relationship="viewControllers" id="PdT-yD-qwi"/>
                         <segue destination="TMR-RL-cMR" kind="relationship" relationship="viewControllers" id="ECC-0u-4dk"/>
                     </connections>
                 </tabBarController>
@@ -141,7 +142,20 @@
                             <outlet property="delegate" destination="bJ7-1j-2Mi" id="v8e-Ze-I8R"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="搜索" id="cny-Jc-ALg"/>
+                    <navigationItem key="navigationItem" title="搜索" id="cny-Jc-ALg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fv2-wk-VVL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="u1m-5U-hiT">
+                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchinfo:" destination="bJ7-1j-2Mi" eventType="touchUpInside" id="xxI-Ou-fXH"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="seachbar" destination="jHE-g0-cqq" id="t8p-4K-3xh"/>
                     </connections>
@@ -170,7 +184,7 @@
         <scene sceneID="a8s-eJ-c77">
             <objects>
                 <navigationController definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J7o-xs-qwP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="进度管理" id="0pO-sf-IXw"/>
+                    <tabBarItem key="tabBarItem" title="进度管理" image="UITabBarList.png" id="0pO-sf-IXw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3sE-Tj-eo2">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -448,7 +462,7 @@
         <scene sceneID="Adn-EL-Yd1">
             <objects>
                 <navigationController definesPresentationContext="YES" id="O7w-ZY-zKI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="每日放送" id="EZf-hi-yhC"/>
+                    <tabBarItem key="tabBarItem" title="每日放送" image="UITabBarStar.png" id="EZf-hi-yhC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FBZ-on-aUx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -563,6 +577,10 @@
             <point key="canvasLocation" x="1846" y="865"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="UITabBarList.png" width="28" height="26"/>
+        <image name="UITabBarStar.png" width="28" height="26"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

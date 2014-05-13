@@ -99,7 +99,7 @@
         NSInteger ep_countindex = ep_count - 1;
         if ([[list valueForKey:@"eps"] count] > 0 && ep_countindex <= [[list valueForKey:@"eps"] count]) {
             NSString *epid = [[[list valueForKey:@"eps"] objectAtIndex:ep_countindex] valueForKey:@"id"];
-            NSLog(@"epidd:%@",epid);
+            //NSLog(@"epidd:%@",epid);
             [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             request_type = @"updateProgress";
@@ -163,11 +163,11 @@
     NSInteger ep_status = [[arr valueForKey:@"ep_status"] integerValue];//已看
     NSInteger eps = [[[arr valueForKey:@"subject"] valueForKey:@"eps"] integerValue];//总共
     
-    [cell.updatebtn setTitle:[NSString stringWithFormat:@"标记 ep.%ld 看过",ep_status+1] forState:UIControlStateNormal];
+    [cell.updatebtn setTitle:[NSString stringWithFormat:@"标记 ep.%ld 看过",(long)ep_status+1] forState:UIControlStateNormal];
     [cell.updatebtn addTarget:self action:@selector(updatebtnpressd:) forControlEvents:UIControlEventTouchUpInside];
     
     if (eps == 0) {
-        cell.progresslabel.text = [NSString stringWithFormat:@"%ld/??",ep_status];
+        cell.progresslabel.text = [NSString stringWithFormat:@"%ld/??",(long)ep_status];
         //[cell.updatebtn setHidden:YES];
         if (ep_status <= 12) {
             eps = 12;
@@ -175,10 +175,10 @@
             eps = 100;
         }
     }else if (eps == ep_status){
-        cell.progresslabel.text = [NSString stringWithFormat:@"%ld/%ld",ep_status,eps];
+        cell.progresslabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)ep_status,(long)eps];
         //[cell.updatebtn setHidden:YES];
     }else{
-        cell.progresslabel.text = [NSString stringWithFormat:@"%ld/%ld",ep_status,eps];
+        cell.progresslabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)ep_status,(long)eps];
         [cell.updatebtn setHidden:NO];
         
     }
@@ -216,7 +216,7 @@
         epid = [[arr valueForKey:@"subject"] valueForKey:@"id"];
         ep_count = ep_status+1;
         UIAlertView *updatealert = [[UIAlertView alloc] initWithTitle:@"确定将以下章节标为看过？"
-                                                              message:[NSString stringWithFormat:@"%@ ep.%ld",[arr valueForKey:@"name"],ep_count]
+                                                              message:[NSString stringWithFormat:@"%@ ep.%ld",[arr valueForKey:@"name"],(long)ep_count]
                                                              delegate:self
                                                     cancelButtonTitle:@"取消"
                                                     otherButtonTitles:@"是的", nil];

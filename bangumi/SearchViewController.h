@@ -12,6 +12,9 @@
 @interface SearchViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UISearchBarDelegate>{
     BGMAPI *bgmapi;
     NSArray *resultlist;
+    
 }
 @property (nonatomic, retain) IBOutlet UISearchBar *seachbar;
+
+-(IBAction)searchinfo:(id)sender;
 @end

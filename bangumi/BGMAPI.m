@@ -48,7 +48,7 @@
 
 -(void)getWatchingListWithUID:(NSString *)uid{
     NSString *url = [NSString stringWithFormat:WatchingListURL,uid];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"&source=%@&auth=%@",appName,authURLencoded]];
     [self createGETConnectionWithURL:url];
 }
 -(void)getProgressListWithUID:(NSString *)uid WithSubID:(NSString *)subid{
@@ -99,7 +99,7 @@
 -(void)searchWithKeyword:(NSString *)keyword startWithCount:(NSInteger)count{
     NSString *keyEncoded = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)keyword,NULL,(CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",kCFStringEncodingUTF8);
     NSString *url = [NSString stringWithFormat:SearchURL,keyEncoded];
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&start=%ld&max_results=20",appName,authURLencoded,count]];
+    url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&start=%ld&max_results=20",appName,authURLencoded,(long)count]];
     [self createGETConnectionWithURL:url];
 }
 

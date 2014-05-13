@@ -35,7 +35,14 @@
     bgmapi = [[BGMAPI alloc] initWithdelegate:self ];
     //[self.tableView registerClass: [NormalCell class] forCellReuseIdentifier:@"SearchCell"];
 }
-
+-(IBAction)searchinfo:(id)sender{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"关于搜索"
+                                                    message:@"目前暂时只能显示前20条项目，如果找不到您想看的番组，请将关键词描写更详细一些。m(_ _)m"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"知道了"
+                                          otherButtonTitles:nil, nil];
+    [alert show];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -69,12 +76,12 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSInteger count = [[resultlist valueForKey:@"list"] count];
-    if (count == 20) {
-        return [[resultlist valueForKey:@"list"] count] + 1;
-    }else{
+//    NSInteger count = [[resultlist valueForKey:@"list"] count];
+//    if (count == 20) {
+//        return [[resultlist valueForKey:@"list"] count] + 1;
+//    }else{
         return [[resultlist valueForKey:@"list"] count];
-    }
+//    }
 }
 
 
@@ -87,8 +94,8 @@
     NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     NSUInteger row = [indexPath row];
     
-    if (row == [[resultlist valueForKey:@"list"] count]) {
-        cell.titlelabel.text = [resultlist valueForKey:@"results"];
+    if (row == [[resultlist valueForKey:@"list"] count]+1) {
+        cell.titlelabel.text = @"下一页";
         cell.sublabel.text = @"";
         cell.icon.image = nil;
     }else{
