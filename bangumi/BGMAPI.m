@@ -97,7 +97,8 @@
     [self createGETConnectionWithURL:url];
 }
 -(void)searchWithKeyword:(NSString *)keyword startWithCount:(NSInteger)count{
-    NSString *url = [NSString stringWithFormat:SearchURL,keyword];
+    NSString *keyEncoded = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)keyword,NULL,(CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",kCFStringEncodingUTF8);
+    NSString *url = [NSString stringWithFormat:SearchURL,keyEncoded];
     url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@&start=%ld&max_results=20",appName,authURLencoded,count]];
     [self createGETConnectionWithURL:url];
 }
