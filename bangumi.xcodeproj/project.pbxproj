@@ -16,7 +16,7 @@
 		4751E63B1921F521004143D3 /* UITabBarList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6391921F521004143D3 /* UITabBarList@2x.png */; };
 		478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */; };
 		47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DC55190940340086A14B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		47A5DC58190AA7F10086A14B /* README in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DC57190AA7F10086A14B /* README */; };
+		47A5DC58190AA7F10086A14B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DC57190AA7F10086A14B /* README.md */; };
 		47A5DD25191127150086A14B /* DaliyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD24191127150086A14B /* DaliyListViewController.m */; };
 		47A5DD29191135BB0086A14B /* bgm38a1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DD28191135BB0086A14B /* bgm38a1024.png */; };
 		47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD2B19113CAE0086A14B /* NormalCell.m */; };
@@ -68,7 +68,7 @@
 		478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMDetailViewController.m; sourceTree = "<group>"; };
 		47A5DC54190940340086A14B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		47A5DC55190940340086A14B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		47A5DC57190AA7F10086A14B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		47A5DC57190AA7F10086A14B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		47A5DD23191127150086A14B /* DaliyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaliyListViewController.h; sourceTree = "<group>"; };
 		47A5DD24191127150086A14B /* DaliyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaliyListViewController.m; sourceTree = "<group>"; };
 		47A5DD28191135BB0086A14B /* bgm38a1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgm38a1024.png; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		47E271461900043300304DED = {
 			isa = PBXGroup;
 			children = (
-				47A5DC57190AA7F10086A14B /* README */,
+				47A5DC57190AA7F10086A14B /* README.md */,
 				47E271581900043300304DED /* bangumi */,
 				47E2717A1900043300304DED /* bangumiTests */,
 				47E271511900043300304DED /* Frameworks */,
@@ -325,7 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4751E6371921F231004143D3 /* UITabBarStar@2x.png in Resources */,
-				47A5DC58190AA7F10086A14B /* README in Resources */,
+				47A5DC58190AA7F10086A14B /* README.md in Resources */,
 				47E2716E1900043300304DED /* Images.xcassets in Resources */,
 				47A5DD29191135BB0086A14B /* bgm38a1024.png in Resources */,
 				4751E6361921F231004143D3 /* UITabBarStar.png in Resources */,
