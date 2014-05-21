@@ -57,6 +57,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(IBAction)reloadpage:(id)sender{
+    [self.webview reload];
+}
+
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];

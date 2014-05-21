@@ -14,4 +14,6 @@
 @property (nonatomic, strong) IBOutlet UIWebView *webview;
 @property (strong, nonatomic) NSURLConnection *theConnection;
 @property (strong, nonatomic) NSMutableData *receivedData;
+
+-(IBAction)reloadpage:(id)sender;
 @end
