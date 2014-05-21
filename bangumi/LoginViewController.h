@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TabbarViewController.h"
-@interface LoginViewController : UIViewController<BGMAPIDelegate>{
+@interface LoginViewController : UIViewController<BGMAPIDelegate,UITextFieldDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSString *auth;
@@ -22,6 +22,5 @@
 @property (nonatomic, strong) IBOutlet TabbarViewController *tabbarview;
 
 -(IBAction)loginbtnpressd:(id)sender;
-
 
 @end

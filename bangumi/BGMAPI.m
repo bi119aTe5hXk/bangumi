@@ -36,14 +36,14 @@
 }
 
 
-//-(NSString *)mainURLWithPath:(NSString *)path{
-//    return [NSString stringWithFormat:@"%@%@",APIBaseURL,path];
-//}
-
 -(void)userLoginWithUserName:(NSString *)username WithPassword:(NSString *)password{
-    NSString *url = [NSString stringWithFormat:LoginURL,username,password];
+    NSString *url = [NSString stringWithFormat:PostLoginURL];
     url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@",appName]];
-    [self createGETConnectionWithURL:url];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:username,@"username",password,@"password", nil];
+    [self createPOSTConnectionWithURL:url WithPOSTData:dic];
+    
+    //NSString *keyEncoded = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)username,NULL,(CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",kCFStringEncodingUTF8);
+    //[self createGETConnectionWithURL:[[NSString stringWithFormat:BaseLoginURL,keyEncoded,password] stringByAppendingString:[NSString stringWithFormat:@"?source=%@",appName]]];
 }
 
 -(void)getWatchingListWithUID:(NSString *)uid{
@@ -124,18 +124,6 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     
-//    NSMutableString *post_string =[NSMutableString string];
-//    NSString *k;
-//    for (k in post_data) {
-//        if ([[post_data objectForKey:k] isKindOfClass:[NSString class]]) {
-//            [post_string appendFormat:@"%@=%@", k, [[post_data objectForKey:k] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-//        } else {
-//            [post_string appendFormat:@"%@=%@", k, [post_data objectForKey:k]];
-//        }
-//    }
-    
-//    NSError *jsonError;
-//    NSData *postData = [NSJSONSerialization dataWithJSONObject:post_data options:NSJSONWritingPrettyPrinted error:&jsonError];
     NSMutableString *body = [NSMutableString string];
     for (NSString *key in post_data) {
         NSString *val = [post_data objectForKey:key];
@@ -147,10 +135,6 @@
     }
     
     
-    
-    //NSData *postData = [post_string dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    //NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-    
     if (debugmode == YES) {
         NSLog(@"Post Data: %@",body);
     }
@@ -159,11 +143,8 @@
                                       cachePolicy:NSURLRequestReloadRevalidatingCacheData
                                   timeoutInterval:settimeout];
     
-    //[request setURL:url];
     [request setHTTPMethod:@"POST"];
-    //[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    //[request setHTTPBody:postData];
     [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:YES];
     
@@ -204,19 +185,11 @@
 	return YES;
 }
 
-
-
-
-
-
-
 - (void)cancelConnection{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	//if(self.theConnection && self.isBusy){
     [self.theConnection cancel];
     self.theConnection = nil;
     self.receivedData = nil;
-	//}
 }
 - (void)cancelRequest{
 	[self.theConnection cancel];
@@ -248,14 +221,6 @@
               [error localizedDescription],
               [error userInfo][NSURLErrorFailingURLStringErrorKey]);
     }
-    
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误"
-//                                                        message:@"服务器无法连接"
-//                                                       delegate:nil
-//                                              cancelButtonTitle:nil
-//                                              otherButtonTitles:@"了解", nil];
-//    alertView.tag = 0;
-//    [alertView show];
     if([self.delegate respondsToSelector:@selector(api:requestFailedWithError:)]){
 		[self.delegate api:self requestFailedWithError:error];
 	}
@@ -277,22 +242,9 @@
         if (debugmode == YES) {
             NSLog(@"json:%@",json);
         }
-        
-//        if ([[[json valueForKey:@"response"] valueForKey:@"information"] valueForKey:@"has_error"] == [NSNumber numberWithBool:NO]) {
-//            if (debugmode == YES) {
-//                NSLog(@"information ok %@",[[json valueForKey:@"response"]  valueForKey:@"information"]);
-//            }
-//            
             if([self.delegate respondsToSelector:@selector(api:readyWithList:)]){
                 [self.delegate api:self readyWithList:json];
             }
-//        }else{
-//            NSLog(@"return error %@",[[json valueForKey:@"response"]  valueForKey:@"information"]);
-//            if([self.delegate respondsToSelector:@selector(api:requestFailedWithError:)]){
-//                [self.delegate api:self requestFailedWithError:error];
-//            }
-//            
-//        }
     }
     
     self.theConnection = nil;

@@ -32,11 +32,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+
+}
+-(void)viewWillAppear:(BOOL)animated{
     userdefault = [NSUserDefaults standardUserDefaults];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getNotifyCount];
-
+    if (debugmode == YES) {
+        NSLog(@"START GET NOTIFY COUNT");
+    }
 }
+
 -(IBAction)logout:(id)sender{
     [userdefault setObject:nil forKey:@"auth_urlencoded"];
     [userdefault setObject:nil forKey:@"auth"];

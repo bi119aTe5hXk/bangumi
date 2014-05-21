@@ -109,6 +109,20 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	switch (textField.returnKeyType) {
+		case UIReturnKeyNext:
+			[self.passwordfield becomeFirstResponder];
+			break;
+		case UIReturnKeyDone:
+			[textField resignFirstResponder];
+			[self loginbtnpressd:nil];
+			break;
+		default:
+			break;
+	}
+	return YES;
+}
 
 //#pragma mark - Navigation
 //

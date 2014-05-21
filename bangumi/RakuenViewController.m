@@ -34,17 +34,17 @@
     
     //[request setValue:[userdefault stringForKey:@"auth"] forHTTPHeaderField:@"chii_auth"];
     
-    NSMutableDictionary *cookiePropertiesUser = [NSMutableDictionary dictionary];
-    [cookiePropertiesUser setObject:@".bgm.tv" forKey:NSHTTPCookieDomain];
-    [cookiePropertiesUser setObject:@"chii_auth" forKey:NSHTTPCookieName];
-    [cookiePropertiesUser setObject:@"/" forKey:NSHTTPCookiePath];
-    [cookiePropertiesUser setObject:[userdefault stringForKey:@"auth"] forKey:NSHTTPCookieValue];
-    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookiePropertiesUser];
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+//    NSMutableDictionary *cookiePropertiesUser = [NSMutableDictionary dictionary];
+//    [cookiePropertiesUser setObject:@".bgm.tv" forKey:NSHTTPCookieDomain];
+//    [cookiePropertiesUser setObject:@"chii_auth" forKey:NSHTTPCookieName];
+//    [cookiePropertiesUser setObject:@"/" forKey:NSHTTPCookiePath];
+//    [cookiePropertiesUser setObject:[userdefault stringForKey:@"auth_urlencoded"] forKey:NSHTTPCookieValue];
+//    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookiePropertiesUser];
+//    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
     
     
     NSURL *url = [NSURL URLWithString:rakuenURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url ]; // cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
 
     [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     [self.webview loadRequest:request];
