@@ -70,6 +70,15 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
+        if ([bgmlist count] == 0) {
+            UIAlertView *emptyalert = [[UIAlertView alloc] initWithTitle:@"列表是空的！"
+                                                                 message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～"
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"知道了"
+                                                       otherButtonTitles:nil, nil];
+            [emptyalert show];
+        }
+        
         bgmlist = list;
         [self.tableView reloadData];
         
