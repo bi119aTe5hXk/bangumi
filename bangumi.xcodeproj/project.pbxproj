@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470FFA9619307306001CF488 /* ProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 470FFA9519307306001CF488 /* ProgressCell.m */; };
 		4751E628191F648E004143D3 /* ProgressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E627191F648E004143D3 /* ProgressListViewController.m */; };
 		4751E630191F84DA004143D3 /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
 		4751E633191F9209004143D3 /* RakuenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E632191F9209004143D3 /* RakuenViewController.m */; };
@@ -27,11 +28,6 @@
 		47E2715F1900043300304DED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2715E1900043300304DED /* main.m */; };
 		47E271631900043300304DED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E271621900043300304DED /* AppDelegate.m */; };
 		47E2716E1900043300304DED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
-		47E271751900043300304DED /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271741900043300304DED /* XCTest.framework */; };
-		47E271761900043300304DED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271521900043300304DED /* Foundation.framework */; };
-		47E271771900043300304DED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271561900043300304DED /* UIKit.framework */; };
-		47E2717F1900043300304DED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47E2717D1900043300304DED /* InfoPlist.strings */; };
-		47E271811900043300304DED /* bangumiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E271801900043300304DED /* bangumiTests.m */; };
 		47E2718D190009E100304DED /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
 		47E2719319001AE000304DED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2719119001AE000304DED /* Main.storyboard */; };
 		47E2719C19014ECE00304DED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2719B19014ECE00304DED /* LoginViewController.m */; };
@@ -43,17 +39,10 @@
 		47E271C819016E4A00304DED /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271C719016E4A00304DED /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		47E271781900043300304DED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47E271471900043300304DED /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 47E2714E1900043300304DED;
-			remoteInfo = bangumi;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		470FFA9419307306001CF488 /* ProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressCell.h; sourceTree = "<group>"; };
+		470FFA9519307306001CF488 /* ProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressCell.m; sourceTree = "<group>"; };
+		470FFA97193080AC001CF488 /* bangumi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = bangumi.entitlements; sourceTree = "<group>"; };
 		4751E626191F648E004143D3 /* ProgressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressListViewController.h; sourceTree = "<group>"; };
 		4751E627191F648E004143D3 /* ProgressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressListViewController.m; sourceTree = "<group>"; };
 		4751E62E191F84DA004143D3 /* HTMLEntityDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLEntityDecode.h; sourceTree = "<group>"; };
@@ -86,7 +75,6 @@
 		47E271611900043300304DED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47E271621900043300304DED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		47E2716D1900043300304DED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		47E271731900043300304DED /* bangumiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bangumiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E271741900043300304DED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		47E2717C1900043300304DED /* bangumiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bangumiTests-Info.plist"; sourceTree = "<group>"; };
 		47E271801900043300304DED /* bangumiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bangumiTests.m; sourceTree = "<group>"; };
@@ -123,16 +111,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47E271701900043300304DED /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47E271751900043300304DED /* XCTest.framework in Frameworks */,
-				47E271771900043300304DED /* UIKit.framework in Frameworks */,
-				47E271761900043300304DED /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -151,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				47E2714F1900043300304DED /* bangumi.app */,
-				47E271731900043300304DED /* bangumiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +150,7 @@
 		47E271581900043300304DED /* bangumi */ = {
 			isa = PBXGroup;
 			children = (
+				470FFA97193080AC001CF488 /* bangumi.entitlements */,
 				47E2718A1900046900304DED /* API.h */,
 				47E2718B190009E100304DED /* BGMAPI.h */,
 				47E2718C190009E100304DED /* BGMAPI.m */,
@@ -196,6 +174,8 @@
 				478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */,
 				4751E626191F648E004143D3 /* ProgressListViewController.h */,
 				4751E627191F648E004143D3 /* ProgressListViewController.m */,
+				470FFA9419307306001CF488 /* ProgressCell.h */,
+				470FFA9519307306001CF488 /* ProgressCell.m */,
 				47E271AF1901666800304DED /* SettingsViewController.h */,
 				47E271B01901666800304DED /* SettingsViewController.m */,
 				4751E631191F9209004143D3 /* RakuenViewController.h */,
@@ -264,24 +244,6 @@
 			productReference = 47E2714F1900043300304DED /* bangumi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		47E271721900043300304DED /* bangumiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 47E271871900043300304DED /* Build configuration list for PBXNativeTarget "bangumiTests" */;
-			buildPhases = (
-				47E2716F1900043300304DED /* Sources */,
-				47E271701900043300304DED /* Frameworks */,
-				47E271711900043300304DED /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				47E271791900043300304DED /* PBXTargetDependency */,
-			);
-			name = bangumiTests;
-			productName = bangumiTests;
-			productReference = 47E271731900043300304DED /* bangumiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -293,9 +255,14 @@
 				TargetAttributes = {
 					47E2714E1900043300304DED = {
 						DevelopmentTeam = HR66SGQEZ4;
-					};
-					47E271721900043300304DED = {
-						TestTargetID = 47E2714E1900043300304DED;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -314,7 +281,6 @@
 			projectRoot = "";
 			targets = (
 				47E2714E1900043300304DED /* bangumi */,
-				47E271721900043300304DED /* bangumiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,14 +298,6 @@
 				47E2719319001AE000304DED /* Main.storyboard in Resources */,
 				4751E63B1921F521004143D3 /* UITabBarList@2x.png in Resources */,
 				4751E63A1921F521004143D3 /* UITabBarList.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		47E271711900043300304DED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47E2717F1900043300304DED /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,28 +322,13 @@
 				47E271A519015DBA00304DED /* BGMCell.m in Sources */,
 				47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */,
 				47A5DD25191127150086A14B /* DaliyListViewController.m in Sources */,
+				470FFA9619307306001CF488 /* ProgressCell.m in Sources */,
 				478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */,
 				47E271B11901666800304DED /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47E2716F1900043300304DED /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47E271811900043300304DED /* bangumiTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		47E271791900043300304DED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 47E2714E1900043300304DED /* bangumi */;
-			targetProxy = 47E271781900043300304DED /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		47E2717D1900043300304DED /* InfoPlist.strings */ = {
@@ -423,8 +366,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -441,9 +384,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "20B40042-EBB8-4AB1-9696-88B27267673E";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -464,8 +407,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -477,7 +420,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "20B40042-EBB8-4AB1-9696-88B27267673E";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -488,8 +431,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bi119aTe5hXk/Downloads,
@@ -501,8 +444,9 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AE94A5CB-9E81-4B3A-A9CE-97BD89350C73";
+				PROVISIONING_PROFILE = "20B40042-EBB8-4AB1-9696-88B27267673E";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -512,8 +456,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bi119aTe5hXk/Downloads,
@@ -522,52 +466,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bangumi/bangumi-Prefix.pch";
 				INFOPLIST_FILE = "bangumi/bangumi-Info.plist";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AE94A5CB-9E81-4B3A-A9CE-97BD89350C73";
+				PROVISIONING_PROFILE = "20B40042-EBB8-4AB1-9696-88B27267673E";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		47E271881900043300304DED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/bangumi.app/bangumi";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bangumi/bangumi-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "bangumiTests/bangumiTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		47E271891900043300304DED /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/bangumi.app/bangumi";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bangumi/bangumi-Prefix.pch";
-				INFOPLIST_FILE = "bangumiTests/bangumiTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -588,15 +493,6 @@
 			buildConfigurations = (
 				47E271851900043300304DED /* Debug */,
 				47E271861900043300304DED /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		47E271871900043300304DED /* Build configuration list for PBXNativeTarget "bangumiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47E271881900043300304DED /* Debug */,
-				47E271891900043300304DED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,6 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    application.statusBarHidden = NO;
     // Override point for customization after application launch.
     if (debugmode == YES) {
         NSLog(@"Your system version is:%@",[[UIDevice currentDevice] systemVersion]);

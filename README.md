@@ -20,7 +20,7 @@
 
 
 ##下载
-[![img](http://blog.bi119ate5hxk.net/wp-content/uploads/2014/05/Download_on_the_App_Store_Badge_US-UK-200x59.png)](https://itunes.apple.com/us/app/fan-zu-ji-hua+/id878016314?mt=8)
+[![img](http://blog.bi119ate5hxk.net/wp-content/uploads/2014/05/Download_on_the_App_Store_Badge_US-UK-200x59.png)](https://itunes.apple.com/cn/app/fan-zu-ji-hua+/id878016314?mt=8)
 
 
 [捐助](http://blog.bi119ate5hxk.net/donate/)

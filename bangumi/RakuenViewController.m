@@ -22,6 +22,9 @@
     }
     return self;
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [self saveCookie];
+}
 
 - (void)viewDidLoad
 {
@@ -29,28 +32,40 @@
     // Do any additional setup after loading the view.
     self.title = @"超展开 Mobile";
     userdefault = [NSUserDefaults standardUserDefaults];
+    [self loadCookie];
     
-    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:rakuenURL]];
-    
-    //[request setValue:[userdefault stringForKey:@"auth"] forHTTPHeaderField:@"chii_auth"];
-    
-//    NSMutableDictionary *cookiePropertiesUser = [NSMutableDictionary dictionary];
-//    [cookiePropertiesUser setObject:@".bgm.tv" forKey:NSHTTPCookieDomain];
-//    [cookiePropertiesUser setObject:@"chii_auth" forKey:NSHTTPCookieName];
-//    [cookiePropertiesUser setObject:@"/" forKey:NSHTTPCookiePath];
-//    [cookiePropertiesUser setObject:[userdefault stringForKey:@"auth_urlencoded"] forKey:NSHTTPCookieValue];
-//    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookiePropertiesUser];
+//    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:[NSDictionary dictionaryWithObjectsAndKeys:
+//                                                               @"chii_auth", NSHTTPCookieName,
+//                                                               [userdefault stringForKey:@"auth"], NSHTTPCookieValue,
+//                                                               @".bgm.tv", NSHTTPCookieDomain,
+//                                                               @"/", NSHTTPCookiePath,
+//                                                               [NSDate distantFuture], NSHTTPCookieExpires,
+//                                                               nil]];
 //    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
     
-    
     NSURL *url = [NSURL URLWithString:rakuenURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url ]; // cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
 
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     [self.webview loadRequest:request];
     [self.webview setDelegate:self];
 }
-
+- (void)loadCookie{
+    NSData *cookiesData = [userdefault objectForKey:@"SavedHTTPCookiesKey"];
+    if (cookiesData) {
+        NSLog(@"load cookies");
+        NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData:cookiesData];
+        for (NSHTTPCookie *cookie in cookies)
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    }
+    
+}
+- (void)saveCookie{
+    // Save the cookies to the user defaults
+    NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
+    [userdefault setObject:cookiesData forKey:@"SavedHTTPCookiesKey"];
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,11 +92,13 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self saveCookie];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self saveCookie];
 }
 /*
 #pragma mark - Navigation

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProgressCell.h"
 @interface ProgressListViewController : UITableViewController<BGMAPIDelegate,UIAlertViewDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;

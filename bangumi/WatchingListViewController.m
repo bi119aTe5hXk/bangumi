@@ -70,7 +70,7 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
-        if ([bgmlist count] == 0) {
+        if ([list count] == 0) {
             UIAlertView *emptyalert = [[UIAlertView alloc] initWithTitle:@"列表是空的！"
                                                                  message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～"
                                                                 delegate:nil
@@ -197,7 +197,7 @@
     [cell.prgoressbar setProgress:percent animated:YES];
     
     
-    NSString *iconurl = [[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"small"];
+    NSString *iconurl = [[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
     [cell.icon setImageWithURL:[NSURL URLWithString:iconurl] placeholderImage:nil];
     
     ep_status=0;

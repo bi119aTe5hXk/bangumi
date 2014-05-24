@@ -108,10 +108,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ProgressCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-    }
+    ProgressCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     
     NSInteger row = indexPath.row;
     
@@ -119,43 +117,43 @@
     
     if (row <= self.progresslist.count) {
         NSArray *progressArr = [self.progresslist objectAtIndex:row];
-        cell.textLabel.text = [HTMLEntityDecode htmlEntityDecode:[NSString stringWithFormat:@"ep.%@ %@",[progressArr valueForKey:@"sort"],[progressArr valueForKey:@"name"]]];
+        cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[NSString stringWithFormat:@"ep.%@ %@",[progressArr valueForKey:@"sort"],[progressArr valueForKey:@"name"]]];
         
     }else{
-        cell.textLabel.text = @"";
+        cell.titlelabel.text = @"";
     }
     
     if (row < statuslist.count) {
         NSArray *progressStatuesArr = [statuslist objectAtIndex:row];
         if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:1]) {
-            cell.detailTextLabel.text = @"想看";
-            [cell.detailTextLabel setTextColor:[UIColor redColor]];
+            cell.sublabel.text = @"想看";
+            [cell.sublabel setTextColor:[UIColor redColor]];
         }else if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:2]){
-            cell.detailTextLabel.text = @"看过";
-            [cell.detailTextLabel setTextColor:[UIColor blueColor]];
+            cell.sublabel.text = @"看过";
+            [cell.sublabel setTextColor:[UIColor blueColor]];
         }else if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:3]){
-            cell.detailTextLabel.text = @"在看";
-            [cell.detailTextLabel setTextColor:[UIColor greenColor]];
+            cell.sublabel.text = @"在看";
+            [cell.sublabel setTextColor:[UIColor greenColor]];
         }else if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:4]){
-            cell.detailTextLabel.text = @"搁置";
-            [cell.detailTextLabel setTextColor:[UIColor grayColor]];
+            cell.sublabel.text = @"搁置";
+            [cell.sublabel setTextColor:[UIColor grayColor]];
         }else if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:5]){
-            cell.detailTextLabel.text = @"抛弃";
-            [cell.detailTextLabel setTextColor:[UIColor darkGrayColor]];
+            cell.sublabel.text = @"抛弃";
+            [cell.sublabel setTextColor:[UIColor darkGrayColor]];
         }else{
-            cell.detailTextLabel.text = @"";
-            [cell.detailTextLabel setTextColor:[UIColor grayColor]];
+            cell.sublabel.text = @"";
+            [cell.sublabel setTextColor:[UIColor grayColor]];
         }
     }else{
-        cell.detailTextLabel.text = @"";
-        [cell.detailTextLabel setTextColor:[UIColor grayColor]];
+        cell.sublabel.text = @"";
+        [cell.sublabel setTextColor:[UIColor grayColor]];
     }
     
     
-    cell.textLabel.font = [UIFont systemFontOfSize:12.0f];
-    cell.textLabel.numberOfLines = 3;
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:15.0f];
-    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.titlelabel.font = [UIFont systemFontOfSize:12.0f];
+    cell.titlelabel.numberOfLines = 3;
+    cell.sublabel.font = [UIFont systemFontOfSize:15.0f];
+    cell.sublabel.lineBreakMode = NSLineBreakByWordWrapping;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     return cell;

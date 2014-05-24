@@ -121,7 +121,7 @@
     if(self.theConnection){
 		return NO;
 	}
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
     
     
     NSMutableString *body = [NSMutableString string];
@@ -138,7 +138,7 @@
     if (debugmode == YES) {
         NSLog(@"Post Data: %@",body);
     }
-    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     request = [NSMutableURLRequest requestWithURL:url
                                       cachePolicy:NSURLRequestReloadRevalidatingCacheData
                                   timeoutInterval:settimeout];
