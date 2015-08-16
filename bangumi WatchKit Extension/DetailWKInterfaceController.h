@@ -13,8 +13,9 @@
 
 @interface DetailWKInterfaceController : WKInterfaceController<BGMAPIDelegate>{
     BGMAPI *bgmapi;
-    NSArray *progresslist;
+    NSArray *detailarr;
     NSString *request_type;
+    NSInteger ep_count;
 }
 
 @property (nonatomic, strong) IBOutlet WKInterfaceImage *imageview;
