@@ -630,6 +630,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -649,6 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -689,7 +691,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "20B40042-EBB8-4AB1-9696-88B27267673E";
+				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -723,7 +725,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "20B40042-EBB8-4AB1-9696-88B27267673E";
+				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

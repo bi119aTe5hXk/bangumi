@@ -27,7 +27,8 @@
     
     auth = [userdefaults stringForKey:@"auth"];
     if ([auth length] == 0) {
-        [self pushControllerWithName:@"NotLoginInterfaceController" context:NULL];
+        
+        [self presentControllerWithName:@"NotLoginInterfaceController" context:NULL];
     }
 }
 

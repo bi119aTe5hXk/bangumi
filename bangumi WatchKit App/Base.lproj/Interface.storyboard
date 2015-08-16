@@ -112,13 +112,13 @@
                         </label>
                         <button width="1" alignment="left" title="每日放送" id="KmO-mP-o8i">
                             <connections>
-                                <segue destination="AgC-eL-Hgc" kind="push" id="ZsC-wX-uxg"/>
+                                <segue destination="AgC-eL-Hgc" kind="modal" id="kGe-Sl-72Y"/>
                             </connections>
                         </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="167" y="-225"/>
+            <point key="canvasLocation" x="167" y="-267"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -129,6 +129,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZsC-wX-uxg"/>
+        <segue reference="kGe-Sl-72Y"/>
     </inferredMetricsTieBreakers>
 </document>
