@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cui-ud-jnF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Daliy ListWK Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="DaliyListWKController">
+                    <items>
+                        <group width="1" alignment="left" id="tls-xb-f4K">
+                            <items>
+                                <label width="70" height="22" alignment="left" text="今日放送" textAlignment="left" id="nSk-wO-YNE">
+                                    <color key="textColor" red="1" green="0.29218034718893326" blue="0.31028376863399654" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <dateLabel width="57" height="24" alignment="left" textAlignment="right" format="M/d" id="MqI-ao-pre"/>
+                            </items>
+                        </group>
+                        <table alignment="left" id="XQx-2w-wKh">
+                            <items>
+                                <tableRow id="xnD-9N-iED" customClass="BGMWKCell">
+                                    <group key="rootItem" width="1" height="40" alignment="left" id="5S0-8D-7oO">
+                                        <items>
+                                            <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="c12-5R-bMT"/>
+                                            <label width="85" height="40" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="5Vc-aE-WjH">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="wk_icon" destination="c12-5R-bMT" id="nZ7-Gj-wL5"/>
+                                        <outlet property="wk_title" destination="5Vc-aE-WjH" id="yzV-pc-C1z"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableview" destination="XQx-2w-wKh" id="HG9-4C-AGf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="405" y="48"/>
+        </scene>
+        <!--番组详细-->
+        <scene sceneID="EEr-OP-vdL">
+            <objects>
+                <controller title="番组详细" id="XeQ-A9-BRW"/>
+            </objects>
+            <point key="canvasLocation" x="405" y="339"/>
+        </scene>
+        <!--我的追番列表-->
+        <scene sceneID="ROT-CJ-GUd">
+            <objects>
+                <controller title="我的追番列表" id="cui-ud-jnF" customClass="MainListInterfaceController">
+                    <items>
+                        <table alignment="left" id="BYZ-mh-meb">
+                            <items>
+                                <tableRow id="CQZ-yV-19F" customClass="BGMWKCell">
+                                    <group key="rootItem" width="1" alignment="left" id="hRN-hZ-bss">
+                                        <items>
+                                            <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="t1H-8c-6dS"/>
+                                            <label width="85" height="40" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="kBe-8U-2yP">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                        <connections>
+                                            <segue destination="XeQ-A9-BRW" kind="push" id="OFf-9a-xfV"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="wk_icon" destination="t1H-8c-6dS" id="y4k-gN-uyX"/>
+                                        <outlet property="wk_title" destination="kBe-8U-2yP" id="8cb-So-lpx"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="Ap3-UF-Caf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="153" y="201"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--NotLoginInterfaceController-->
+        <scene sceneID="uOI-cA-JGm">
+            <objects>
+                <controller identifier="NotLoginInterfaceController" id="aRN-jh-a70" customClass="NotLoginInterfaceController">
+                    <items>
+                        <label height="67" alignment="left" text="只有在登录后才能同步查看追番进度哦" textAlignment="center" numberOfLines="2" id="VWY-KL-cFm">
+                            <color key="textColor" red="0.37850475991029187" green="1" blue="0.42396958402395735" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button width="1" alignment="left" title="每日放送" id="KmO-mP-o8i">
+                            <connections>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="ZsC-wX-uxg"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="167" y="-225"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZsC-wX-uxg"/>
+    </inferredMetricsTieBreakers>
+</document>

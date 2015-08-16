@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 HT&L. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import "API.h"
 @class BGMAPI;
 @protocol BGMAPIDelegate
 @optional

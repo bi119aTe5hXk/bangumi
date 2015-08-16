@@ -148,8 +148,9 @@
     [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:YES];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
+#if TARGET_OS_IPHONE
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+#endif
     
 	self.theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	if (self.theConnection) {
@@ -175,7 +176,9 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadRevalidatingCacheData
                                                        timeoutInterval:settimeout];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+#if TARGET_OS_IPHONE
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+#endif
 	self.theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	if (self.theConnection) {
 		self.receivedData = [NSMutableData data];
@@ -186,7 +189,9 @@
 }
 
 - (void)cancelConnection{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#if TARGET_OS_IPHONE
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#endif
     [self.theConnection cancel];
     self.theConnection = nil;
     self.receivedData = nil;
@@ -215,7 +220,9 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
 	self.theConnection = nil;
     self.receivedData = nil;
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#if TARGET_OS_IPHONE
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#endif
     if (debugmode == YES) {
         NSLog(@"Connection failed! Error - %@ %@",
               [error localizedDescription],
@@ -249,7 +256,9 @@
     
     self.theConnection = nil;
     self.receivedData = nil;
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#if TARGET_OS_IPHONE
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#endif
 }
 
 

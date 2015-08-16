@@ -10,29 +10,29 @@
 	<string>bangumi</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>864B9DDA-A29C-48D0-A301-2091BBFA9B76</key>
-		<string>https://github.com/billgateshxk/bangumi.git</string>
+		<key>B6A9F571146E00F19CE7ED63755DC81300FB21AA</key>
+		<string>https://github.com/billgateshxk/bangumi</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>bangumi.xcodeproj/project.xcworkspace</string>
+	<string>bangumi.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>864B9DDA-A29C-48D0-A301-2091BBFA9B76</key>
+		<key>B6A9F571146E00F19CE7ED63755DC81300FB21AA</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/billgateshxk/bangumi.git</string>
+	<string>https://github.com/billgateshxk/bangumi</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>864B9DDA-A29C-48D0-A301-2091BBFA9B76</string>
+	<string>B6A9F571146E00F19CE7ED63755DC81300FB21AA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>864B9DDA-A29C-48D0-A301-2091BBFA9B76</string>
+			<string>B6A9F571146E00F19CE7ED63755DC81300FB21AA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>bangumi</string>
 		</dict>
