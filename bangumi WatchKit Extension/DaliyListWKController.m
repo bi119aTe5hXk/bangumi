@@ -38,7 +38,7 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierJapanese];
     NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:[NSDate date]];
     NSInteger weekday = [comps weekday];
-    NSLog(@"weekday:%ld",weekday);
+    //NSLog(@"weekday:%ld",weekday);
     NSInteger day=0;
     if (weekday == 1) {
         //sun
@@ -64,7 +64,7 @@
     }
     //NSLog(@"day:%ld",day);
     daylist = [[list objectAtIndex:day] valueForKey:@"items"];
-    NSLog(@"daylist:%@",daylist);
+    //NSLog(@"daylist:%@",daylist);
     
     [self.tableview setNumberOfRows:[daylist count] withRowType:@"default"];
     NSInteger rowCount = self.tableview.numberOfRows;

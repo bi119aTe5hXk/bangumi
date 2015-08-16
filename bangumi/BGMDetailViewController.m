@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view.
     
     
-    userdefaults = [NSUserDefaults standardUserDefaults];
+    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getSubjectInfoWithSubID:self.bgmid];
     request_type = @"BGMDetail";

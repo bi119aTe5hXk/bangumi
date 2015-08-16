@@ -80,6 +80,7 @@
                         </table>
                     </items>
                     <connections>
+                        <outlet property="tableview" destination="BYZ-mh-meb" id="n13-N4-2jv"/>
                         <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="Ap3-UF-Caf"/>
                     </connections>
                 </controller>
@@ -129,6 +130,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kGe-Sl-72Y"/>
+        <segue reference="Ap3-UF-Caf"/>
     </inferredMetricsTieBreakers>
 </document>

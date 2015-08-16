@@ -6,11 +6,12 @@
 //  Copyright (c) 2014年 HT&L. All rights reserved.
 //
 
-#define debugmode 0
+#define debugmode YES
 
 #define BaseLoginURL @"http://%@:%@@api.bgm.tv/auth"
 #define PostLoginURL @"http://api.bgm.tv/auth"
 #define appName @"BGMbi119aTe5hXk"
+#define groupName @"group.BGM"
 
 #define rakuenURL @"http://bgm.tv/m"
 

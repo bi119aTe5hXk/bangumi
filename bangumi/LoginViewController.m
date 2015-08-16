@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    userdefaults = [NSUserDefaults standardUserDefaults];
+    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth",nil]];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth_urlencoded",nil]];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"userid",nil]];
@@ -36,7 +36,7 @@
     auth_urlencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     auth = [userdefaults stringForKey:@"auth"];
     userid = [userdefaults stringForKey:@"userid"];
-    
+    [userdefaults synchronize];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     if (debugmode == YES) {
         NSLog(@"auth:%@,auth_URLencoded:%@",auth,auth_urlencoded);

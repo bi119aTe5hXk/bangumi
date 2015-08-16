@@ -28,7 +28,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    userdefaults = [NSUserDefaults standardUserDefaults];
+    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getProgressListWithUID:[userdefaults stringForKey:@"userid"] WithSubID:self.subid];
     request_type = @"getProgressList";

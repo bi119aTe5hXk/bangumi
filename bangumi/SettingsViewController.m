@@ -36,7 +36,7 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
-    userdefault = [NSUserDefaults standardUserDefaults];
+    userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getNotifyCount];
     if (debugmode == YES) {

@@ -36,7 +36,7 @@
     [refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     bgmlist = [[NSArray alloc] init];
-    userdefault = [NSUserDefaults standardUserDefaults];
+    userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     //[self loadList];
 }
 - (void)onRefresh:(id)sender{

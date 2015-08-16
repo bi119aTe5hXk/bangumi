@@ -28,7 +28,7 @@
 -(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate{
     self = [super init];
     
-    userdefaults = [NSUserDefaults standardUserDefaults];
+    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     authString = [userdefaults stringForKey:@"auth"];
     authURLencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     self.delegate = delegate;

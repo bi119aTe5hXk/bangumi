@@ -11,7 +11,7 @@
 #import "BGMWKCell.h"
 #import "BGMAPI.h"
 #import "NotificationController.h"
-
+#import "HTMLEntityDecode.h"
 @interface MainListInterfaceController : WKInterfaceController<BGMAPIDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;

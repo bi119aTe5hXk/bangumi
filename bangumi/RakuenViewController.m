@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"超展开 Mobile";
-    userdefault = [NSUserDefaults standardUserDefaults];
+    userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     [self loadCookie];
     
 //    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:[NSDictionary dictionaryWithObjectsAndKeys:
