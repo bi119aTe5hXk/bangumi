@@ -28,6 +28,8 @@
 		478CEC371B80CC5700BB2442 /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
 		478CEC3A1B80D72800BB2442 /* MainListInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC391B80D72800BB2442 /* MainListInterfaceController.m */; };
 		478CEC3D1B80D75300BB2442 /* NotLoginInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC3C1B80D75300BB2442 /* NotLoginInterfaceController.m */; };
+		478CEC411B80FEEF00BB2442 /* DetailWKInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC401B80FEEF00BB2442 /* DetailWKInterfaceController.m */; };
+		478CEC421B8109E200BB2442 /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
 		47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DC55190940340086A14B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		47A5DC58190AA7F10086A14B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DC57190AA7F10086A14B /* README.md */; };
 		47A5DD25191127150086A14B /* DaliyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD24191127150086A14B /* DaliyListViewController.m */; };
@@ -117,6 +119,8 @@
 		478CEC3B1B80D75300BB2442 /* NotLoginInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotLoginInterfaceController.h; sourceTree = "<group>"; };
 		478CEC3C1B80D75300BB2442 /* NotLoginInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotLoginInterfaceController.m; sourceTree = "<group>"; };
 		478CEC3E1B80F05B00BB2442 /* bangumi WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "bangumi WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		478CEC3F1B80FEEF00BB2442 /* DetailWKInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWKInterfaceController.h; sourceTree = "<group>"; };
+		478CEC401B80FEEF00BB2442 /* DetailWKInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWKInterfaceController.m; sourceTree = "<group>"; };
 		47A5DC54190940340086A14B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		47A5DC55190940340086A14B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		47A5DC57190AA7F10086A14B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				478CEC3E1B80F05B00BB2442 /* bangumi WatchKit Extension.entitlements */,
 				478CEC381B80D72800BB2442 /* MainListInterfaceController.h */,
 				478CEC391B80D72800BB2442 /* MainListInterfaceController.m */,
+				478CEC3F1B80FEEF00BB2442 /* DetailWKInterfaceController.h */,
+				478CEC401B80FEEF00BB2442 /* DetailWKInterfaceController.m */,
 				478CEC3B1B80D75300BB2442 /* NotLoginInterfaceController.h */,
 				478CEC3C1B80D75300BB2442 /* NotLoginInterfaceController.m */,
 				478CEC2E1B80C2F500BB2442 /* DaliyListWKController.h */,
@@ -419,6 +425,7 @@
 					};
 					478CEC171B7A2C9600BB2442 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = HR66SGQEZ4;
 					};
 					47E2714E1900043300304DED = {
 						DevelopmentTeam = HR66SGQEZ4;
@@ -499,8 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				478CEC411B80FEEF00BB2442 /* DetailWKInterfaceController.m in Sources */,
 				478CEC131B7A2C9600BB2442 /* NotificationController.m in Sources */,
 				478CEC301B80C2F500BB2442 /* DaliyListWKController.m in Sources */,
+				478CEC421B8109E200BB2442 /* HTMLEntityDecode.m in Sources */,
 				478CEC331B80C43900BB2442 /* BGMWKCell.m in Sources */,
 				478CEC3D1B80D75300BB2442 /* NotLoginInterfaceController.m in Sources */,
 				478CEC371B80CC5700BB2442 /* BGMAPI.m in Sources */,
@@ -580,6 +589,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -593,7 +604,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
+				PROVISIONING_PROFILE = "15c53c24-80fa-4a92-bdc9-b6391f2ef5dd";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -605,6 +616,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -614,7 +627,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
+				PROVISIONING_PROFILE = "15c53c24-80fa-4a92-bdc9-b6391f2ef5dd";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -626,8 +639,8 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit Extension/bangumi WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -641,7 +654,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c395bf17-028e-4370-805f-e9e655513b64";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -651,8 +664,8 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit Extension/bangumi WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -662,7 +675,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c395bf17-028e-4370-805f-e9e655513b64";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -703,7 +716,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
+				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -737,7 +750,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "ac40592c-a008-447d-8ccf-a5f755f81ebd";
+				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -749,8 +762,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = bangumi/bangumi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bi119aTe5hXk/Downloads,
@@ -763,7 +776,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -776,8 +789,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = bangumi/bangumi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bi119aTe5hXk/Downloads,
@@ -790,7 +803,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

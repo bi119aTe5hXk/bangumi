@@ -29,9 +29,10 @@
 }
 
 - (void)didDeactivate {
+    [api cancelConnection];
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
-    [api cancelConnection];
+    
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     //daylist = list;

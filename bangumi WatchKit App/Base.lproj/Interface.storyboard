@@ -21,7 +21,7 @@
                         </group>
                         <table alignment="left" id="XQx-2w-wKh">
                             <items>
-                                <tableRow id="xnD-9N-iED" customClass="BGMWKCell">
+                                <tableRow selectable="NO" id="xnD-9N-iED" customClass="BGMWKCell">
                                     <group key="rootItem" width="1" height="40" alignment="left" id="5S0-8D-7oO">
                                         <items>
                                             <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="c12-5R-bMT"/>
@@ -48,9 +48,48 @@
         <!--番组详细-->
         <scene sceneID="EEr-OP-vdL">
             <objects>
-                <controller title="番组详细" id="XeQ-A9-BRW"/>
+                <controller title="番组详细" id="XeQ-A9-BRW" customClass="DetailWKInterfaceController">
+                    <items>
+                        <button width="1" alignment="left" title="返回" id="wZ9-Qf-w5p">
+                            <connections>
+                                <action selector="backbtn:" destination="XeQ-A9-BRW" id="R1l-IA-TZf"/>
+                            </connections>
+                        </button>
+                        <group width="136" height="369" alignment="left" layout="vertical" id="AAX-sU-FrH">
+                            <items>
+                                <imageView width="136" height="137" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
+                                <label width="136" height="64" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="136" height="50" alignment="left" text="title_cn" textAlignment="center" numberOfLines="3" id="GT3-v3-EJl">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                                <label width="67" height="20" alignment="left" text="目前进度" id="J63-gl-UoJ">
+                                    <color key="textColor" red="1" green="0.29218034720000002" blue="0.31028376860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="136" height="22" alignment="left" text="??/??" textAlignment="center" id="5NS-ec-iy4"/>
+                                <button width="1" height="44" alignment="left" title="标记ep.???为看过" id="VRa-mi-9ON">
+                                    <color key="titleColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                    <connections>
+                                        <action selector="watchedbtn:" destination="XeQ-A9-BRW" id="mzM-3G-JD5"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="imageview" destination="RGb-l5-fLs" id="pMK-WD-zzo"/>
+                        <outlet property="progresslabel" destination="5NS-ec-iy4" id="D6s-gS-N2p"/>
+                        <outlet property="title_cn" destination="GT3-v3-EJl" id="obc-fP-a5T"/>
+                        <outlet property="title_org" destination="bKK-vU-oP8" id="QJN-r2-2Gv"/>
+                        <outlet property="watchedbtn" destination="VRa-mi-9ON" id="FIp-rE-IOe"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="405" y="339"/>
+            <point key="canvasLocation" x="612" y="191"/>
         </scene>
         <!--我的追番列表-->
         <scene sceneID="ROT-CJ-GUd">
@@ -67,13 +106,11 @@
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
-                                        <connections>
-                                            <segue destination="XeQ-A9-BRW" kind="push" id="OFf-9a-xfV"/>
-                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="wk_icon" destination="t1H-8c-6dS" id="y4k-gN-uyX"/>
                                         <outlet property="wk_title" destination="kBe-8U-2yP" id="8cb-So-lpx"/>
+                                        <segue destination="XeQ-A9-BRW" kind="modal" id="Fbg-4s-FH7"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -101,7 +138,7 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="211" y="957"/>
         </scene>
         <!--NotLoginInterfaceController-->
         <scene sceneID="uOI-cA-JGm">
@@ -126,7 +163,7 @@
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="434" y="957"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

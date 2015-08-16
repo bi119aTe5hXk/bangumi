@@ -40,9 +40,10 @@
 }
 
 - (void)didDeactivate {
+    [bgmapi cancelConnection];
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
-    [bgmapi cancelConnection];
+    
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     
@@ -50,6 +51,7 @@
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     //daylist = [[list objectAtIndex:day] valueForKey:@"items"];
     //NSLog(@"daylist:%@",daylist);
+    bgmlist = list;
     
     [self.tableview setNumberOfRows:[list count] withRowType:@"default"];
     NSInteger rowCount = self.tableview.numberOfRows;
@@ -63,6 +65,15 @@
     }
 
 }
+
+-(id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex{
+    
+//    DetailWKInterfaceController *detailview = [segue destinationViewController];
+//    
+//    NSString *bgmids = [[[bgmlist objectAtIndex:rowIndex] valueForKey:@"subject"] valueForKey:@"id"];
+    return [bgmlist objectAtIndex:rowIndex];
+}
+
 
 @end
 
