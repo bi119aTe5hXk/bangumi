@@ -27,10 +27,10 @@
                         <table alignment="left" id="XQx-2w-wKh">
                             <items>
                                 <tableRow selectable="NO" id="xnD-9N-iED" customClass="BGMWKCell">
-                                    <group key="rootItem" width="1" height="40" alignment="left" id="5S0-8D-7oO">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="5S0-8D-7oO">
                                         <items>
                                             <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="c12-5R-bMT"/>
-                                            <label width="85" height="40" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="5Vc-aE-WjH">
+                                            <label height="39" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="5Vc-aE-WjH">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
@@ -60,20 +60,20 @@
                                 <action selector="backbtn:" destination="XeQ-A9-BRW" id="R1l-IA-TZf"/>
                             </connections>
                         </button>
-                        <group width="136" height="415" alignment="left" layout="vertical" id="AAX-sU-FrH">
+                        <group width="1" height="396" alignment="left" layout="vertical" id="AAX-sU-FrH">
                             <items>
-                                <imageView width="136" height="137" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
-                                <label width="136" height="52" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
+                                <imageView width="1" height="137" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
+                                <label width="1" height="52" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label width="136" height="50" alignment="left" text="title_cn" textAlignment="center" numberOfLines="3" id="GT3-v3-EJl">
+                                <label width="1" height="43" alignment="left" text="title_cn" textAlignment="center" numberOfLines="3" id="GT3-v3-EJl">
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                 </label>
-                                <label width="67" height="20" alignment="left" text="目前进度" id="J63-gl-UoJ">
+                                <label height="20" alignment="left" text="目前进度" id="J63-gl-UoJ">
                                     <color key="textColor" red="1" green="0.29218034720000002" blue="0.31028376860000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label width="136" height="22" alignment="left" text="??/??" textAlignment="center" id="5NS-ec-iy4"/>
+                                <label width="1" height="22" alignment="left" text="??/??" textAlignment="center" id="5NS-ec-iy4"/>
                                 <button width="1" height="44" alignment="left" title="标记ep.???为看过" id="VRa-mi-9ON">
                                     <color key="titleColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="14"/>
@@ -99,7 +99,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="612" y="213.25"/>
+            <point key="canvasLocation" x="612" y="196.75"/>
         </scene>
         <!--我的追番列表-->
         <scene sceneID="ROT-CJ-GUd">
@@ -109,10 +109,10 @@
                         <table alignment="left" id="BYZ-mh-meb">
                             <items>
                                 <tableRow id="CQZ-yV-19F" customClass="BGMWKCell">
-                                    <group key="rootItem" width="1" alignment="left" id="hRN-hZ-bss">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="hRN-hZ-bss">
                                         <items>
                                             <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="t1H-8c-6dS"/>
-                                            <label width="85" height="40" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="kBe-8U-2yP">
+                                            <label height="40" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="kBe-8U-2yP">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>

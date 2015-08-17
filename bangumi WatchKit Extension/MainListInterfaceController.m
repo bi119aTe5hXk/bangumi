@@ -26,7 +26,7 @@
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     
     auth = [userdefaults stringForKey:@"auth"];
-    NSLog(@"auth:%@",auth);
+    //NSLog(@"auth:%@",auth);
     if ([auth length] == 0) {
         
         [self presentControllerWithName:@"NotLoginInterfaceController" context:NULL];
