@@ -31,6 +31,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"超展开 Mobile";
+    //UINavigationItem *items = [[UINavigationItem alloc] initWithTitle:@""];
+    UIBarButtonItem *backbutton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRewind
+                                      target:self
+                                      action:@selector(backbtn:)];
+    UIBarButtonItem *refreshbutton = [[UIBarButtonItem alloc]
+                               initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                               target:self
+                               action:@selector(reloadpage:)];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:refreshbutton,backbutton,nil];
+    
     userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     [self loadCookie];
     
@@ -74,6 +86,9 @@
 }
 -(IBAction)reloadpage:(id)sender{
     [self.webview reload];
+}
+-(IBAction)backbtn:(id)sender{
+    [self.webview goBack];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{

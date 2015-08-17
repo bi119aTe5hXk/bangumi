@@ -582,13 +582,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5AG-Ei-7tV">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="ce9-4t-owf">
-                            <connections>
-                                <action selector="reloadpage:" destination="7lu-8F-56y" id="gN9-jL-IjM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="5AG-Ei-7tV"/>
                     <connections>
                         <outlet property="webview" destination="TkB-vo-1X4" id="lJs-mV-mhW"/>
                     </connections>
