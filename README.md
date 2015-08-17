@@ -6,6 +6,7 @@
 * 无跟踪
 * 无强制评分
 * 无捆绑销售
+* 支持AppleWatch
 
 [了解更多](http://chii.in/group/topic/32239)
 
@@ -24,4 +25,4 @@
 
 [捐助](http://blog.bi119ate5hxk.net/donate/)
 
-@bi119aTe5hXk 2014
+@bi119aTe5hXk 2015

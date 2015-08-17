@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cui-ud-jnF">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cui-ud-jnF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
@@ -55,10 +55,10 @@
                                 <action selector="backbtn:" destination="XeQ-A9-BRW" id="R1l-IA-TZf"/>
                             </connections>
                         </button>
-                        <group width="136" height="369" alignment="left" layout="vertical" id="AAX-sU-FrH">
+                        <group width="136" height="415" alignment="left" layout="vertical" id="AAX-sU-FrH">
                             <items>
                                 <imageView width="136" height="137" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
-                                <label width="136" height="64" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
+                                <label width="136" height="52" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
                                 <label width="136" height="50" alignment="left" text="title_cn" textAlignment="center" numberOfLines="3" id="GT3-v3-EJl">
@@ -76,6 +76,11 @@
                                         <action selector="watchedbtn:" destination="XeQ-A9-BRW" id="mzM-3G-JD5"/>
                                     </connections>
                                 </button>
+                                <button width="1" alignment="left" title="返回" id="LWB-XL-o1m">
+                                    <connections>
+                                        <action selector="backbtn:" destination="XeQ-A9-BRW" id="uqw-fA-Nbr"/>
+                                    </connections>
+                                </button>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
@@ -89,7 +94,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="612" y="191"/>
+            <point key="canvasLocation" x="612" y="213.25"/>
         </scene>
         <!--我的追番列表-->
         <scene sceneID="ROT-CJ-GUd">

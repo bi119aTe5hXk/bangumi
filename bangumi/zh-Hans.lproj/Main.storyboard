@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="c0g-T8-Y24">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="c0g-T8-Y24">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Sbp-Y5-S1w">
             <objects>
                 <navigationController definesPresentationContext="YES" id="c0g-T8-Y24" sceneMemberID="viewController">
-                    <size key="freeformSize" width="320" height="568"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5bp-d4-oZv">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -21,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-594" y="-620"/>
         </scene>
-        <!--Login View Controller - Bangumi+-->
+        <!--Bangumi+-->
         <scene sceneID="KjD-8A-Xwv">
             <objects>
                 <viewController id="kKC-iY-qY7" customClass="LoginViewController" sceneMemberID="viewController">
@@ -77,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="-131" y="-620"/>
         </scene>
-        <!--Tabbar View Controller - 进度管理-->
+        <!--进度管理-->
         <scene sceneID="Y1g-BM-zq3">
             <objects>
                 <tabBarController storyboardIdentifier="TabbarViewController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yv6-Gx-mpd" customClass="TabbarViewController" sceneMemberID="viewController">
@@ -99,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="342" y="-620"/>
         </scene>
-        <!--Search View Controller - 搜索-->
+        <!--搜索-->
         <scene sceneID="y5j-0k-EJV">
             <objects>
                 <tableViewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bJ7-1j-2Mi" customClass="SearchViewController" sceneMemberID="viewController">
@@ -117,7 +115,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="NormalCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" rowHeight="68" id="i6A-7M-ndd" customClass="NormalCell">
-                                <rect key="frame" x="0.0" y="130" width="320" height="68"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i6A-7M-ndd" id="1qp-pw-Tw4">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
@@ -193,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="881" y="-658"/>
         </scene>
-        <!--Navigation Controller - 进度管理-->
+        <!--进度管理-->
         <scene sceneID="a8s-eJ-c77">
             <objects>
                 <navigationController definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J7o-xs-qwP" sceneMemberID="viewController">
@@ -209,7 +207,7 @@
             </objects>
             <point key="canvasLocation" x="881" y="-1420"/>
         </scene>
-        <!--Watching List View Controller - 进度管理-->
+        <!--进度管理-->
         <scene sceneID="9Mz-Pi-hSy">
             <objects>
                 <tableViewController storyboardIdentifier="WatchingListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pzv-dj-RD0" customClass="WatchingListViewController" sceneMemberID="viewController">
@@ -219,7 +217,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="96" id="5T2-Xb-X5v" customClass="BGMCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="96"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5T2-Xb-X5v" id="0lS-Rn-JZh">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="95"/>
@@ -279,7 +277,7 @@
             </objects>
             <point key="canvasLocation" x="1414" y="-1420"/>
         </scene>
-        <!--Detail View Controller - 番组详细-->
+        <!--番组详细-->
         <scene sceneID="94L-ld-wAE">
             <objects>
                 <viewController storyboardIdentifier="BGMDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iU8-It-a40" customClass="BGMDetailViewController" sceneMemberID="viewController">
@@ -356,7 +354,7 @@
             </objects>
             <point key="canvasLocation" x="1860" y="-1420"/>
         </scene>
-        <!--Progress List View Controller - 番组进度-->
+        <!--番组进度-->
         <scene sceneID="KlN-Un-2wS">
             <objects>
                 <tableViewController storyboardIdentifier="ProgressListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OmN-mz-1Fp" customClass="ProgressListViewController" sceneMemberID="viewController">
@@ -420,7 +418,7 @@
             </objects>
             <point key="canvasLocation" x="892" y="865"/>
         </scene>
-        <!--Daliy List View Controller - 每日放送-->
+        <!--每日放送-->
         <scene sceneID="lab-rb-vff">
             <objects>
                 <tableViewController storyboardIdentifier="DaliyListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ux-Dq-vfJ" customClass="DaliyListViewController" sceneMemberID="viewController">
@@ -430,7 +428,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="NormalCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DayCell" rowHeight="69" id="vX6-AL-4Yp" customClass="NormalCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="69"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vX6-AL-4Yp" id="2OX-Qb-ZLv">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="68"/>
@@ -474,7 +472,7 @@
             </objects>
             <point key="canvasLocation" x="1423" y="95"/>
         </scene>
-        <!--Navigation Controller - 每日放送-->
+        <!--每日放送-->
         <scene sceneID="Adn-EL-Yd1">
             <objects>
                 <navigationController definesPresentationContext="YES" id="O7w-ZY-zKI" sceneMemberID="viewController">
@@ -490,7 +488,7 @@
             </objects>
             <point key="canvasLocation" x="891" y="95"/>
         </scene>
-        <!--Settings View Controller - 设置-->
+        <!--设置-->
         <scene sceneID="gY4-Ks-uaW">
             <objects>
                 <tableViewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GHg-VX-l3v" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -502,7 +500,7 @@
                             <tableViewSection headerTitle="功能" footerTitle="*由于API所获得的验证信息与网页不通用，所以超展开必须得进行二次重复登录。m(_ _)m" id="gWq-Pk-Qcs">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yzT-aY-U9Z">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzT-aY-U9Z" id="kPL-mi-lSw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -527,7 +525,7 @@
                             <tableViewSection headerTitle="账户" id="tRU-ZY-Dde">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="73n-9J-yyu">
-                                        <rect key="frame" x="0.0" y="255" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="238" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="73n-9J-yyu" id="9Us-ot-wkF">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -549,7 +547,8 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Credits" footerTitle="WebSite/API: @Sai                           Developer: @bi119aTe5hXk                        Icon: @cinnamor" id="c23-9v-zMq">
+                            <tableViewSection headerTitle="Credits" id="c23-9v-zMq">
+                                <string key="footerTitle">WebSite/API: @Sai                                      Developer: @bi119aTe5hXk                                               Icon: @cinnamor</string>
                                 <cells/>
                             </tableViewSection>
                         </sections>

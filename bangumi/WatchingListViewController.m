@@ -105,7 +105,7 @@
         
     }
     if ([request_type isEqualToString:@"EPList"]) {
-        NSInteger ep_countindex = ep_count - 1;
+        NSInteger ep_countindex = ep_count;
         if ([[list valueForKey:@"eps"] count] > 0 && ep_countindex <= [[list valueForKey:@"eps"] count]) {
             NSString *epid = [[[list valueForKey:@"eps"] objectAtIndex:ep_countindex] valueForKey:@"id"];
             //NSLog(@"epidd:%@",epid);
