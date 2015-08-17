@@ -12,11 +12,16 @@
                     <items>
                         <group width="1" alignment="left" id="tls-xb-f4K">
                             <items>
-                                <label width="70" height="22" alignment="left" text="今日放送" textAlignment="left" id="nSk-wO-YNE">
+                                <label width="61" height="22" alignment="left" text="今日放送" textAlignment="left" id="nSk-wO-YNE">
                                     <color key="textColor" red="1" green="0.29218034718893326" blue="0.31028376863399654" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <dateLabel width="57" height="24" alignment="left" textAlignment="right" format="M/d" id="MqI-ao-pre"/>
+                                <dateLabel width="68" height="21" alignment="left" textAlignment="right" format="M/d (EEE)" id="MqI-ao-pre">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                    <date key="previewedDate" timeIntervalSinceReferenceDate="461524140">
+                                        <!--2015-08-17 17:09:00 +0000-->
+                                    </date>
+                                </dateLabel>
                             </items>
                         </group>
                         <table alignment="left" id="XQx-2w-wKh">
