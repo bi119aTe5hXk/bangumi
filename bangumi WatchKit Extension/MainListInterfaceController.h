@@ -10,7 +10,6 @@
 #import <Foundation/Foundation.h>
 #import "BGMWKCell.h"
 #import "BGMAPI.h"
-#import "NotificationController.h"
 #import "HTMLEntityDecode.h"
 #import "DetailWKInterfaceController.h"
 @interface MainListInterfaceController : WKInterfaceController<BGMAPIDelegate>{
