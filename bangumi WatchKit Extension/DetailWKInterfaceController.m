@@ -28,12 +28,12 @@
     NSString *iconurl = [[[context valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
     [self.imageview setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]]];
     
-    NSInteger ep_status = [[context valueForKey:@"ep_status"] integerValue];//已看
-    NSInteger eps = [[[context valueForKey:@"subject"] valueForKey:@"eps"] integerValue];//总共
+    NSInteger ep_status = [[context valueForKey:@"ep_status"] integerValue]-1;//已看
+    NSInteger eps = [[[context valueForKey:@"subject"] valueForKey:@"eps"] integerValue]-1;//总共
     ep_count = ep_status+1;
 
     [self.watchedbtn setTitle:[NSString stringWithFormat:@"标记 ep.%ld 看过",(long)ep_status+1]];
-    if (eps == 0) {
+    if (eps <= 0) {
         [self.progresslabel setText:[NSString stringWithFormat:@"%ld/??",(long)ep_status]];
         //[cell.updatebtn setHidden:YES];
         if (ep_status <= 12) {
@@ -67,9 +67,22 @@
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     if ([request_type isEqualToString:@"EPList"]) {
-        NSInteger ep_countindex = ep_count;
+        NSInteger ep_countindex = ep_count -1;
         if ([[list valueForKey:@"eps"] count] > 0 && ep_countindex <= [[list valueForKey:@"eps"] count]) {
-            NSString *epid = [[[list valueForKey:@"eps"] objectAtIndex:ep_countindex] valueForKey:@"id"];
+            
+            //remove sp
+            NSArray *arr = [list valueForKey:@"eps"];
+            NSArray *newlist = [NSArray array];
+            for (int i=0; i<[arr count]; i++) {
+                
+                if ([[[arr objectAtIndex:i] valueForKey:@"type"] isEqualToNumber:[NSNumber numberWithInt:0]]) {
+                    newlist = [newlist arrayByAddingObject:[arr objectAtIndex:i]];
+                }else{
+                    
+                }
+            }
+            
+            NSString *epid = [[newlist objectAtIndex:ep_countindex] valueForKey:@"id"];
             //NSLog(@"epidd:%@",epid);
             [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
             request_type = @"updateProgress";

@@ -210,10 +210,10 @@
     if (self.receivedData == nil) {
         self.receivedData = [NSMutableData data];
     }
-    if (debugmode == YES) {
-        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"t:%@",str);
-    }
+//    if (debugmode == YES) {
+//        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        NSLog(@"t:%@",str);
+//    }
     [self.receivedData appendData:data];
 }
 

@@ -105,9 +105,22 @@
         
     }
     if ([request_type isEqualToString:@"EPList"]) {
-        NSInteger ep_countindex = ep_count;
+        NSInteger ep_countindex = ep_count -1;
         if ([[list valueForKey:@"eps"] count] > 0 && ep_countindex <= [[list valueForKey:@"eps"] count]) {
-            NSString *epid = [[[list valueForKey:@"eps"] objectAtIndex:ep_countindex] valueForKey:@"id"];
+            
+            //remove sp
+            NSArray *arr = [list valueForKey:@"eps"];
+            NSArray *newlist = [NSArray array];
+            for (int i=0; i<[arr count]; i++) {
+                
+                if ([[[arr objectAtIndex:i] valueForKey:@"type"] isEqualToNumber:[NSNumber numberWithInt:0]]) {
+                    newlist = [newlist arrayByAddingObject:[arr objectAtIndex:i]];
+                }else{
+                    
+                }
+            }
+            
+            NSString *epid = [[newlist objectAtIndex:ep_countindex] valueForKey:@"id"];
             //NSLog(@"epidd:%@",epid);
             [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -175,7 +188,7 @@
     [cell.updatebtn setTitle:[NSString stringWithFormat:@"标记 ep.%ld 看过",(long)ep_status+1] forState:UIControlStateNormal];
     [cell.updatebtn addTarget:self action:@selector(updatebtnpressd:) forControlEvents:UIControlEventTouchUpInside];
     
-    if (eps == 0) {
+    if (eps <= 0) {
         cell.progresslabel.text = [NSString stringWithFormat:@"%ld/??",(long)ep_status];
         //[cell.updatebtn setHidden:YES];
         if (ep_status <= 12) {

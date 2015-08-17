@@ -74,7 +74,20 @@
         [self.scrollview setContentSize:CGSizeMake(320, stringSize.height + 300)];
         [self.scrollview setScrollEnabled:YES];
         
-        progresslist = [list valueForKey:@"eps"];
+        
+        //remove sp
+        NSArray *arr = [list valueForKey:@"eps"];
+        NSArray *newlist = [NSArray array];
+        for (int i=0; i<[arr count]; i++) {
+            
+            if ([[[arr objectAtIndex:i] valueForKey:@"type"] isEqualToNumber:[NSNumber numberWithInt:0]]) {
+                newlist = [newlist arrayByAddingObject:[arr objectAtIndex:i]];
+            }else{
+                
+            }
+        }
+        
+        progresslist = newlist;
         
     }
     
