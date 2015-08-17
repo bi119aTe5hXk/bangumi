@@ -28,8 +28,8 @@
     NSString *iconurl = [[[context valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
     [self.imageview setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]]];
     
-    NSInteger ep_status = [[context valueForKey:@"ep_status"] integerValue]-1;//已看
-    NSInteger eps = [[[context valueForKey:@"subject"] valueForKey:@"eps"] integerValue]-1;//总共
+    NSInteger ep_status = [[context valueForKey:@"ep_status"] integerValue];//已看
+    NSInteger eps = [[[context valueForKey:@"subject"] valueForKey:@"eps"] integerValue];//总共
     ep_count = ep_status+1;
 
     [self.watchedbtn setTitle:[NSString stringWithFormat:@"标记 ep.%ld 看过",(long)ep_status+1]];
