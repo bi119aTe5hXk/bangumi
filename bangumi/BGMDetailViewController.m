@@ -76,18 +76,23 @@
         
         
         //remove sp
-        NSArray *arr = [list valueForKey:@"eps"];
-        NSArray *newlist = [NSArray array];
-        for (int i=0; i<[arr count]; i++) {
-            
-            if ([[[arr objectAtIndex:i] valueForKey:@"type"] isEqualToNumber:[NSNumber numberWithInt:0]]) {
-                newlist = [newlist arrayByAddingObject:[arr objectAtIndex:i]];
-            }else{
+        if ([list valueForKey:@"eps"] != [NSNull null]) {
+            NSArray *arr = [list valueForKey:@"eps"];
+            NSArray *newlist = [NSArray array];
+            for (int i=0; i<[arr count]; i++) {
                 
+                if ([[[arr objectAtIndex:i] valueForKey:@"type"] isEqualToNumber:[NSNumber numberWithInt:0]]) {
+                    newlist = [newlist arrayByAddingObject:[arr objectAtIndex:i]];
+                }else{
+                    
+                }
             }
+            
+            progresslist = newlist;
+        }else{
+            progresslist = [NSArray array];
         }
         
-        progresslist = newlist;
         
     }
     

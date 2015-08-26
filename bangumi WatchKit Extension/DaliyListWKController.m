@@ -71,7 +71,7 @@
     NSInteger rowCount = self.tableview.numberOfRows;
     
     for (NSInteger i = 0; i < rowCount; i++) {
-    NSString *itemText = [[daylist objectAtIndex:i] valueForKey:@"name"];
+    NSString *itemText = [HTMLEntityDecode htmlEntityDecode:[[daylist objectAtIndex:i] valueForKey:@"name"]];
     NSString *imageURL = [[[daylist objectAtIndex:i] valueForKey:@"images"] valueForKey:@"grid"];
     BGMWKCell* row = [self.tableview rowControllerAtIndex:i];
     [row.wk_title setText:itemText];

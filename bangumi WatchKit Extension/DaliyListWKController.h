@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "BGMAPI.h"
 #import "BGMWKCell.h"
+#import "HTMLEntityDecode.h"
 @interface DaliyListWKController : WKInterfaceController<BGMAPIDelegate>{
     NSArray *daylist;
     BGMAPI *api;
