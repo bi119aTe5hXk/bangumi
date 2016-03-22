@@ -49,16 +49,16 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     resultlist = list;
     [self.tableView reloadData];
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 
@@ -102,7 +102,18 @@
         NSArray *arr = [[resultlist valueForKey:@"list"] objectAtIndex:row];
         cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name"]];
         cell.sublabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name_cn"]];
-        [cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
+        //[cell.icon setImageWithURL:];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[arr valueForKey:@"images"] valueForKey:@"grid"]]];
+            if (imgData) {
+                UIImage *image = [UIImage imageWithData:imgData];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.icon setImage:image];
+                    });
+                }
+            }
+        });
     }
     
     return cell;
@@ -165,12 +176,17 @@
 	}else{
         resultlist = nil;
         resultlist = [[NSArray alloc] init];
-        [self.tableView reloadData];
-        [searchBar setShowsCancelButton:YES animated:YES];
-        //isLoading = NO;
-        [bgmapi cancelConnection];
-		//[searchBar resignFirstResponder];
-	}
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [searchBar setShowsCancelButton:YES animated:YES];
+            //isLoading = NO;
+            [bgmapi cancelConnection];
+            //[searchBar resignFirstResponder];
+
+        });
+        
+    }
+    
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -180,22 +196,28 @@
         //start search
         
         //resultlist = nil;
-        resultlist = [[NSArray alloc] init];
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            resultlist = [[NSArray alloc] init];
+            [self.tableView reloadData];
+            
+            
+            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
+        });
         
-        
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
     }
 }
 -(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope{
     if ([searchBar.text length] != 0) {
         //page = 1;
-        [bgmapi cancelConnection];
-        resultlist = [[NSArray alloc] init];
-        [self.tableView reloadData];
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [bgmapi cancelConnection];
+            resultlist = [[NSArray alloc] init];
+            [self.tableView reloadData];
+            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
+        });
+        
     }
 }
 

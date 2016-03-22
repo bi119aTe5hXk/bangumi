@@ -33,12 +33,12 @@
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getSubjectInfoWithSubID:self.bgmid];
     request_type = @"BGMDetail";
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.progressmanabtn setHidden:YES];
     [self.statusmanabtn setHidden:YES];
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -54,13 +54,27 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.progressmanabtn setHidden:NO];
     [self.statusmanabtn setHidden:NO];
     if ([request_type isEqualToString:@"BGMDetail"]) {
         self.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name"]];
         self.titlelabel_cn.text = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name_cn"]];
-        [self.cover setImageWithURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
+        //[self.cover setImageWithURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
+            if (imgData) {
+                UIImage *image = [UIImage imageWithData:imgData];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.cover setImage:image];
+                    });
+                }
+            }
+        });
+
+        
         
         self.bgmsummary.text = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"summary"]];
         
@@ -107,7 +121,7 @@
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 
@@ -163,7 +177,7 @@
                 //抛弃
                 [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"dropped"];
             }
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
             request_type = @"updateStatus";
         }
     }

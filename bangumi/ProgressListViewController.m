@@ -23,7 +23,7 @@
     return self;
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 
@@ -32,7 +32,7 @@
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getProgressListWithUID:[userdefaults stringForKey:@"userid"] WithSubID:self.subid];
     request_type = @"getProgressList";
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     //NSLog(@"list:%@",self.progresslist);
     //[self.tableView reloadData];
@@ -56,10 +56,13 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     if ([request_type  isEqualToString: @"getProgressList"]) {
         statuslist = [list valueForKey:@"eps"];
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
         if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
@@ -84,7 +87,7 @@
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 
@@ -237,7 +240,7 @@
                 //撤销
                 [bgmapi setProgressWithEPID:epid WithStatus:@"remove"];
             }
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
             request_type = @"updateProgress";
         }
     }

@@ -25,7 +25,10 @@
     [super willActivate];
     
     api = [[BGMAPI alloc] initWithdelegate:self];
-    [api getDayBGMList];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [api getDayBGMList];
+    });
+    
 }
 
 - (void)didDeactivate {

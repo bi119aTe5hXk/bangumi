@@ -29,9 +29,7 @@
     // Do any additional setup after loading the view.
     
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
-    [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth",nil]];
-    [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"auth_urlencoded",nil]];
-    [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:nil, @"userid",nil]];
+    
     
     auth_urlencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     auth = [userdefaults stringForKey:@"auth"];
@@ -50,7 +48,7 @@
     
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -65,7 +63,7 @@
 
 -(IBAction)loginbtnpressd:(id)sender{
     if ([self.usernamefield.text length] > 0 && [self.passwordfield.text length] > 0) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [bgmapi userLoginWithUserName:self.usernamefield.text WithPassword:self.passwordfield.text];
         request_type = @"login";
     }else{
@@ -80,7 +78,7 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     if ([request_type isEqualToString:@"login"]) {
         auth_urlencoded = [list valueForKey:@"auth_encode"];
         auth = [list valueForKey:@"auth"];
@@ -106,7 +104,7 @@
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

@@ -43,7 +43,7 @@
     [self loadList];
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -52,7 +52,7 @@
     }
 }
 -(void)loadList{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *userid = [userdefault stringForKey:@"userid"];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi cancelConnection];
@@ -67,7 +67,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
         if ([list count] == 0) {
@@ -80,10 +80,15 @@
         }
         
         bgmlist = list;
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [bgmapi getNotifyCount];
+            request_type = @"notifycount";
+        });
         
-        [bgmapi getNotifyCount];
-        request_type = @"notifycount";
+        
+        
+        
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
         if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
@@ -123,7 +128,7 @@
             NSString *epid = [[newlist objectAtIndex:ep_countindex] valueForKey:@"id"];
             //NSLog(@"epidd:%@",epid);
             [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
             request_type = @"updateProgress";
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"未知错误！"
@@ -147,11 +152,14 @@
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
-        [bgmapi getNotifyCount];
-        request_type = @"notifycount";
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [bgmapi getNotifyCount];
+            request_type = @"notifycount";
+        });
+        
     }
 }
 #pragma mark - Table view data source
@@ -211,7 +219,18 @@
     
     
     NSString *iconurl = [[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
-    [cell.icon setImageWithURL:[NSURL URLWithString:iconurl] placeholderImage:nil];
+    //cell.icon setImageWithURL:[NSURL URLWithString:iconurl] placeholderImage:nil];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]];
+        if (imgData) {
+            UIImage *image = [UIImage imageWithData:imgData];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.icon setImage:image];
+                });
+            }
+        }
+    });
     
     ep_status=0;
     eps=0;
@@ -252,9 +271,12 @@
     if (actionSheet.tag == 2) {
         if (buttonIndex > 0) {
             if (buttonIndex == 1) {
-                [bgmapi getEPListWithSubID:epid];
-                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                request_type = @"EPList";
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [bgmapi getEPListWithSubID:epid];
+                    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    request_type = @"EPList";
+                });
+                
             }
         }
     }

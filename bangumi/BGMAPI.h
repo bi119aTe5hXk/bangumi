@@ -14,10 +14,13 @@
 - (void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error;
 @end
 
-@interface BGMAPI : NSObject<NSURLConnectionDelegate>{
+@interface BGMAPI : NSObject<NSURLSessionDelegate>{
     NSUserDefaults *userdefaults;
     NSString *authString;
     NSString *authURLencoded;
+    NSURLSession* urlsession;
+    NSMutableData *responseData;
+    NSURLSessionDataTask *task;
 }
 -(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate;
 

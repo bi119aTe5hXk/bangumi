@@ -59,8 +59,11 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
 
     //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
-    [self.webview loadRequest:request];
-    [self.webview setDelegate:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.webview loadRequest:request];
+        [self.webview setDelegate:self];
+    });
+    
 }
 - (void)loadCookie{
     NSData *cookiesData = [userdefault objectForKey:@"SavedHTTPCookiesKey"];

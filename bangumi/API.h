@@ -8,25 +8,25 @@
 
 #define debugmode YES
 
-#define BaseLoginURL @"http://%@:%@@api.bgm.tv/auth"
-#define PostLoginURL @"http://api.bgm.tv/auth"
+#define BaseLoginURL @"https://%@:%@@api.bgm.tv/auth"
+#define PostLoginURL @"https://api.bgm.tv/auth"
 #define appName @"BGMbi119aTe5hXk"
 #define groupName @"group.BGM"
 
-#define rakuenURL @"http://bgm.tv/m"
+#define rakuenURL @"https://bgm.tv/m"
 
-#define WatchingListURL @"http://api.bgm.tv/user/%@/collection?cat=watching"
-#define ProgressListURL @"http://api.bgm.tv/user/%@/progress?subject_id=%@"
-#define SubjectInfoURL @"http://api.bgm.tv/subject/%@"
-#define SubjectEPlistURL @"http://api.bgm.tv/subject/%@/ep"
-#define CollectionInfoURL @"http://api.bgm.tv/collection/%@"
+#define WatchingListURL @"https://api.bgm.tv/user/%@/collection?cat=watching"
+#define ProgressListURL @"https://api.bgm.tv/user/%@/progress?subject_id=%@"
+#define SubjectInfoURL @"https://api.bgm.tv/subject/%@"
+#define SubjectEPlistURL @"https://api.bgm.tv/subject/%@/ep"
+#define CollectionInfoURL @"https://api.bgm.tv/collection/%@"
 
 
-#define setCollectionURL @"http://api.bgm.tv/collection/%@/%@"
-#define setProgressURL @"http://api.bgm.tv/ep/%@/status/%@"
+#define setCollectionURL @"https://api.bgm.tv/collection/%@/%@"
+#define setProgressURL @"https://api.bgm.tv/ep/%@/status/%@"
 
-#define dayBGMListURL @"http://api.bgm.tv/calendar"
+#define dayBGMListURL @"https://api.bgm.tv/calendar"
 
-#define SearchURL @"http://api.bgm.tv/search/subject/%@"
+#define SearchURL @"https://api.bgm.tv/search/subject/%@"
 
-#define notifyURL @"http://api.bgm.tv/notify/count"
+#define notifyURL @"https://api.bgm.tv/notify/count"

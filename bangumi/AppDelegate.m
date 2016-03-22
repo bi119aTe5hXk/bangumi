@@ -23,7 +23,10 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }
-    
+    NSUserDefaults *userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
+    [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"auth",nil]];
+    [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"auth_urlencoded",nil]];
+    [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"userid",nil]];
     return YES;
 }
 							

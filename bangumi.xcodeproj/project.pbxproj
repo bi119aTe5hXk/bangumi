@@ -15,12 +15,13 @@
 		4751E6371921F231004143D3 /* UITabBarStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6351921F231004143D3 /* UITabBarStar@2x.png */; };
 		4751E63A1921F521004143D3 /* UITabBarList.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6381921F521004143D3 /* UITabBarList.png */; };
 		4751E63B1921F521004143D3 /* UITabBarList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6391921F521004143D3 /* UITabBarList@2x.png */; };
+		477E91F61CA1801B00C9E6C9 /* bangumi WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */; };
+		477E91FD1CA1867F00C9E6C9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */; };
 		478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */; };
 		478CEC151B7A2C9600BB2442 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC141B7A2C9600BB2442 /* Images.xcassets */; };
-		478CEC191B7A2C9600BB2442 /* bangumi WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */; };
 		478CEC211B7A2C9600BB2442 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */; };
 		478CEC231B7A2C9600BB2442 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC221B7A2C9600BB2442 /* Images.xcassets */; };
-		478CEC261B7A2C9600BB2442 /* bangumi WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		478CEC301B80C2F500BB2442 /* DaliyListWKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC2F1B80C2F500BB2442 /* DaliyListWKController.m */; };
 		478CEC331B80C43900BB2442 /* BGMWKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC321B80C43900BB2442 /* BGMWKCell.m */; };
 		478CEC341B80CB4800BB2442 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */; };
@@ -49,36 +50,46 @@
 		47E271B11901666800304DED /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E271B01901666800304DED /* SettingsViewController.m */; };
 		47E271B4190166C400304DED /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E271B3190166C400304DED /* TabbarViewController.m */; };
 		47E271B619016B9700304DED /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271B519016B9700304DED /* ImageIO.framework */; };
-		47E271C819016E4A00304DED /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271C719016E4A00304DED /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		478CEC1A1B7A2C9600BB2442 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47E271471900043300304DED /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 478CEC171B7A2C9600BB2442;
-			remoteInfo = "bangumi WatchKit App";
-		};
-		478CEC241B7A2C9600BB2442 /* PBXContainerItemProxy */ = {
+		477E91F41CA1801B00C9E6C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 47E271471900043300304DED /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 478CEC081B7A2C9500BB2442;
 			remoteInfo = "bangumi WatchKit Extension";
 		};
+		477E91F71CA1801B00C9E6C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47E271471900043300304DED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 478CEC171B7A2C9600BB2442;
+			remoteInfo = "bangumi WatchKit App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		478CEC2D1B7A2C9600BB2442 /* Embed App Extensions */ = {
+		477E91FA1CA1801B00C9E6C9 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				478CEC261B7A2C9600BB2442 /* bangumi WatchKit Extension.appex in Embed App Extensions */,
+				477E91F61CA1801B00C9E6C9 /* bangumi WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477E91FB1CA1801B00C9E6C9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -97,6 +108,7 @@
 		4751E6351921F231004143D3 /* UITabBarStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarStar@2x.png"; sourceTree = "<group>"; };
 		4751E6381921F521004143D3 /* UITabBarList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarList.png; sourceTree = "<group>"; };
 		4751E6391921F521004143D3 /* UITabBarList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarList@2x.png"; sourceTree = "<group>"; };
+		477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		478B3B861902A2A1006C6E67 /* BGMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMDetailViewController.h; sourceTree = "<group>"; };
 		478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMDetailViewController.m; sourceTree = "<group>"; };
 		478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "bangumi WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +169,6 @@
 		47E271B2190166C400304DED /* TabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
 		47E271B3190166C400304DED /* TabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 		47E271B519016B9700304DED /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		47E271C719016E4A00304DED /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E271C819016E4A00304DED /* SDWebImage.framework in Frameworks */,
 				47E271B619016B9700304DED /* ImageIO.framework in Frameworks */,
 				47E271551900043300304DED /* CoreGraphics.framework in Frameworks */,
 				47E271571900043300304DED /* UIKit.framework in Frameworks */,
@@ -255,7 +265,6 @@
 		47E271511900043300304DED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				47E271C719016E4A00304DED /* SDWebImage.framework */,
 				47E271B519016B9700304DED /* ImageIO.framework */,
 				47E271A619015F9E00304DED /* SDWebImage.framework */,
 				47E271521900043300304DED /* Foundation.framework */,
@@ -300,6 +309,7 @@
 				4751E631191F9209004143D3 /* RakuenViewController.h */,
 				4751E632191F9209004143D3 /* RakuenViewController.m */,
 				47E2719119001AE000304DED /* Main.storyboard */,
+				477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */,
 				47E2716D1900043300304DED /* Images.xcassets */,
 				47E271591900043300304DED /* Supporting Files */,
 			);
@@ -357,27 +367,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				478CEC1B1B7A2C9600BB2442 /* PBXTargetDependency */,
 			);
 			name = "bangumi WatchKit Extension";
 			productName = "bangumi WatchKit Extension";
 			productReference = 478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		478CEC171B7A2C9600BB2442 /* bangumi WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 478CEC271B7A2C9600BB2442 /* Build configuration list for PBXNativeTarget "bangumi WatchKit App" */;
 			buildPhases = (
 				478CEC161B7A2C9600BB2442 /* Resources */,
+				477E91FA1CA1801B00C9E6C9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				477E91F51CA1801B00C9E6C9 /* PBXTargetDependency */,
 			);
 			name = "bangumi WatchKit App";
 			productName = "bangumi WatchKit App";
 			productReference = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 		47E2714E1900043300304DED /* bangumi */ = {
 			isa = PBXNativeTarget;
@@ -386,12 +397,12 @@
 				47E2714B1900043300304DED /* Sources */,
 				47E2714C1900043300304DED /* Frameworks */,
 				47E2714D1900043300304DED /* Resources */,
-				478CEC2D1B7A2C9600BB2442 /* Embed App Extensions */,
+				477E91FB1CA1801B00C9E6C9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				478CEC251B7A2C9600BB2442 /* PBXTargetDependency */,
+				477E91F81CA1801B00C9E6C9 /* PBXTargetDependency */,
 			);
 			name = bangumi;
 			productName = bangumi;
@@ -404,7 +415,7 @@
 		47E271471900043300304DED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "HT&L";
 				TargetAttributes = {
 					478CEC081B7A2C9500BB2442 = {
@@ -462,7 +473,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				478CEC191B7A2C9600BB2442 /* bangumi WatchKit App.app in Resources */,
 				478CEC341B80CB4800BB2442 /* Interface.storyboard in Resources */,
 				478CEC151B7A2C9600BB2442 /* Images.xcassets in Resources */,
 			);
@@ -484,6 +494,7 @@
 				4751E6371921F231004143D3 /* UITabBarStar@2x.png in Resources */,
 				47A5DC58190AA7F10086A14B /* README.md in Resources */,
 				47E2716E1900043300304DED /* Images.xcassets in Resources */,
+				477E91FD1CA1867F00C9E6C9 /* Launch Screen.storyboard in Resources */,
 				47A5DD29191135BB0086A14B /* bgm38a1024.png in Resources */,
 				4751E6361921F231004143D3 /* UITabBarStar.png in Resources */,
 				47E2719319001AE000304DED /* Main.storyboard in Resources */,
@@ -536,15 +547,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		478CEC1B1B7A2C9600BB2442 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 478CEC171B7A2C9600BB2442 /* bangumi WatchKit App */;
-			targetProxy = 478CEC1A1B7A2C9600BB2442 /* PBXContainerItemProxy */;
-		};
-		478CEC251B7A2C9600BB2442 /* PBXTargetDependency */ = {
+		477E91F51CA1801B00C9E6C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 478CEC081B7A2C9500BB2442 /* bangumi WatchKit Extension */;
-			targetProxy = 478CEC241B7A2C9600BB2442 /* PBXContainerItemProxy */;
+			targetProxy = 477E91F41CA1801B00C9E6C9 /* PBXContainerItemProxy */;
+		};
+		477E91F81CA1801B00C9E6C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 478CEC171B7A2C9600BB2442 /* bangumi WatchKit App */;
+			targetProxy = 477E91F71CA1801B00C9E6C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -581,8 +592,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -592,14 +603,15 @@
 				);
 				IBSC_MODULE = bangumi_WatchKit_Extension;
 				INFOPLIST_FILE = "bangumi WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "15c53c24-80fa-4a92-bdc9-b6391f2ef5dd";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -608,21 +620,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = bangumi_WatchKit_Extension;
 				INFOPLIST_FILE = "bangumi WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "15c53c24-80fa-4a92-bdc9-b6391f2ef5dd";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -631,8 +644,8 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit Extension/bangumi WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -645,9 +658,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "c395bf17-028e-4370-805f-e9e655513b64";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -656,8 +673,8 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit Extension/bangumi WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -666,9 +683,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "c395bf17-028e-4370-805f-e9e655513b64";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -691,6 +712,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -706,9 +728,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -742,7 +764,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -754,8 +776,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = bangumi/bangumi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bi119aTe5hXk/Downloads,
@@ -767,8 +789,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -781,8 +804,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = bangumi/bangumi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bi119aTe5hXk/Downloads,
@@ -794,8 +817,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2ef12566-e4a7-49dd-aa5b-7e234a2f3fef";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

@@ -55,7 +55,6 @@
     
     [self.tableview setNumberOfRows:[list count] withRowType:@"default"];
     NSInteger rowCount = self.tableview.numberOfRows;
-    
     for (NSInteger i = 0; i < rowCount; i++) {
         NSString *itemText = [HTMLEntityDecode htmlEntityDecode:[[list objectAtIndex:i] valueForKey:@"name"]];
         NSString *imageURL = [[[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"grid"];
@@ -63,7 +62,7 @@
         [row.wk_title setText:itemText];
         [row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
     }
-
+    
 }
 
 -(id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex{

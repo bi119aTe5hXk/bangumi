@@ -10,8 +10,8 @@
 #define settimeout 50
 @interface BGMAPI ()
 @property (assign, nonatomic) NSObject <BGMAPIDelegate> *delegate;
-@property (retain, nonatomic) NSURLConnection *theConnection;
-@property (retain, nonatomic) NSMutableData *receivedData;
+
+
 -(BOOL)createPOSTConnectionWithURL:(NSString *)urlstr WithPOSTData:(NSDictionary *)post_data;
 - (BOOL)createGETConnectionWithURL:(NSString *)urlstr;
 
@@ -118,9 +118,6 @@
         NSLog(@"URL: %@",url);
     }
     
-    if(self.theConnection){
-		return NO;
-	}
     
     
     
@@ -151,14 +148,17 @@
 #if TARGET_OS_IPHONE
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 #endif
+    NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    urlsession = [NSURLSession sessionWithConfiguration:configuration
+                                              delegate:self
+                                         delegateQueue:nil];
+    task = [urlsession dataTaskWithRequest:request];
+    [task resume];
     
-	self.theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-	if (self.theConnection) {
-		self.receivedData = [NSMutableData data];
-	}else {
-		return NO;
-	}
-	return YES;
+    
+    
+    
+     return YES;
 }
 
 
@@ -170,21 +170,19 @@
         NSLog(@"URL: %@",url);
     }
     
-	if(self.theConnection){
-		return NO;
-	}
+	
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadRevalidatingCacheData
                                                        timeoutInterval:settimeout];
 #if TARGET_OS_IPHONE
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 #endif
-	self.theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-	if (self.theConnection) {
-		self.receivedData = [NSMutableData data];
-	}else {
-		return NO;
-	}
+    NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    urlsession = [NSURLSession sessionWithConfiguration:configuration
+                                               delegate:self
+                                          delegateQueue:nil];
+	task = [urlsession dataTaskWithRequest:request];
+	[task resume];
 	return YES;
 }
 
@@ -192,74 +190,85 @@
 #if TARGET_OS_IPHONE
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 #endif
-    [self.theConnection cancel];
-    self.theConnection = nil;
-    self.receivedData = nil;
+    //[self.theConnection cancel];
+    //self.theConnection = nil;
+    //self.receivedData = nil;
+    [task cancel];
 }
 - (void)cancelRequest{
-	[self.theConnection cancel];
-    self.theConnection = nil;
-}
-
-# pragma mark - NSURLConnectionDelegate
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    [self.receivedData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-    if (self.receivedData == nil) {
-        self.receivedData = [NSMutableData data];
-    }
-//    if (debugmode == YES) {
-//        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//        NSLog(@"t:%@",str);
-//    }
-    [self.receivedData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-	self.theConnection = nil;
-    self.receivedData = nil;
-#if TARGET_OS_IPHONE
-    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-#endif
-    if (debugmode == YES) {
-        NSLog(@"Connection failed! Error - %@ %@",
-              [error localizedDescription],
-              [error userInfo][NSURLErrorFailingURLStringErrorKey]);
-    }
-    if([self.delegate respondsToSelector:@selector(api:requestFailedWithError:)]){
-		[self.delegate api:self requestFailedWithError:error];
-	}
+	//[self.theConnection cancel];
+    //self.theConnection = nil;
+    
+    [task cancel];
     
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    NSError* error;
-    NSArray* json = [NSJSONSerialization JSONObjectWithData:self.receivedData
-                                                    options:kNilOptions
-                                                      error:&error];
-    if(json == nil){
-        NSLog(@"Json data is nil");
+
+
+
+
+
+/**
+ * HTTPリクエストのデリゲートメソッド(データ受け取り初期処理)
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+didReceiveResponse:(NSURLResponse *)response
+ completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
+    // 保持していたレスポンスのデータを初期化
+    //[self setResponseData:[[NSMutableData alloc] init]];
+    responseData = [[NSMutableData alloc] init];
+    
+    // didReceivedData と didCompleteWithError が呼ばれるように、通常継続の定数をハンドラーに渡す
+    completionHandler(NSURLSessionResponseAllow);
+}
+
+/**
+ * HTTPリクエストのデリゲートメソッド(受信の度に実行)
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    // 1つのパケットに収まらないデータ量の場合は複数回呼ばれるので、データを追加していく
+    [responseData appendData:data];
+}
+
+/**
+ * HTTPリクエストのデリゲートメソッド(完了処理)
+ */
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    if (error) {
+        // HTTPリクエスト失敗処理
+        //[self failureHttpRequest:error];
+        if (debugmode == YES) {
+            NSLog(@"Connection failed! Error - %@ %@",
+                  [error localizedDescription],
+                  [error userInfo][NSURLErrorFailingURLStringErrorKey]);
+        }
         if([self.delegate respondsToSelector:@selector(api:requestFailedWithError:)]){
             [self.delegate api:self requestFailedWithError:error];
         }
         
-    }else{
-        if (debugmode == YES) {
-            NSLog(@"json:%@",json);
-        }
+    } else {
+        // HTTPリクエスト成功処理
+        NSArray* json = [NSJSONSerialization JSONObjectWithData:responseData
+                                                        options:kNilOptions
+                                                          error:&error];
+        if(json == nil){
+            NSLog(@"Json data is nil");
+            if([self.delegate respondsToSelector:@selector(api:requestFailedWithError:)]){
+                [self.delegate api:self requestFailedWithError:error];
+            }
+            
+        }else{
+            if (debugmode == YES) {
+                NSLog(@"json:%@",json);
+            }
             if([self.delegate respondsToSelector:@selector(api:readyWithList:)]){
                 [self.delegate api:self readyWithList:json];
             }
+        }
+
     }
-    
-    self.theConnection = nil;
-    self.receivedData = nil;
-#if TARGET_OS_IPHONE
-    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-#endif
 }
+
 
 
 @end

@@ -42,18 +42,18 @@
 }
 - (void)onRefresh:(id)sender{
     [bgmapi getDayBGMList];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewDidAppear:(BOOL)animated{
     if (daylist.count <= 0) {
         bgmapi = [[BGMAPI alloc] initWithdelegate:self];
         [bgmapi getDayBGMList];
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
 }
 - (void)didReceiveMemoryWarning
@@ -63,13 +63,16 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     daylist = list;
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
 }
 
@@ -98,8 +101,22 @@
     
     cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name"]];
     cell.sublabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name_cn"]];
-    [cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
+    
+    //[cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
     //[cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[arr valueForKey:@"images"] valueForKey:@"grid"]]];
+        if (imgData) {
+            UIImage *image = [UIImage imageWithData:imgData];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.icon setImage:image];
+                });
+            }
+        }
+    });
+
     
     return cell;
 }
