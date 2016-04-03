@@ -37,7 +37,7 @@
 }
 -(IBAction)searchinfo:(id)sender{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"关于搜索"
-                                                    message:@"目前暂时只能显示前20条项目，如果找不到您想看的番组，请将关键词描写更详细一些。m(_ _)m"
+                                                    message:@"目前暂时只能搜索动画以及显示前20条结果，如果找不到您想看的番组，请将关键词描写更详细一些。谢谢m(_ _)m"
                                                    delegate:nil
                                           cancelButtonTitle:@"知道了"
                                           otherButtonTitles:nil, nil];
@@ -55,7 +55,10 @@
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     resultlist = list;
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
