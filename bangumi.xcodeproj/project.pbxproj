@@ -30,6 +30,8 @@
 		478CEC3D1B80D75300BB2442 /* NotLoginInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC3C1B80D75300BB2442 /* NotLoginInterfaceController.m */; };
 		478CEC411B80FEEF00BB2442 /* DetailWKInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC401B80FEEF00BB2442 /* DetailWKInterfaceController.m */; };
 		478CEC421B8109E200BB2442 /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
+		479E41841CB17E18001AA6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
+		479E41851CB17E18001AA6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
 		47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DC55190940340086A14B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		47A5DC58190AA7F10086A14B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DC57190AA7F10086A14B /* README.md */; };
 		47A5DD25191127150086A14B /* DaliyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD24191127150086A14B /* DaliyListViewController.m */; };
@@ -90,6 +92,16 @@
 				477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479E41811CB17D52001AA6EA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -400,6 +412,7 @@
 				47E2714C1900043300304DED /* Frameworks */,
 				47E2714D1900043300304DED /* Resources */,
 				477E91FB1CA1801B00C9E6C9 /* Embed Watch Content */,
+				479E41811CB17D52001AA6EA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -480,6 +493,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479E41841CB17E18001AA6EA /* Images.xcassets in Resources */,
 				478CEC341B80CB4800BB2442 /* Interface.storyboard in Resources */,
 				478CEC151B7A2C9600BB2442 /* Images.xcassets in Resources */,
 			);
@@ -489,6 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479E41851CB17E18001AA6EA /* Images.xcassets in Resources */,
 				478CEC211B7A2C9600BB2442 /* Interface.storyboard in Resources */,
 				478CEC231B7A2C9600BB2442 /* Images.xcassets in Resources */,
 			);
@@ -615,7 +630,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "68fdf0a8-85ca-4d26-8bf6-8840439be01d";
+				PROVISIONING_PROFILE = "12aa1bf0-7f16-4d02-9e72-8c37aeba68db";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -640,7 +655,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "68fdf0a8-85ca-4d26-8bf6-8840439be01d";
+				PROVISIONING_PROFILE = "12aa1bf0-7f16-4d02-9e72-8c37aeba68db";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -670,7 +685,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "2a05ff44-214f-44d1-85ac-57cd25f0e7a2";
+				PROVISIONING_PROFILE = "053aa0f1-5a45-47d1-b236-837c24fcefed";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -696,7 +711,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "2a05ff44-214f-44d1-85ac-57cd25f0e7a2";
+				PROVISIONING_PROFILE = "053aa0f1-5a45-47d1-b236-837c24fcefed";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -802,7 +817,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1ea22b42-b9f9-480e-80f6-c7f8bc6e8c0f";
+				PROVISIONING_PROFILE = "abe40d90-10b9-4245-9195-7dcd85a4b42d";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -830,7 +845,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1ea22b42-b9f9-480e-80f6-c7f8bc6e8c0f";
+				PROVISIONING_PROFILE = "abe40d90-10b9-4245-9195-7dcd85a4b42d";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

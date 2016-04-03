@@ -19,10 +19,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>番组计划+ WatchKit 1 App (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>番组计划+ WatchKit 1 App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>478CEC171B7A2C9600BB2442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>479E416C1CB17D52001AA6EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -60,7 +60,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(IBAction)registerbtnpressed:(id)sender{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://bgm.tv/signup"]];
+    
+    
+}
 -(IBAction)loginbtnpressd:(id)sender{
     if ([self.usernamefield.text length] > 0 && [self.passwordfield.text length] > 0) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];

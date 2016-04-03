@@ -22,5 +22,5 @@
 @property (nonatomic, strong) IBOutlet TabbarViewController *tabbarview;
 
 -(IBAction)loginbtnpressd:(id)sender;
-
+-(IBAction)registerbtnpressed:(id)sender;
 @end

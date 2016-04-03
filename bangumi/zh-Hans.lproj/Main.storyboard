@@ -61,9 +61,25 @@
                                     <action selector="loginbtnpressd:" destination="kKC-iY-qY7" eventType="touchUpInside" id="lt0-K4-p6H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpF-5R-7Gx">
+                                <rect key="frame" x="20" y="190" width="143" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="Vst-SD-5dE"/>
+                                    <constraint firstAttribute="height" constant="63" id="X6U-Ca-U8f"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="d1P-3S-nSW"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="63" id="hHL-ml-8c8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="注册"/>
+                                <connections>
+                                    <action selector="loginbtnpressd:" destination="kKC-iY-qY7" eventType="touchUpInside" id="WWm-fY-fix"/>
+                                    <action selector="registerbtnpressed:" destination="kKC-iY-qY7" eventType="touchUpInside" id="95D-JZ-aGV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="3I4-ZD-otu"/>
                             <constraint firstItem="IRN-cV-RiK" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="MNn-7b-U2c"/>
                             <constraint firstItem="Zhm-QC-Bcu" firstAttribute="top" secondItem="VQx-4B-1J4" secondAttribute="bottom" constant="18" id="QJp-iW-u0v"/>
                             <constraint firstItem="Zhm-QC-Bcu" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="aKH-rd-uja"/>
@@ -71,6 +87,7 @@
                             <constraint firstItem="IRN-cV-RiK" firstAttribute="top" secondItem="Zhm-QC-Bcu" secondAttribute="bottom" constant="22" id="eMw-42-sVY"/>
                             <constraint firstItem="IRN-cV-RiK" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="fKM-ry-gbn"/>
                             <constraint firstItem="rkG-SM-24p" firstAttribute="top" secondItem="IRN-cV-RiK" secondAttribute="bottom" constant="26" id="gZN-1S-z2D"/>
+                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="baseline" secondItem="rkG-SM-24p" secondAttribute="baseline" id="hpz-vM-Er9"/>
                             <constraint firstItem="rkG-SM-24p" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="txC-n8-3OA"/>
                         </constraints>
                     </view>
@@ -127,7 +144,7 @@
                                 <rect key="frame" x="0.0" y="130" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i6A-7M-ndd" id="1qp-pw-Tw4">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="68"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cfD-og-S8b">
