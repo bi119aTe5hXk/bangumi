@@ -38,7 +38,7 @@
     [self.statusmanabtn setHidden:YES];
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -54,12 +54,28 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
-    [self.progressmanabtn setHidden:NO];
-    [self.statusmanabtn setHidden:NO];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    
+    
+    
+    
     if ([request_type isEqualToString:@"BGMDetail"]) {
-        self.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name"]];
-        self.titlelabel_cn.text = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name_cn"]];
+        NSString *titlestr = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name"]];
+        NSString *titlecnstr = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name_cn"]];
+        NSString *bgmsummarystr = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"summary"]];
+        dispatch_async(dispatch_get_main_queue(),^{//get main thread
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.progressmanabtn setHidden:NO];
+            [self.statusmanabtn setHidden:NO];
+            [self.titlelabel setText:titlestr];
+            [self.titlelabel_cn setText:titlecnstr];
+            [self.bgmsummary setText:bgmsummarystr];
+        });
+        
+        
+        
         //[self.cover setImageWithURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -75,20 +91,14 @@
         });
 
         
-        
-        self.bgmsummary.text = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"summary"]];
-        
-        [self.bgmsummary setFont:[UIFont systemFontOfSize:12]];
-        CGSize stringSize = [self.bgmsummary.text sizeWithFont:[UIFont systemFontOfSize:12]
-                             constrainedToSize:CGSizeMake(280, CGFLOAT_MAX)
-                                 lineBreakMode:NSLineBreakByWordWrapping];
-        
-        
-        [self.bgmsummary setFrame:CGRectMake(20, 212, 280, stringSize.height+200)];
-        [self.scrollview setContentSize:CGSizeMake(320, stringSize.height + 300)];
-        [self.scrollview setScrollEnabled:YES];
-        
-        
+//        [self.bgmsummary setFont:[UIFont systemFontOfSize:12]];
+//        CGSize stringSize = [self.bgmsummary.text sizeWithFont:[UIFont systemFontOfSize:12]
+//                             constrainedToSize:CGSizeMake(280, CGFLOAT_MAX)
+//                                 lineBreakMode:NSLineBreakByWordWrapping];
+//        [self.bgmsummary setFrame:CGRectMake(20, 212, 280, stringSize.height+200)];
+//        [self.scrollview setContentSize:CGSizeMake(320, stringSize.height + 300)];
+//        [self.scrollview setScrollEnabled:YES];
+
         //remove sp
         if ([list valueForKey:@"eps"] != [NSNull null]) {
             NSArray *arr = [list valueForKey:@"eps"];
@@ -102,13 +112,13 @@
                 }
             }
             
-            progresslist = newlist;
+        progresslist = newlist;
         }else{
             progresslist = [NSArray array];
         }
-        
-        
     }
+    
+    
     
     if ([request_type isEqualToString:@"updateStatus"]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
@@ -119,9 +129,11 @@
         [alert show];
     }
     
+    
+    
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 
@@ -177,7 +189,7 @@
                 //抛弃
                 [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"dropped"];
             }
-            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             request_type = @"updateStatus";
         }
     }

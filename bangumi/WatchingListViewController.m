@@ -43,7 +43,7 @@
     [self loadList];
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -52,7 +52,7 @@
     }
 }
 -(void)loadList{
-    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *userid = [userdefault stringForKey:@"userid"];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi cancelConnection];
@@ -67,7 +67,8 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
         if ([list count] == 0) {
@@ -128,7 +129,7 @@
             NSString *epid = [[newlist objectAtIndex:ep_countindex] valueForKey:@"id"];
             //NSLog(@"epidd:%@",epid);
             [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
-            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             request_type = @"updateProgress";
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"未知错误！"
@@ -152,7 +153,7 @@
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -273,7 +274,7 @@
             if (buttonIndex == 1) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [bgmapi getEPListWithSubID:epid];
-                    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                     request_type = @"EPList";
                 });
                 

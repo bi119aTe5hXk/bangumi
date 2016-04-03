@@ -16,6 +16,6 @@
     #import "API.h"
     #import "BGMAPI.h"
     //#import <SDWebImage/UIImageView+WebCache.h>
-    //#import "MBProgressHUD.h"
+    #import "MBProgressHUD.h"
 #import "HTMLEntityDecode.h"
 #endif

@@ -37,25 +37,29 @@
     self.refreshControl = refreshControl;
     
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
-    //[bgmapi getDayBGMList];
-    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
 }
 - (void)onRefresh:(id)sender{
-    [bgmapi getDayBGMList];
-    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self startGetDayBGMList];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewDidAppear:(BOOL)animated{
     if (daylist.count <= 0) {
-        bgmapi = [[BGMAPI alloc] initWithdelegate:self];
-        [bgmapi getDayBGMList];
-        //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        [self startGetDayBGMList];
     }
 }
+
+-(void)startGetDayBGMList{
+    
+    [bgmapi getDayBGMList];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -63,7 +67,8 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];//
     [self.refreshControl endRefreshing];
     daylist = list;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -72,7 +77,7 @@
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
 }
 

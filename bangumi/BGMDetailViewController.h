@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) NSString *bgmid;
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollview;
+//@property (nonatomic, strong) IBOutlet UIScrollView *scrollview;
 
 @property (nonatomic, strong) IBOutlet UIButton *statusmanabtn;
 @property (nonatomic, strong) IBOutlet UIButton *progressmanabtn;

@@ -49,16 +49,16 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     resultlist = list;
     [self.tableView reloadData];
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 
@@ -201,7 +201,7 @@
             [self.tableView reloadData];
             
             
-            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
         });
         
@@ -214,7 +214,7 @@
             [bgmapi cancelConnection];
             resultlist = [[NSArray alloc] init];
             [self.tableView reloadData];
-            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
         });
         

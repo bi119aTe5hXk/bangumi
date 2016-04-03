@@ -14,5 +14,6 @@
 }
 
 @property (nonatomic, strong) IBOutlet UIButton *rakuenbtn;
+//@property (nonatomic, strong) IBOutlet UILabel *creditText;
 -(IBAction)logout:(id)sender;
 @end

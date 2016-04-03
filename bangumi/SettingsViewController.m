@@ -36,6 +36,9 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
+    //self.creditText.text = @"WebSite/API: @Sai \nDeveloper: @bi119aTe5hXk \nIcon: @cinnamor";
+    
+    
     userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
     [bgmapi getNotifyCount];
