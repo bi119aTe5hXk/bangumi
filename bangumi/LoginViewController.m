@@ -88,16 +88,22 @@
             [userdefaults setObject:userid forKey:@"userid"];
             [userdefaults setObject:auth_urlencoded forKey:@"auth_urlencoded"];
             [userdefaults synchronize];
-            self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
-            [self.navigationController presentViewController:self.tabbarview animated:YES completion:nil];
+            dispatch_async(dispatch_get_main_queue(),^{
+                self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
+                [self.navigationController presentViewController:self.tabbarview animated:YES completion:nil];
+            });
+            
             
         }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
-                                                            message:nil
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
+            dispatch_async(dispatch_get_main_queue(),^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
+                                                                message:nil
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
+            
         }
     }
     

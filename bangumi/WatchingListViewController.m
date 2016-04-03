@@ -72,6 +72,7 @@
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
         if ([list count] == 0) {
+            
             UIAlertView *emptyalert = [[UIAlertView alloc] initWithTitle:@"列表是空的！"
                                                                  message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～"
                                                                 delegate:nil
@@ -92,22 +93,25 @@
         
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
-        if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
-                                                            message:[list valueForKey:@"error"]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"了解"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-            [self loadList];
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
-                                                            message:[list valueForKey:@"error"]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"了解"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-        }
+        dispatch_async(dispatch_get_main_queue(),^{
+            if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
+                                                                message:[list valueForKey:@"error"]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"了解"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+                [self loadList];
+            }else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
+                                                                message:[list valueForKey:@"error"]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"了解"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        });
+        
         
     }
     if ([request_type isEqualToString:@"EPList"]) {
@@ -129,8 +133,11 @@
             NSString *epid = [[newlist objectAtIndex:ep_countindex] valueForKey:@"id"];
             //NSLog(@"epidd:%@",epid);
             [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            
             request_type = @"updateProgress";
+            dispatch_async(dispatch_get_main_queue(),^{
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            });
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"未知错误！"
                                                             message:nil
