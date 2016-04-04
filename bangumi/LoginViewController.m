@@ -100,6 +100,7 @@
             
         }else{
             dispatch_async(dispatch_get_main_queue(),^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
                                                                 message:nil
                                                                delegate:nil
