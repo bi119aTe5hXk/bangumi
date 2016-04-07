@@ -15,26 +15,23 @@
 		4751E6371921F231004143D3 /* UITabBarStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6351921F231004143D3 /* UITabBarStar@2x.png */; };
 		4751E63A1921F521004143D3 /* UITabBarList.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6381921F521004143D3 /* UITabBarList.png */; };
 		4751E63B1921F521004143D3 /* UITabBarList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6391921F521004143D3 /* UITabBarList@2x.png */; };
+		4763B82B1CB6A3860050B017 /* Interface1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4763B8291CB6A3860050B017 /* Interface1.storyboard */; };
+		4763B82C1CB6A3A50050B017 /* bangumi WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 479E418C1CB6841E001AA6EA /* bangumi WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4763B82E1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4763B82D1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets */; };
 		477E91F61CA1801B00C9E6C9 /* bangumi WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */; };
 		477E91FD1CA1867F00C9E6C9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */; };
 		478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */; };
-		478CEC151B7A2C9600BB2442 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC141B7A2C9600BB2442 /* Images.xcassets */; };
 		478CEC211B7A2C9600BB2442 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */; };
-		478CEC231B7A2C9600BB2442 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC221B7A2C9600BB2442 /* Images.xcassets */; };
 		478CEC331B80C43900BB2442 /* BGMWKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC321B80C43900BB2442 /* BGMWKCell.m */; };
 		478CEC341B80CB4800BB2442 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */; };
 		478CEC371B80CC5700BB2442 /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
 		478CEC421B8109E200BB2442 /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
 		479E41841CB17E18001AA6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
 		479E41851CB17E18001AA6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
-		479E41971CB6841F001AA6EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479E41961CB6841F001AA6EA /* Assets.xcassets */; };
-		479E419C1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App.app in Resources */ = {isa = PBXBuildFile; fileRef = 479E419B1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App.app */; };
-		479E41A21CB6841F001AA6EA /* Interface1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479E41A01CB6841F001AA6EA /* Interface1.storyboard */; };
-		479E41A41CB6841F001AA6EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479E41A31CB6841F001AA6EA /* Assets.xcassets */; };
-		479E41A81CB6841F001AA6EA /* 番组计划+ WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 479E418C1CB6841E001AA6EA /* 番组计划+ WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		479E419C1CB6841F001AA6EA /* bangumi WatchKit 1 App.app in Resources */ = {isa = PBXBuildFile; fileRef = 479E419B1CB6841F001AA6EA /* bangumi WatchKit 1 App.app */; };
 		479E41C51CB68CAF001AA6EA /* DaliyListWKController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41BE1CB68CAF001AA6EA /* DaliyListWKController1.m */; };
-		479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.m */; };
+		479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.h in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.h */; };
 		479E41C71CB68CAF001AA6EA /* MainListInterfaceController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C21CB68CAF001AA6EA /* MainListInterfaceController1.m */; };
 		479E41C81CB68CAF001AA6EA /* NotLoginInterfaceController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C41CB68CAF001AA6EA /* NotLoginInterfaceController1.m */; };
 		479E41C91CB68D37001AA6EA /* DaliyListWKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41B21CB68C99001AA6EA /* DaliyListWKController.m */; };
@@ -126,7 +123,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				479E41A81CB6841F001AA6EA /* 番组计划+ WatchKit 1 Extension.appex in Embed App Extensions */,
+				4763B82C1CB6A3A50050B017 /* bangumi WatchKit 1 Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,30 +144,27 @@
 		4751E6351921F231004143D3 /* UITabBarStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarStar@2x.png"; sourceTree = "<group>"; };
 		4751E6381921F521004143D3 /* UITabBarList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarList.png; sourceTree = "<group>"; };
 		4751E6391921F521004143D3 /* UITabBarList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarList@2x.png"; sourceTree = "<group>"; };
+		4763B82A1CB6A3860050B017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "bangumi WatchKit 1 App/Base.lproj/Interface1.storyboard"; sourceTree = SOURCE_ROOT; };
+		4763B82D1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ICONAssetWKOS1.xcassets; path = "bangumi WatchKit 1 Extension/ICONAssetWKOS1.xcassets"; sourceTree = SOURCE_ROOT; };
 		477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		478B3B861902A2A1006C6E67 /* BGMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMDetailViewController.h; sourceTree = "<group>"; };
 		478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMDetailViewController.m; sourceTree = "<group>"; };
 		478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "bangumi WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		478CEC0C1B7A2C9500BB2442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		478CEC141B7A2C9600BB2442 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bangumi WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		478CEC1E1B7A2C9600BB2442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		478CEC201B7A2C9600BB2442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		478CEC221B7A2C9600BB2442 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		478CEC311B80C43900BB2442 /* BGMWKCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGMWKCell.h; path = "../bangumi WatchKit Extension/BGMWKCell.h"; sourceTree = "<group>"; };
 		478CEC321B80C43900BB2442 /* BGMWKCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGMWKCell.m; path = "../bangumi WatchKit Extension/BGMWKCell.m"; sourceTree = "<group>"; };
 		478CEC3E1B80F05B00BB2442 /* bangumi WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "bangumi WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		479E40CA1CB16FCB001AA6EA /* bangumi WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "bangumi WatchKit App.entitlements"; sourceTree = "<group>"; };
-		479E418C1CB6841E001AA6EA /* 番组计划+ WatchKit 1 Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "番组计划+ WatchKit 1 Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		479E418C1CB6841E001AA6EA /* bangumi WatchKit 1 Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "bangumi WatchKit 1 Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		479E418F1CB6841F001AA6EA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		479E41961CB6841F001AA6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		479E41981CB6841F001AA6EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		479E419B1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "番组计划+ WatchKit 1 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		479E41A11CB6841F001AA6EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface1.storyboard; sourceTree = "<group>"; };
-		479E41A31CB6841F001AA6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		479E41A51CB6841F001AA6EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		479E41AF1CB68462001AA6EA /* 番组计划+ WatchKit 1 Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "番组计划+ WatchKit 1 Extension.entitlements"; sourceTree = "<group>"; };
-		479E41B01CB6846C001AA6EA /* 番组计划+ WatchKit 1 App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "番组计划+ WatchKit 1 App.entitlements"; sourceTree = "<group>"; };
+		479E41981CB6841F001AA6EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "bangumi WatchKit 1 Extension/Info.plist"; sourceTree = "<group>"; };
+		479E419B1CB6841F001AA6EA /* bangumi WatchKit 1 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bangumi WatchKit 1 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		479E41A51CB6841F001AA6EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "bangumi WatchKit 1 App/Info.plist"; sourceTree = "<group>"; };
+		479E41AF1CB68462001AA6EA /* bangumi WatchKit 1 Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bangumi WatchKit 1 Extension.entitlements"; path = "bangumi WatchKit 1 Extension/bangumi WatchKit 1 Extension.entitlements"; sourceTree = "<group>"; };
+		479E41B01CB6846C001AA6EA /* bangumi WatchKit 1 App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "bangumi WatchKit 1 App.entitlements"; sourceTree = "<group>"; };
 		479E41B11CB68C99001AA6EA /* DaliyListWKController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaliyListWKController.h; path = "bangumi WatchKit Extension/DaliyListWKController.h"; sourceTree = SOURCE_ROOT; };
 		479E41B21CB68C99001AA6EA /* DaliyListWKController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaliyListWKController.m; path = "bangumi WatchKit Extension/DaliyListWKController.m"; sourceTree = SOURCE_ROOT; };
 		479E41B31CB68C99001AA6EA /* DetailWKInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWKInterfaceController.h; path = "bangumi WatchKit Extension/DetailWKInterfaceController.h"; sourceTree = SOURCE_ROOT; };
@@ -179,15 +173,16 @@
 		479E41B61CB68C99001AA6EA /* MainListInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainListInterfaceController.m; path = "bangumi WatchKit Extension/MainListInterfaceController.m"; sourceTree = SOURCE_ROOT; };
 		479E41B71CB68C99001AA6EA /* NotLoginInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotLoginInterfaceController.h; path = "bangumi WatchKit Extension/NotLoginInterfaceController.h"; sourceTree = SOURCE_ROOT; };
 		479E41B81CB68C99001AA6EA /* NotLoginInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotLoginInterfaceController.m; path = "bangumi WatchKit Extension/NotLoginInterfaceController.m"; sourceTree = SOURCE_ROOT; };
-		479E41BD1CB68CAF001AA6EA /* DaliyListWKController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaliyListWKController1.h; path = "番组计划+ WatchKit 1 Extension/DaliyListWKController1.h"; sourceTree = SOURCE_ROOT; };
-		479E41BE1CB68CAF001AA6EA /* DaliyListWKController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaliyListWKController1.m; path = "番组计划+ WatchKit 1 Extension/DaliyListWKController1.m"; sourceTree = SOURCE_ROOT; };
-		479E41BF1CB68CAF001AA6EA /* DetailWKInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWKInterfaceController1.h; path = "番组计划+ WatchKit 1 Extension/DetailWKInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
-		479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailWKInterfaceController1.m; path = "番组计划+ WatchKit 1 Extension/DetailWKInterfaceController1.m"; sourceTree = SOURCE_ROOT; };
-		479E41C11CB68CAF001AA6EA /* MainListInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainListInterfaceController1.h; path = "番组计划+ WatchKit 1 Extension/MainListInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
-		479E41C21CB68CAF001AA6EA /* MainListInterfaceController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainListInterfaceController1.m; path = "番组计划+ WatchKit 1 Extension/MainListInterfaceController1.m"; sourceTree = SOURCE_ROOT; };
-		479E41C31CB68CAF001AA6EA /* NotLoginInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotLoginInterfaceController1.h; path = "番组计划+ WatchKit 1 Extension/NotLoginInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
-		479E41C41CB68CAF001AA6EA /* NotLoginInterfaceController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotLoginInterfaceController1.m; path = "番组计划+ WatchKit 1 Extension/NotLoginInterfaceController1.m"; sourceTree = SOURCE_ROOT; };
+		479E41BD1CB68CAF001AA6EA /* DaliyListWKController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaliyListWKController1.h; path = "bangumi WatchKit 1 Extension/DaliyListWKController1.h"; sourceTree = SOURCE_ROOT; };
+		479E41BE1CB68CAF001AA6EA /* DaliyListWKController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaliyListWKController1.m; path = "bangumi WatchKit 1 Extension/DaliyListWKController1.m"; sourceTree = SOURCE_ROOT; };
+		479E41BF1CB68CAF001AA6EA /* DetailWKInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWKInterfaceController1.h; path = "bangumi WatchKit 1 Extension/DetailWKInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
+		479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWKInterfaceController1.h; path = "bangumi WatchKit 1 Extension/DetailWKInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
+		479E41C11CB68CAF001AA6EA /* MainListInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainListInterfaceController1.h; path = "bangumi WatchKit 1 Extension/MainListInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
+		479E41C21CB68CAF001AA6EA /* MainListInterfaceController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainListInterfaceController1.m; path = "bangumi WatchKit 1 Extension/MainListInterfaceController1.m"; sourceTree = SOURCE_ROOT; };
+		479E41C31CB68CAF001AA6EA /* NotLoginInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotLoginInterfaceController1.h; path = "bangumi WatchKit 1 Extension/NotLoginInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
+		479E41C41CB68CAF001AA6EA /* NotLoginInterfaceController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotLoginInterfaceController1.m; path = "bangumi WatchKit 1 Extension/NotLoginInterfaceController1.m"; sourceTree = SOURCE_ROOT; };
 		479E41CF1CB69CD3001AA6EA /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		479E41D11CB6A127001AA6EA /* bangumi WatchKit 1 App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "bangumi WatchKit 1 App.entitlements"; sourceTree = SOURCE_ROOT; };
 		47A5DC54190940340086A14B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		47A5DC55190940340086A14B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		47A5DC57190AA7F10086A14B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -264,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				478CEC3E1B80F05B00BB2442 /* bangumi WatchKit Extension.entitlements */,
-				478CEC141B7A2C9600BB2442 /* Images.xcassets */,
 				478CEC0B1B7A2C9500BB2442 /* Supporting Files */,
 			);
 			path = "bangumi WatchKit Extension";
@@ -293,7 +287,6 @@
 				478CEC311B80C43900BB2442 /* BGMWKCell.h */,
 				478CEC321B80C43900BB2442 /* BGMWKCell.m */,
 				478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */,
-				478CEC221B7A2C9600BB2442 /* Images.xcassets */,
 				478CEC1D1B7A2C9600BB2442 /* Supporting Files */,
 			);
 			path = "bangumi WatchKit App";
@@ -307,14 +300,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		479E418D1CB6841F001AA6EA /* 番组计划+ WatchKit 1 Extension */ = {
+		479E418D1CB6841F001AA6EA /* bangumi WatchKit 1 Extension */ = {
 			isa = PBXGroup;
 			children = (
-				479E41AF1CB68462001AA6EA /* 番组计划+ WatchKit 1 Extension.entitlements */,
-				479E41961CB6841F001AA6EA /* Assets.xcassets */,
+				479E41AF1CB68462001AA6EA /* bangumi WatchKit 1 Extension.entitlements */,
 				479E41981CB6841F001AA6EA /* Info.plist */,
 				479E418E1CB6841F001AA6EA /* Supporting Files */,
 			);
+			name = "bangumi WatchKit 1 Extension";
 			path = "番组计划+ WatchKit 1 Extension";
 			sourceTree = "<group>";
 		};
@@ -326,22 +319,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		479E419F1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App */ = {
+		479E419F1CB6841F001AA6EA /* bangumi WatchKit 1 App */ = {
 			isa = PBXGroup;
 			children = (
-				479E41B01CB6846C001AA6EA /* 番组计划+ WatchKit 1 App.entitlements */,
+				479E41D11CB6A127001AA6EA /* bangumi WatchKit 1 App.entitlements */,
+				479E41B01CB6846C001AA6EA /* bangumi WatchKit 1 App.entitlements */,
 				479E41C11CB68CAF001AA6EA /* MainListInterfaceController1.h */,
 				479E41C21CB68CAF001AA6EA /* MainListInterfaceController1.m */,
 				479E41BD1CB68CAF001AA6EA /* DaliyListWKController1.h */,
 				479E41BE1CB68CAF001AA6EA /* DaliyListWKController1.m */,
 				479E41BF1CB68CAF001AA6EA /* DetailWKInterfaceController1.h */,
-				479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.m */,
+				479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.h */,
 				479E41C31CB68CAF001AA6EA /* NotLoginInterfaceController1.h */,
 				479E41C41CB68CAF001AA6EA /* NotLoginInterfaceController1.m */,
-				479E41A01CB6841F001AA6EA /* Interface1.storyboard */,
-				479E41A31CB6841F001AA6EA /* Assets.xcassets */,
+				4763B8291CB6A3860050B017 /* Interface1.storyboard */,
 				479E41A51CB6841F001AA6EA /* Info.plist */,
+				4763B82D1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets */,
 			);
+			name = "bangumi WatchKit 1 App";
 			path = "番组计划+ WatchKit 1 App";
 			sourceTree = "<group>";
 		};
@@ -353,8 +348,8 @@
 				47E2717A1900043300304DED /* bangumiTests */,
 				478CEC0A1B7A2C9500BB2442 /* bangumi WatchKit Extension */,
 				478CEC1C1B7A2C9600BB2442 /* bangumi WatchKit App */,
-				479E418D1CB6841F001AA6EA /* 番组计划+ WatchKit 1 Extension */,
-				479E419F1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App */,
+				479E418D1CB6841F001AA6EA /* bangumi WatchKit 1 Extension */,
+				479E419F1CB6841F001AA6EA /* bangumi WatchKit 1 App */,
 				47E271511900043300304DED /* Frameworks */,
 				47E271501900043300304DED /* Products */,
 			);
@@ -366,8 +361,8 @@
 				47E2714F1900043300304DED /* bangumi.app */,
 				478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */,
 				478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */,
-				479E418C1CB6841E001AA6EA /* 番组计划+ WatchKit 1 Extension.appex */,
-				479E419B1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App.app */,
+				479E418C1CB6841E001AA6EA /* bangumi WatchKit 1 Extension.appex */,
+				479E419B1CB6841F001AA6EA /* bangumi WatchKit 1 App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -501,9 +496,9 @@
 			productReference = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		479E418B1CB6841E001AA6EA /* 番组计划+ WatchKit 1 Extension */ = {
+		479E418B1CB6841E001AA6EA /* bangumi WatchKit 1 Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 479E41AC1CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "番组计划+ WatchKit 1 Extension" */;
+			buildConfigurationList = 479E41AC1CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "bangumi WatchKit 1 Extension" */;
 			buildPhases = (
 				479E41881CB6841E001AA6EA /* Sources */,
 				479E41891CB6841E001AA6EA /* Frameworks */,
@@ -514,14 +509,14 @@
 			dependencies = (
 				479E419E1CB6841F001AA6EA /* PBXTargetDependency */,
 			);
-			name = "番组计划+ WatchKit 1 Extension";
+			name = "bangumi WatchKit 1 Extension";
 			productName = "番组计划+ WatchKit 1 Extension";
-			productReference = 479E418C1CB6841E001AA6EA /* 番组计划+ WatchKit 1 Extension.appex */;
+			productReference = 479E418C1CB6841E001AA6EA /* bangumi WatchKit 1 Extension.appex */;
 			productType = "com.apple.product-type.watchkit-extension";
 		};
-		479E419A1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App */ = {
+		479E419A1CB6841F001AA6EA /* bangumi WatchKit 1 App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 479E41A91CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "番组计划+ WatchKit 1 App" */;
+			buildConfigurationList = 479E41A91CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "bangumi WatchKit 1 App" */;
 			buildPhases = (
 				479E41991CB6841F001AA6EA /* Resources */,
 			);
@@ -529,9 +524,9 @@
 			);
 			dependencies = (
 			);
-			name = "番组计划+ WatchKit 1 App";
+			name = "bangumi WatchKit 1 App";
 			productName = "番组计划+ WatchKit 1 App";
-			productReference = 479E419B1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App.app */;
+			productReference = 479E419B1CB6841F001AA6EA /* bangumi WatchKit 1 App.app */;
 			productType = "com.apple.product-type.application.watchapp";
 		};
 		47E2714E1900043300304DED /* bangumi */ = {
@@ -633,8 +628,8 @@
 				47E2714E1900043300304DED /* bangumi */,
 				478CEC081B7A2C9500BB2442 /* bangumi WatchKit Extension */,
 				478CEC171B7A2C9600BB2442 /* bangumi WatchKit App */,
-				479E418B1CB6841E001AA6EA /* 番组计划+ WatchKit 1 Extension */,
-				479E419A1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App */,
+				479E418B1CB6841E001AA6EA /* bangumi WatchKit 1 Extension */,
+				479E419A1CB6841F001AA6EA /* bangumi WatchKit 1 App */,
 			);
 		};
 /* End PBXProject section */
@@ -646,7 +641,6 @@
 			files = (
 				479E41841CB17E18001AA6EA /* Images.xcassets in Resources */,
 				478CEC341B80CB4800BB2442 /* Interface.storyboard in Resources */,
-				478CEC151B7A2C9600BB2442 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,7 +650,6 @@
 			files = (
 				479E41851CB17E18001AA6EA /* Images.xcassets in Resources */,
 				478CEC211B7A2C9600BB2442 /* Interface.storyboard in Resources */,
-				478CEC231B7A2C9600BB2442 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,8 +657,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				479E419C1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App.app in Resources */,
-				479E41971CB6841F001AA6EA /* Assets.xcassets in Resources */,
+				479E419C1CB6841F001AA6EA /* bangumi WatchKit 1 App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,8 +665,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				479E41A41CB6841F001AA6EA /* Assets.xcassets in Resources */,
-				479E41A21CB6841F001AA6EA /* Interface1.storyboard in Resources */,
+				4763B82B1CB6A3860050B017 /* Interface1.storyboard in Resources */,
+				4763B82E1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,7 +710,7 @@
 				479E41CD1CB68D76001AA6EA /* BGMAPI.m in Sources */,
 				479E41C71CB68CAF001AA6EA /* MainListInterfaceController1.m in Sources */,
 				479E41C81CB68CAF001AA6EA /* NotLoginInterfaceController1.m in Sources */,
-				479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.m in Sources */,
+				479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.h in Sources */,
 				479E41C51CB68CAF001AA6EA /* DaliyListWKController1.m in Sources */,
 				479E41CE1CB68D7D001AA6EA /* HTMLEntityDecode.m in Sources */,
 			);
@@ -763,31 +755,31 @@
 		};
 		479E419E1CB6841F001AA6EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 479E419A1CB6841F001AA6EA /* 番组计划+ WatchKit 1 App */;
+			target = 479E419A1CB6841F001AA6EA /* bangumi WatchKit 1 App */;
 			targetProxy = 479E419D1CB6841F001AA6EA /* PBXContainerItemProxy */;
 		};
 		479E41A71CB6841F001AA6EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 479E418B1CB6841E001AA6EA /* 番组计划+ WatchKit 1 Extension */;
+			target = 479E418B1CB6841E001AA6EA /* bangumi WatchKit 1 Extension */;
 			targetProxy = 479E41A61CB6841F001AA6EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4763B8291CB6A3860050B017 /* Interface1.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4763B82A1CB6A3860050B017 /* Base */,
+			);
+			name = Interface1.storyboard;
+			sourceTree = "<group>";
+		};
 		478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				478CEC201B7A2C9600BB2442 /* Base */,
 			);
 			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-		479E41A01CB6841F001AA6EA /* Interface1.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				479E41A11CB6841F001AA6EA /* Base */,
-			);
-			name = Interface1.storyboard;
 			sourceTree = "<group>";
 		};
 		47E2717D1900043300304DED /* InfoPlist.strings */ = {
@@ -815,8 +807,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit App/bangumi WatchKit App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -844,8 +836,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit App/bangumi WatchKit App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -868,9 +860,9 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit Extension/bangumi WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -879,7 +871,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "bangumi WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -889,7 +881,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
@@ -898,15 +890,15 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit Extension/bangumi WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "bangumi WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp.watchkitextension;
@@ -915,7 +907,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -925,15 +917,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "番组计划+ WatchKit 1 App/番组计划+ WatchKit 1 App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
+				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit 1 App.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = "______WatchKit_1_Extension";
-				INFOPLIST_FILE = "番组计划+ WatchKit 1 App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				INFOPLIST_FILE = "bangumi WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -950,16 +942,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "番组计划+ WatchKit 1 App/番组计划+ WatchKit 1 App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit 1 App.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = "______WatchKit_1_Extension";
-				INFOPLIST_FILE = "番组计划+ WatchKit 1 App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				INFOPLIST_FILE = "bangumi WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -975,14 +967,14 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "番组计划+ WatchKit 1 Extension/番组计划+ WatchKit 1 Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huang Xingkai (ZSK3Q7V672)";
+				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit 1 Extension/bangumi WatchKit 1 Extension.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "番组计划+ WatchKit 1 Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				INFOPLIST_FILE = "bangumi WatchKit 1 Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitextension;
@@ -997,15 +989,15 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "番组计划+ WatchKit 1 Extension/番组计划+ WatchKit 1 Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_ENTITLEMENTS = "bangumi WatchKit 1 Extension/bangumi WatchKit 1 Extension.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "番组计划+ WatchKit 1 Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				INFOPLIST_FILE = "bangumi WatchKit 1 Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitextension;
@@ -1031,8 +1023,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1073,8 +1065,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Huang Xingkai (HR66SGQEZ4)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1108,12 +1100,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bangumi/bangumi-Prefix.pch";
 				INFOPLIST_FILE = "bangumi/bangumi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "989832ed-d67c-4f59-914c-9f367a9dc2e6";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -1126,8 +1118,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = bangumi/bangumi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/bi119aTe5hXk/Downloads,
@@ -1136,12 +1128,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bangumi/bangumi-Prefix.pch";
 				INFOPLIST_FILE = "bangumi/bangumi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "abe40d90-10b9-4245-9195-7dcd85a4b42d";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -1169,21 +1161,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		479E41A91CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "番组计划+ WatchKit 1 App" */ = {
+		479E41A91CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "bangumi WatchKit 1 App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				479E41AA1CB6841F001AA6EA /* Debug */,
 				479E41AB1CB6841F001AA6EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		479E41AC1CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "番组计划+ WatchKit 1 Extension" */ = {
+		479E41AC1CB6841F001AA6EA /* Build configuration list for PBXNativeTarget "bangumi WatchKit 1 Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				479E41AD1CB6841F001AA6EA /* Debug */,
 				479E41AE1CB6841F001AA6EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47E2714A1900043300304DED /* Build configuration list for PBXProject "bangumi" */ = {
 			isa = XCConfigurationList;
