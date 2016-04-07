@@ -26,7 +26,21 @@
     [self.title_org setText:[HTMLEntityDecode htmlEntityDecode:[[context valueForKey:@"subject"] valueForKey:@"name"]]];
     [self.title_cn setText:[HTMLEntityDecode htmlEntityDecode:[[context valueForKey:@"subject"] valueForKey:@"name_cn"]]];
     NSString *iconurl = [[[context valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
-    [self.imageview setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]]];
+    //[self.imageview setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]]];
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session             = [NSURLSession sessionWithConfiguration:config];
+    
+    NSURLSessionDownloadTask *imageDownloadTask = [session downloadTaskWithURL:[NSURL URLWithString:iconurl] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        //NSLog(@"download complate : %@", imageName);
+        UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.imageview setImage:downloadedImage];
+        });
+    }];
+    [imageDownloadTask resume];
+    
+    
     
     NSInteger ep_status = [[context valueForKey:@"ep_status"] integerValue];//已看
     NSInteger eps = [[[context valueForKey:@"subject"] valueForKey:@"eps"] integerValue];//总共

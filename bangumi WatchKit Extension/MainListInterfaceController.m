@@ -31,12 +31,16 @@
     }
     
     [defaults synchronize];
+    [self checkauth];
 }
 
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    
+    
     
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];
@@ -48,7 +52,10 @@
     
     [userdefaults synchronize];
     
+    [self checkauth];
     
+}
+-(void)checkauth{
     auth = [userdefaults stringForKey:@"auth"];
     //NSLog(@"watchauth2:%@",auth);
     if ([auth length] <= 0) {
@@ -62,6 +69,7 @@
         [bgmapi getWatchingListWithUID:userid];
         
     }
+    
 }
 
 - (void)didDeactivate {
@@ -85,7 +93,19 @@
         NSString *imageURL = [[[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"grid"];
         BGMWKCell* row = [self.tableview rowControllerAtIndex:i];
         [row.wk_title setText:itemText];
-        [row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+        //[row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+        
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session             = [NSURLSession sessionWithConfiguration:config];
+        
+        NSURLSessionDownloadTask *imageDownloadTask = [session downloadTaskWithURL:[NSURL URLWithString:imageURL] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+            //NSLog(@"download complate : %@", imageName);
+            UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [row.wk_icon setImage:downloadedImage];
+            });
+        }];
+        [imageDownloadTask resume];
     }
     
 }

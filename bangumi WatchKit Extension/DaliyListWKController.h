@@ -14,6 +14,8 @@
 @interface DaliyListWKController : WKInterfaceController<BGMAPIDelegate>{
     NSArray *daylist;
     BGMAPI *api;
+    
+    NSDictionary   *_imageNameDict;
 }
 @property (nonatomic, strong) IBOutlet WKInterfaceTable *tableview;
 

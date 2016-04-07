@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Daliy ListWK Controller-->
+        <!--DaliyListWKController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="DaliyListWKController">
+                <controller identifier="DaliyListWKController" id="AgC-eL-Hgc" customClass="DaliyListWKController">
                     <items>
                         <group width="1" alignment="left" id="tls-xb-f4K">
                             <items>
@@ -53,7 +53,7 @@
         <!--番组详细-->
         <scene sceneID="EEr-OP-vdL">
             <objects>
-                <controller title="番组详细" id="XeQ-A9-BRW" customClass="DetailWKInterfaceController">
+                <controller identifier="DetailWKInterfaceController" title="番组详细" id="XeQ-A9-BRW" customClass="DetailWKInterfaceController">
                     <items>
                         <button width="1" alignment="left" title="返回" id="wZ9-Qf-w5p">
                             <connections>
@@ -104,7 +104,7 @@
         <!--我的追番列表-->
         <scene sceneID="ROT-CJ-GUd">
             <objects>
-                <controller title="我的追番列表" id="cui-ud-jnF" customClass="MainListInterfaceController">
+                <controller identifier="MainListInterfaceController" title="我的追番列表" id="cui-ud-jnF" customClass="MainListInterfaceController">
                     <items>
                         <table alignment="left" id="BYZ-mh-meb">
                             <items>

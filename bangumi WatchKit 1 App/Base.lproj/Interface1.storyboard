@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Daliy ListWK Controller1-->
+        <!--DaliyListWKController1-->
         <scene sceneID="y2z-cy-mie">
             <objects>
-                <controller id="RmQ-54-wPe" customClass="DaliyListWKController1">
+                <controller identifier="DaliyListWKController1" id="RmQ-54-wPe" customClass="DaliyListWKController1">
                     <items>
                         <group width="1" alignment="left" id="TEe-dX-H3t">
                             <items>
@@ -53,7 +53,7 @@
         <!--番组详细-->
         <scene sceneID="uuh-de-SNF">
             <objects>
-                <controller title="番组详细" id="4Mf-G7-yrh" customClass="DetailWKInterfaceController1">
+                <controller identifier="DetailWKInterfaceController1" title="番组详细" id="4Mf-G7-yrh" customClass="DetailWKInterfaceController1">
                     <items>
                         <button width="1" alignment="left" title="返回" id="cJE-uv-kzD">
                             <connections>
@@ -104,7 +104,7 @@
         <!--我的追番列表-->
         <scene sceneID="cOz-28-xL3">
             <objects>
-                <controller title="我的追番列表" id="Erc-VX-z9Q" customClass="MainListInterfaceController1">
+                <controller identifier="MainListInterfaceController1" title="我的追番列表" id="Erc-VX-z9Q" customClass="MainListInterfaceController1">
                     <items>
                         <table alignment="left" id="T2R-Gl-3ti">
                             <items>
@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="153" y="201"/>
         </scene>
-        <!--NotLoginInterfaceController-->
+        <!--NotLoginInterfaceController1-->
         <scene sceneID="lD7-ae-IEr">
             <objects>
-                <controller identifier="NotLoginInterfaceController" id="mdv-Xj-V5U" customClass="NotLoginInterfaceController1">
+                <controller identifier="NotLoginInterfaceController1" id="mdv-Xj-V5U" customClass="NotLoginInterfaceController1">
                     <items>
                         <label height="67" alignment="left" text="只有在登录后才能同步查看追番进度哦" textAlignment="center" numberOfLines="2" id="m8c-zm-2c5">
                             <color key="textColor" red="0.37850475989999999" green="1" blue="0.42396958400000001" alpha="1" colorSpace="calibratedRGB"/>
