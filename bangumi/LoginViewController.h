@@ -8,18 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "TabbarViewController.h"
-@interface LoginViewController : UIViewController<BGMAPIDelegate,UITextFieldDelegate>{
+#import <WatchConnectivity/WatchConnectivity.h>
+@interface LoginViewController : UIViewController<BGMAPIDelegate,UITextFieldDelegate,WCSessionDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSString *auth;
     NSString *auth_urlencoded;
     NSString *userid;
     NSString *request_type;
+    
+    
+    
 }
 @property (nonatomic, strong) IBOutlet UITextField *usernamefield;
 @property (nonatomic, strong) IBOutlet UITextField *passwordfield;
 
 @property (nonatomic, strong) IBOutlet TabbarViewController *tabbarview;
+
+
 
 -(IBAction)loginbtnpressd:(id)sender;
 -(IBAction)registerbtnpressed:(id)sender;

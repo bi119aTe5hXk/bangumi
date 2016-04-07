@@ -41,12 +41,30 @@
     }
     
     if ([auth length] > 0) {
+        [self pushSettingsToWatchApp];
         self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
         [self.navigationController presentViewController:self.tabbarview animated:NO completion:nil];
         
     }
     
 }
+- (void)pushSettingsToWatchApp
+{
+    if ([WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        
+        
+        [[WCSession defaultSession] updateApplicationContext:[[[NSUserDefaults alloc] initWithSuiteName:groupName] dictionaryRepresentation] error:nil];
+    }
+    
+
+}
+
+
+
+
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];

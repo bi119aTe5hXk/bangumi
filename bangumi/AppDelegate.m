@@ -27,6 +27,7 @@
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"auth",nil]];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"auth_urlencoded",nil]];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"userid",nil]];
+    [userdefaults synchronize];
     return YES;
 }
 							

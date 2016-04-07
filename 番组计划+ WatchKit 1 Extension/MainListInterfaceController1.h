@@ -8,12 +8,11 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
-#import <WatchConnectivity/WatchConnectivity.h>
 #import "BGMWKCell.h"
 #import "BGMAPI.h"
 #import "HTMLEntityDecode.h"
-#import "DetailWKInterfaceController.h"
-@interface MainListInterfaceController : WKInterfaceController<BGMAPIDelegate,WCSessionDelegate>{
+#import "DetailWKInterfaceController1.h"
+@interface MainListInterfaceController1 : WKInterfaceController<BGMAPIDelegate>{
     BGMAPI *bgmapi;
     NSArray *bgmlist;
     NSUserDefaults *userdefaults;

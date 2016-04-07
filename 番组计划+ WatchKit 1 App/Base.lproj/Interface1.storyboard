@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Erc-VX-z9Q">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Daliy ListWK Controller1-->
+        <scene sceneID="y2z-cy-mie">
+            <objects>
+                <controller id="RmQ-54-wPe" customClass="DaliyListWKController1">
+                    <items>
+                        <group width="1" alignment="left" id="TEe-dX-H3t">
+                            <items>
+                                <label width="61" height="22" alignment="left" text="今日放送" textAlignment="left" id="Y9K-PZ-Zcn">
+                                    <color key="textColor" red="1" green="0.29218034720000002" blue="0.31028376860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <dateLabel width="68" height="21" alignment="left" textAlignment="right" format="M/d (EEE)" id="lEK-WJ-2P9">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                    <date key="previewedDate" timeIntervalSinceReferenceDate="461524140">
+                                        <!--2015-08-17 17:09:00 +0000-->
+                                    </date>
+                                </dateLabel>
+                            </items>
+                        </group>
+                        <table alignment="left" id="wdx-Ft-wJS">
+                            <items>
+                                <tableRow selectable="NO" id="spg-ZO-B7B" customClass="BGMWKCell">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="yNY-it-FHb">
+                                        <items>
+                                            <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="Puj-eT-7Ym"/>
+                                            <label height="39" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="5Gq-Fs-VMU">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="wk_icon" destination="Puj-eT-7Ym" id="aEf-ma-l6i"/>
+                                        <outlet property="wk_title" destination="5Gq-Fs-VMU" id="d59-Z4-fjm"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableview" destination="wdx-Ft-wJS" id="7Sq-Ol-nhY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="551" y="-267"/>
+        </scene>
+        <!--番组详细-->
+        <scene sceneID="uuh-de-SNF">
+            <objects>
+                <controller title="番组详细" id="4Mf-G7-yrh" customClass="DetailWKInterfaceController1">
+                    <items>
+                        <button width="1" alignment="left" title="返回" id="cJE-uv-kzD">
+                            <connections>
+                                <action selector="backbtn:" destination="4Mf-G7-yrh" id="Bf3-eh-mh3"/>
+                            </connections>
+                        </button>
+                        <group width="1" height="396" alignment="left" layout="vertical" id="3ZO-sK-8tN">
+                            <items>
+                                <imageView width="1" height="137" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="m5Q-zV-XO2"/>
+                                <label width="1" height="52" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="tr0-eP-beO">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="1" height="43" alignment="left" text="title_cn" textAlignment="center" numberOfLines="3" id="hPH-l7-8oc">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                                <label height="20" alignment="left" text="目前进度" id="m1M-Bo-bi8">
+                                    <color key="textColor" red="1" green="0.29218034720000002" blue="0.31028376860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="1" height="22" alignment="left" text="??/??" textAlignment="center" id="PF9-mo-KyY"/>
+                                <button width="1" height="44" alignment="left" title="标记ep.???为看过" id="B5n-eZ-Nhz">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.4039215686" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                    <connections>
+                                        <action selector="watchedbtn:" destination="4Mf-G7-yrh" id="HQy-c9-ZLc"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="返回" id="TFl-dR-qfk">
+                                    <connections>
+                                        <action selector="backbtn:" destination="4Mf-G7-yrh" id="jpk-qh-zZD"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="imageview" destination="m5Q-zV-XO2" id="o1U-jC-gem"/>
+                        <outlet property="progresslabel" destination="PF9-mo-KyY" id="bAG-R4-4Bv"/>
+                        <outlet property="title_cn" destination="hPH-l7-8oc" id="0RL-gr-HRF"/>
+                        <outlet property="title_org" destination="tr0-eP-beO" id="PC8-Bm-4tJ"/>
+                        <outlet property="watchedbtn" destination="B5n-eZ-Nhz" id="Lld-ic-lLs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="612" y="196.75"/>
+        </scene>
+        <!--我的追番列表-->
+        <scene sceneID="cOz-28-xL3">
+            <objects>
+                <controller title="我的追番列表" id="Erc-VX-z9Q" customClass="MainListInterfaceController1">
+                    <items>
+                        <table alignment="left" id="T2R-Gl-3ti">
+                            <items>
+                                <tableRow id="1HM-Om-9hc" customClass="BGMWKCell">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="pog-C8-BCY">
+                                        <items>
+                                            <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="8vz-sV-WyP"/>
+                                            <label height="40" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="6Y0-9Y-PLX">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="wk_icon" destination="8vz-sV-WyP" id="AIb-XZ-Br0"/>
+                                        <outlet property="wk_title" destination="6Y0-9Y-PLX" id="bMM-CR-Ybc"/>
+                                        <segue destination="4Mf-G7-yrh" kind="modal" id="lfZ-Zk-7D6"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableview" destination="T2R-Gl-3ti" id="L3n-0A-B5b"/>
+                        <segue destination="RmQ-54-wPe" kind="relationship" relationship="nextPage" id="aAV-Ss-xsq"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="153" y="201"/>
+        </scene>
+        <!--NotLoginInterfaceController-->
+        <scene sceneID="lD7-ae-IEr">
+            <objects>
+                <controller identifier="NotLoginInterfaceController" id="mdv-Xj-V5U" customClass="NotLoginInterfaceController1">
+                    <items>
+                        <label height="67" alignment="left" text="只有在登录后才能同步查看追番进度哦" textAlignment="center" numberOfLines="2" id="m8c-zm-2c5">
+                            <color key="textColor" red="0.37850475989999999" green="1" blue="0.42396958400000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button width="1" alignment="left" title="每日放送" id="myq-kc-M8c">
+                            <connections>
+                                <segue destination="RmQ-54-wPe" kind="modal" id="fwR-a9-XZp"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="167" y="-267"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aAV-Ss-xsq"/>
+    </inferredMetricsTieBreakers>
+</document>

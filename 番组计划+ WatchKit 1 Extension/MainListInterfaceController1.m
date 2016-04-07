@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 HT&L. All rights reserved.
 //
 
-#import "MainListInterfaceController.h"
+#import "MainListInterfaceController1.h"
 
-@interface MainListInterfaceController ()
+@interface MainListInterfaceController1 ()
 
 @end
 
-@implementation MainListInterfaceController
+@implementation MainListInterfaceController1
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
@@ -20,29 +20,10 @@
     // Configure interface objects here.
 }
 
-
--(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext {
-    NSLog(@"New Session Context: %@", applicationContext);
-    
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
-    
-    for (NSString *key in applicationContext.allKeys) {
-        [defaults setObject:[applicationContext objectForKey:key] forKey:key];
-    }
-    
-    [defaults synchronize];
-}
-
-
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     
-    if ([WCSession isSupported]) {
-        WCSession *session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-    }
     
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     
@@ -50,13 +31,12 @@
     
     
     auth = [userdefaults stringForKey:@"auth"];
-    //NSLog(@"watchauth2:%@",auth);
-    if ([auth length] <= 0) {
+    //NSLog(@"watchauth1:%@",auth);
+    if ([auth length] == 0) {
         
-        [self presentControllerWithName:@"NotLoginInterfaceController" context:NULL];
+        [self presentControllerWithName:@"NotLoginInterfaceController1" context:NULL];
     }else{
         //start to load list
-        
         bgmapi = [[BGMAPI alloc] initWithdelegate:self];
         NSString *userid = [userdefaults stringForKey:@"userid"];
         [bgmapi getWatchingListWithUID:userid];
