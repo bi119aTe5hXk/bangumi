@@ -21,16 +21,12 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-<<<<<<< HEAD:bangumi WatchKit 1 Extension/Info.plist
-	<string>201604080158</string>
+	<string>201604080211</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-=======
-	<string>201604072308</string>
->>>>>>> aa0ddf6b958694696b906c69aa41b2df8ff196cf:bangumi WatchKit 1 Extension/Info.plist
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
