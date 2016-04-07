@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "479E416C1CB17D52001AA6EA"
-               BuildableName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App.app"
-               BlueprintName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App"
+               BlueprintIdentifier = "479E419A1CB6841F001AA6EA"
+               BuildableName = "bangumi WatchKit 1 App.app"
+               BlueprintName = "bangumi WatchKit 1 App"
                ReferencedContainer = "container:bangumi.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "479E415D1CB17D51001AA6EA"
-               BuildableName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 Extension.appex"
-               BlueprintName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 Extension"
+               BlueprintIdentifier = "479E418B1CB6841E001AA6EA"
+               BuildableName = "bangumi WatchKit 1 Extension.appex"
+               BlueprintName = "bangumi WatchKit 1 Extension"
                ReferencedContainer = "container:bangumi.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -74,9 +74,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "479E416C1CB17D52001AA6EA"
-            BuildableName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App.app"
-            BlueprintName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App"
+            BlueprintIdentifier = "479E419A1CB6841F001AA6EA"
+            BuildableName = "bangumi WatchKit 1 App.app"
+            BlueprintName = "bangumi WatchKit 1 App"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,18 +99,18 @@
          RemotePath = "/&#x756a;&#x7ec4;&#x8ba1;&#x5212;+">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "479E416C1CB17D52001AA6EA"
-            BuildableName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App.app"
-            BlueprintName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App"
+            BlueprintIdentifier = "479E419A1CB6841F001AA6EA"
+            BuildableName = "bangumi WatchKit 1 App.app"
+            BlueprintName = "bangumi WatchKit 1 App"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "479E416C1CB17D52001AA6EA"
-            BuildableName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App.app"
-            BlueprintName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App"
+            BlueprintIdentifier = "479E419A1CB6841F001AA6EA"
+            BuildableName = "bangumi WatchKit 1 App.app"
+            BlueprintName = "bangumi WatchKit 1 App"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -129,18 +129,18 @@
          RemotePath = "/&#x756a;&#x7ec4;&#x8ba1;&#x5212;+">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "479E416C1CB17D52001AA6EA"
-            BuildableName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App.app"
-            BlueprintName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App"
+            BlueprintIdentifier = "479E419A1CB6841F001AA6EA"
+            BuildableName = "bangumi WatchKit 1 App.app"
+            BlueprintName = "bangumi WatchKit 1 App"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "479E416C1CB17D52001AA6EA"
-            BuildableName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App.app"
-            BlueprintName = "&#x756a;&#x7ec4;&#x8ba1;&#x5212;+ WatchKit 1 App"
+            BlueprintIdentifier = "479E419A1CB6841F001AA6EA"
+            BuildableName = "bangumi WatchKit 1 App.app"
+            BlueprintName = "bangumi WatchKit 1 App"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
