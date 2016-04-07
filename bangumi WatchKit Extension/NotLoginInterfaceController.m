@@ -32,6 +32,20 @@
     [super didDeactivate];
 }
 
+-(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext {
+    NSLog(@"New Session Context: %@", applicationContext);
+    
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
+    
+    for (NSString *key in applicationContext.allKeys) {
+        [defaults setObject:[applicationContext objectForKey:key] forKey:key];
+    }
+    
+    [defaults synchronize];
+    
+    [self dismissController];
+}
+
 @end
 
 
