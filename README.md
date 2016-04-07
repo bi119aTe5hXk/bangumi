@@ -6,8 +6,8 @@
 * 无跟踪
 * 无强制评分
 * 无捆绑销售
-* 支持AppleWatch
-* 支持iPad分屏
+* 支持AppleWatch OS1 和 2
+* 支持iPad和分屏
 
 [了解更多](http://chii.in/group/topic/32239)
 
