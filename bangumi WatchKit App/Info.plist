@@ -21,7 +21,11 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
 	<string>201604080158</string>
+=======
+	<string>201604072308</string>
+>>>>>>> aa0ddf6b958694696b906c69aa41b2df8ff196cf
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
