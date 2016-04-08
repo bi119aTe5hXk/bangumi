@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 HT&L. All rights reserved.
 //
 
-#import "RakuenViewController.h"
+#import "WebViewController.h"
 
-@interface RakuenViewController ()
+@interface WebViewController ()
 
 @end
 
-@implementation RakuenViewController
+@implementation WebViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,12 +25,19 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [self saveCookie];
 }
+-(IBAction)closeWebView:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:^{
+        NULL;
+    }];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"超展开 Mobile";
+    //self.title = @"超展开 Mobile";
+    self.title = self.titlestr;
+    self.navitem.title = self.titlestr;
     //UINavigationItem *items = [[UINavigationItem alloc] initWithTitle:@""];
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc]
                                       initWithBarButtonSystemItem:UIBarButtonSystemItemRewind
@@ -55,7 +62,7 @@
 //                                                               nil]];
 //    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
     
-    NSURL *url = [NSURL URLWithString:rakuenURL];
+    NSURL *url = [NSURL URLWithString:self.urlstr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
 
     //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];

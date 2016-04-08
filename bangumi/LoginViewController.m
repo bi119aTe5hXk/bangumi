@@ -42,8 +42,8 @@
     
     if ([auth length] > 0) {
         [self pushSettingsToWatchApp];
-        self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
-        [self.navigationController presentViewController:self.tabbarview animated:NO completion:nil];
+        self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
+        [self.navigationController presentViewController:self.splitview animated:NO completion:nil];
         
     }
     
@@ -79,8 +79,11 @@
     // Dispose of any resources that can be recreated.
 }
 -(IBAction)registerbtnpressed:(id)sender{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://bgm.tv/signup"]];
-    
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://bgm.tv/signup"]];
+    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webview.urlstr = @"https://bgm.tv/signup";
+    webview.titlestr = @"注册 bangumi";
+    [self.navigationController presentViewController:webview animated:YES completion:nil];
     
 }
 -(IBAction)loginbtnpressd:(id)sender{
@@ -111,8 +114,8 @@
             [userdefaults setObject:auth_urlencoded forKey:@"auth_urlencoded"];
             [userdefaults synchronize];
             dispatch_async(dispatch_get_main_queue(),^{
-                self.tabbarview = [self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
-                [self.navigationController presentViewController:self.tabbarview animated:YES completion:nil];
+                self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
+                [self.navigationController presentViewController:self.splitview animated:YES completion:nil];
             });
             
             

@@ -251,11 +251,33 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 96;
 }
-
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger row = [indexPath row];
+    NSArray *arr = [bgmlist objectAtIndex:row];
+    NSInteger ep_status = [[arr valueForKey:@"ep_status"] integerValue];//已看
+    return @[
+             
+             [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
+                                                title:[NSString stringWithFormat:@"标记 ep.%ld 看过",(long)ep_status+1]
+                                              handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+                                                  // own action
+                                                  //[tableView setEditing:NO animated:YES];
+                                                  [self updateStateWithIndex:indexPath];
+                                                  
+                                              }],
+             ];
+}
 -(void)updatebtnpressd:(id)sender{
     
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    
+    
+    [self updateStateWithIndex:indexPath];
+}
+-(void)updateStateWithIndex:(NSIndexPath *)indexPath{
+    
     if (indexPath != nil)
     {
         //NSLog(@"indexpath?:%ld",indexPath.row);
@@ -273,6 +295,7 @@
         [updatealert show];
         
     }
+
 }
 
 -(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{

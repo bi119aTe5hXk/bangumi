@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TabbarViewController.h"
+#import "SplitViewController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
+#import "WebViewController.h"
 @interface LoginViewController : UIViewController<BGMAPIDelegate,UITextFieldDelegate,WCSessionDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
@@ -23,7 +24,7 @@
 @property (nonatomic, strong) IBOutlet UITextField *usernamefield;
 @property (nonatomic, strong) IBOutlet UITextField *passwordfield;
 
-@property (nonatomic, strong) IBOutlet TabbarViewController *tabbarview;
+@property (nonatomic, strong) IBOutlet SplitViewController *splitview;
 
 
 

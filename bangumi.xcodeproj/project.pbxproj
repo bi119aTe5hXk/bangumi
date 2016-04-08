@@ -10,7 +10,7 @@
 		470FFA9619307306001CF488 /* ProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 470FFA9519307306001CF488 /* ProgressCell.m */; };
 		4751E628191F648E004143D3 /* ProgressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E627191F648E004143D3 /* ProgressListViewController.m */; };
 		4751E630191F84DA004143D3 /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
-		4751E633191F9209004143D3 /* RakuenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E632191F9209004143D3 /* RakuenViewController.m */; };
+		4751E633191F9209004143D3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E632191F9209004143D3 /* WebViewController.m */; };
 		4751E6361921F231004143D3 /* UITabBarStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6341921F231004143D3 /* UITabBarStar.png */; };
 		4751E6371921F231004143D3 /* UITabBarStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6351921F231004143D3 /* UITabBarStar@2x.png */; };
 		4751E63A1921F521004143D3 /* UITabBarList.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6381921F521004143D3 /* UITabBarList.png */; };
@@ -18,6 +18,7 @@
 		4763B82B1CB6A3860050B017 /* Interface1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4763B8291CB6A3860050B017 /* Interface1.storyboard */; };
 		4763B82C1CB6A3A50050B017 /* bangumi WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 479E418C1CB6841E001AA6EA /* bangumi WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4763B82E1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4763B82D1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets */; };
+		4763B8571CB7D2780050B017 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4763B8561CB7D2780050B017 /* SplitViewController.m */; };
 		477E91F61CA1801B00C9E6C9 /* bangumi WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */; };
 		477E91FD1CA1867F00C9E6C9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */; };
@@ -138,14 +139,16 @@
 		4751E627191F648E004143D3 /* ProgressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressListViewController.m; sourceTree = "<group>"; };
 		4751E62E191F84DA004143D3 /* HTMLEntityDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLEntityDecode.h; sourceTree = "<group>"; };
 		4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLEntityDecode.m; sourceTree = "<group>"; };
-		4751E631191F9209004143D3 /* RakuenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RakuenViewController.h; sourceTree = "<group>"; };
-		4751E632191F9209004143D3 /* RakuenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RakuenViewController.m; sourceTree = "<group>"; };
+		4751E631191F9209004143D3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		4751E632191F9209004143D3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		4751E6341921F231004143D3 /* UITabBarStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarStar.png; sourceTree = "<group>"; };
 		4751E6351921F231004143D3 /* UITabBarStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarStar@2x.png"; sourceTree = "<group>"; };
 		4751E6381921F521004143D3 /* UITabBarList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarList.png; sourceTree = "<group>"; };
 		4751E6391921F521004143D3 /* UITabBarList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarList@2x.png"; sourceTree = "<group>"; };
 		4763B82A1CB6A3860050B017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "bangumi WatchKit 1 App/Base.lproj/Interface1.storyboard"; sourceTree = SOURCE_ROOT; };
 		4763B82D1CB6A44B0050B017 /* ICONAssetWKOS1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ICONAssetWKOS1.xcassets; path = "bangumi WatchKit 1 Extension/ICONAssetWKOS1.xcassets"; sourceTree = SOURCE_ROOT; };
+		4763B8551CB7D2780050B017 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
+		4763B8561CB7D2780050B017 /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
 		477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		478B3B861902A2A1006C6E67 /* BGMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMDetailViewController.h; sourceTree = "<group>"; };
 		478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMDetailViewController.m; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				47E271621900043300304DED /* AppDelegate.m */,
 				47E2719A19014ECE00304DED /* LoginViewController.h */,
 				47E2719B19014ECE00304DED /* LoginViewController.m */,
+				4763B8551CB7D2780050B017 /* SplitViewController.h */,
+				4763B8561CB7D2780050B017 /* SplitViewController.m */,
 				47E271B2190166C400304DED /* TabbarViewController.h */,
 				47E271B3190166C400304DED /* TabbarViewController.m */,
 				47E271A019015D9300304DED /* WatchingListViewController.h */,
@@ -412,8 +417,8 @@
 				470FFA9519307306001CF488 /* ProgressCell.m */,
 				47E271AF1901666800304DED /* SettingsViewController.h */,
 				47E271B01901666800304DED /* SettingsViewController.m */,
-				4751E631191F9209004143D3 /* RakuenViewController.h */,
-				4751E632191F9209004143D3 /* RakuenViewController.m */,
+				4751E631191F9209004143D3 /* WebViewController.h */,
+				4751E632191F9209004143D3 /* WebViewController.m */,
 				47E2719119001AE000304DED /* Main.storyboard */,
 				477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */,
 				47E2716D1900043300304DED /* Images.xcassets */,
@@ -726,7 +731,8 @@
 				47A923FE1916723600B3D10A /* SearchViewController.m in Sources */,
 				47E271A219015D9300304DED /* WatchingListViewController.m in Sources */,
 				47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */,
-				4751E633191F9209004143D3 /* RakuenViewController.m in Sources */,
+				4751E633191F9209004143D3 /* WebViewController.m in Sources */,
+				4763B8571CB7D2780050B017 /* SplitViewController.m in Sources */,
 				47E2718D190009E100304DED /* BGMAPI.m in Sources */,
 				47E271631900043300304DED /* AppDelegate.m in Sources */,
 				47E271B4190166C400304DED /* TabbarViewController.m in Sources */,
