@@ -23,19 +23,27 @@
     return self;
 }
 
+-(void)startGetSubjectInfoWithID:(NSString *)bgmid{
+    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
+    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
+    if ((unsigned long)bgmid.length != 0) {
+        self.bgmidstr = bgmid;
+        [bgmapi getSubjectInfoWithSubID:bgmid];
+        request_type = @"BGMDetail";
+        //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [self.progressmanabtn setHidden:YES];
+        [self.statusmanabtn setHidden:YES];
+    }
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     
-    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
-    bgmapi = [[BGMAPI alloc] initWithdelegate:self];
-    [bgmapi getSubjectInfoWithSubID:self.bgmid];
-    request_type = @"BGMDetail";
-    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.progressmanabtn setHidden:YES];
-    [self.statusmanabtn setHidden:YES];
+    [self startGetSubjectInfoWithID:self.bgmidstr];
+    
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -157,7 +165,7 @@
 
 -(IBAction)PorgressViewBTN:(id)sender{
     ProgressListViewController *progressview = [self.storyboard instantiateViewControllerWithIdentifier:@"ProgressListViewController"];
-    progressview.subid = self.bgmid;
+    progressview.subid = self.bgmidstr;
     progressview.progresslist = progresslist;
     [self.navigationController pushViewController:progressview animated:YES];
 }
@@ -175,19 +183,19 @@
         if (buttonIndex >0) {
             if (buttonIndex == 1) {
                 //想看
-                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"wish"];
+                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"wish"];
             }else if (buttonIndex == 2){
                 //在看
-                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"do"];
+                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"do"];
             }else if (buttonIndex == 3){
                 //看过
-                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"collect"];
+                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"collect"];
             }else if (buttonIndex == 4){
                 //搁置
-                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"on_hold"];
+                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"on_hold"];
             }else if (buttonIndex == 5){
                 //抛弃
-                [bgmapi setCollectionWithColID:self.bgmid WithRating:0 WithStatus:@"dropped"];
+                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"dropped"];
             }
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             request_type = @"updateStatus";

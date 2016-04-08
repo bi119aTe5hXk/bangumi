@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    UINavigationController *navigationController = [self.splitViewController.viewControllers lastObject];
+    navigationController.topViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    self.splitViewController.delegate = self;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +40,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+//    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[BGMDetailViewController class]] ) {
+//        // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+//        return YES;
+//    } else {
+//        return NO;
+//    }
+    return YES;
+}
 
 @end

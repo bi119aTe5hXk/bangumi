@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WatchingListViewController.h"
+#import "TabbarViewController.h"
+#import "SearchViewController.h"
+#import "DaliyListViewController.h"
+#import "BGMDetailViewController.h"
 
-@interface SplitViewController : UISplitViewController
+@interface SplitViewController : UISplitViewController<UISplitViewControllerDelegate>
 
 @end

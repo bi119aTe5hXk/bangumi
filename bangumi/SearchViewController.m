@@ -155,12 +155,26 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    BGMDetailViewController *detailview = [self.storyboard instantiateViewControllerWithIdentifier:@"BGMDetailViewController"];
+//    detailview.bgmidstr = [[[resultlist valueForKey:@"list"] objectAtIndex:indexPath.row] valueForKey:@"id"];
+//    [self.navigationController pushViewController:detailview animated:YES];
+//}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    BGMDetailViewController *detailview = [self.storyboard instantiateViewControllerWithIdentifier:@"BGMDetailViewController"];
-    detailview.bgmid = [[[resultlist valueForKey:@"list"] objectAtIndex:indexPath.row] valueForKey:@"id"];
-    [self.navigationController pushViewController:detailview animated:YES];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    BGMDetailViewController *detailview = (BGMDetailViewController *)[[segue destinationViewController] topViewController] ;
+    NSString *bgmid = [[[[resultlist valueForKey:@"list"] objectAtIndex:indexPath.row] valueForKey:@"id"] stringValue];
+    [detailview startGetSubjectInfoWithID:bgmid];
+    detailview.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    detailview.navigationItem.leftItemsSupplementBackButton = YES;
+    
+    
 }
+
+
 
 #pragma mark Search Bar Delegate
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{

@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -95,11 +95,12 @@
     if ([request_type isEqualToString:@"updateProgress"]) {
         dispatch_async(dispatch_get_main_queue(),^{
             if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录，要去看看讨论串吗？"
                                                                 message:[list valueForKey:@"error"]
-                                                               delegate:nil
+                                                               delegate:self
                                                       cancelButtonTitle:@"了解"
-                                                      otherButtonTitles:nil, nil];
+                                                      otherButtonTitles:@"去看看", nil];
+                alert.tag = 3;
                 [alert show];
                 [self loadList];
             }else{
@@ -130,9 +131,10 @@
                 }
             }
             
-            NSString *epid = [[newlist objectAtIndex:ep_countindex] valueForKey:@"id"];
-            //NSLog(@"epidd:%@",epid);
-            [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
+            NSString *epid1 = [[[newlist objectAtIndex:ep_countindex] valueForKey:@"id"] stringValue];
+            disscussurl = [NSString stringWithFormat:@"http://bgm.tv/m/topic/ep/%@",epid1];
+            //NSLog(@"epidd:%@",epid1);
+            [bgmapi setProgressWithEPID:epid1 WithStatus:@"watched"];
             
             request_type = @"updateProgress";
             dispatch_async(dispatch_get_main_queue(),^{
@@ -310,6 +312,17 @@
                 
             }
         }
+    }else if (actionSheet.tag == 3){
+        if (buttonIndex >0) {
+            if (buttonIndex == 1) {
+                //webview
+                
+                WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+                webview.urlstr = disscussurl;
+                webview.titlestr = @"条目讨论版";
+                [self.navigationController presentViewController:webview animated:YES completion:nil];
+            }
+        }
     }
     
     
@@ -326,17 +339,13 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = [self.tableView indexPathsForSelectedRows][0];
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    BGMDetailViewController *detailview = [segue destinationViewController];
-    //NSLog(@"id:%@",[[[bgmlist objectAtIndex:indexPath.row] valueForKey:@"subject"] valueForKey:@"id"]);
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    BGMDetailViewController *detailview = (BGMDetailViewController *)[[segue destinationViewController] topViewController] ;
+    NSString *bgmid = [[[[bgmlist objectAtIndex:indexPath.row] valueForKey:@"subject"] valueForKey:@"id"] stringValue];
+    [detailview startGetSubjectInfoWithID:bgmid];
+    detailview.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    detailview.navigationItem.leftItemsSupplementBackButton = YES;
     
-    detailview.bgmid = [[[bgmlist objectAtIndex:indexPath.row] valueForKey:@"subject"] valueForKey:@"id"];
-    detailview.bgmsummary.text = @"";
-    detailview.titlelabel.text = @"";
-    detailview.titlelabel_cn.text = @"";
-    [detailview.progressmanabtn setHidden:YES];
 }
 
 

@@ -16,7 +16,7 @@
     NSArray *progresslist;
 }
 
-@property (nonatomic, strong) NSString *bgmid;
+@property (nonatomic, strong) NSString *bgmidstr;
 
 //@property (nonatomic, strong) IBOutlet UIScrollView *scrollview;
 
@@ -28,7 +28,7 @@
 
 @property (nonatomic, strong) IBOutlet UITextView *bgmsummary;
 
-
+-(void)startGetSubjectInfoWithID:(NSString *)bgmid;
 -(IBAction)PorgressViewBTN:(id)sender;
 -(IBAction)BGMStatuesBTN:(id)sender;
 

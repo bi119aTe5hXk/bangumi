@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 HT&L. All rights reserved.
 //
 
-#define debugmode NO
+#define debugmode YES
 
 #define BaseLoginURL @"https://%@:%@@api.bgm.tv/auth"
 #define PostLoginURL @"https://api.bgm.tv/auth"

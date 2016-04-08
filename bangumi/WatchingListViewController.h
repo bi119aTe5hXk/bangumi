@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BGMCell.h"
 #import "BGMDetailViewController.h"
+#import "WebViewController.h"
 @interface WatchingListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UIAlertViewDelegate>{
     NSUserDefaults *userdefault;
     BGMAPI *bgmapi;
@@ -16,6 +17,8 @@
     NSArray *bgmlist;
     NSInteger ep_count;
     NSString *epid;
+    
+    NSString *disscussurl;
 }
 
 
