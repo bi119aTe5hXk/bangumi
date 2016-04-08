@@ -22,7 +22,14 @@
     }
     return self;
 }
-
+- (void)setDetailItem:(id)newDetailItem {
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        // Update the view.
+        //[self configureView];
+    }
+}
 -(void)startGetSubjectInfoWithID:(NSString *)bgmid{
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];

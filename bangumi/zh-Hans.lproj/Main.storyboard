@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c0g-T8-Y24">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LDn-D6-Hqx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,25 +7,10 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="Sbp-Y5-S1w">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="c0g-T8-Y24" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5bp-d4-oZv">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="kKC-iY-qY7" kind="relationship" relationship="rootViewController" id="zKt-t9-miF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BpE-KN-a8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1113.75" y="-654.92957746478874"/>
-        </scene>
         <!--Bangumi+-->
         <scene sceneID="KjD-8A-Xwv">
             <objects>
-                <viewController id="kKC-iY-qY7" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kKC-iY-qY7" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VQx-4B-1J4"/>
                         <viewControllerLayoutGuide type="bottom" id="0zZ-eC-v7q"/>
@@ -54,8 +39,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkG-SM-24p">
                                 <rect key="frame" x="437" y="190" width="143" height="63"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="jEV-SN-ObX"/>
-                                    <constraint firstAttribute="width" constant="143" id="pSU-sA-0Pi"/>
+                                    <constraint firstAttribute="width" constant="143" id="PHP-yK-9X2"/>
+                                    <constraint firstAttribute="height" constant="63" id="Uss-ur-eHY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="登录"/>
@@ -66,10 +51,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpF-5R-7Gx">
                                 <rect key="frame" x="20" y="190" width="143" height="63"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="143" id="Vst-SD-5dE"/>
-                                    <constraint firstAttribute="height" constant="63" id="X6U-Ca-U8f"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="d1P-3S-nSW"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="63" id="hHL-ml-8c8"/>
+                                    <constraint firstAttribute="height" constant="63" id="Hut-bD-xun"/>
+                                    <constraint firstAttribute="width" constant="143" id="ebF-XU-oCo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="注册"/>
@@ -80,16 +63,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="3I4-ZD-otu"/>
-                            <constraint firstItem="IRN-cV-RiK" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="MNn-7b-U2c"/>
-                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="top" secondItem="VQx-4B-1J4" secondAttribute="bottom" constant="18" id="QJp-iW-u0v"/>
-                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="aKH-rd-uja"/>
-                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="cyk-Zm-2L1"/>
-                            <constraint firstItem="IRN-cV-RiK" firstAttribute="top" secondItem="Zhm-QC-Bcu" secondAttribute="bottom" constant="22" id="eMw-42-sVY"/>
-                            <constraint firstItem="IRN-cV-RiK" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="fKM-ry-gbn"/>
-                            <constraint firstItem="rkG-SM-24p" firstAttribute="top" secondItem="IRN-cV-RiK" secondAttribute="bottom" constant="26" id="gZN-1S-z2D"/>
-                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="baseline" secondItem="rkG-SM-24p" secondAttribute="baseline" id="hpz-vM-Er9"/>
-                            <constraint firstItem="rkG-SM-24p" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="txC-n8-3OA"/>
+                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="0G6-9b-PWS"/>
+                            <constraint firstItem="IRN-cV-RiK" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="6bV-Qu-h98"/>
+                            <constraint firstItem="IRN-cV-RiK" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="EF4-YQ-gss"/>
+                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="top" secondItem="VQx-4B-1J4" secondAttribute="bottom" constant="18" id="H75-rY-CY3"/>
+                            <constraint firstItem="rkG-SM-24p" firstAttribute="top" secondItem="IRN-cV-RiK" secondAttribute="bottom" constant="26" id="PDc-iV-yw2"/>
+                            <constraint firstItem="rkG-SM-24p" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="Sf8-Ga-xhG"/>
+                            <constraint firstItem="IRN-cV-RiK" firstAttribute="top" secondItem="Zhm-QC-Bcu" secondAttribute="bottom" constant="22" id="ZJF-NV-sVe"/>
+                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="eNc-s2-mGz"/>
+                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="top" secondItem="IRN-cV-RiK" secondAttribute="bottom" constant="26" id="orm-ok-zQF"/>
+                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="s5s-7y-ySF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bangumi+" id="zuM-HI-ZPE"/>
@@ -202,7 +185,7 @@
                                     <outlet property="icon" destination="cfD-og-S8b" id="kyS-VU-sT3"/>
                                     <outlet property="sublabel" destination="NjR-ou-902" id="xSL-Kx-ekM"/>
                                     <outlet property="titlelabel" destination="Ub4-w6-JZf" id="s2J-ap-hyI"/>
-                                    <segue destination="eSe-oB-TLc" kind="showDetail" identifier="showDetail1" trigger="accessoryAction" id="na1-h0-H9N"/>
+                                    <segue destination="eSe-oB-TLc" kind="showDetail" identifier="showDetail2" id="16q-Or-RqZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -341,7 +324,7 @@
                                     <outlet property="progresslabel" destination="sIS-EO-4Ck" id="hox-wq-oKp"/>
                                     <outlet property="titlelabel" destination="Voc-4a-HgY" id="MqS-sG-6VP"/>
                                     <outlet property="updatebtn" destination="Ick-mq-1Oe" id="uFG-RM-7eA"/>
-                                    <segue destination="eSe-oB-TLc" kind="showDetail" identifier="showDetail0" id="WJV-q9-QMV"/>
+                                    <segue destination="eSe-oB-TLc" kind="showDetail" identifier="showDetail1" id="Y44-sG-Vgs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -410,7 +393,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qg-te-zSa">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qg-te-zSa">
                                 <rect key="frame" x="20" y="208" width="559" height="335"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -661,7 +644,7 @@
                                     <outlet property="icon" destination="FDw-WV-7gQ" id="SVz-yG-dtT"/>
                                     <outlet property="sublabel" destination="eTe-Gn-Kzw" id="i6D-r8-gds"/>
                                     <outlet property="titlelabel" destination="3pH-qK-je4" id="vPf-7r-74M"/>
-                                    <segue destination="eSe-oB-TLc" kind="showDetail" identifier="showDetail2" trigger="accessoryAction" id="Mya-ld-Cmg"/>
+                                    <segue destination="eSe-oB-TLc" kind="showDetail" identifier="showDetail3" id="rGe-xl-mdV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -780,6 +763,22 @@
             </objects>
             <point key="canvasLocation" x="2578" y="913"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ehx-Zq-m7V">
+            <objects>
+                <navigationController id="LDn-D6-Hqx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Erv-AU-A23">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kKC-iY-qY7" kind="relationship" relationship="rootViewController" id="cqv-fX-B6N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pom-zp-jFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1035" y="-655"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="9nt-NJ-Npl">
             <objects>
@@ -853,6 +852,6 @@
         <image name="UITabBarStar.png" width="28" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WJV-q9-QMV"/>
+        <segue reference="Y44-sG-Vgs"/>
     </inferredMetricsTieBreakers>
 </document>

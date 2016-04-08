@@ -157,9 +157,12 @@
 */
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    BGMDetailViewController *detailview = [self.storyboard instantiateViewControllerWithIdentifier:@"BGMDetailViewController"];
-//    detailview.bgmidstr = [[[resultlist valueForKey:@"list"] objectAtIndex:indexPath.row] valueForKey:@"id"];
-//    [self.navigationController pushViewController:detailview animated:YES];
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] != UIUserInterfaceIdiomPad) {
+//        BGMDetailViewController *detailview = [self.storyboard instantiateViewControllerWithIdentifier:@"BGMDetailViewController"];
+//        detailview.bgmidstr = [[[resultlist valueForKey:@"list"] objectAtIndex:indexPath.row] valueForKey:@"id"];
+//        [self.navigationController pushViewController:detailview animated:YES];
+//    }
+//    
 //}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -170,8 +173,6 @@
     [detailview startGetSubjectInfoWithID:bgmid];
     detailview.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     detailview.navigationItem.leftItemsSupplementBackButton = YES;
-    
-    
 }
 
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WebViewController.h"
+#import "LoginViewController.h"
 @interface SettingsViewController : UITableViewController<BGMAPIDelegate>{
     NSUserDefaults *userdefault;
     BGMAPI *bgmapi;

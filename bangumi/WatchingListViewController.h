@@ -20,6 +20,6 @@
     
     NSString *disscussurl;
 }
-
+@property (strong, nonatomic) BGMDetailViewController *detailviewcontroller;
 
 @end

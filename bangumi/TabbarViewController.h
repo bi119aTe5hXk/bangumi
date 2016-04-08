@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TabbarViewController : UITabBarController
+#import "BGMDetailViewController.h"
+@interface TabbarViewController : UITabBarController<UISplitViewControllerDelegate>
 
 @end

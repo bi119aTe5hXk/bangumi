@@ -15,7 +15,7 @@
     
     NSArray *progresslist;
 }
-
+@property (strong, nonatomic) id detailItem;
 @property (nonatomic, strong) NSString *bgmidstr;
 
 //@property (nonatomic, strong) IBOutlet UIScrollView *scrollview;

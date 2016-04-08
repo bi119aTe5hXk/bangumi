@@ -331,7 +331,16 @@
 
 
 
-
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] != UIUserInterfaceIdiomPad) {
+//        BGMDetailViewController *detailview = [self.storyboard instantiateViewControllerWithIdentifier:@"BGMDetailViewController"];
+//        detailview.bgmidstr = [[[[bgmlist objectAtIndex:indexPath.row] valueForKey:@"subject"] valueForKey:@"id"] stringValue];
+//        //detailview.bgmidstr = [[[resultlist valueForKey:@"list"] objectAtIndex:indexPath.row] valueForKey:@"id"];
+//        [self.navigationController pushViewController:detailview animated:YES];
+//    }
+//    
+//}
 
 
 #pragma mark - Navigation
@@ -339,12 +348,15 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"[segue identifier]:%@",[segue identifier]);
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     BGMDetailViewController *detailview = (BGMDetailViewController *)[[segue destinationViewController] topViewController] ;
+    
     NSString *bgmid = [[[[bgmlist objectAtIndex:indexPath.row] valueForKey:@"subject"] valueForKey:@"id"] stringValue];
     [detailview startGetSubjectInfoWithID:bgmid];
     detailview.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     detailview.navigationItem.leftItemsSupplementBackButton = YES;
+    
     
 }
 
