@@ -103,7 +103,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSHTTPCookie *cookie;
     NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     for (cookie in [cookieJar cookies]) {
@@ -116,13 +116,13 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [self saveCookie];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
     [self saveCookie];
 }
 /*

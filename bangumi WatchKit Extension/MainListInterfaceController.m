@@ -90,22 +90,30 @@
     NSInteger rowCount = self.tableview.numberOfRows;
     for (NSInteger i = 0; i < rowCount; i++) {
         NSString *itemText = [HTMLEntityDecode htmlEntityDecode:[[list objectAtIndex:i] valueForKey:@"name"]];
-        NSString *imageURL = [[[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"grid"];
+        
         BGMWKCell* row = [self.tableview rowControllerAtIndex:i];
         [row.wk_title setText:itemText];
-        //[row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
         
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        NSURLSession *session             = [NSURLSession sessionWithConfiguration:config];
         
-        NSURLSessionDownloadTask *imageDownloadTask = [session downloadTaskWithURL:[NSURL URLWithString:imageURL] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-            //NSLog(@"download complate : %@", imageName);
-            UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [row.wk_icon setImage:downloadedImage];
-            });
-        }];
-        [imageDownloadTask resume];
+        
+        if ([[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"]  != [NSNull null]) {
+            NSString *imageURL = [[[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"grid"];
+            
+            //[row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+            
+            NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+            NSURLSession *session             = [NSURLSession sessionWithConfiguration:config];
+            
+            NSURLSessionDownloadTask *imageDownloadTask = [session downloadTaskWithURL:[NSURL URLWithString:imageURL] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+                //NSLog(@"download complate : %@", imageName);
+                UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [row.wk_icon setImage:downloadedImage];
+                });
+            }];
+            [imageDownloadTask resume];
+        }
+        
     }
     
 }

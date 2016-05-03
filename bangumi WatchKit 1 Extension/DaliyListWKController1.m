@@ -74,11 +74,16 @@
     NSInteger rowCount = self.tableview.numberOfRows;
     
     for (NSInteger i = 0; i < rowCount; i++) {
-    NSString *itemText = [HTMLEntityDecode htmlEntityDecode:[[daylist objectAtIndex:i] valueForKey:@"name"]];
-    NSString *imageURL = [[[daylist objectAtIndex:i] valueForKey:@"images"] valueForKey:@"grid"];
-    BGMWKCell* row = [self.tableview rowControllerAtIndex:i];
-    [row.wk_title setText:itemText];
-    [row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+        NSString *itemText = [HTMLEntityDecode htmlEntityDecode:[[daylist objectAtIndex:i] valueForKey:@"name"]];
+        
+        BGMWKCell* row = [self.tableview rowControllerAtIndex:i];
+        [row.wk_title setText:itemText];
+        
+        if ([[daylist objectAtIndex:i] valueForKey:@"images"]  != [NSNull null]) {
+            NSString *imageURL = [[[daylist objectAtIndex:i] valueForKey:@"images"] valueForKey:@"grid"];
+            [row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+        }
+        
     }
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{

@@ -126,8 +126,7 @@
         NSString *val = [post_data objectForKey:key];
         if ([body length])
             [body appendString:@"&"];
-        [body appendFormat:@"%@=%@", [[key description] urlEncodedUTF8String
-                                      ],
+        [body appendFormat:@"%@=%@", [[key description] urlEncodedUTF8String],
          [[val description] urlEncodedUTF8String]];
     }
     

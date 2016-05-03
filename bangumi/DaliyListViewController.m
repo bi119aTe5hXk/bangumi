@@ -85,6 +85,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return [daylist count];
@@ -100,7 +101,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
+    NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DailyCell" forIndexPath:indexPath];
     NSUInteger row = [indexPath row];
     NSArray *arr = daylist[indexPath.section][@"items"][row];
     
@@ -110,17 +111,29 @@
     //[cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
     //[cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[arr valueForKey:@"images"] valueForKey:@"grid"]]];
-        if (imgData) {
-            UIImage *image = [UIImage imageWithData:imgData];
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.icon setImage:image];
-                });
-            }
+    
+    if ([arr valueForKey:@"images"] != [NSNull null]) {
+        NSString *imgurlstr =[[arr valueForKey:@"images"] valueForKey:@"grid"];
+        
+        //NSLog(@"imageurlstr:%@",imgurlstr);
+        if (imgurlstr.length > 0) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgurlstr]];
+                if (imgData) {
+                    UIImage *image = [UIImage imageWithData:imgData];
+                    if (image) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [cell.icon setImage:image];
+                        });
+                    }
+                }
+            });
         }
-    });
+
+    }else{
+        [cell.icon setImage:[UIImage imageNamed:@"bgm38a1024.png"]];
+    }
+    
 
     
     return cell;
@@ -195,6 +208,10 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     BGMDetailViewController *detailview = (BGMDetailViewController *)[[segue destinationViewController] topViewController] ;
     NSString *bgmid = [[daylist[indexPath.section][@"items"][indexPath.row] valueForKey:@"id"] stringValue];
+    detailview.bgmidstr = bgmid;
+    if (debugmode == YES) {
+        NSLog(@"bgmid pass:%@",bgmid);
+    }
     [detailview startGetSubjectInfoWithID:bgmid];
     detailview.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     detailview.navigationItem.leftItemsSupplementBackButton = YES;

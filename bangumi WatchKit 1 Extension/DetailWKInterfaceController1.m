@@ -25,8 +25,12 @@
     
     [self.title_org setText:[HTMLEntityDecode htmlEntityDecode:[[context valueForKey:@"subject"] valueForKey:@"name"]]];
     [self.title_cn setText:[HTMLEntityDecode htmlEntityDecode:[[context valueForKey:@"subject"] valueForKey:@"name_cn"]]];
-    NSString *iconurl = [[[context valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
-    [self.imageview setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]]];
+    
+    if ([[context valueForKey:@"subject"] valueForKey:@"images"]  != [NSNull null]) {
+        NSString *iconurl = [[[context valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
+        [self.imageview setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]]];
+    }
+    
     
     NSInteger ep_status = [[context valueForKey:@"ep_status"] integerValue];//已看
     NSInteger eps = [[[context valueForKey:@"subject"] valueForKey:@"eps"] integerValue];//总共

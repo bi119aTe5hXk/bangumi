@@ -32,7 +32,7 @@
 		479E41851CB17E18001AA6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
 		479E419C1CB6841F001AA6EA /* bangumi WatchKit 1 App.app in Resources */ = {isa = PBXBuildFile; fileRef = 479E419B1CB6841F001AA6EA /* bangumi WatchKit 1 App.app */; };
 		479E41C51CB68CAF001AA6EA /* DaliyListWKController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41BE1CB68CAF001AA6EA /* DaliyListWKController1.m */; };
-		479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.h in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.h */; };
+		479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.m */; };
 		479E41C71CB68CAF001AA6EA /* MainListInterfaceController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C21CB68CAF001AA6EA /* MainListInterfaceController1.m */; };
 		479E41C81CB68CAF001AA6EA /* NotLoginInterfaceController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41C41CB68CAF001AA6EA /* NotLoginInterfaceController1.m */; };
 		479E41C91CB68D37001AA6EA /* DaliyListWKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41B21CB68C99001AA6EA /* DaliyListWKController.m */; };
@@ -179,7 +179,7 @@
 		479E41BD1CB68CAF001AA6EA /* DaliyListWKController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaliyListWKController1.h; path = "bangumi WatchKit 1 Extension/DaliyListWKController1.h"; sourceTree = SOURCE_ROOT; };
 		479E41BE1CB68CAF001AA6EA /* DaliyListWKController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaliyListWKController1.m; path = "bangumi WatchKit 1 Extension/DaliyListWKController1.m"; sourceTree = SOURCE_ROOT; };
 		479E41BF1CB68CAF001AA6EA /* DetailWKInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWKInterfaceController1.h; path = "bangumi WatchKit 1 Extension/DetailWKInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
-		479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailWKInterfaceController1.h; path = "bangumi WatchKit 1 Extension/DetailWKInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
+		479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailWKInterfaceController1.m; path = "bangumi WatchKit 1 Extension/DetailWKInterfaceController1.m"; sourceTree = SOURCE_ROOT; };
 		479E41C11CB68CAF001AA6EA /* MainListInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainListInterfaceController1.h; path = "bangumi WatchKit 1 Extension/MainListInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
 		479E41C21CB68CAF001AA6EA /* MainListInterfaceController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainListInterfaceController1.m; path = "bangumi WatchKit 1 Extension/MainListInterfaceController1.m"; sourceTree = SOURCE_ROOT; };
 		479E41C31CB68CAF001AA6EA /* NotLoginInterfaceController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotLoginInterfaceController1.h; path = "bangumi WatchKit 1 Extension/NotLoginInterfaceController1.h"; sourceTree = SOURCE_ROOT; };
@@ -332,7 +332,7 @@
 				479E41BD1CB68CAF001AA6EA /* DaliyListWKController1.h */,
 				479E41BE1CB68CAF001AA6EA /* DaliyListWKController1.m */,
 				479E41BF1CB68CAF001AA6EA /* DetailWKInterfaceController1.h */,
-				479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.h */,
+				479E41C01CB68CAF001AA6EA /* DetailWKInterfaceController1.m */,
 				479E41C31CB68CAF001AA6EA /* NotLoginInterfaceController1.h */,
 				479E41C41CB68CAF001AA6EA /* NotLoginInterfaceController1.m */,
 				4763B8291CB6A3860050B017 /* Interface1.storyboard */,
@@ -715,7 +715,7 @@
 				479E41CD1CB68D76001AA6EA /* BGMAPI.m in Sources */,
 				479E41C71CB68CAF001AA6EA /* MainListInterfaceController1.m in Sources */,
 				479E41C81CB68CAF001AA6EA /* NotLoginInterfaceController1.m in Sources */,
-				479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.h in Sources */,
+				479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.m in Sources */,
 				479E41C51CB68CAF001AA6EA /* DaliyListWKController1.m in Sources */,
 				479E41CE1CB68D7D001AA6EA /* HTMLEntityDecode.m in Sources */,
 			);

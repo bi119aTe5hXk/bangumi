@@ -54,6 +54,7 @@
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     resultlist = list;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
@@ -77,6 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
 //    NSInteger count = [[resultlist valueForKey:@"list"] count];
@@ -106,17 +108,32 @@
         cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name"]];
         cell.sublabel.text = [HTMLEntityDecode htmlEntityDecode:[arr valueForKey:@"name_cn"]];
         //[cell.icon setImageWithURL:];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[arr valueForKey:@"images"] valueForKey:@"grid"]]];
-            if (imgData) {
-                UIImage *image = [UIImage imageWithData:imgData];
-                if (image) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [cell.icon setImage:image];
-                    });
-                }
+        
+        
+        if ([arr valueForKey:@"images"] != [NSNull null]) {
+            NSString *imgurlstr =[[arr valueForKey:@"images"] valueForKey:@"grid"];
+            
+            //NSLog(@"imageurlstr:%@",imgurlstr);
+            if (imgurlstr.length > 0) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgurlstr]];
+                    if (imgData) {
+                        UIImage *image = [UIImage imageWithData:imgData];
+                        if (image) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [cell.icon setImage:image];
+                            });
+                        }
+                    }
+                });
             }
-        });
+            
+        }else{
+            [cell.icon setImage:[UIImage imageNamed:@"bgm38a1024.png"]];
+        }
+        
+        
+        
     }
     
     return cell;

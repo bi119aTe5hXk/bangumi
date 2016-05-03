@@ -27,8 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UINavigationController *navigationController = [self.splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+//    UINavigationController *navigationController = [self.splitViewController.viewControllers lastObject];
+//    navigationController.topViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     self.splitViewController.delegate = self;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;

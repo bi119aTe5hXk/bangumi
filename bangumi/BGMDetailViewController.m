@@ -92,18 +92,22 @@
         
         
         //[self.cover setImageWithURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
-            if (imgData) {
-                UIImage *image = [UIImage imageWithData:imgData];
-                if (image) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.cover setImage:image];
-                    });
+        if ([list valueForKey:@"images"] != [NSNull null]) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
+                if (imgData) {
+                    UIImage *image = [UIImage imageWithData:imgData];
+                    if (image) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.cover setImage:image];
+                        });
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            [self.cover setImage:[UIImage imageNamed:@"bgm38a1024.png"]];
+        }
+        
 
         
 //        [self.bgmsummary setFont:[UIFont systemFontOfSize:12]];

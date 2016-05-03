@@ -62,10 +62,15 @@
     NSInteger rowCount = self.tableview.numberOfRows;
     for (NSInteger i = 0; i < rowCount; i++) {
         NSString *itemText = [HTMLEntityDecode htmlEntityDecode:[[list objectAtIndex:i] valueForKey:@"name"]];
-        NSString *imageURL = [[[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"grid"];
+        
         BGMWKCell* row = [self.tableview rowControllerAtIndex:i];
         [row.wk_title setText:itemText];
-        [row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+        
+        if ([[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"]  != [NSNull null]) {
+            NSString *imageURL = [[[[list objectAtIndex:i] valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"grid"];
+            [row.wk_icon setImageData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+        }
+        
     }
     
 }

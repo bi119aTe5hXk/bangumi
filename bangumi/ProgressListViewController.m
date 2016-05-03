@@ -57,6 +57,7 @@
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     if ([request_type  isEqualToString: @"getProgressList"]) {
         statuslist = [list valueForKey:@"eps"];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -102,6 +103,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return self.progresslist.count;

@@ -37,7 +37,9 @@
     self.refreshControl = refreshControl;
     bgmlist = [[NSArray alloc] init];
     userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
-    //[self loadList];
+    if (bgmlist.count <= 0) {
+        [self loadList];
+    }
 }
 - (void)onRefresh:(id)sender{
     [self loadList];
@@ -47,9 +49,7 @@
     [bgmapi cancelConnection];
 }
 -(void)viewDidAppear:(BOOL)animated{
-    if (bgmlist.count <= 0) {
-        [self loadList];
-    }
+    
 }
 -(void)loadList{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -228,19 +228,32 @@
     [cell.prgoressbar setProgress:percent animated:YES];
     
     
-    NSString *iconurl = [[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
-    //cell.icon setImageWithURL:[NSURL URLWithString:iconurl] placeholderImage:nil];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:iconurl]];
-        if (imgData) {
-            UIImage *image = [UIImage imageWithData:imgData];
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.icon setImage:image];
-                });
-            }
+    
+    if ([[arr valueForKey:@"subject"] valueForKey:@"images"] != [NSNull null]) {
+        NSString *imgurlstr =[[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
+        
+        //NSLog(@"imageurlstr:%@",imgurlstr);
+        if (imgurlstr.length > 0) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgurlstr]];
+                if (imgData) {
+                    UIImage *image = [UIImage imageWithData:imgData];
+                    if (image) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [cell.icon setImage:image];
+                        });
+                    }
+                }
+            });
         }
-    });
+        
+    }else{
+        [cell.icon setImage:[UIImage imageNamed:@"bgm38a1024.png"]];
+    }
+    
+    
+    
+    
     
     ep_status=0;
     eps=0;
@@ -348,11 +361,16 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"[segue identifier]:%@",[segue identifier]);
+    //NSLog(@"[segue identifier]:%@",[segue identifier]);
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     BGMDetailViewController *detailview = (BGMDetailViewController *)[[segue destinationViewController] topViewController] ;
     
     NSString *bgmid = [[[[bgmlist objectAtIndex:indexPath.row] valueForKey:@"subject"] valueForKey:@"id"] stringValue];
+    
+    if (debugmode == YES) {
+        NSLog(@"bgmid pass:%@",bgmid);
+    }
+    detailview.bgmidstr = bgmid;
     [detailview startGetSubjectInfoWithID:bgmid];
     detailview.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     detailview.navigationItem.leftItemsSupplementBackButton = YES;
