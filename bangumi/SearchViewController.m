@@ -24,11 +24,21 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.navigationItem.title  = @"搜索";
+    
+    // Info button
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(searchinfo:) forControlEvents:UIControlEventTouchUpInside];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    
+    //UIBarButtonItem *helpbtn = [[UIBarButtonItem alloc] initWithTitle:@"？" style:UIBarButtonItemStyleDone target:self action:@selector(searchinfo:)];
+    
+    //self.tabBarController.navigationItem.rightBarButtonItem = helpbtn;
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tabBarController.navigationItem.title  = @"搜索";
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -52,6 +62,7 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    self.tabBarController.navigationItem.rightBarButtonItem = nil;
     [bgmapi cancelConnection];
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
