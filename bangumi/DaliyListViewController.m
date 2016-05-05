@@ -53,6 +53,9 @@
         [self startGetDayBGMList];
     }
 }
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.navigationItem.title = @"每日番组";
+}
 
 -(void)startGetDayBGMList{
     

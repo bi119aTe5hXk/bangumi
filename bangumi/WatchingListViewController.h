@@ -19,6 +19,8 @@
     NSString *epid;
     
     NSString *disscussurl;
+    
+    
 }
 @property (strong, nonatomic) BGMDetailViewController *detailviewcontroller;
 

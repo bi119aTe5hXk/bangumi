@@ -33,13 +33,15 @@
 -(void)startGetSubjectInfoWithID:(NSString *)bgmid{
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
-    if ((unsigned long)bgmid.length != 0) {
+    if ((unsigned long)bgmid.length > 0) {
+        [bgmapi cancelConnection];
         self.bgmidstr = bgmid;
         [bgmapi getSubjectInfoWithSubID:bgmid];
         request_type = @"BGMDetail";
         //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self.progressmanabtn setHidden:YES];
         [self.statusmanabtn setHidden:YES];
+        
     }
     
 }
@@ -47,14 +49,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"番组详细";
     
-    
-    [self startGetSubjectInfoWithID:self.bgmidstr];
+    //[self startGetSubjectInfoWithID:self.bgmidstr];
     
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
+    bgmapi = nil;
 }
 -(void)viewWillAppear:(BOOL)animated{
     

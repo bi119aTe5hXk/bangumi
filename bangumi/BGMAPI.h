@@ -13,8 +13,8 @@
 - (void)api:(BGMAPI *)api readyWithList:(NSArray *)list;
 - (void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error;
 @end
-
-@interface BGMAPI : NSObject<NSURLSessionDelegate>{
+typedef void (^CompletionHandlerType)();
+@interface BGMAPI : NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate>{
     NSUserDefaults *userdefaults;
     NSString *authString;
     NSString *authURLencoded;
@@ -22,6 +22,10 @@
     NSMutableData *responseData;
     NSURLSessionDataTask *task;
 }
+
+
+
+
 -(BGMAPI *)initWithdelegate:(NSObject <BGMAPIDelegate> *)delegate;
 
 -(void)userLoginWithUserName:(NSString *)username WithPassword:(NSString *)password;
@@ -41,6 +45,8 @@
 -(void)searchWithKeyword:(NSString *)keyword startWithCount:(NSInteger)count;
 
 -(void)getNotifyCount;
+
+
 
 - (void)cancelConnection;
 @end

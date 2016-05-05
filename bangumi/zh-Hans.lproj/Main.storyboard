@@ -98,13 +98,13 @@
             </objects>
             <point key="canvasLocation" x="205" y="-2727"/>
         </scene>
-        <!--进度管理-->
+        <!--bangumi+-->
         <scene sceneID="Y1g-BM-zq3">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRK-FI-AP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="TabbarViewController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yv6-Gx-mpd" customClass="TabbarViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="进度管理" id="odQ-G8-Kr0"/>
+                    <navigationItem key="navigationItem" title="bangumi+" id="odQ-G8-Kr0"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="8yt-pX-TS6">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -233,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugg-Gc-9lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253" y="-2772"/>
+            <point key="canvasLocation" x="1157" y="-1636"/>
         </scene>
         <!--进度管理-->
         <scene sceneID="9Mz-Pi-hSy">

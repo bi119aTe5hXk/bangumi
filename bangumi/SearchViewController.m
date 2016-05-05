@@ -22,11 +22,13 @@
     }
     return self;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.navigationItem.title  = @"搜索";
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.tabBarController.navigationItem.title  = @"搜索";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,17 +57,41 @@
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    resultlist = list;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
+    
+    if ([list valueForKey:@"list"] != [NSNull null]) {
+        resultlist = list;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.tableView reloadData];
+        });
+    }else{
+        [self noresult];
+    }
+    
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
+    
+    [self noresult];
+    
 }
-
+-(void)noresult{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无结果"
+                                                        message:@"换个关键词试试？"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"好的"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
+}
 
 #pragma mark - Table view data source
 
@@ -236,7 +262,7 @@
             [self.tableView reloadData];
             
             
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
         });
         
@@ -249,7 +275,7 @@
             [bgmapi cancelConnection];
             resultlist = [[NSArray alloc] init];
             [self.tableView reloadData];
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [bgmapi searchWithKeyword:searchBar.text startWithCount:0];
         });
         

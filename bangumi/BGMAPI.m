@@ -32,6 +32,15 @@
     authString = [userdefaults stringForKey:@"auth"];
     authURLencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     self.delegate = delegate;
+    
+    
+    
+    
+    
+    
+
+    
+    
     return self;
 }
 
@@ -115,7 +124,7 @@
     
     [self cancelConnection];
     if (debugmode == YES) {
-        NSLog(@"URL: %@",url);
+        NSLog(@"POSTURL: %@",url);
     }
     
     
@@ -148,9 +157,8 @@
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 #endif
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    urlsession = [NSURLSession sessionWithConfiguration:configuration
-                                              delegate:self
-                                         delegateQueue:nil];
+    urlsession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    
     task = [urlsession dataTaskWithRequest:request];
     [task resume];
     
@@ -166,7 +174,7 @@
     
     [self cancelConnection];
     if (debugmode == YES) {
-        NSLog(@"URL: %@",url);
+        NSLog(@"GETURL: %@",url);
     }
     
 	
@@ -177,9 +185,7 @@
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 #endif
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    urlsession = [NSURLSession sessionWithConfiguration:configuration
-                                               delegate:self
-                                          delegateQueue:nil];
+    urlsession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
 	task = [urlsession dataTaskWithRequest:request];
 	[task resume];
 	return YES;
@@ -193,13 +199,16 @@
     //self.theConnection = nil;
     //self.receivedData = nil;
     [task cancel];
+    task = nil;
+    responseData = nil;
 }
 - (void)cancelRequest{
 	//[self.theConnection cancel];
     //self.theConnection = nil;
     
     [task cancel];
-    
+    task = nil;
+    responseData = nil;
 }
 
 

@@ -19,6 +19,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -26,7 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //self.title = @"进度管理";
+    //self.navigationItem.title = @"进度管理";
+    self.tabBarController.navigationItem.title  = @"进度管理";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -48,8 +51,8 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
--(void)viewDidAppear:(BOOL)animated{
-    
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.navigationItem.title  = @"进度管理";
 }
 -(void)loadList{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

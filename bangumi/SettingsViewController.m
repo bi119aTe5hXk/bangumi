@@ -37,7 +37,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     //self.creditText.text = @"WebSite/API: @Sai \nDeveloper: @bi119aTe5hXk \nIcon: @cinnamor";
-    
+    self.tabBarController.navigationItem.title = @"设置";
     
     userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];

@@ -22,11 +22,12 @@
 		477E91F61CA1801B00C9E6C9 /* bangumi WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */; };
 		477E91FD1CA1867F00C9E6C9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */; };
+		478A51831CDB1487003DF9BF /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
+		478A51841CDB1488003DF9BF /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
 		478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */; };
 		478CEC211B7A2C9600BB2442 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */; };
 		478CEC331B80C43900BB2442 /* BGMWKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CEC321B80C43900BB2442 /* BGMWKCell.m */; };
 		478CEC341B80CB4800BB2442 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478CEC1F1B7A2C9600BB2442 /* Interface.storyboard */; };
-		478CEC371B80CC5700BB2442 /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
 		478CEC421B8109E200BB2442 /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
 		479E41841CB17E18001AA6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
 		479E41851CB17E18001AA6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E2716D1900043300304DED /* Images.xcassets */; };
@@ -39,7 +40,6 @@
 		479E41CA1CB68D37001AA6EA /* DetailWKInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41B41CB68C99001AA6EA /* DetailWKInterfaceController.m */; };
 		479E41CB1CB68D37001AA6EA /* MainListInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41B61CB68C99001AA6EA /* MainListInterfaceController.m */; };
 		479E41CC1CB68D37001AA6EA /* NotLoginInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41B81CB68C99001AA6EA /* NotLoginInterfaceController.m */; };
-		479E41CD1CB68D76001AA6EA /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
 		479E41CE1CB68D7D001AA6EA /* HTMLEntityDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */; };
 		479E41D01CB69CD3001AA6EA /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479E41CF1CB69CD3001AA6EA /* WatchConnectivity.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DC55190940340086A14B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -702,9 +702,9 @@
 				478CEC331B80C43900BB2442 /* BGMWKCell.m in Sources */,
 				479E41CA1CB68D37001AA6EA /* DetailWKInterfaceController.m in Sources */,
 				479E41CC1CB68D37001AA6EA /* NotLoginInterfaceController.m in Sources */,
-				478CEC371B80CC5700BB2442 /* BGMAPI.m in Sources */,
 				479E41CB1CB68D37001AA6EA /* MainListInterfaceController.m in Sources */,
 				479E41C91CB68D37001AA6EA /* DaliyListWKController.m in Sources */,
+				478A51831CDB1487003DF9BF /* BGMAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,10 +712,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				479E41CD1CB68D76001AA6EA /* BGMAPI.m in Sources */,
 				479E41C71CB68CAF001AA6EA /* MainListInterfaceController1.m in Sources */,
 				479E41C81CB68CAF001AA6EA /* NotLoginInterfaceController1.m in Sources */,
 				479E41C61CB68CAF001AA6EA /* DetailWKInterfaceController1.m in Sources */,
+				478A51841CDB1488003DF9BF /* BGMAPI.m in Sources */,
 				479E41C51CB68CAF001AA6EA /* DaliyListWKController1.m in Sources */,
 				479E41CE1CB68D7D001AA6EA /* HTMLEntityDecode.m in Sources */,
 			);
