@@ -124,17 +124,18 @@
             
             //remove sp
             NSArray *arr = [list valueForKey:@"eps"];
-            NSArray *newlist = [NSArray array];
+            NSArray *maineplist = [NSArray array];
+            //NSArray *splist = [NSArray array];
             for (int i=0; i<[arr count]; i++) {
                 
                 if ([[[arr objectAtIndex:i] valueForKey:@"type"] isEqualToNumber:[NSNumber numberWithInt:0]]) {
-                    newlist = [newlist arrayByAddingObject:[arr objectAtIndex:i]];
+                    maineplist = [maineplist arrayByAddingObject:[arr objectAtIndex:i]];
                 }else{
-                    
+                    //splist = [splist arrayByAddingObject:[arr objectAtIndex:i]];
                 }
             }
             
-            NSString *epid1 = [[[newlist objectAtIndex:ep_countindex] valueForKey:@"id"] stringValue];
+            NSString *epid1 = [[[maineplist objectAtIndex:ep_countindex] valueForKey:@"id"] stringValue];
             disscussurl = [NSString stringWithFormat:@"http://bgm.tv/m/topic/ep/%@",epid1];
             //NSLog(@"epidd:%@",epid1);
             [bgmapi setProgressWithEPID:epid1 WithStatus:@"watched"];

@@ -10,6 +10,9 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 #import <WatchConnectivity/WatchConnectivity.h>
-@interface NotLoginInterfaceController : WKInterfaceController<WCSessionDelegate>
+@interface NotLoginInterfaceController : WKInterfaceController<WCSessionDelegate>{
+    NSUserDefaults *userdefaults;
+}
+- (IBAction)retrybtn;
 
 @end

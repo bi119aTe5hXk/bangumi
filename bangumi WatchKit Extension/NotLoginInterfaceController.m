@@ -45,7 +45,35 @@
     
     [self dismissController];
 }
-
+-(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(nullable NSError *)error{
+    NSLog(@"activationDidCompleteWithState: %ld", (long)activationState);
+    
+    
+    [self dismissController];
+}
+- (IBAction)retrybtn {
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+    
+    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
+    [userdefaults synchronize];
+    
+}
+-(void)checkauth{
+    NSString *auth = [userdefaults stringForKey:@"auth"];
+    NSLog(@"watchauth2:%@",auth);
+    if ([auth length] <= 0) {
+        
+        
+    }else{
+        
+        [self dismissController];
+    }
+    
+}
 @end
 
 

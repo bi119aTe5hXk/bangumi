@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cui-ud-jnF">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11191" systemVersion="16A304a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cui-ud-jnF">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
     </dependencies>
     <scenes>
         <!--DaliyListWKController-->
@@ -13,7 +13,7 @@
                         <group width="1" alignment="left" id="tls-xb-f4K">
                             <items>
                                 <label width="61" height="22" alignment="left" text="今日放送" textAlignment="left" id="nSk-wO-YNE">
-                                    <color key="textColor" red="1" green="0.29218034718893326" blue="0.31028376863399654" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="0.29218034718893326" blue="0.31028376863399654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
                                 <dateLabel width="68" height="21" alignment="left" textAlignment="right" format="M/d (EEE)" id="MqI-ao-pre">
@@ -70,12 +70,12 @@
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                 </label>
                                 <label height="20" alignment="left" text="目前进度" id="J63-gl-UoJ">
-                                    <color key="textColor" red="1" green="0.29218034720000002" blue="0.31028376860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="0.29218034720000002" blue="0.31028376860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
                                 <label width="1" height="22" alignment="left" text="??/??" textAlignment="center" id="5NS-ec-iy4"/>
                                 <button width="1" height="44" alignment="left" title="标记ep.???为看过" id="VRa-mi-9ON">
-                                    <color key="titleColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="14"/>
                                     <connections>
                                         <action selector="watchedbtn:" destination="XeQ-A9-BRW" id="mzM-3G-JD5"/>
@@ -140,7 +140,7 @@
                 <controller identifier="NotLoginInterfaceController" id="aRN-jh-a70" customClass="NotLoginInterfaceController">
                     <items>
                         <label height="67" alignment="left" text="只有在登录后才能同步查看追番进度哦" textAlignment="center" numberOfLines="2" id="VWY-KL-cFm">
-                            <color key="textColor" red="0.37850475991029187" green="1" blue="0.42396958402395735" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.37850475991029187" green="1" blue="0.42396958402395735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </label>
                         <button width="1" alignment="left" title="每日放送" id="KmO-mP-o8i">
                             <connections>
@@ -148,12 +148,21 @@
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="CuR-an-xSg">
+                        <items>
+                            <menuItem title="重试" icon="resume" id="q1g-wu-HzT">
+                                <connections>
+                                    <action selector="retrybtn" destination="aRN-jh-a70" id="0h1-8b-1NC"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="167" y="-267"/>
+            <point key="canvasLocation" x="167" y="-352"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ap3-UF-Caf"/>
+        <segue reference="kGe-Sl-72Y"/>
     </inferredMetricsTieBreakers>
 </document>

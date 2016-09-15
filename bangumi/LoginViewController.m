@@ -51,6 +51,7 @@
 - (void)pushSettingsToWatchApp
 {
     if ([WCSession isSupported]) {
+        NSLog(@"START PUSH SETTINGS TO WATCH");
         WCSession* session = [WCSession defaultSession];
         session.delegate = self;
         [session activateSession];

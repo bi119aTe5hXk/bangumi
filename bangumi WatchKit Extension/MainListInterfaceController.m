@@ -57,7 +57,7 @@
 }
 -(void)checkauth{
     auth = [userdefaults stringForKey:@"auth"];
-    //NSLog(@"watchauth2:%@",auth);
+    NSLog(@"watchauth2:%@",auth);
     if ([auth length] <= 0) {
         
         [self presentControllerWithName:@"NotLoginInterfaceController" context:NULL];
