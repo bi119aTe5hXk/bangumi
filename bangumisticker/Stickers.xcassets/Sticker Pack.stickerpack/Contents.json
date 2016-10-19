@@ -1,0 +1,35 @@
+{
+  "stickers" : [
+    {
+      "filename" : "bgm38.sticker"
+    },
+    {
+      "filename" : "糊一脸.sticker"
+    },
+    {
+      "filename" : "哈哈.sticker"
+    },
+    {
+      "filename" : "黑幕.sticker"
+    },
+    {
+      "filename" : "黑化.sticker"
+    },
+    {
+      "filename" : "呵呵.sticker"
+    },
+    {
+      "filename" : "羞.sticker"
+    },
+    {
+      "filename" : ">_<.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "small"
+  }
+}

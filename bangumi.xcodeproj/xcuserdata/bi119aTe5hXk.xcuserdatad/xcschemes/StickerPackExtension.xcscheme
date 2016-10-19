@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "47A65EA11D8A338E00E2CD7C"
+               BlueprintIdentifier = "475D970A1DB76D8C00C034FE"
                BuildableName = "StickerPackExtension.appex"
                BlueprintName = "StickerPackExtension"
                ReferencedContainer = "container:bangumi.xcodeproj">
@@ -29,8 +29,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "47A65E9E1D8A338E00E2CD7C"
-               BuildableName = "bangumisticker.app"
+               BlueprintIdentifier = "475D971A1DB7720300C034FE"
+               BuildableName = "bangumisticker.appex"
                BlueprintName = "bangumisticker"
                ReferencedContainer = "container:bangumi.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "47A65EA11D8A338E00E2CD7C"
+            BlueprintIdentifier = "475D970A1DB76D8C00C034FE"
             BuildableName = "StickerPackExtension.appex"
             BlueprintName = "StickerPackExtension"
             ReferencedContainer = "container:bangumi.xcodeproj">
@@ -67,16 +67,26 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.MobileSMS">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "47A65E9E1D8A338E00E2CD7C"
-            BuildableName = "bangumisticker.app"
-            BlueprintName = "bangumisticker"
+            BlueprintIdentifier = "475D970A1DB76D8C00C034FE"
+            BuildableName = "StickerPackExtension.appex"
+            BlueprintName = "StickerPackExtension"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "475D970A1DB76D8C00C034FE"
+            BuildableName = "StickerPackExtension.appex"
+            BlueprintName = "StickerPackExtension"
+            ReferencedContainer = "container:bangumi.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -91,8 +101,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "47A65E9E1D8A338E00E2CD7C"
-            BuildableName = "bangumisticker.app"
+            BlueprintIdentifier = "475D971A1DB7720300C034FE"
+            BuildableName = "bangumisticker.appex"
             BlueprintName = "bangumisticker"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
