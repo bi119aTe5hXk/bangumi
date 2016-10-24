@@ -659,8 +659,7 @@
                             <tableViewSection headerTitle="Credits" id="c23-9v-zMq">
                                 <string key="footerTitle">WebSite/API: @Saic.
 Developer: @bi119aTe5hXk.
-Icon: @cinnamor.
-Sticker: 林卯 @laoism.</string>
+Icon, Sticker: 林卯 @laoism.</string>
                                 <cells/>
                             </tableViewSection>
                         </sections>
