@@ -41,7 +41,14 @@
         //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self.progressmanabtn setHidden:YES];
         [self.statusmanabtn setHidden:YES];
-        
+        bgmid1 = bgmid;
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"出错了！"
+                                                        message:@"BGMID长度为0。"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
     }
     
 }
@@ -215,5 +222,15 @@
             request_type = @"updateStatus";
         }
     }
+}
+-(IBAction)showDetailWebBTN:(id)sender{
+    NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/subject/%@",bgmid1];
+    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webview.urlstr = disscussurl;
+    webview.titlestr = @"作品详细";
+    [self.navigationController presentViewController:webview animated:YES completion:nil];
+    
+    
+    
 }
 @end

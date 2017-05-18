@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ProgressListViewController.h"
+#import "WebViewController.h"
 @interface BGMDetailViewController : UIViewController<BGMAPIDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSString *request_type;
-    
+    NSString *bgmid1;
     NSArray *progresslist;
 }
 @property (strong, nonatomic) id detailItem;
@@ -31,5 +32,5 @@
 -(void)startGetSubjectInfoWithID:(NSString *)bgmid;
 -(IBAction)PorgressViewBTN:(id)sender;
 -(IBAction)BGMStatuesBTN:(id)sender;
-
+-(IBAction)showDetailWebBTN:(id)sender;
 @end
