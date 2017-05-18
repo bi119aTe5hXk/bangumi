@@ -1287,6 +1287,7 @@
 				475D97251DB7720400C034FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		478CEC271B7A2C9600BB2442 /* Build configuration list for PBXNativeTarget "bangumi WatchKit App" */ = {
 			isa = XCConfigurationList;
