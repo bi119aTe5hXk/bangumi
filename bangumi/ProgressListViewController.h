@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProgressCell.h"
+#import "WebViewController.h"
 @interface ProgressListViewController : UITableViewController<BGMAPIDelegate,UIAlertViewDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;

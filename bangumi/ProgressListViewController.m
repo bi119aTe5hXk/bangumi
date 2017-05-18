@@ -221,7 +221,7 @@
                                                     message:nil
                                                    delegate:self
                                           cancelButtonTitle:@"保持不变"
-                                          otherButtonTitles:@"看过",@"想看",@"抛弃",@"撤销", nil];
+                                          otherButtonTitles:@"看过",@"想看",@"抛弃",@"撤销",@"查看讨论串", nil];
     [alert setTag:233];
     [alert show];
 }
@@ -229,6 +229,8 @@
     if (actionSheet.tag == 233) {
         if (buttonIndex >0) {
             NSString *epid = [[self.progresslist objectAtIndex:selectrow] valueForKey:@"id"];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            request_type = @"updateProgress";
             if(buttonIndex == 1){
                 //看过
                 [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
@@ -242,9 +244,24 @@
                 //撤销
                 [bgmapi setProgressWithEPID:epid WithStatus:@"remove"];
             }
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            request_type = @"updateProgress";
+            else if (buttonIndex == 5){
+                //查看讨论串
+                NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/m/topic/ep/%@",epid];
+                [self showWebViewWithURL:disscussurl];
+                
+            }
+            
         }
     }
+}
+-(void)showWebViewWithURL:(NSString *)url{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webview.urlstr = url;
+    webview.titlestr = @"条目讨论版";
+    [self.navigationController presentViewController:webview animated:YES completion:nil];
+    
+    
 }
 @end
