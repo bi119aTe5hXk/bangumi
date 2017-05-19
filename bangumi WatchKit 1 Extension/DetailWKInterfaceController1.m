@@ -18,6 +18,7 @@
     [super awakeWithContext:context];
     if (context == nil) {
         [self dismissController];
+        return;
     }
     
     //NSLog(@"context:%@",context);
@@ -40,11 +41,11 @@
     if (eps <= 0) {
         [self.progresslabel setText:[NSString stringWithFormat:@"%ld/??",(long)ep_status]];
         //[cell.updatebtn setHidden:YES];
-        if (ep_status <= 12) {
-            eps = 12;
-        }else{
-            eps = 100;
-        }
+//        if (ep_status <= 12) {
+//            eps = 12;
+//        }else{
+//            eps = 100;
+//        }
     }else if (eps == ep_status){
         [self.progresslabel setText:[NSString stringWithFormat:@"%ld/%ld",(long)ep_status,(long)eps]];
         //[cell.updatebtn setHidden:YES];

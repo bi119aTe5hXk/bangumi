@@ -51,14 +51,18 @@
     ep_count = ep_status+1;
 
     [self.watchedbtn setTitle:[NSString stringWithFormat:@"标记 ep.%ld 看过",(long)ep_status+1]];
+    
     if (eps <= 0) {
-        [self.progresslabel setText:[NSString stringWithFormat:@"%ld/??",(long)ep_status]];
+        
         //[cell.updatebtn setHidden:YES];
-        if (ep_status <= 12) {
-            eps = 12;
-        }else{
-            eps = 100;
-        }
+//        if (ep_status <= 12) {
+//            eps = 12;
+//        }else{
+//            eps = 100;
+//        }
+        [self.progresslabel setText:[NSString stringWithFormat:@"%ld/??",(long)ep_status]];
+        
+        
     }else if (eps == ep_status){
         [self.progresslabel setText:[NSString stringWithFormat:@"%ld/%ld",(long)ep_status,(long)eps]];
         //[cell.updatebtn setHidden:YES];
@@ -67,7 +71,6 @@
         //[cell.updatebtn setHidden:NO];
         
     }
-    // Configure interface objects here.
 }
 
 - (void)willActivate {
