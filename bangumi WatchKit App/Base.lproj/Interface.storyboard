@@ -32,7 +32,7 @@
                                 <tableRow selectable="NO" id="xnD-9N-iED" customClass="BGMWKCell">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="5S0-8D-7oO">
                                         <items>
-                                            <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="c12-5R-bMT"/>
+                                            <imageView width="40" height="40" alignment="left" contentMode="scaleAspectFit" id="c12-5R-bMT"/>
                                             <label height="39" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="5Vc-aE-WjH">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
@@ -65,7 +65,7 @@
                         </button>
                         <group width="1" height="396" alignment="left" layout="vertical" id="AAX-sU-FrH">
                             <items>
-                                <imageView width="1" height="137" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
+                                <imageView width="1" height="137" alignment="left" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
                                 <label width="1" height="52" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
@@ -114,7 +114,7 @@
                                 <tableRow id="CQZ-yV-19F" customClass="BGMWKCell">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="hRN-hZ-bss">
                                         <items>
-                                            <imageView width="40" height="40" alignment="left" image="bgm38a1024.png" contentMode="scaleAspectFit" id="t1H-8c-6dS"/>
+                                            <imageView width="40" height="40" alignment="left" contentMode="scaleAspectFit" id="t1H-8c-6dS"/>
                                             <label height="40" alignment="left" text="Label" textAlignment="left" numberOfLines="2" id="kBe-8U-2yP">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
@@ -129,6 +129,15 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="ujD-cb-I9L">
+                        <items>
+                            <menuItem title="刷新" icon="resume" id="Wxf-HR-agV">
+                                <connections>
+                                    <action selector="updatebtn:" destination="cui-ud-jnF" id="l3p-uR-bPo"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="tableview" destination="BYZ-mh-meb" id="n13-N4-2jv"/>
                         <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="Ap3-UF-Caf"/>
@@ -166,6 +175,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kGe-Sl-72Y"/>
+        <segue reference="Ap3-UF-Caf"/>
     </inferredMetricsTieBreakers>
 </document>

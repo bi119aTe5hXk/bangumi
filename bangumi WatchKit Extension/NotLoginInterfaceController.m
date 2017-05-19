@@ -60,19 +60,18 @@
     
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     [userdefaults synchronize];
+    [self checkauth];
     
 }
 -(void)checkauth{
     NSString *auth = [userdefaults stringForKey:@"auth"];
-    NSLog(@"watchauth2:%@",auth);
+    if (debugmode == YES) {
+        NSLog(@"watchauth2:%@",auth);
+    }
     if ([auth length] <= 0) {
-        
-        
     }else{
-        
         [self dismissController];
     }
-    
 }
 @end
 

@@ -57,7 +57,10 @@
 }
 -(void)checkauth{
     auth = [userdefaults stringForKey:@"auth"];
-    NSLog(@"watchauth2:%@",auth);
+    if (debugmode == YES) {
+        NSLog(@"watchauth2:%@",auth);
+    }
+    
     if ([auth length] <= 0) {
         
         [self presentControllerWithName:@"NotLoginInterfaceController" context:NULL];
@@ -125,7 +128,9 @@
 //    NSString *bgmids = [[[bgmlist objectAtIndex:rowIndex] valueForKey:@"subject"] valueForKey:@"id"];
     return [bgmlist objectAtIndex:rowIndex];
 }
-
+-(IBAction)updatebtn:(id)sender{
+    [self checkauth];
+}
 
 @end
 

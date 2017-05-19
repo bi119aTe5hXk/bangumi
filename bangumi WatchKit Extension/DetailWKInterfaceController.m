@@ -130,6 +130,7 @@
     [bgmapi getEPListWithSubID:epid];
     request_type = @"EPList";
 }
+
 @end
 
 
