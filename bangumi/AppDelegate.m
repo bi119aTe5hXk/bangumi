@@ -12,8 +12,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"Init...");
+    NSLog(@"Powered by");
+    NSLog(@"██████╗  █████╗ ███╗   ██╗ ██████╗ ██╗   ██╗███╗   ███╗██╗");
+    NSLog(@"██╔══██╗██╔══██╗████╗  ██║██╔════╝ ██║   ██║████╗ ████║██║");
+    NSLog(@"██████╔╝███████║██╔██╗ ██║██║  ███╗██║   ██║██╔████╔██║██║");
+    NSLog(@"██╔══██╗██╔══██║██║╚██╗██║██║   ██║██║   ██║██║╚██╔╝██║██║");
+    NSLog(@"██████╔╝██║  ██║██║ ╚████║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║██║");
+    NSLog(@"╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝");
+    NSLog(@"Product by ©bi119aTe5hXk 2009-2017.");
+    NSLog(@"なにこれ(°Д°)？！");
     application.statusBarHidden = NO;
     // Override point for customization after application launch.
+    
     if (debugmode == YES) {
         NSLog(@"Your system version is:%@",[[UIDevice currentDevice] systemVersion]);
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"欢迎使用番组计划+测试版"
@@ -23,6 +34,7 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }
+    
     NSUserDefaults *userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"auth",nil]];
     [userdefaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:@"", @"auth_urlencoded",nil]];
