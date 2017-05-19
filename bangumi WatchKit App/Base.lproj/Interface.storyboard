@@ -46,6 +46,15 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="pe2-V4-mlT">
+                        <items>
+                            <menuItem title="刷新" icon="resume" id="wwi-bm-z1w">
+                                <connections>
+                                    <action selector="refreshbtn:" destination="AgC-eL-Hgc" id="o61-cG-cew"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="tableview" destination="XQx-2w-wKh" id="HG9-4C-AGf"/>
                     </connections>

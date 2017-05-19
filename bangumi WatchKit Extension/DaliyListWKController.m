@@ -103,6 +103,12 @@
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     
 }
+-(IBAction)refreshbtn:(id)sender{
+    api = [[BGMAPI alloc] initWithdelegate:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [api getDayBGMList];
+    });
+}
 @end
 
 

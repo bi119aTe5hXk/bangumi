@@ -39,7 +39,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgm38a1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-oo-ErF">
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgm38a1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-oo-ErF">
                                 <rect key="frame" x="20" y="317" width="374" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="288" id="A75-Uu-jkV"/>

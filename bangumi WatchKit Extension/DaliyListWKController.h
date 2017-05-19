@@ -18,5 +18,5 @@
     NSDictionary   *_imageNameDict;
 }
 @property (nonatomic, strong) IBOutlet WKInterfaceTable *tableview;
-
+-(IBAction)refreshbtn:(id)sender;
 @end
