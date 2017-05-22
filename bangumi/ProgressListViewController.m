@@ -134,13 +134,6 @@
     
     // Configure the cell...
     
-//    if (row <= self.progresslist.count) {
-//        
-//        
-//    }else{
-//        cell.titlelabel.text = @"";
-//    }
-    
     NSArray *progressArr = [self.progresslist objectAtIndex:row];
     
     
@@ -148,6 +141,7 @@
         NSArray *progressStatuesArr = [statuslist objectAtIndex:i];
         
         if ([[progressStatuesArr valueForKey:@"id"] isEqual:[progressArr valueForKey:@"id"]]) {
+            
             //NSLog(@"id1:%@,id2:%@",[progressStatuesArr valueForKey:@"id"],[progressArr valueForKey:@"id"]);
             
             NSString *name_cn = [[progressStatuesArr valueForKey:@"status"] valueForKey:@"cn_name"];
@@ -164,56 +158,13 @@
                 [cell.sublabel setTextColor:[UIColor darkGrayColor]];
             }
             cell.sublabel.text = name_cn;
-            NSLog(@"wtf:%@",name_cn);
-        }else{
-            cell.sublabel.text = @"";
-            [cell.sublabel setTextColor:[UIColor grayColor]];
+            NSLog(@"wtf:%@,row:%ld",name_cn,(long)row);
         }
         
     }
     
     
-//    if (row < statuslist.count) {
-//        NSArray *progressStatuesArr = [statuslist objectAtIndex:row];
-//        NSString *name_cn = [[progressStatuesArr valueForKey:@"status"] valueForKey:@"cn_name"];
-//        cell.sublabel.text = name_cn;
-//        [cell.sublabel setTextColor:[UIColor grayColor]];
-//        
-//        if ([name_cn  isEqualToString: @"想看"]) {
-//            [cell.sublabel setTextColor:[UIColor redColor]];
-//        }else if ([name_cn  isEqualToString: @"看过"]){
-//            [cell.sublabel setTextColor:[UIColor blueColor]];
-//        }else if ([name_cn  isEqualToString: @"在看"]){
-//            [cell.sublabel setTextColor:[UIColor greenColor]];
-//        }else if ([name_cn  isEqualToString: @"搁置"]){
-//            [cell.sublabel setTextColor:[UIColor grayColor]];
-//        }else if ([name_cn  isEqualToString: @"抛弃"]){
-//            [cell.sublabel setTextColor:[UIColor darkGrayColor]];
-//        }
-//        
-//        
-////        if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:1]) {
-////            cell.sublabel.text = @"想看";
-////            [cell.sublabel setTextColor:[UIColor redColor]];
-////        }else if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:2]){
-////            cell.sublabel.text = @"看过";
-////            [cell.sublabel setTextColor:[UIColor blueColor]];
-////        }else if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:3]){
-////            cell.sublabel.text = @"在看";
-////            [cell.sublabel setTextColor:[UIColor greenColor]];
-////        }else if ( == [NSNumber numberWithInteger:4]){
-////            cell.sublabel.text = @"搁置";
-////            [cell.sublabel setTextColor:[UIColor grayColor]];
-////        }else if ([[progressStatuesArr valueForKey:@"status"] valueForKey:@"id"] == [NSNumber numberWithInteger:5]){
-////            cell.sublabel.text = @"抛弃";
-////            [cell.sublabel setTextColor:[UIColor darkGrayColor]];
-////        }else{
-////            
-////        }
-//    }else{
-//        cell.sublabel.text = @"";
-//        [cell.sublabel setTextColor:[UIColor grayColor]];
-//    }
+
     
     cell.titlelabel.text = [HTMLEntityDecode htmlEntityDecode:[NSString stringWithFormat:@"ep.%@ %@",[progressArr valueForKey:@"sort"],[progressArr valueForKey:@"name"]]];
     
