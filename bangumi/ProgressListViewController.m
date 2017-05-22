@@ -70,9 +70,9 @@
     [self.refreshControl endRefreshing];
     if ([request_type  isEqualToString: @"getProgressList"]) {
         statuslist = [list valueForKey:@"eps"];
-        dispatch_async(dispatch_get_main_queue(), ^{
+        //dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
-        });
+        //});
         
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
@@ -158,7 +158,7 @@
                 [cell.sublabel setTextColor:[UIColor darkGrayColor]];
             }
             cell.sublabel.text = name_cn;
-            NSLog(@"wtf:%@,row:%ld",name_cn,(long)row);
+            //NSLog(@"wtf:%@,row:%ld",name_cn,(long)row);
         }
         
     }
