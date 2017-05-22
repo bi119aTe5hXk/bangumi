@@ -68,8 +68,41 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
+    statuslist = [[NSMutableArray alloc] init];
     if ([request_type  isEqualToString: @"getProgressList"]) {
-        statuslist = [list valueForKey:@"eps"];
+        NSArray *statusArr = [list valueForKey:@"eps"];
+        
+        
+        for(int i = 0; i < self.progresslist.count; i++){
+            NSArray *aep = [self.progresslist objectAtIndex:i];
+           NSString *name_cn = @"null";
+            
+            for(int l = 0; l < statusArr.count; l++){
+                NSArray *epsing = [statusArr objectAtIndex:l];
+                
+                if ([aep containsObject:[epsing valueForKey:@"id"]]) {
+                    
+                    name_cn = [[epsing valueForKey:@"status"] valueForKey:@"cn_name"];
+                    [statuslist addObject:name_cn];
+                   // NSLog(@"wtf:%@",name_cn);
+                    break;
+                }else{
+                    
+                }
+            }
+            if ([name_cn  isEqualToString: @"null"]) {
+                name_cn = @"未看";
+                //NSLog(@"wtf2:%@",name_cn);
+                [statuslist addObject:name_cn];
+            }
+            
+        }
+       // NSLog(@"statuslist:%@,count:%ld",statuslist,(long)statuslist.count);
+        
+        
+        
+        
+        
         //dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         //});
@@ -137,31 +170,44 @@
     NSArray *progressArr = [self.progresslist objectAtIndex:row];
     
     
-    for(int i = 0; i < statuslist.count; i++){
-        NSArray *progressStatuesArr = [statuslist objectAtIndex:i];
-        
-        if ([[progressStatuesArr valueForKey:@"id"] isEqual:[progressArr valueForKey:@"id"]]) {
-            
-            //NSLog(@"id1:%@,id2:%@",[progressStatuesArr valueForKey:@"id"],[progressArr valueForKey:@"id"]);
-            
-            NSString *name_cn = [[progressStatuesArr valueForKey:@"status"] valueForKey:@"cn_name"];
-            
-            if ([name_cn  isEqualToString: @"想看"]) {
-                [cell.sublabel setTextColor:[UIColor redColor]];
-            }else if ([name_cn  isEqualToString: @"看过"]){
-                [cell.sublabel setTextColor:[UIColor blueColor]];
-            }else if ([name_cn  isEqualToString: @"在看"]){
-                [cell.sublabel setTextColor:[UIColor greenColor]];
-            }else if ([name_cn  isEqualToString: @"搁置"]){
-                [cell.sublabel setTextColor:[UIColor grayColor]];
-            }else if ([name_cn  isEqualToString: @"抛弃"]){
-                [cell.sublabel setTextColor:[UIColor darkGrayColor]];
-            }
-            cell.sublabel.text = name_cn;
-            //NSLog(@"wtf:%@,row:%ld",name_cn,(long)row);
-        }
-        
+    
+    NSString *name_cn = [statuslist objectAtIndex:row];
+    if ([name_cn  isEqualToString: @"想看"]) {
+        [cell.sublabel setTextColor:[UIColor redColor]];
+    }else if ([name_cn  isEqualToString: @"看过"]){
+        [cell.sublabel setTextColor:[UIColor blueColor]];
+    }else if ([name_cn  isEqualToString: @"在看"]){
+        [cell.sublabel setTextColor:[UIColor greenColor]];
+    }else if ([name_cn  isEqualToString: @"搁置"]){
+        [cell.sublabel setTextColor:[UIColor grayColor]];
+    }else if ([name_cn  isEqualToString: @"抛弃"]){
+        [cell.sublabel setTextColor:[UIColor darkGrayColor]];
+    }else{
+        [cell.sublabel setTextColor:[UIColor grayColor]];
     }
+    
+    cell.sublabel.text = name_cn;
+    
+    
+    
+//    for(int i = 0; i < statuslist.count; i++){
+//        NSArray *progressStatuesArr = [statuslist objectAtIndex:i];
+//        
+//        if () {
+//            
+//            NSLog(@"id1:%@,id2:%@",[progressStatuesArr valueForKey:@"id"],[progressArr valueForKey:@"id"]);
+//            
+//            
+//            
+//            
+//            NSLog(@"wtf:%@,row:%ld，ep:%@",name_cn,(long)row,[progressArr valueForKey:@"sort"]);
+//        }else{
+//            NSLog(@"nil,row:%ld，ep:%@",(long)row,[progressArr valueForKey:@"sort"]);
+//            cell.sublabel.text = @"未看";
+//            [cell.sublabel setTextColor:[UIColor grayColor]];
+//        }
+//        
+//    }
     
     
 

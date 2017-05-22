@@ -12,7 +12,8 @@
 @interface ProgressListViewController : UITableViewController<BGMAPIDelegate,UIAlertViewDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
-    NSArray *statuslist;
+    NSMutableArray *statuslist;
+    
     NSString *request_type;
     
     NSInteger selectrow;
