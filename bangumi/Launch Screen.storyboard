@@ -23,43 +23,50 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@bi119aTe5hXk. 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
                                 <rect key="frame" x="20" y="695" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="awr-Yf-KCK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="番组计划+" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
                                 <rect key="frame" x="20" y="180" width="374" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="jAU-U6-YGS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangumi+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJu-vJ-gyG">
                                 <rect key="frame" x="20" y="231" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5Vp-F4-JfQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgm38a1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-oo-ErF">
                                 <rect key="frame" x="20" y="317" width="374" height="288"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="288" id="A75-Uu-jkV"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="471-Go-IcP"/>
-                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" symbolic="YES" id="BrM-s7-iHm"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="160" id="DOv-qz-vtu"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="Edg-j3-4mQ"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="MTq-Xl-7KH"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="trailing" secondItem="IJu-vJ-gyG" secondAttribute="trailing" id="OKr-DF-2nC"/>
-                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="8" symbolic="YES" id="Vej-nk-Umb"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="top" secondItem="IJu-vJ-gyG" secondAttribute="bottom" constant="65" id="es0-E1-x9J"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" id="ghn-ff-w5h"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="leading" secondItem="IJu-vJ-gyG" secondAttribute="leading" id="hO8-9g-Waq"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="IJu-vJ-gyG" secondAttribute="trailing" id="miP-zi-gxL"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="IJu-vJ-gyG" secondAttribute="leading" id="wcR-tU-HD1"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="ByM-jj-8xN"/>
+                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" symbolic="YES" id="HkN-0p-VQm"/>
+                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="PDf-ib-mQW"/>
+                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="leading" secondItem="Jsi-oo-ErF" secondAttribute="leading" id="TE6-nh-yVD"/>
+                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="8" symbolic="YES" id="Xvd-Uz-kwp"/>
+                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="top" secondItem="IJu-vJ-gyG" secondAttribute="bottom" constant="65" id="aJ3-hN-Bug"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="IJu-vJ-gyG" secondAttribute="leading" id="cgN-0m-1RN"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="dhO-Ov-kgU"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="IJu-vJ-gyG" secondAttribute="trailing" id="ozt-Oa-Bih"/>
+                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="trailing" secondItem="Jsi-oo-ErF" secondAttribute="trailing" id="q3f-TG-PPb"/>
+                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" id="vRC-zV-ZIT"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="160" id="vS2-ZJ-eav"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="Jsi-oo-ErF" secondAttribute="bottom" constant="90" id="y1V-BC-JlH"/>
                         </constraints>
                     </view>
                 </viewController>

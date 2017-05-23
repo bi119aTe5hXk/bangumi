@@ -77,32 +77,29 @@
             NSArray *aep = [self.progresslist objectAtIndex:i];
            NSString *name_cn = @"null";
             
-            for(int l = 0; l < statusArr.count; l++){
-                NSArray *epsing = [statusArr objectAtIndex:l];
-                
+            
+            for(NSArray *epsing in statusArr){
                 if ([aep containsObject:[epsing valueForKey:@"id"]]) {
                     
                     name_cn = [[epsing valueForKey:@"status"] valueForKey:@"cn_name"];
                     [statuslist addObject:name_cn];
-                   // NSLog(@"wtf:%@",name_cn);
                     break;
-                }else{
-                    
                 }
             }
             if ([name_cn  isEqualToString: @"null"]) {
                 name_cn = @"未看";
-                //NSLog(@"wtf2:%@",name_cn);
                 [statuslist addObject:name_cn];
             }
             
         }
-       // NSLog(@"statuslist:%@,count:%ld",statuslist,(long)statuslist.count);
-        
-        
-        
-        
-        
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0),
+//                       ^{
+//                           //background thread code
+//                           //[self performSelector:@selector(updatemethod:) withObject:nil];
+//                           dispatch_async(dispatch_get_main_queue(),
+//                                          ^{    //back on main thread
+//                                              [self.tableView reloadData];
+//                                          });});
         //dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         //});
