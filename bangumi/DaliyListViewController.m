@@ -120,6 +120,7 @@
         
         //NSLog(@"imageurlstr:%@",imgurlstr);
         if (imgurlstr.length > 0) {
+            cell.icon.image = nil;
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgurlstr]];
                 if (imgData) {

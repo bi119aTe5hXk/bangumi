@@ -237,6 +237,7 @@
         NSString *imgurlstr =[[[arr valueForKey:@"subject"] valueForKey:@"images"] valueForKey:@"common"];
         
         //NSLog(@"imageurlstr:%@",imgurlstr);
+        cell.icon.image = nil;
         if (imgurlstr.length > 0) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgurlstr]];

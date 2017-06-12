@@ -93,6 +93,7 @@
                                         <action selector="watchedbtn:" destination="XeQ-A9-BRW" id="mzM-3G-JD5"/>
                                     </connections>
                                 </button>
+                                <button width="1" alignment="left" title="修改追番状态" id="2C2-zT-Dxd"/>
                                 <button width="1" alignment="left" title="返回" id="LWB-XL-o1m">
                                     <connections>
                                         <action selector="backbtn:" destination="XeQ-A9-BRW" id="uqw-fA-Nbr"/>
