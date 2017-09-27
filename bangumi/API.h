@@ -3,10 +3,10 @@
 //  bangumi
 //
 //  Created by bi119aTe5hXk on 2014/04/17.
-//  Copyright (c) 2014年 HT&L. All rights reserved.
+//  Copyright (c) 2014年 bi119aTe5hXk. All rights reserved.
 //
 
-#define debugmode 0
+#define debugmode 1
 
 #define BaseLoginURL @"https://%@:%@@api.bgm.tv/auth"
 #define PostLoginURL @"https://api.bgm.tv/auth"

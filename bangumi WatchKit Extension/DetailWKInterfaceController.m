@@ -3,7 +3,7 @@
 //  bangumi
 //
 //  Created by bi119aTe5hXk on 2015/08/17.
-//  Copyright (c) 2015年 HT&L. All rights reserved.
+//  Copyright (c) 2015年 bi119aTe5hXk. All rights reserved.
 //
 
 #import "DetailWKInterfaceController.h"

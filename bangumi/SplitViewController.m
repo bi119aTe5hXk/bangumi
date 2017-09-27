@@ -3,7 +3,7 @@
 //  bangumi
 //
 //  Created by bi119aTe5hXk on 2016/04/08.
-//  Copyright © 2016年 HT&L. All rights reserved.
+//  Copyright © 2016年 bi119aTe5hXk. All rights reserved.
 //
 
 #import "SplitViewController.h"
