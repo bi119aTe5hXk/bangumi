@@ -7,15 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WebViewController.h"
+@import SafariServices;
+//#import "WebViewController.h"
 #import "LoginViewController.h"
-@interface SettingsViewController : UITableViewController<BGMAPIDelegate>{
+@interface SettingsViewController : UITableViewController<BGMAPIDelegate,SFSafariViewControllerDelegate>{
     NSUserDefaults *userdefault;
     BGMAPI *bgmapi;
 }
 
 @property (nonatomic, strong) IBOutlet UIButton *rakuenbtn;
-@property (nonatomic ,strong)  WebViewController *webview;
+//@property (nonatomic ,strong)  WebViewController *webview;
 //@property (nonatomic, strong) IBOutlet UILabel *creditText;
 
 -(IBAction)openRakuen:(id)sender;

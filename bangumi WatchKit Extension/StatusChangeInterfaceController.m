@@ -1,30 +1,28 @@
 //
-//  NotLoginInterfaceController.m
+//  StatusChangeInterfaceController.m
 //  bangumi
 //
-//  Created by bi119aTe5hXk on 2015/08/16.
-//  Copyright (c) 2015年 bi119aTe5hXk. All rights reserved.
+//  Created by bi119aTe5hXk on 2017/10/04.
+//  Copyright © 2017 HT&L. All rights reserved.
 //
 
-#import "NotLoginInterfaceController1.h"
+#import "StatusChangeInterfaceController.h"
 
-@interface NotLoginInterfaceController1 ()
+@interface StatusChangeInterfaceController ()
 
 @end
 
-@implementation NotLoginInterfaceController1
+@implementation StatusChangeInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
     // Configure interface objects here.
-    [self setTitle:@" "];
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-   
 }
 
 - (void)didDeactivate {

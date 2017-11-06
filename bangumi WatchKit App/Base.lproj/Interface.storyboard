@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cui-ud-jnF">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cui-ud-jnF">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
     </dependencies>
     <scenes>
         <!--DaliyListWKController-->
@@ -72,7 +72,7 @@
                                 <action selector="backbtn:" destination="XeQ-A9-BRW" id="R1l-IA-TZf"/>
                             </connections>
                         </button>
-                        <group width="1" height="396" alignment="left" layout="vertical" id="AAX-sU-FrH">
+                        <group width="1" height="426" alignment="left" layout="vertical" id="AAX-sU-FrH">
                             <items>
                                 <imageView width="1" height="137" alignment="left" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
                                 <label width="1" height="52" alignment="left" text="title" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
@@ -93,7 +93,12 @@
                                         <action selector="watchedbtn:" destination="XeQ-A9-BRW" id="mzM-3G-JD5"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="修改追番状态" id="2C2-zT-Dxd"/>
+                                <button width="1" alignment="left" title="修改追番状态" id="2C2-zT-Dxd">
+                                    <connections>
+                                        <action selector="setBGMStatus:" destination="XeQ-A9-BRW" id="no9-3g-FEy"/>
+                                        <segue destination="aFy-Ve-y6h" kind="push" id="BAk-PH-8HT"/>
+                                    </connections>
+                                </button>
                                 <button width="1" alignment="left" title="返回" id="LWB-XL-o1m">
                                     <connections>
                                         <action selector="backbtn:" destination="XeQ-A9-BRW" id="uqw-fA-Nbr"/>
@@ -106,13 +111,70 @@
                     <connections>
                         <outlet property="imageview" destination="RGb-l5-fLs" id="pMK-WD-zzo"/>
                         <outlet property="progresslabel" destination="5NS-ec-iy4" id="D6s-gS-N2p"/>
+                        <outlet property="statusbtn" destination="2C2-zT-Dxd" id="eB0-mg-zHK"/>
                         <outlet property="title_cn" destination="GT3-v3-EJl" id="obc-fP-a5T"/>
                         <outlet property="title_org" destination="bKK-vU-oP8" id="QJN-r2-2Gv"/>
                         <outlet property="watchedbtn" destination="VRa-mi-9ON" id="FIp-rE-IOe"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="612" y="196.75"/>
+            <point key="canvasLocation" x="612" y="211.5"/>
+        </scene>
+        <!--Status Change Interface Controller-->
+        <scene sceneID="90A-k9-aad">
+            <objects>
+                <controller id="aFy-Ve-y6h" customClass="StatusChangeInterfaceController">
+                    <items>
+                        <table alignment="left" id="Ewn-fj-N4t">
+                            <items>
+                                <tableRow id="FzX-4f-2Q0">
+                                    <group key="rootItem" width="1" alignment="left" id="OfO-Uq-YDT">
+                                        <items>
+                                            <button width="1" alignment="left" title="想看" id="Scj-pZ-w4i"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="2Sd-EA-fzS">
+                                    <group key="rootItem" width="1" alignment="left" id="8al-kc-l9K">
+                                        <items>
+                                            <button width="1" alignment="left" title="在看" id="MKe-CP-OE0"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="ZYf-Ym-SF1">
+                                    <group key="rootItem" width="1" alignment="left" id="bCu-ZH-hgs">
+                                        <items>
+                                            <button width="1" alignment="left" title="看过" id="EwH-Vi-dja"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="ALQ-Wz-7Hk">
+                                    <group key="rootItem" width="1" alignment="left" id="PGD-6D-kQ5">
+                                        <items>
+                                            <button width="1" alignment="left" title="搁置" id="g9e-iN-a5u"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="Rak-2f-9DW">
+                                    <group key="rootItem" width="1" alignment="left" id="s6p-uJ-72k">
+                                        <items>
+                                            <button width="1" alignment="left" title="抛弃" id="xUA-9H-trg"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="AhR-lc-Veq">
+                                    <group key="rootItem" width="1" alignment="left" id="efg-F1-AJe">
+                                        <items>
+                                            <button width="1" alignment="left" title="取消" id="lqK-uL-nwy"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="901" y="158"/>
         </scene>
         <!--我的追番列表-->
         <scene sceneID="ROT-CJ-GUd">
@@ -185,6 +247,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ap3-UF-Caf"/>
+        <segue reference="kGe-Sl-72Y"/>
     </inferredMetricsTieBreakers>
 </document>

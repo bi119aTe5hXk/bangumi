@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SafariServices;
 #import "ProgressCell.h"
-#import "WebViewController.h"
-@interface ProgressListViewController : UITableViewController<BGMAPIDelegate,UIAlertViewDelegate>{
+//#import "WebViewController.h"
+@interface ProgressListViewController : UITableViewController<BGMAPIDelegate,UIAlertViewDelegate,SFSafariViewControllerDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSMutableArray *statuslist;

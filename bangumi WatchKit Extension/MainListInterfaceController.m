@@ -122,11 +122,11 @@
 }
 
 -(id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex{
-    
+    [bgmapi cancelConnection];
 //    DetailWKInterfaceController *detailview = [segue destinationViewController];
 //    
-//    NSString *bgmids = [[[bgmlist objectAtIndex:rowIndex] valueForKey:@"subject"] valueForKey:@"id"];
-    return [bgmlist objectAtIndex:rowIndex];
+    NSString *bgmids = [[[bgmlist objectAtIndex:rowIndex] valueForKey:@"subject"] valueForKey:@"id"];
+    return bgmids;//[bgmlist objectAtIndex:rowIndex];
 }
 -(IBAction)updatebtn:(id)sender{
     [self checkauth];

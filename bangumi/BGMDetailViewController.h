@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SafariServices;
 #import "ProgressListViewController.h"
-#import "WebViewController.h"
-@interface BGMDetailViewController : UIViewController<BGMAPIDelegate>{
+//#import "WebViewController.h"
+@interface BGMDetailViewController : UIViewController<BGMAPIDelegate,SFSafariViewControllerDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSString *request_type;

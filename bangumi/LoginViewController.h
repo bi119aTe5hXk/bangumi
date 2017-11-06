@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SplitViewController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
-#import "WebViewController.h"
-@interface LoginViewController : UIViewController<BGMAPIDelegate,UITextFieldDelegate,WCSessionDelegate>{
+//#import "WebViewController.h"
+@import SafariServices;
+@interface LoginViewController : UIViewController<BGMAPIDelegate,UITextFieldDelegate,WCSessionDelegate,SFSafariViewControllerDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSString *auth;

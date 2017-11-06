@@ -47,10 +47,13 @@
     }
 }
 -(IBAction)openRakuen:(id)sender{
-    self.webview = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
-    self.webview.urlstr = rakuenURL;
-    self.webview.titlestr = @"超展开 Mobile";
-    [self.navigationController presentViewController:self.webview animated:YES completion:nil];
+//    self.webview = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+//    self.webview.urlstr = rakuenURL;
+//    self.webview.titlestr = @"超展开 Mobile";
+//    [self.navigationController presentViewController:self.webview animated:YES completion:nil];
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:rakuenURL] entersReaderIfAvailable:NO];
+    safariVC.delegate = self;
+    [self presentViewController:safariVC animated:YES completion:nil];
 }
 -(IBAction)logout:(id)sender{
     [userdefault setObject:nil forKey:@"auth_urlencoded"];

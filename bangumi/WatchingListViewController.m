@@ -335,10 +335,13 @@
             if (buttonIndex == 1) {
                 //webview
                 
-                WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
-                webview.urlstr = disscussurl;
-                webview.titlestr = @"条目讨论版";
-                [self.navigationController presentViewController:webview animated:YES completion:nil];
+//                WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+//                webview.urlstr = disscussurl;
+//                webview.titlestr = @"条目讨论版";
+//                [self.navigationController presentViewController:webview animated:YES completion:nil];
+                SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
+                safariVC.delegate = self;
+                [self presentViewController:safariVC animated:YES completion:nil];
             }
         }
     }

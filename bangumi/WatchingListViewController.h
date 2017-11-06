@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SafariServices;
 #import "BGMCell.h"
 #import "BGMDetailViewController.h"
-#import "WebViewController.h"
-@interface WatchingListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UIAlertViewDelegate>{
+//#import "WebViewController.h"
+@interface WatchingListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UIAlertViewDelegate,SFSafariViewControllerDelegate>{
     NSUserDefaults *userdefault;
     BGMAPI *bgmapi;
     NSString *request_type;

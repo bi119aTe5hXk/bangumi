@@ -313,12 +313,14 @@
 -(void)showWebViewWithURL:(NSString *)url{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [self.refreshControl endRefreshing];
-    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
-    webview.urlstr = url;
-    webview.titlestr = @"条目讨论版";
-    [self.navigationController presentViewController:webview animated:YES completion:nil];
-    
+//    [self.refreshControl endRefreshing];
+//    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+//    webview.urlstr = url;
+//    webview.titlestr = @"条目讨论版";
+//    [self.navigationController presentViewController:webview animated:YES completion:nil];
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:url] entersReaderIfAvailable:NO];
+    safariVC.delegate = self;
+    [self presentViewController:safariVC animated:YES completion:nil];
     
 }
 @end

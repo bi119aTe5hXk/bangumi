@@ -81,11 +81,13 @@
 }
 -(IBAction)registerbtnpressed:(id)sender{
     //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://bgm.tv/signup"]];
-    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
-    webview.urlstr = @"https://bgm.tv/signup";
-    webview.titlestr = @"注册 bangumi";
-    [self.navigationController presentViewController:webview animated:YES completion:nil];
-    
+//    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+//    webview.urlstr = @"https://bgm.tv/signup";
+//    webview.titlestr = @"注册 bangumi";
+//    [self.navigationController presentViewController:webview animated:YES completion:nil];
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:@"https://bgm.tv/signup"] entersReaderIfAvailable:NO];
+    safariVC.delegate = self;
+    [self presentViewController:safariVC animated:YES completion:nil];
 }
 -(IBAction)loginbtnpressd:(id)sender{
     if ([self.usernamefield.text length] > 0 && [self.passwordfield.text length] > 0) {
