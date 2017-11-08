@@ -13,6 +13,7 @@
 #import "BGMAPI.h"
 #import "HTMLEntityDecode.h"
 #import "DetailWKInterfaceController.h"
+
 @interface MainListInterfaceController : WKInterfaceController<BGMAPIDelegate,WCSessionDelegate>{
     BGMAPI *bgmapi;
     NSArray *bgmlist;

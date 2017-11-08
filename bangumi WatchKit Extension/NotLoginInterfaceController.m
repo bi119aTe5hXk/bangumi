@@ -63,6 +63,17 @@
     [self checkauth];
     
 }
+- (IBAction)retrybtn2{
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+    
+    userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
+    [userdefaults synchronize];
+    [self checkauth];
+}
 -(void)checkauth{
     NSString *auth = [userdefaults stringForKey:@"auth"];
     if (debugmode == YES) {

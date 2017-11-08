@@ -14,5 +14,5 @@
     NSUserDefaults *userdefaults;
 }
 - (IBAction)retrybtn;
-
+- (IBAction)retrybtn2;
 @end

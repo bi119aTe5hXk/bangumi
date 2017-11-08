@@ -13,7 +13,7 @@
 - (void)api:(BGMAPI *)api readyWithList:(NSArray *)list;
 - (void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error;
 @end
-typedef void (^CompletionHandlerType)();
+typedef void (^CompletionHandlerType)(void);
 @interface BGMAPI : NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate>{
     NSUserDefaults *userdefaults;
     NSString *authString;

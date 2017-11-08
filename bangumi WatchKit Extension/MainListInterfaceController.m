@@ -34,6 +34,11 @@
     [self checkauth];
 }
 
+- (void)session:(nonnull WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(nullable NSError *)error { 
+    
+}
+
+
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
@@ -125,8 +130,9 @@
     [bgmapi cancelConnection];
 //    DetailWKInterfaceController *detailview = [segue destinationViewController];
 //    
-    NSString *bgmids = [[[bgmlist objectAtIndex:rowIndex] valueForKey:@"subject"] valueForKey:@"id"];
-    return bgmids;//[bgmlist objectAtIndex:rowIndex];
+    //NSString *bgmids = [[[bgmlist objectAtIndex:rowIndex] valueForKey:@"subject"] valueForKey:@"id"];
+    
+    return [bgmlist objectAtIndex:rowIndex];
 }
 -(IBAction)updatebtn:(id)sender{
     [self checkauth];
