@@ -108,20 +108,26 @@
     if ([request_type isEqualToString:@"updateProgress"]) {
         
         if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
-                                                            message:[list valueForKey:@"error"]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"了解"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"已成功记录" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
+//                                                            message:[list valueForKey:@"error"]
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"了解"
+//                                                  otherButtonTitles:nil, nil];
+//            [alert show];
             
         }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
-                                                            message:[list valueForKey:@"error"]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"了解"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"记录失败" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
+//                                                            message:[list valueForKey:@"error"]
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"了解"
+//                                                  otherButtonTitles:nil, nil];
+//            [alert show];
             
         }
         [self getList];

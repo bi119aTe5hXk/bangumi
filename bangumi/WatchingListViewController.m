@@ -75,13 +75,15 @@
     [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
         if ([list count] == 0) {
-            
-            UIAlertView *emptyalert = [[UIAlertView alloc] initWithTitle:@"列表是空的！"
-                                                                 message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～"
-                                                                delegate:nil
-                                                       cancelButtonTitle:@"知道了"
-                                                       otherButtonTitles:nil, nil];
-            [emptyalert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"列表是空的！" message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+//            UIAlertView *emptyalert = [[UIAlertView alloc] initWithTitle:@"列表是空的！"
+//                                                                 message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～"
+//                                                                delegate:nil
+//                                                       cancelButtonTitle:@"知道了"
+//                                                       otherButtonTitles:nil, nil];
+//            [emptyalert show];
         }
         
         bgmlist = list;
@@ -98,6 +100,7 @@
     if ([request_type isEqualToString:@"updateProgress"]) {
         dispatch_async(dispatch_get_main_queue(),^{
             if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
+                
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录，要去看看讨论串吗？"
                                                                 message:[list valueForKey:@"error"]
                                                                delegate:self
@@ -107,12 +110,15 @@
                 [alert show];
                 [self loadList];
             }else{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
-                                                                message:[list valueForKey:@"error"]
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"了解"
-                                                      otherButtonTitles:nil, nil];
-                [alert show];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"记录失败" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
+//                                                                message:[list valueForKey:@"error"]
+//                                                               delegate:nil
+//                                                      cancelButtonTitle:@"了解"
+//                                                      otherButtonTitles:nil, nil];
+//                [alert show];
             }
         });
         
@@ -145,12 +151,15 @@
                 [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             });
         }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"未知错误！"
-                                                            message:nil
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"了解"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"未知错误！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"未知错误！"
+//                                                            message:nil
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"了解"
+//                                                  otherButtonTitles:nil, nil];
+//            [alert show];
         }
         
     }
@@ -306,6 +315,7 @@
         NSInteger ep_status = [[arr valueForKey:@"ep_status"] integerValue];//已看
         epid = [[arr valueForKey:@"subject"] valueForKey:@"id"];
         ep_count = ep_status+1;
+        
         UIAlertView *updatealert = [[UIAlertView alloc] initWithTitle:@"确定将以下章节标为看过？"
                                                               message:[NSString stringWithFormat:@"%@ ep.%ld",[arr valueForKey:@"name"],(long)ep_count]
                                                              delegate:self

@@ -27,6 +27,9 @@
     
     if (debugmode == YES) {
         NSLog(@"Your system version is:%@",[[UIDevice currentDevice] systemVersion]);
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"欢迎使用番组计划+测试版" message:@"这是测试版app，如果有任何问题请找@bi119aTe5hXk。谢谢。" preferredStyle:UIAlertControllerStyleAlert];
+//        [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
+//        [self presentViewController:alert animated:YES completion:nil];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"欢迎使用番组计划+测试版"
                                                             message:@"这是测试版app，如果有任何问题请找@bi119aTe5hXk。谢谢。"
                                                            delegate:nil

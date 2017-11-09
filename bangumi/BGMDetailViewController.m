@@ -43,12 +43,15 @@
         [self.statusmanabtn setHidden:YES];
         bgmid1 = bgmid;
     }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"出错了！"
-                                                        message:@"BGMID长度为0。"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"出错了！" message:@"BGMID长度为0。" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"出错了！"
+//                                                        message:@"BGMID长度为0。"
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil, nil];
+//        [alert show];
     }
     
 }
@@ -79,10 +82,22 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
+    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    
+    if ([request_type isEqualToString:@"updateStatus"]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"已成功记录" message:[[list valueForKey:@"status"] valueForKey:@"type"] preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
+//                                                        message:[[list valueForKey:@"status"] valueForKey:@"type"]
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"了解"
+//                                              otherButtonTitles:nil, nil];
+//
+//        [alert show];
+    }
     
     
     
@@ -149,14 +164,7 @@
     
     
     
-    if ([request_type isEqualToString:@"updateStatus"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
-                                                        message:[[list valueForKey:@"status"] valueForKey:@"type"]
-                                                       delegate:nil
-                                              cancelButtonTitle:@"了解"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-    }
+    
     
     
     

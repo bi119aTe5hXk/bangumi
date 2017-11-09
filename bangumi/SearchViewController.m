@@ -94,12 +94,15 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无结果"
-                                                        message:@"换个关键词试试？"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"好的"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"无结果" message:@"换个关键词试试？" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无结果"
+//                                                        message:@"换个关键词试试？"
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"好的"
+//                                              otherButtonTitles:nil, nil];
+//        [alert show];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
 }

@@ -95,12 +95,15 @@
         [bgmapi userLoginWithUserName:self.usernamefield.text WithPassword:self.passwordfield.text];
         request_type = @"login";
     }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入用户名密码！"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入用户名和密码！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入用户名和密码！"
+//                                                        message:nil
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil, nil];
+//        [alert show];
     }
     
 }
@@ -125,12 +128,15 @@
         }else{
             dispatch_async(dispatch_get_main_queue(),^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
-                                                                message:nil
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil, nil];
-                [alert show];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户名密码错误！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
+//                                                                message:nil
+//                                                               delegate:nil
+//                                                      cancelButtonTitle:@"OK"
+//                                                      otherButtonTitles:nil, nil];
+//                [alert show];
             });
             
         }

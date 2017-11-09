@@ -116,7 +116,7 @@
     
     
     if ([arr valueForKey:@"images"] != [NSNull null]) {
-        NSString *imgurlstr =[[arr valueForKey:@"images"] valueForKey:@"grid"];
+        NSString *imgurlstr =[[arr valueForKey:@"images"] valueForKey:@"small"];
         
         //NSLog(@"imageurlstr:%@",imgurlstr);
         if (imgurlstr.length > 0) {
