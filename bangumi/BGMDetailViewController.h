@@ -30,9 +30,14 @@
 @property (nonatomic, strong) IBOutlet UILabel *ratscoretitle;
 @property (nonatomic, strong) IBOutlet UILabel *ratscore;
 @property (nonatomic, strong) IBOutlet UITextView *bgmsummary;
+@property (nonatomic, strong) IBOutlet UILabel *ranktitle;
+@property (nonatomic, strong) IBOutlet UILabel *rankscore;
+@property (nonatomic, strong) IBOutlet UIButton *bgmdetailbtn;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *actionbtn;
 
 -(void)startGetSubjectInfoWithID:(NSString *)bgmid;
 -(IBAction)PorgressViewBTN:(id)sender;
 -(IBAction)BGMStatuesBTN:(id)sender;
 -(IBAction)showDetailWebBTN:(id)sender;
+-(IBAction)shareBTN:(id)sender;
 @end

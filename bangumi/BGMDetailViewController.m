@@ -38,7 +38,7 @@
         self.bgmidstr = bgmid;
         [bgmapi getSubjectInfoWithSubID:bgmid];
         request_type = @"BGMDetail";
-        //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self.progressmanabtn setHidden:YES];
         [self.statusmanabtn setHidden:YES];
         bgmid1 = bgmid;
@@ -114,9 +114,13 @@
             [self.titlelabel_cn setText:titlecnstr];
             [self.bgmsummary setText:bgmsummarystr];
             [self.ratscore setText:[NSString stringWithFormat:@"%@/10",[[[list valueForKey:@"rating"] valueForKey:@"score"] stringValue]] ];
+            [self.rankscore setText:[[list valueForKey:@"rank"] stringValue] ];
             [self.ratscore setHidden:NO];
             [self.ratscoretitle setHidden:NO];
-            
+            [self.bgmdetailbtn setHidden:NO];
+            [self.actionbtn setEnabled:YES];
+            [self.rankscore setHidden:NO];
+            [self.ranktitle setHidden:NO];
         });
         
         
@@ -245,7 +249,12 @@
     SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
     safariVC.delegate = self;
     [self presentViewController:safariVC animated:YES completion:nil];
-    
-    
+}
+-(IBAction)shareBTN:(id)sender{
+    NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/subject/%@",bgmid1];
+    UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[disscussurl] applicationActivities:@[]];
+    [self presentViewController:avc animated:YES completion:^{
+        nil;
+    }];
 }
 @end
