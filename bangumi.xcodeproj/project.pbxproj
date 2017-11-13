@@ -39,6 +39,7 @@
 		47A5DD29191135BB0086A14B /* bgm38a1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DD28191135BB0086A14B /* bgm38a1024.png */; };
 		47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD2B19113CAE0086A14B /* NormalCell.m */; };
 		47A923FE1916723600B3D10A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A923FD1916723600B3D10A /* SearchViewController.m */; };
+		47B72B6C1FB4059E0035D353 /* DailyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B72B6B1FB4059E0035D353 /* DailyCell.m */; };
 		47C3C7F01F849D77007A49FD /* StatusChangeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C7EF1F849D77007A49FD /* StatusChangeInterfaceController.m */; };
 		47C3C7F11F849D77007A49FD /* StatusChangeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C7EF1F849D77007A49FD /* StatusChangeInterfaceController.m */; };
 		47E271531900043300304DED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271521900043300304DED /* Foundation.framework */; };
@@ -165,6 +166,8 @@
 		47A5DD2B19113CAE0086A14B /* NormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCell.m; sourceTree = "<group>"; };
 		47A923FC1916723600B3D10A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		47A923FD1916723600B3D10A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		47B72B6A1FB4059E0035D353 /* DailyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCell.h; sourceTree = "<group>"; };
+		47B72B6B1FB4059E0035D353 /* DailyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCell.m; sourceTree = "<group>"; };
 		47C3C7EE1F849D77007A49FD /* StatusChangeInterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StatusChangeInterfaceController.h; path = "bangumi WatchKit Extension/StatusChangeInterfaceController.h"; sourceTree = SOURCE_ROOT; };
 		47C3C7EF1F849D77007A49FD /* StatusChangeInterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StatusChangeInterfaceController.m; path = "bangumi WatchKit Extension/StatusChangeInterfaceController.m"; sourceTree = SOURCE_ROOT; };
 		47E2714F1900043300304DED /* bangumi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bangumi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +343,8 @@
 				47A923FD1916723600B3D10A /* SearchViewController.m */,
 				47A5DD23191127150086A14B /* DaliyListViewController.h */,
 				47A5DD24191127150086A14B /* DaliyListViewController.m */,
+				47B72B6A1FB4059E0035D353 /* DailyCell.h */,
+				47B72B6B1FB4059E0035D353 /* DailyCell.m */,
 				47A5DD2A19113CAE0086A14B /* NormalCell.h */,
 				47A5DD2B19113CAE0086A14B /* NormalCell.m */,
 				478B3B861902A2A1006C6E67 /* BGMDetailViewController.h */,
@@ -612,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47B72B6C1FB4059E0035D353 /* DailyCell.m in Sources */,
 				47E2719C19014ECE00304DED /* LoginViewController.m in Sources */,
 				4751E630191F84DA004143D3 /* HTMLEntityDecode.m in Sources */,
 				4751E628191F648E004143D3 /* ProgressListViewController.m in Sources */,

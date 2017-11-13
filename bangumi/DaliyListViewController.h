@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BGMDetailViewController.h"
-#import "NormalCell.h"
+//#import "NormalCell.h"
+#import "DailyCell.h"
 @interface DaliyListViewController : UITableViewController<BGMAPIDelegate>{
     BGMAPI *bgmapi;
     NSArray *daylist;

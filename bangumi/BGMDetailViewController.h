@@ -27,7 +27,8 @@
 @property (nonatomic, strong) IBOutlet UIImageView *cover;
 @property (nonatomic, strong) IBOutlet UILabel *titlelabel;
 @property (nonatomic, strong) IBOutlet UILabel *titlelabel_cn;
-
+@property (nonatomic, strong) IBOutlet UILabel *ratscoretitle;
+@property (nonatomic, strong) IBOutlet UILabel *ratscore;
 @property (nonatomic, strong) IBOutlet UITextView *bgmsummary;
 
 -(void)startGetSubjectInfoWithID:(NSString *)bgmid;

@@ -72,5 +72,14 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+-(void)application:(UIApplication *)application performActionForShortcutItem:(nonnull UIApplicationShortcutItem *)shortcutItem completionHandler:(nonnull void (^)(BOOL))completionHandler{
+    if(debugmode == YES){
+        NSLog(@"%@",shortcutItem);
+        NSLog(@"userinfo:%@", [shortcutItem.userInfo valueForKey:@"key1"]);
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"shortCutNotification"
+                                                        object:nil
+                                                      userInfo:shortcutItem.userInfo];
+    
+}
 @end

@@ -78,6 +78,7 @@
     }else{
         [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
         [self.rakuenbtn setTitle:@"超展开 Mobile" forState:UIControlStateNormal];
+        
     }
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{

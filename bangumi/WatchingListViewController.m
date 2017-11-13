@@ -30,6 +30,11 @@
     //self.title = @"进度管理";
     //self.navigationItem.title = @"进度管理";
     self.tabBarController.navigationItem.title  = @"进度管理";
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(shortCutReceived:)
+                                                 name:@"shortCutNotification"
+                                               object:nil];
+    [self registHomeScreenQuickActions];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,6 +48,7 @@
     if (bgmlist.count <= 0) {
         [self loadList];
     }
+    
 }
 - (void)onRefresh:(id)sender{
     [self loadList];
@@ -108,7 +114,7 @@
                                                       otherButtonTitles:@"去看看", nil];
                 alert.tag = 3;
                 [alert show];
-                [self loadList];
+                
             }else{
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"记录失败" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
                 [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
@@ -344,7 +350,7 @@
         if (buttonIndex >0) {
             if (buttonIndex == 1) {
                 //webview
-                
+                NSLog(@"heyyy");
 //                WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
 //                webview.urlstr = disscussurl;
 //                webview.titlestr = @"条目讨论版";
@@ -352,6 +358,8 @@
                 SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
                 safariVC.delegate = self;
                 [self presentViewController:safariVC animated:YES completion:nil];
+            }else{
+                [self loadList];
             }
         }
     }
@@ -396,7 +404,22 @@
     
 }
 
+-(void)shortCutReceived:(NSNotification *)notification{
+    NSDictionary *userInfo = notification.userInfo;
+    if([[userInfo valueForKey:@"key1"]  isEqual: @"rakuen"] ){
+        SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:rakuenURL] entersReaderIfAvailable:NO];
+        safariVC.delegate = self;
+        [self presentViewController:safariVC animated:YES completion:nil];
+    }
+}
 
-
-
+-(void)registHomeScreenQuickActions{
+    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc]
+                                       initWithType:@"com.HTandL.bgmclient.test"
+                                       localizedTitle:@"打开超展开"
+                                       localizedSubtitle:nil
+                                        icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeFavorite]
+                                        userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"rakuen",@"key1", nil]];
+    [[UIApplication sharedApplication] setShortcutItems:@[item1]] ;
+}
 @end

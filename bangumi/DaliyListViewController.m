@@ -104,7 +104,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DailyCell" forIndexPath:indexPath];
+    DailyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DailyCell" forIndexPath:indexPath];
     NSUInteger row = [indexPath row];
     NSArray *arr = daylist[indexPath.section][@"items"][row];
     
@@ -113,7 +113,7 @@
     
     //[cell.icon setImageWithURL:[[arr valueForKey:@"images"] valueForKey:@"grid"]];
     //[cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    
+    cell.ratscorelabel.text = [NSString stringWithFormat:@"%@分",[[[arr valueForKey:@"rating"] valueForKey:@"score"] stringValue]];
     
     if ([arr valueForKey:@"images"] != [NSNull null]) {
         NSString *imgurlstr =[[arr valueForKey:@"images"] valueForKey:@"small"];

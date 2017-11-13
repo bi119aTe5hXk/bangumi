@@ -105,6 +105,7 @@
         NSString *titlestr = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name"]];
         NSString *titlecnstr = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"name_cn"]];
         NSString *bgmsummarystr = [HTMLEntityDecode htmlEntityDecode:[list valueForKey:@"summary"]];
+        
         dispatch_async(dispatch_get_main_queue(),^{//get main thread
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.progressmanabtn setHidden:NO];
@@ -112,6 +113,10 @@
             [self.titlelabel setText:titlestr];
             [self.titlelabel_cn setText:titlecnstr];
             [self.bgmsummary setText:bgmsummarystr];
+            [self.ratscore setText:[NSString stringWithFormat:@"%@/10",[[[list valueForKey:@"rating"] valueForKey:@"score"] stringValue]] ];
+            [self.ratscore setHidden:NO];
+            [self.ratscoretitle setHidden:NO];
+            
         });
         
         

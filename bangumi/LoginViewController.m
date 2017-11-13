@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     
     
@@ -47,7 +48,12 @@
         
     }
     
+    
+    
+    
 }
+
+
 - (void)pushSettingsToWatchApp
 {
     if ([WCSession isSupported]) {

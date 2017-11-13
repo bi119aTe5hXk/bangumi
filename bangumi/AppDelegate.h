@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//@import SafariServices;
+//#import "BGMAPI.m"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
