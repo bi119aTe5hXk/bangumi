@@ -128,7 +128,7 @@
         //[self.cover setImageWithURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
         if ([list valueForKey:@"images"] != [NSNull null]) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"common"]]];
+                NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[list valueForKey:@"images"] valueForKey:@"large"]]];
                 if (imgData) {
                     UIImage *image = [UIImage imageWithData:imgData];
                     if (image) {
