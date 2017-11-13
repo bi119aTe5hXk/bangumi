@@ -66,7 +66,7 @@
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
     [self.refreshControl endRefreshing];
     statuslist = [[NSMutableArray alloc] init];
     if ([request_type  isEqualToString: @"getProgressList"]) {
@@ -100,13 +100,14 @@
 //                                          ^{    //back on main thread
 //                                              [self.tableView reloadData];
 //                                          });});
-        //dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
-        //});
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
         
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
-        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"已成功记录" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
@@ -133,7 +134,7 @@
         [self getList];
     }
     
-    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     [self.refreshControl endRefreshing];
