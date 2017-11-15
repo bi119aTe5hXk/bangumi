@@ -78,7 +78,10 @@
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [self.refreshControl endRefreshing];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.refreshControl endRefreshing];
+    });
+    
     if ([request_type isEqualToString:@"WatchingList"]) {
         if ([list count] == 0) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"列表是空的！" message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～" preferredStyle:UIAlertControllerStyleAlert];
@@ -106,14 +109,31 @@
     if ([request_type isEqualToString:@"updateProgress"]) {
         dispatch_async(dispatch_get_main_queue(),^{
             if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
-                
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录，要去看看讨论串吗？"
-                                                                message:[list valueForKey:@"error"]
-                                                               delegate:self
-                                                      cancelButtonTitle:@"了解"
-                                                      otherButtonTitles:@"去看看", nil];
-                alert.tag = 3;
-                [alert show];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"已成功记录，要去看看讨论串吗？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"去看看" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                                                                      SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
+                                                                      safariVC.delegate = self;
+                                                                      [self presentViewController:safariVC animated:YES completion:nil];
+                                                                  }]];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"算了" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                                                                      
+                                                                      [self loadList];
+                                                                  }]];
+                [self presentViewController:alertController
+                                   animated:YES
+                                 completion:^{
+                                     nil;
+                                     //NSLog(@"displayed");
+                                 }];
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录，要去看看讨论串吗？"
+//                                                                message:[list valueForKey:@"error"]
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"了解"
+//                                                      otherButtonTitles:@"去看看", nil];
+//                alert.tag = 3;
+//                [alert show];
                 
             }else{
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"记录失败" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
@@ -172,11 +192,17 @@
     
     if ([request_type isEqualToString:@"notifycount"]) {
         NSString *count = [NSString stringWithFormat:@"%@",[list valueForKey:@"count"]];
-        if ([count integerValue] >= 1) {
-            [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%@",[list valueForKey:@"count"]]];
-        }else{
-            [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
-        }
+        dispatch_async(dispatch_get_main_queue(),^{
+            if ([count integerValue] >= 1) {
+                
+                [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%@",[list valueForKey:@"count"]]];
+                
+            }else{
+                [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
+            }
+            
+        });
+        
     }
     
 }
@@ -326,52 +352,68 @@
         NSInteger ep_status = [[arr valueForKey:@"ep_status"] integerValue];//已看
         epid = [[arr valueForKey:@"subject"] valueForKey:@"id"];
         ep_count = ep_status+1;
-        
-        UIAlertView *updatealert = [[UIAlertView alloc] initWithTitle:@"确定将以下章节标为看过？"
-                                                              message:[NSString stringWithFormat:@"%@ ep.%ld",[arr valueForKey:@"name"],(long)ep_count]
-                                                             delegate:self
-                                                    cancelButtonTitle:@"取消"
-                                                    otherButtonTitles:@"是的", nil];
-        [updatealert setTag:2];
-        [updatealert show];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"确定将以下章节标为看过？" message:[NSString stringWithFormat:@"%@ ep.%ld",[arr valueForKey:@"name"],(long)ep_count] preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"是的" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [bgmapi getEPListWithSubID:epid];
+                                                              [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                              request_type = @"EPList";
+                                                          }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              nil;
+                                                          }]];
+        [self presentViewController:alertController
+                           animated:YES
+                         completion:^{
+                             nil;
+                             //NSLog(@"displayed");
+                         }];
+//        UIAlertView *updatealert = [[UIAlertView alloc] initWithTitle:@"确定将以下章节标为看过？"
+//                                                              message:[NSString stringWithFormat:@"%@ ep.%ld",[arr valueForKey:@"name"],(long)ep_count]
+//                                                             delegate:self
+//                                                    cancelButtonTitle:@"取消"
+//                                                    otherButtonTitles:@"是的", nil];
+//        [updatealert setTag:2];
+//        [updatealert show];
         
     }
 
 }
 
--(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (actionSheet.tag == 2) {
-        if (buttonIndex > 0) {
-            if (buttonIndex == 1) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [bgmapi getEPListWithSubID:epid];
-                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                    request_type = @"EPList";
-                });
-                
-            }
-        }
-    }else if (actionSheet.tag == 3){
-        if (buttonIndex >0) {
-            if (buttonIndex == 1) {
-                //webview
-                NSLog(@"heyyy");
-//                WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
-//                webview.urlstr = disscussurl;
-//                webview.titlestr = @"条目讨论版";
-//                [self.navigationController presentViewController:webview animated:YES completion:nil];
-                SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
-                safariVC.delegate = self;
-                [self presentViewController:safariVC animated:YES completion:nil];
-            }else{
-                [self loadList];
-            }
-        }
-    }
-    
-    
-    
-}
+//-(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    if (actionSheet.tag == 2) {
+//        if (buttonIndex > 0) {
+//            if (buttonIndex == 1) {
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [bgmapi getEPListWithSubID:epid];
+//                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//                    request_type = @"EPList";
+//                });
+//
+//            }
+//        }
+//    }else if (actionSheet.tag == 3){
+//        if (buttonIndex >0) {
+//            if (buttonIndex == 1) {
+//                //webview
+//                //NSLog(@"heyyy");
+////                WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+////                webview.urlstr = disscussurl;
+////                webview.titlestr = @"条目讨论版";
+////                [self.navigationController presentViewController:webview animated:YES completion:nil];
+//                SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
+//                safariVC.delegate = self;
+//                [self presentViewController:safariVC animated:YES completion:nil];
+//            }else{
+//                [self loadList];
+//            }
+//        }
+//    }
+//
+//
+//
+//}
 
 
 

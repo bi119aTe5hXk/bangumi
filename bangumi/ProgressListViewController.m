@@ -321,9 +321,7 @@
                                                       }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action) {
-                                                          [self dismissViewControllerAnimated:YES completion:^{
-                                                              nil;
-                                                          }];
+                                                          nil;
                                                       }]];
     
     [self presentViewController:alertController

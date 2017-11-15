@@ -208,37 +208,85 @@
     [self.navigationController pushViewController:progressview animated:YES];
 }
 -(IBAction)BGMStatuesBTN:(id)sender{
-    UIAlertView *stateAlert = [[UIAlertView alloc] initWithTitle:@"修改番组状态"
-                                                         message:nil
-                                                        delegate:self
-                                               cancelButtonTitle:@"保持不变"
-                                               otherButtonTitles:@"想看",@"在看",@"看过",@"搁置",@"抛弃", nil];
-    [stateAlert setTag:998];
-    [stateAlert show];
-}
--(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (actionSheet.tag == 998) {
-        if (buttonIndex >0) {
-            if (buttonIndex == 1) {
-                //想看
-                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"wish"];
-            }else if (buttonIndex == 2){
-                //在看
-                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"do"];
-            }else if (buttonIndex == 3){
-                //看过
-                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"collect"];
-            }else if (buttonIndex == 4){
-                //搁置
-                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"on_hold"];
-            }else if (buttonIndex == 5){
-                //抛弃
-                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"dropped"];
-            }
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            request_type = @"updateStatus";
-        }
-    }
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改番组状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"想看" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"wish"];
+                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                          request_type = @"updateStatus";
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"在看" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"do"];
+                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                          request_type = @"updateStatus";
+                                                          
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"看过" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"collect"];
+                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                          request_type = @"updateStatus";
+                                                          
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"搁置" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"on_hold"];
+                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                          request_type = @"updateStatus";
+                                                          
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"抛弃" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"dropped"];
+                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                          request_type = @"updateStatus";
+                                                          
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"保持不变" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          nil;
+                                                      }]];
+    
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:^{
+                         nil;
+                         //NSLog(@"displayed");
+                     }];
+    
+    
+//    UIAlertView *stateAlert = [[UIAlertView alloc] initWithTitle:@"修改番组状态"
+//                                                         message:nil
+//                                                        delegate:self
+//                                               cancelButtonTitle:@"保持不变"
+//                                               otherButtonTitles:@"想看",@"在看",@"看过",@"搁置",@"抛弃", nil];
+//    [stateAlert setTag:998];
+//    [stateAlert show];
+//}
+//-(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    if (actionSheet.tag == 998) {
+//        if (buttonIndex >0) {
+//            if (buttonIndex == 1) {
+//                //想看
+//                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"wish"];
+//            }else if (buttonIndex == 2){
+//                //在看
+//                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"do"];
+//            }else if (buttonIndex == 3){
+//                //看过
+//                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"collect"];
+//            }else if (buttonIndex == 4){
+//                //搁置
+//                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"on_hold"];
+//            }else if (buttonIndex == 5){
+//                //抛弃
+//                [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"dropped"];
+//            }
+//            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//            request_type = @"updateStatus";
+//        }
+//    }
 }
 -(IBAction)showDetailWebBTN:(id)sender{
     NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/subject/%@",bgmid1];
