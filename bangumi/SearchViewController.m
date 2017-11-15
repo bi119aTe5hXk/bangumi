@@ -48,12 +48,15 @@
     //[self.tableView registerClass: [NormalCell class] forCellReuseIdentifier:@"SearchCell"];
 }
 -(IBAction)searchinfo:(id)sender{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"关于搜索"
-                                                    message:@"目前暂时只能搜索动画以及显示前20条结果，如果找不到您想看的番组，请将关键词描写更详细一些。谢谢m(_ _)m"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"知道了"
-                                          otherButtonTitles:nil, nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"关于搜索" message:@"目前暂时只能搜索动画以及显示前20条结果，如果找不到您想看的番组，请将关键词描写更详细一些。谢谢m(_ _)m" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"关于搜索"
+//                                                    message:@"目前暂时只能搜索动画以及显示前20条结果，如果找不到您想看的番组，请将关键词描写更详细一些。谢谢m(_ _)m"
+//                                                   delegate:nil
+//                                          cancelButtonTitle:@"知道了"
+//                                          otherButtonTitles:nil, nil];
+//    [alert show];
 }
 - (void)didReceiveMemoryWarning
 {

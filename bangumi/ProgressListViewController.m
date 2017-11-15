@@ -280,54 +280,111 @@
 */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     selectrow = indexPath.row;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"修改追番状态"
-                                                    message:nil
-                                                   delegate:self
-                                          cancelButtonTitle:@"保持不变"
-                                          otherButtonTitles:@"看过",@"想看",@"抛弃",@"撤销",@"查看讨论串", nil];
-    [alert setTag:233];
-    [alert show];
-}
--(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (actionSheet.tag == 233) {
-        if (buttonIndex >0) {
-            NSString *epid = [[self.progresslist objectAtIndex:selectrow] valueForKey:@"id"];
-            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            request_type = @"updateProgress";
-            if(buttonIndex == 1){
-                //看过
-                [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
-            }else if (buttonIndex == 2){
-                //想看
-                [bgmapi setProgressWithEPID:epid WithStatus:@"queue"];
-            }else if (buttonIndex == 3){
-                //抛弃
-                [bgmapi setProgressWithEPID:epid WithStatus:@"drop"];
-            }else if (buttonIndex == 4){
-                //撤销
-                [bgmapi setProgressWithEPID:epid WithStatus:@"remove"];
-            }
-            else if (buttonIndex == 5){
-                //查看讨论串
-                NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/m/topic/ep/%@",epid];
-                [self showWebViewWithURL:disscussurl];
-                
-            }
-            
-        }
-    }
-}
--(void)showWebViewWithURL:(NSString *)url{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-//    [self.refreshControl endRefreshing];
-//    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
-//    webview.urlstr = url;
-//    webview.titlestr = @"条目讨论版";
-//    [self.navigationController presentViewController:webview animated:YES completion:nil];
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:url] entersReaderIfAvailable:NO];
-    safariVC.delegate = self;
-    [self presentViewController:safariVC animated:YES completion:nil];
     
+    NSString *epid = [[self.progresslist objectAtIndex:selectrow] valueForKey:@"id"];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改追番状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"看过" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action) {
+                                                       [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                       request_type = @"updateProgress";
+                                                       [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
+                                                   }]];
+    
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"想看" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action) {
+                                                       [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                       request_type = @"updateProgress";
+                                                       [bgmapi setProgressWithEPID:epid WithStatus:@"queue"];
+                                                   }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"抛弃" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                          request_type = @"updateProgress";
+                                                          [bgmapi setProgressWithEPID:epid WithStatus:@"drop"];
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"撤销" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                          request_type = @"updateProgress";
+                                                          [bgmapi setProgressWithEPID:epid WithStatus:@"remove"];
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"查看讨论串" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/m/topic/ep/%@",epid];
+                                                          SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
+                                                          safariVC.delegate = self;
+                                                          //[self presentViewController:safariVC animated:YES completion:nil];
+                                                          [self presentViewController:safariVC animated:YES completion:^{
+                                                              nil;
+                                                          }];
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [self dismissViewControllerAnimated:YES completion:^{
+                                                              nil;
+                                                          }];
+                                                      }]];
+    
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:^{
+                         nil;
+                         //NSLog(@"displayed");
+                     }];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"修改追番状态"
+//                                                    message:nil
+//                                                   delegate:self
+//                                          cancelButtonTitle:@"保持不变"
+//                                          otherButtonTitles:@"看过",@"想看",@"抛弃",@"撤销",@"查看讨论串", nil];
+//    [alert setTag:233];
+//    [alert show];
 }
+//-(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    if (actionSheet.tag == 233) {
+//        if (buttonIndex >0) {
+//            NSString *epid = [[self.progresslist objectAtIndex:selectrow] valueForKey:@"id"];
+//            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//            request_type = @"updateProgress";
+//            if(buttonIndex == 1){
+//                //看过
+//                [bgmapi setProgressWithEPID:epid WithStatus:@"watched"];
+//            }else if (buttonIndex == 2){
+//                //想看
+//                [bgmapi setProgressWithEPID:epid WithStatus:@"queue"];
+//            }else if (buttonIndex == 3){
+//                //抛弃
+//                [bgmapi setProgressWithEPID:epid WithStatus:@"drop"];
+//            }else if (buttonIndex == 4){
+//                //撤销
+//                [bgmapi setProgressWithEPID:epid WithStatus:@"remove"];
+//            }
+//            else if (buttonIndex == 5){
+//                //查看讨论串
+//                NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/m/topic/ep/%@",epid];
+//                SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:disscussurl] entersReaderIfAvailable:NO];
+//                safariVC.delegate = self;
+//                //[self presentViewController:safariVC animated:YES completion:nil];
+//                [self presentViewController:safariVC animated:YES completion:^{
+//                    nil;
+//                }];
+//            }
+//
+//        }
+//    }
+//}
+//-(void)showWebViewWithURL:(NSString *)url{
+//
+//    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+//    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+////    [self.refreshControl endRefreshing];
+////    WebViewController *webview  = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+////    webview.urlstr = url;
+////    webview.titlestr = @"条目讨论版";
+////    [self.navigationController presentViewController:webview animated:YES completion:nil];
+//
+//    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+//
+//
+//}
 @end
