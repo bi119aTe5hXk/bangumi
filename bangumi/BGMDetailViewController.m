@@ -299,10 +299,21 @@
     [self presentViewController:safariVC animated:YES completion:nil];
 }
 -(IBAction)shareBTN:(id)sender{
+    
     NSString *disscussurl = [NSString stringWithFormat:@"http://bgm.tv/subject/%@",bgmid1];
     UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[disscussurl] applicationActivities:@[]];
-    [self presentViewController:avc animated:YES completion:^{
-        nil;
-    }];
+    
+    
+    //if iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:avc animated:YES completion:nil];
+    }
+    //if iPad
+    else {
+        // Change Rect to position Popover
+        UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:avc];
+        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width, self.view.frame.size.height/4, 0, 0)inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+    
 }
 @end
