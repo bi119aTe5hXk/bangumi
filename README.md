@@ -29,4 +29,6 @@
 
 [捐助](http://blog.bi119ate5hxk.net/donate/)
 
+基于WTFPL协议.
+
 @bi119aTe5hXk 2017
