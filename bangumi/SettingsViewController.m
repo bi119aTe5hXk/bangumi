@@ -53,6 +53,7 @@
 //    [self.navigationController presentViewController:self.webview animated:YES completion:nil];
     SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:rakuenURL] entersReaderIfAvailable:NO];
     safariVC.delegate = self;
+    [safariVC setPreferredBarTintColor:[UIColor blackColor]];
     [self presentViewController:safariVC animated:YES completion:nil];
 }
 -(IBAction)logout:(id)sender{

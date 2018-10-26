@@ -34,13 +34,6 @@
     self.delegate = delegate;
     
     
-    
-    
-    
-    
-
-    
-    
     return self;
 }
 

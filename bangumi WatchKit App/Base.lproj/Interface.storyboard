@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cui-ud-jnF">
-    <device id="watch38" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cui-ud-jnF">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
         <!--DaliyListWKController-->
@@ -19,7 +19,7 @@
                                     <color key="textColor" red="1" green="0.29218034718893326" blue="0.31028376863399654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <dateLabel width="68" height="21" alignment="left" textAlignment="right" format="M/d (EEE)" id="MqI-ao-pre">
+                                <dateLabel width="92" height="21" alignment="right" textAlignment="right" format="M/d (EEE)" id="MqI-ao-pre">
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                     <date key="previewedDate" timeIntervalSinceReferenceDate="461524140">
                                         <!--2015-08-17 17:09:00 +0000-->
@@ -33,7 +33,7 @@
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="5S0-8D-7oO">
                                         <items>
                                             <imageView width="40" height="40" alignment="left" contentMode="scaleAspectFit" id="c12-5R-bMT"/>
-                                            <label height="39" alignment="left" text="正在加载..." textAlignment="left" numberOfLines="2" id="5Vc-aE-WjH">
+                                            <label width="99" height="39" alignment="left" text="正在加载..." textAlignment="left" numberOfLines="2" id="5Vc-aE-WjH">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
@@ -60,7 +60,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="405" y="48"/>
+            <point key="canvasLocation" x="404.51282051282055" y="47.512820512820518"/>
         </scene>
         <!--番组详细-->
         <scene sceneID="EEr-OP-vdL">
@@ -69,32 +69,32 @@
                     <items>
                         <group width="1" height="426" alignment="left" layout="vertical" id="AAX-sU-FrH">
                             <items>
-                                <imageView width="1" height="137" alignment="left" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
-                                <label width="1" height="52" alignment="left" text="正在加载" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
+                                <imageView width="1" height="137" alignment="center" contentMode="scaleAspectFit" id="RGb-l5-fLs"/>
+                                <label width="1" height="52" alignment="center" text="正在加载" textAlignment="center" numberOfLines="3" id="bKK-vU-oP8">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label width="1" height="43" alignment="left" text="请等待..." textAlignment="center" numberOfLines="3" id="GT3-v3-EJl">
+                                <label width="1" height="43" alignment="center" text="请等待..." textAlignment="center" numberOfLines="3" id="GT3-v3-EJl">
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                 </label>
                                 <label height="20" alignment="left" text="目前进度" id="J63-gl-UoJ">
                                     <color key="textColor" red="1" green="0.29218034720000002" blue="0.31028376860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label width="1" height="22" alignment="left" text="??/??" textAlignment="center" id="5NS-ec-iy4"/>
-                                <button width="1" height="44" alignment="left" title="标记ep.???为看过" id="VRa-mi-9ON">
+                                <label width="1" height="22" alignment="center" text="??/??" textAlignment="center" id="5NS-ec-iy4"/>
+                                <button width="1" height="44" alignment="center" title="标记ep.???为看过" id="VRa-mi-9ON">
                                     <color key="titleColor" red="0.086274509803921567" green="0.40392156862745099" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="14"/>
                                     <connections>
                                         <action selector="watchedbtn:" destination="XeQ-A9-BRW" id="mzM-3G-JD5"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="修改追番状态" id="2C2-zT-Dxd">
+                                <button width="1" alignment="center" title="修改追番状态" id="2C2-zT-Dxd">
                                     <connections>
                                         <action selector="setBGMStatus:" destination="XeQ-A9-BRW" id="no9-3g-FEy"/>
                                         <segue destination="aFy-Ve-y6h" kind="modal" identifier="setStatus" id="4Hs-m6-qw4"/>
                                     </connections>
                                 </button>
-                                <button width="1" alignment="left" title="返回" id="LWB-XL-o1m">
+                                <button width="1" alignment="center" title="返回" id="LWB-XL-o1m">
                                     <connections>
                                         <action selector="backbtn:" destination="XeQ-A9-BRW" id="uqw-fA-Nbr"/>
                                     </connections>
@@ -120,32 +120,32 @@
             <objects>
                 <controller identifier="StatusChangeInterfaceController" title="追番状态" id="aFy-Ve-y6h" customClass="StatusChangeInterfaceController">
                     <items>
-                        <button width="1" alignment="left" title="想看" id="Scj-pZ-w4i">
+                        <button width="1" alignment="center" title="想看" id="Scj-pZ-w4i">
                             <connections>
                                 <action selector="wantBTN:" destination="aFy-Ve-y6h" id="uWC-vv-8zG"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="在看" id="MKe-CP-OE0">
+                        <button width="1" alignment="center" title="在看" id="MKe-CP-OE0">
                             <connections>
                                 <action selector="wingBTN:" destination="aFy-Ve-y6h" id="Ac8-SS-Oco"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="看过" id="EwH-Vi-dja">
+                        <button width="1" alignment="center" title="看过" id="EwH-Vi-dja">
                             <connections>
                                 <action selector="wedBTN:" destination="aFy-Ve-y6h" id="G5d-xC-GC0"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="搁置" id="g9e-iN-a5u">
+                        <button width="1" alignment="center" title="搁置" id="g9e-iN-a5u">
                             <connections>
                                 <action selector="wlaterBTN:" destination="aFy-Ve-y6h" id="JVd-34-ubH"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="抛弃" id="xUA-9H-trg">
+                        <button width="1" alignment="center" title="抛弃" id="xUA-9H-trg">
                             <connections>
                                 <action selector="trashBTN:" destination="aFy-Ve-y6h" id="jwM-Fu-fSd"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="取消" id="lqK-uL-nwy">
+                        <button width="1" alignment="center" title="取消" id="lqK-uL-nwy">
                             <connections>
                                 <action selector="cancelBTN:" destination="aFy-Ve-y6h" id="F3D-82-5MF"/>
                             </connections>
@@ -166,15 +166,15 @@
         <!--我的追番列表-->
         <scene sceneID="ROT-CJ-GUd">
             <objects>
-                <controller identifier="MainListInterfaceController" title="我的追番列表" id="cui-ud-jnF" customClass="MainListInterfaceController">
+                <controller identifier="MainListInterfaceController" title="我的追番列表" alwaysBounce="YES" fullBounds="YES" fullScreen="YES" id="cui-ud-jnF" customClass="MainListInterfaceController">
                     <items>
-                        <table alignment="left" id="BYZ-mh-meb">
+                        <table alignment="center" id="BYZ-mh-meb">
                             <items>
                                 <tableRow id="CQZ-yV-19F" customClass="BGMWKCell">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="hRN-hZ-bss">
                                         <items>
                                             <imageView width="40" height="40" alignment="left" contentMode="scaleAspectFit" id="t1H-8c-6dS"/>
-                                            <label height="40" alignment="left" text="正在加载..." textAlignment="left" numberOfLines="2" id="kBe-8U-2yP">
+                                            <label width="100" height="40" alignment="left" text="正在加载..." textAlignment="left" numberOfLines="2" id="kBe-8U-2yP">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
@@ -203,22 +203,22 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="153" y="201"/>
+            <point key="canvasLocation" x="152.56410256410257" y="200.94871794871796"/>
         </scene>
         <!--NotLoginInterfaceController-->
         <scene sceneID="uOI-cA-JGm">
             <objects>
                 <controller identifier="NotLoginInterfaceController" id="aRN-jh-a70" customClass="NotLoginInterfaceController">
                     <items>
-                        <label width="134" height="53" alignment="left" text="请在iOS上登录后再刷新重试。" textAlignment="center" numberOfLines="4" id="VWY-KL-cFm">
+                        <label width="136" height="65" alignment="center" text="请在iOS上登录后再刷新重试。" textAlignment="center" numberOfLines="4" id="VWY-KL-cFm">
                             <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </label>
-                        <button width="1" alignment="left" title="每日放送列表" id="KmO-mP-o8i">
+                        <button width="1" alignment="center" title="每日放送列表" id="KmO-mP-o8i">
                             <connections>
                                 <segue destination="AgC-eL-Hgc" kind="modal" id="kGe-Sl-72Y"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="重试" id="gld-Bc-66u">
+                        <button width="1" alignment="center" title="重试" id="gld-Bc-66u">
                             <connections>
                                 <action selector="retrybtn2" destination="aRN-jh-a70" id="oZU-fh-CZc"/>
                             </connections>
@@ -235,10 +235,10 @@
                     </menu>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="167" y="-352"/>
+            <point key="canvasLocation" x="165.56521739130434" y="-352.90178571428572"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kGe-Sl-72Y"/>
+        <segue reference="Ap3-UF-Caf"/>
     </inferredMetricsTieBreakers>
 </document>

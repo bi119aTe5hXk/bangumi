@@ -7,7 +7,7 @@
 //
 
 #import "WatchingListViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+//#import <SDWebImage/UIImageView+WebCache.h>
 @interface WatchingListViewController ()
 
 @end
@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //self.tabBarController.tabBarItem.title = @"进度管理";
     //self.title = @"进度管理";
     //self.navigationItem.title = @"进度管理";
     self.tabBarController.navigationItem.title  = @"进度管理";

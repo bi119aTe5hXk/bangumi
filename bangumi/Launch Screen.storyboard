@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@bi119aTe5hXk. 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@bi119aTe5hXk. 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
                                 <rect key="frame" x="20" y="695" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="awr-Yf-KCK"/>
@@ -50,24 +49,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-oo-ErF">
-                                <rect key="frame" x="20" y="317" width="374" height="288"/>
+                                <rect key="frame" x="111" y="382" width="193" height="169"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="ByM-jj-8xN"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" symbolic="YES" id="HkN-0p-VQm"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="PDf-ib-mQW"/>
-                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="leading" secondItem="Jsi-oo-ErF" secondAttribute="leading" id="TE6-nh-yVD"/>
+                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" constant="-90" id="PDf-ib-mQW"/>
+                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="leading" secondItem="Jsi-oo-ErF" secondAttribute="leading" constant="-91" id="TE6-nh-yVD"/>
                             <constraint firstItem="IJu-vJ-gyG" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="8" symbolic="YES" id="Xvd-Uz-kwp"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="top" secondItem="IJu-vJ-gyG" secondAttribute="bottom" constant="65" id="aJ3-hN-Bug"/>
+                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="top" secondItem="IJu-vJ-gyG" secondAttribute="bottom" constant="130" id="aJ3-hN-Bug"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="IJu-vJ-gyG" secondAttribute="leading" id="cgN-0m-1RN"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="dhO-Ov-kgU"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="IJu-vJ-gyG" secondAttribute="trailing" id="ozt-Oa-Bih"/>
-                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="trailing" secondItem="Jsi-oo-ErF" secondAttribute="trailing" id="q3f-TG-PPb"/>
-                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" id="vRC-zV-ZIT"/>
+                            <constraint firstItem="IJu-vJ-gyG" firstAttribute="trailing" secondItem="Jsi-oo-ErF" secondAttribute="trailing" constant="90" id="q3f-TG-PPb"/>
+                            <constraint firstItem="Jsi-oo-ErF" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" constant="91" id="vRC-zV-ZIT"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="160" id="vS2-ZJ-eav"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="Jsi-oo-ErF" secondAttribute="bottom" constant="90" id="y1V-BC-JlH"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="Jsi-oo-ErF" secondAttribute="bottom" constant="144" id="y1V-BC-JlH"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -77,6 +76,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash" width="341" height="341"/>
+        <image name="splash" width="341.33334350585938" height="341.33334350585938"/>
     </resources>
 </document>

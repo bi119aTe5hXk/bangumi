@@ -13,6 +13,7 @@
 @interface SettingsViewController : UITableViewController<BGMAPIDelegate,SFSafariViewControllerDelegate>{
     NSUserDefaults *userdefault;
     BGMAPI *bgmapi;
+
 }
 
 @property (nonatomic, strong) IBOutlet UIButton *rakuenbtn;
