@@ -42,7 +42,8 @@
     }
     
     if ([auth length] > 0) {
-//        [self pushSettingsToWatchApp];
+        [self pushSettingsToWatchApp];
+        
 //        self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
 //        [self.navigationController presentViewController:self.splitview animated:NO completion:nil];
         [self dismissViewControllerAnimated:YES completion:NULL];
@@ -125,6 +126,7 @@
             [userdefaults setObject:userid forKey:@"userid"];
             [userdefaults setObject:auth_urlencoded forKey:@"auth_urlencoded"];
             [userdefaults synchronize];
+            [self pushSettingsToWatchApp];
 //            dispatch_async(dispatch_get_main_queue(),^{
 ////                self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
 ////                [self.navigationController presentViewController:self.splitview animated:YES completion:nil];

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cui-ud-jnF">
-    <device id="watch42" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cui-ud-jnF">
+    <device id="watch44" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
         <!--DaliyListWKController-->
@@ -15,11 +15,11 @@
                     <items>
                         <group width="1" alignment="left" id="tls-xb-f4K">
                             <items>
-                                <label width="61" height="22" alignment="left" text="今日放送" textAlignment="left" id="nSk-wO-YNE">
+                                <label height="22" alignment="left" text="今日放送" textAlignment="left" id="nSk-wO-YNE">
                                     <color key="textColor" red="1" green="0.29218034718893326" blue="0.31028376863399654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <dateLabel width="92" height="21" alignment="right" textAlignment="right" format="M/d (EEE)" id="MqI-ao-pre">
+                                <dateLabel height="21" alignment="right" textAlignment="right" format="M/d (EEE)" id="MqI-ao-pre">
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                     <date key="previewedDate" timeIntervalSinceReferenceDate="461524140">
                                         <!--2015-08-17 17:09:00 +0000-->
@@ -60,7 +60,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="404.51282051282055" y="47.512820512820518"/>
+            <point key="canvasLocation" x="404" y="47.5"/>
         </scene>
         <!--番组详细-->
         <scene sceneID="EEr-OP-vdL">
@@ -166,9 +166,9 @@
         <!--我的追番列表-->
         <scene sceneID="ROT-CJ-GUd">
             <objects>
-                <controller identifier="MainListInterfaceController" title="我的追番列表" alwaysBounce="YES" fullBounds="YES" fullScreen="YES" id="cui-ud-jnF" customClass="MainListInterfaceController">
+                <controller identifier="MainListInterfaceController" title="我的追番列表" alwaysBounce="YES" id="cui-ud-jnF" customClass="MainListInterfaceController">
                     <items>
-                        <table alignment="center" id="BYZ-mh-meb">
+                        <table alignment="left" id="BYZ-mh-meb">
                             <items>
                                 <tableRow id="CQZ-yV-19F" customClass="BGMWKCell">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="hRN-hZ-bss">
