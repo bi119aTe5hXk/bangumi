@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LDn-D6-Hqx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n1L-8k-myp">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment version="4096" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="邮箱地址" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zhm-QC-Bcu">
-                                <rect key="frame" x="20" y="106" width="374" height="30"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9p-bA-1oh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="bbc-Ui-GiW"/>
+                                <items>
+                                    <navigationItem title="登录 bangumi" id="Vrq-GP-GAP">
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="4yt-lA-bUD">
+                                            <connections>
+                                                <action selector="cancel:" destination="kKC-iY-qY7" id="otn-Qf-dBz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="邮箱地址" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zhm-QC-Bcu">
+                                <rect key="frame" x="64" y="151" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="gry-82-ygi"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -27,52 +43,46 @@
                                     <outlet property="delegate" destination="kKC-iY-qY7" id="9d7-U3-74J"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IRN-cV-RiK">
-                                <rect key="frame" x="20" y="158" width="374" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IRN-cV-RiK">
+                                <rect key="frame" x="64" y="203" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="E2Y-PA-t02"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="kKC-iY-qY7" id="CZo-yt-G0I"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkG-SM-24p">
-                                <rect key="frame" x="251" y="214" width="143" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="143" id="PHP-yK-9X2"/>
-                                    <constraint firstAttribute="height" constant="63" id="Uss-ur-eHY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="登录"/>
-                                <connections>
-                                    <action selector="loginbtnpressd:" destination="kKC-iY-qY7" eventType="touchUpInside" id="lt0-K4-p6H"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpF-5R-7Gx">
-                                <rect key="frame" x="20" y="214" width="143" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="Hut-bD-xun"/>
-                                    <constraint firstAttribute="width" constant="143" id="ebF-XU-oCo"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpF-5R-7Gx">
+                                <rect key="frame" x="64" y="259" width="143" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="DP7-xY-IG0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="注册"/>
                                 <connections>
                                     <action selector="registerbtnpressed:" destination="kKC-iY-qY7" eventType="touchUpInside" id="95D-JZ-aGV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="部分功能需要使用bangumi网站账户登录之后才可正常使用, 请使用邮箱地址登录." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q11-ev-AAz">
+                                <rect key="frame" x="64" y="88" width="307" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="98w-03-aNK"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkG-SM-24p">
+                                <rect key="frame" x="207" y="259" width="143" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="VAz-Z2-jZl"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="登录"/>
+                                <connections>
+                                    <action selector="loginbtnpressd:" destination="kKC-iY-qY7" eventType="touchUpInside" id="lt0-K4-p6H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="0G6-9b-PWS"/>
-                            <constraint firstItem="IRN-cV-RiK" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="6bV-Qu-h98"/>
-                            <constraint firstItem="IRN-cV-RiK" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="EF4-YQ-gss"/>
-                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="top" secondItem="1Jx-YU-L2k" secondAttribute="top" constant="18" id="H75-rY-CY3"/>
-                            <constraint firstItem="rkG-SM-24p" firstAttribute="top" secondItem="IRN-cV-RiK" secondAttribute="bottom" constant="26" id="PDc-iV-yw2"/>
-                            <constraint firstItem="rkG-SM-24p" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="Sf8-Ga-xhG"/>
-                            <constraint firstItem="IRN-cV-RiK" firstAttribute="top" secondItem="Zhm-QC-Bcu" secondAttribute="bottom" constant="22" id="ZJF-NV-sVe"/>
-                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="leading" secondItem="mVr-zg-tbj" secondAttribute="leadingMargin" id="eNc-s2-mGz"/>
-                            <constraint firstItem="ZpF-5R-7Gx" firstAttribute="top" secondItem="IRN-cV-RiK" secondAttribute="bottom" constant="26" id="orm-ok-zQF"/>
-                            <constraint firstItem="Zhm-QC-Bcu" firstAttribute="trailing" secondItem="mVr-zg-tbj" secondAttribute="trailingMargin" id="s5s-7y-ySF"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Jx-YU-L2k"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bangumi+" id="zuM-HI-ZPE"/>
@@ -83,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJ7-aE-AWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-246" y="-655"/>
+            <point key="canvasLocation" x="-246.42857142857142" y="-656.52173913043487"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="snC-F4-K3r">
@@ -107,14 +117,14 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" itemPositioning="fill" id="8yt-pX-TS6">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                         <viewLayoutGuide key="safeArea" id="K95-gg-zK5"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Pzv-dj-RD0" kind="relationship" relationship="viewControllers" id="vcL-rE-byv"/>
                         <segue destination="8ux-Dq-vfJ" kind="relationship" relationship="viewControllers" id="whk-xH-Q6P"/>
+                        <segue destination="Pzv-dj-RD0" kind="relationship" relationship="viewControllers" id="vcL-rE-byv"/>
                         <segue destination="bJ7-1j-2Mi" kind="relationship" relationship="viewControllers" id="Dmo-y2-uJS"/>
                         <segue destination="GHg-VX-l3v" kind="relationship" relationship="viewControllers" id="9k8-0P-CyY"/>
                     </connections>
@@ -321,7 +331,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="X89-6P-dJS"/>
+                    <tabBarItem key="tabBarItem" title="进度管理" image="UITabBarList.png" id="X89-6P-dJS"/>
                     <navigationItem key="navigationItem" title="进度管理" id="nNn-R1-EVa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sA6-3p-taK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,7 +470,7 @@
                             <constraint firstItem="Erl-xx-58K" firstAttribute="bottom" secondItem="k5a-M7-vz5" secondAttribute="bottom" constant="8" symbolic="YES" id="E0j-v9-Pyv"/>
                             <constraint firstItem="dCr-Ok-GAh" firstAttribute="baseline" secondItem="j0V-va-l78" secondAttribute="baseline" id="GXH-Yz-Dwg"/>
                             <constraint firstItem="tm5-ID-AfT" firstAttribute="leading" secondItem="J6M-ke-N3S" secondAttribute="leading" id="JcW-qT-EDd"/>
-                            <constraint firstItem="Erl-xx-58K" firstAttribute="bottom" secondItem="5qg-te-zSa" secondAttribute="bottom" constant="8" symbolic="YES" id="Nkm-HC-RhA"/>
+                            <constraint firstItem="Erl-xx-58K" firstAttribute="bottom" secondItem="5qg-te-zSa" secondAttribute="bottom" symbolic="YES" id="Nkm-HC-RhA"/>
                             <constraint firstItem="tm5-ID-AfT" firstAttribute="centerX" secondItem="Erl-xx-58K" secondAttribute="centerX" id="O9V-79-lAx"/>
                             <constraint firstItem="85O-X9-SyP" firstAttribute="baseline" secondItem="WZC-yv-T6N" secondAttribute="baseline" id="RNA-y6-FWf"/>
                             <constraint firstItem="5qg-te-zSa" firstAttribute="trailing" secondItem="k5a-M7-vz5" secondAttribute="trailing" id="Rwb-bJ-zNl"/>
@@ -641,7 +651,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="l8W-tF-hlo"/>
+                    <tabBarItem key="tabBarItem" title="每日放送" image="UITabBarStar.png" id="l8W-tF-hlo"/>
                     <navigationItem key="navigationItem" title="每日放送" id="cmV-b1-myO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vid-Dm-C47" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -699,12 +709,12 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8j-4u-QvD">
                                                     <rect key="frame" x="12" y="0.0" width="390" height="43.666666666666664"/>
-                                                    <state key="normal" title="登出 bangumi">
+                                                    <state key="normal" title="登录 bangumi">
                                                         <color key="titleColor" red="1" green="0.15596905150000001" blue="0.1062615517" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="logout:" destination="GHg-VX-l3v" eventType="touchUpInside" id="uBn-MF-ukL"/>
+                                                        <action selector="loginbtnpressd:" destination="GHg-VX-l3v" eventType="touchUpInside" id="MO0-0N-jU7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -733,6 +743,7 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
                     <tabBarItem key="tabBarItem" title="设置" systemItem="more" id="3TR-PA-9Ol"/>
                     <navigationItem key="navigationItem" title="设置" id="l4D-IQ-aaO"/>
                     <connections>
+                        <outlet property="loginbtn" destination="n8j-4u-QvD" id="00h-dT-eEu"/>
                         <outlet property="rakuenbtn" destination="dVY-2E-YVv" id="enM-SC-Bs0"/>
                     </connections>
                 </tableViewController>
@@ -740,24 +751,12 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
             </objects>
             <point key="canvasLocation" x="2698" y="997"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ehx-Zq-m7V">
-            <objects>
-                <navigationController id="LDn-D6-Hqx" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Erv-AU-A23">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="kKC-iY-qY7" kind="relationship" relationship="rootViewController" id="cqv-fX-B6N"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pom-zp-jFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1035" y="-655"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="UITabBarList.png" width="27" height="26"/>
+        <image name="UITabBarStar.png" width="27" height="26"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y44-sG-Vgs"/>
+        <segue reference="rGe-xl-mdV"/>
     </inferredMetricsTieBreakers>
 </document>

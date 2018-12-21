@@ -19,8 +19,11 @@
 @implementation NSString (URLEncoding)
 
 - (NSString *)urlEncodedUTF8String {
-    return (id)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(0, (CFStringRef)self, 0,
-                                                       (CFStringRef)@";/?:@&=$+{}<>,", kCFStringEncodingUTF8));
+    return (id)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(0,
+                                                                         (CFStringRef)self,
+                                                                         0,
+                                                                         (CFStringRef)@";/?:@&=$+{}<>,",
+                                                                         kCFStringEncodingUTF8));
 }
 
 @end
@@ -61,7 +64,7 @@
 -(void)getEPListWithSubID:(NSString *)subid{
     NSString *url = [NSString stringWithFormat:SubjectEPlistURL,subid];
     url = [url stringByAppendingString:[NSString stringWithFormat:@"?source=%@&auth=%@",appName,authURLencoded]];
-     [self createGETConnectionWithURL:url];
+    [self createGETConnectionWithURL:url];
 }
 -(void)getSubjectInfoWithSubID:(NSString *)subid{
     NSString *url = [NSString stringWithFormat:SubjectInfoURL,subid];
@@ -155,10 +158,7 @@
     task = [urlsession dataTaskWithRequest:request];
     [task resume];
     
-    
-    
-    
-     return YES;
+    return YES;
 }
 
 
@@ -170,7 +170,7 @@
         NSLog(@"GETURL: %@",url);
     }
     
-	
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadRevalidatingCacheData
                                                        timeoutInterval:settimeout];
@@ -179,9 +179,9 @@
 #endif
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     urlsession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
-	task = [urlsession dataTaskWithRequest:request];
-	[task resume];
-	return YES;
+    task = [urlsession dataTaskWithRequest:request];
+    [task resume];
+    return YES;
 }
 
 - (void)cancelConnection{
@@ -196,7 +196,7 @@
     responseData = nil;
 }
 - (void)cancelRequest{
-	//[self.theConnection cancel];
+    //[self.theConnection cancel];
     //self.theConnection = nil;
     
     [task cancel];
@@ -266,7 +266,7 @@ didReceiveResponse:(NSURLResponse *)response
                 [self.delegate api:self readyWithList:json];
             }
         }
-
+        
     }
 }
 

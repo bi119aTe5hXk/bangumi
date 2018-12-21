@@ -42,10 +42,10 @@
     }
     
     if ([auth length] > 0) {
-        [self pushSettingsToWatchApp];
-        self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
-        [self.navigationController presentViewController:self.splitview animated:NO completion:nil];
-        
+//        [self pushSettingsToWatchApp];
+//        self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
+//        [self.navigationController presentViewController:self.splitview animated:NO completion:nil];
+        [self dismissViewControllerAnimated:YES completion:NULL];
     }
     
     
@@ -125,25 +125,28 @@
             [userdefaults setObject:userid forKey:@"userid"];
             [userdefaults setObject:auth_urlencoded forKey:@"auth_urlencoded"];
             [userdefaults synchronize];
-            dispatch_async(dispatch_get_main_queue(),^{
-                self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
-                [self.navigationController presentViewController:self.splitview animated:YES completion:nil];
-            });
+//            dispatch_async(dispatch_get_main_queue(),^{
+////                self.splitview = [self.storyboard instantiateViewControllerWithIdentifier:@"SplitViewController"];
+////                [self.navigationController presentViewController:self.splitview animated:YES completion:nil];
+//
+//            });
+            [self dismissViewControllerAnimated:YES completion:NULL];
             
             
         }else{
-            dispatch_async(dispatch_get_main_queue(),^{
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户名密码错误！" message:nil preferredStyle:UIAlertControllerStyleAlert];
-                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-                [self presentViewController:alert animated:YES completion:nil];
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
-//                                                                message:nil
-//                                                               delegate:nil
-//                                                      cancelButtonTitle:@"OK"
-//                                                      otherButtonTitles:nil, nil];
-//                [alert show];
-            });
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户名密码错误！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+//            dispatch_async(dispatch_get_main_queue(),^{
+//
+////                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
+////                                                                message:nil
+////                                                               delegate:nil
+////                                                      cancelButtonTitle:@"OK"
+////                                                      otherButtonTitles:nil, nil];
+////                [alert show];
+//            });
             
         }
     }
@@ -179,6 +182,8 @@
 //    
 //    
 //}
-
+-(IBAction)cancel:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 @end

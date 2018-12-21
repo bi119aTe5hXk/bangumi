@@ -20,7 +20,7 @@
     NSLog(@"██╔══██╗██╔══██║██║╚██╗██║██║   ██║██║   ██║██║╚██╔╝██║██║");
     NSLog(@"██████╔╝██║  ██║██║ ╚████║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║██║");
     NSLog(@"╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝");
-    NSLog(@"Product by ©bi119aTe5hXk 2015-2017.");
+    NSLog(@"Product by ©bi119aTe5hXk 2015-2019.");
     NSLog(@"なにこれ(°Д°)？！");
     application.statusBarHidden = NO;
     // Override point for customization after application launch.

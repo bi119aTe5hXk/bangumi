@@ -11,6 +11,7 @@
 #import "BGMCell.h"
 #import "BGMDetailViewController.h"
 //#import "WebViewController.h"
+#import "LoginViewController.h"
 @interface WatchingListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UIAlertViewDelegate,SFSafariViewControllerDelegate>{
     NSUserDefaults *userdefault;
     BGMAPI *bgmapi;
@@ -18,11 +19,12 @@
     NSArray *bgmlist;
     NSInteger ep_count;
     NSString *epid;
-    
+    NSString *auth;
     NSString *disscussurl;
     
     
 }
 @property (strong, nonatomic) BGMDetailViewController *detailviewcontroller;
+@property (strong, nonatomic) LoginViewController *loginviewcontroller;
 
 @end

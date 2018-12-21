@@ -40,11 +40,21 @@
     self.tabBarController.navigationItem.title = @"设置";
     
     userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
+    auth = [userdefault stringForKey:@"auth"];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
-    [bgmapi getNotifyCount];
-    if (debugmode == YES) {
-        NSLog(@"START GET NOTIFY COUNT");
+    if ([auth length] > 0) {
+        [self.loginbtn setTitle:@"登出 bangumi" forState:UIControlStateNormal];
+        [bgmapi getNotifyCount];
+        if (debugmode == YES) {
+            NSLog(@"START GET NOTIFY COUNT");
+        }
+    }else{
+        [self.loginbtn setTitle:@"登录 bangumi" forState:UIControlStateNormal];
     }
+    
+    
+    
+    
 }
 -(IBAction)openRakuen:(id)sender{
 //    self.webview = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
@@ -56,12 +66,24 @@
     [safariVC setPreferredBarTintColor:[UIColor blackColor]];
     [self presentViewController:safariVC animated:YES completion:nil];
 }
--(IBAction)logout:(id)sender{
-    [userdefault setObject:nil forKey:@"auth_urlencoded"];
-    [userdefault setObject:nil forKey:@"auth"];
-    [userdefault setObject:nil forKey:@"userid"];
-    [userdefault synchronize];
-    [self dismissViewControllerAnimated:YES completion:nil];
+-(IBAction)loginbtnpressd:(id)sender{
+    auth = [userdefault stringForKey:@"auth"];
+    if ([auth length] > 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"您确定要登出账户?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"是的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [userdefault setObject:nil forKey:@"auth_urlencoded"];
+            [userdefault setObject:nil forKey:@"auth"];
+            [userdefault setObject:nil forKey:@"userid"];
+            [userdefault synchronize];
+            [self.loginbtn setTitle:@"登录 bangumi" forState:UIControlStateNormal];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        self.loginviewcontroller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController presentViewController:self.loginviewcontroller animated:YES completion:NULL];
+    }
+    
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [bgmapi cancelConnection];

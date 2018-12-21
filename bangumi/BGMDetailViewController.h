@@ -10,12 +10,14 @@
 @import SafariServices;
 #import "ProgressListViewController.h"
 //#import "WebViewController.h"
+#import "LoginViewController.h"
 @interface BGMDetailViewController : UIViewController<BGMAPIDelegate,SFSafariViewControllerDelegate>{
     BGMAPI *bgmapi;
     NSUserDefaults *userdefaults;
     NSString *request_type;
     NSString *bgmid1;
     NSArray *progresslist;
+    NSString *auth;
 }
 @property (strong, nonatomic) id detailItem;
 @property (nonatomic, strong) NSString *bgmidstr;
@@ -34,6 +36,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *rankscore;
 @property (nonatomic, strong) IBOutlet UIButton *bgmdetailbtn;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *actionbtn;
+
+@property (nonatomic, strong) LoginViewController *loginviewcontroller;
 
 -(void)startGetSubjectInfoWithID:(NSString *)bgmid;
 -(IBAction)PorgressViewBTN:(id)sender;

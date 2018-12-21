@@ -33,6 +33,10 @@
 -(void)startGetSubjectInfoWithID:(NSString *)bgmid{
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
+    auth = [userdefaults stringForKey:@"auth"];
+    
+    
+    
     if ((unsigned long)bgmid.length > 0) {
         [bgmapi cancelConnection];
         self.bgmidstr = bgmid;
@@ -202,58 +206,73 @@
 
 
 -(IBAction)PorgressViewBTN:(id)sender{
-    ProgressListViewController *progressview = [self.storyboard instantiateViewControllerWithIdentifier:@"ProgressListViewController"];
-    progressview.subid = self.bgmidstr;
-    progressview.progresslist = progresslist;
-    [self.navigationController pushViewController:progressview animated:YES];
+    auth = [userdefaults stringForKey:@"auth"];
+    if([auth length]>0){
+        ProgressListViewController *progressview = [self.storyboard instantiateViewControllerWithIdentifier:@"ProgressListViewController"];
+        progressview.subid = self.bgmidstr;
+        progressview.progresslist = progresslist;
+        [self.navigationController pushViewController:progressview animated:YES];
+    }else{
+        self.loginviewcontroller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController presentViewController:self.loginviewcontroller animated:YES completion:NULL];
+    }
+    
 }
 -(IBAction)BGMStatuesBTN:(id)sender{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改番组状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"想看" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"wish"];
-                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                                                          request_type = @"updateStatus";
-                                                      }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"在看" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"do"];
-                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                                                          request_type = @"updateStatus";
-                                                          
-                                                      }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"看过" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"collect"];
-                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                                                          request_type = @"updateStatus";
-                                                          
-                                                      }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"搁置" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"on_hold"];
-                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                                                          request_type = @"updateStatus";
-                                                          
-                                                      }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"抛弃" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"dropped"];
-                                                          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                                                          request_type = @"updateStatus";
-                                                          
-                                                      }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"保持不变" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          nil;
-                                                      }]];
+    auth = [userdefaults stringForKey:@"auth"];
+    if([auth length]>0){
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改番组状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"想看" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"wish"];
+                                                              [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                              request_type = @"updateStatus";
+                                                          }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"在看" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"do"];
+                                                              [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                              request_type = @"updateStatus";
+                                                              
+                                                          }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"看过" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"collect"];
+                                                              [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                              request_type = @"updateStatus";
+                                                              
+                                                          }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"搁置" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"on_hold"];
+                                                              [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                              request_type = @"updateStatus";
+                                                              
+                                                          }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"抛弃" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [bgmapi setCollectionWithColID:self.bgmidstr WithRating:0 WithStatus:@"dropped"];
+                                                              [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                              request_type = @"updateStatus";
+                                                              
+                                                          }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"保持不变" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              nil;
+                                                          }]];
+        
+        [self presentViewController:alertController
+                           animated:YES
+                         completion:^{
+                             nil;
+                             //NSLog(@"displayed");
+                         }];
+        
+    }else{
+        self.loginviewcontroller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController presentViewController:self.loginviewcontroller animated:YES completion:NULL];
+    }
     
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:^{
-                         nil;
-                         //NSLog(@"displayed");
-                     }];
     
     
 //    UIAlertView *stateAlert = [[UIAlertView alloc] initWithTitle:@"修改番组状态"

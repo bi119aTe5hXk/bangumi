@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SplitViewController.h"
+//#import "SplitViewController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 //#import "WebViewController.h"
 @import SafariServices;
@@ -25,10 +25,10 @@
 @property (nonatomic, strong) IBOutlet UITextField *usernamefield;
 @property (nonatomic, strong) IBOutlet UITextField *passwordfield;
 
-@property (nonatomic, strong) IBOutlet SplitViewController *splitview;
+//@property (nonatomic, strong) IBOutlet SplitViewController *splitview;
 
 
-
+-(IBAction)cancel:(id)sender;
 -(IBAction)loginbtnpressd:(id)sender;
 -(IBAction)registerbtnpressed:(id)sender;
 @end

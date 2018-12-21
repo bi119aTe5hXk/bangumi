@@ -46,20 +46,52 @@
     self.refreshControl = refreshControl;
     bgmlist = [[NSArray alloc] init];
     userdefault = [[NSUserDefaults alloc] initWithSuiteName:groupName];
-    if (bgmlist.count <= 0) {
-        [self loadList];
-    }
     
+    auth = [userdefault stringForKey:@"auth"];
+    if ([auth length] > 0) {
+        if (bgmlist.count <= 0) {
+            [self loadList];
+        }
+    }else{
+        self.loginviewcontroller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController presentViewController:self.loginviewcontroller animated:YES completion:nil];
+    }
 }
 - (void)onRefresh:(id)sender{
-    [self loadList];
+    auth = [userdefault stringForKey:@"auth"];//get latest info
+    if ([auth length] > 0) {
+        [self loadList];
+    }else{
+        [self.refreshControl endRefreshing];
+        bgmlist = [NSArray array];
+        bgmlist = @[];
+        [self.tableView reloadData];
+        self.loginviewcontroller = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self.navigationController presentViewController:self.loginviewcontroller animated:YES completion:nil];
+    }
+    
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
+
 -(void)viewWillAppear:(BOOL)animated{
-    self.tabBarController.navigationItem.title  = @"进度管理";
+    auth = [userdefault stringForKey:@"auth"];//get latest info
+    
+    if ([auth length] > 0) {
+        self.tabBarController.navigationItem.title  = @"进度管理";
+        if (bgmlist.count <= 0) {
+            [self loadList];
+        }
+    }else{
+        self.tabBarController.navigationItem.title  = @"未登录";
+        bgmlist = [NSArray array];
+        bgmlist = @[];
+        [self.tableView reloadData];
+        
+    }
+    
 }
 -(void)loadList{
     NSString *userid = [userdefault stringForKey:@"userid"];

@@ -32,12 +32,20 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+//    UIButton* todayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [todayButton setTitle:@"今日" forState:UIControlStateNormal];
+//    [todayButton addTarget:self action:@selector(jumpToToday) forControlEvents:UIControlEventTouchUpInside];
+//    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:todayButton];
+    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
     [refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
     bgmapi = [[BGMAPI alloc] initWithdelegate:self];
-    
+    if (daylist.count <= 0) {
+        [self startGetDayBGMList];
+    }
 }
 - (void)onRefresh:(id)sender{
     [self startGetDayBGMList];
@@ -46,12 +54,6 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
-}
--(void)viewDidAppear:(BOOL)animated{
-    if (daylist.count <= 0) {
-        
-        [self startGetDayBGMList];
-    }
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.navigationItem.title = @"每日番组";
@@ -77,7 +79,42 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+    [self jumpToToday];
     
+}
+-(void)jumpToToday{
+    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:[self todayNum]];
+    [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+-(NSInteger)todayNum{
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierJapanese];
+    NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:[NSDate date]];
+    NSInteger weekday = [comps weekday];
+    //NSLog(@"weekday:%ld",weekday);
+    NSInteger day=0;
+    if (weekday == 1) {
+        //sun
+        day=6;
+    }else if(weekday ==2){
+        //mon
+        day = 0;
+    }else if(weekday ==3){
+        //tue
+        day = 1;
+    }else if(weekday ==4){
+        //wen
+        day = 2;
+    }else if(weekday ==5){
+        //tur
+        day = 3;
+    }else if(weekday ==6){
+        //fri
+        day = 4;
+    }else if(weekday ==7){
+        //sat
+        day = 5;
+    }
+    return day;
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -219,8 +256,6 @@
     [detailview startGetSubjectInfoWithID:bgmid];
     detailview.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     detailview.navigationItem.leftItemsSupplementBackButton = YES;
-    
-    
     
 }
 @end

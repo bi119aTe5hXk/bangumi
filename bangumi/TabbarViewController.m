@@ -48,7 +48,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
 
 /*
 #pragma mark - Navigation
@@ -60,10 +62,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    
-    NSLog(@"intrinsicContentSize.height:%f",self.tabBar.safeAreaInsets.bottom);
-    
+    //[self.tabBar safeAreaInsets];
+    //NSLog(@"intrinsicContentSize.height:%f",self.tabBar.safeAreaInsets.bottom);
+    [self.tabBar invalidateIntrinsicContentSize];
+//    self.tabBar.heightAnchor
     if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[BGMDetailViewController class]] && ([(BGMDetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
         // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
         NSLog(@"handled the collapse by doing nothing; the secondary controller will be discarded.");
