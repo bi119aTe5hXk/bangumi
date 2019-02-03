@@ -15,6 +15,8 @@
 		47756E2F2206B89200B51037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47756E2D2206B89200B51037 /* LaunchScreen.storyboard */; };
 		47756E3A2206B89200B51037 /* bangumiSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E392206B89200B51037 /* bangumiSwiftTests.swift */; };
 		47756E452206B89200B51037 /* bangumiSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E442206B89200B51037 /* bangumiSwiftUITests.swift */; };
+		47756E532206C05A00B51037 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E522206C05A00B51037 /* API.swift */; };
+		47756E552206C35200B51037 /* BangumiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E542206C35200B51037 /* BangumiServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		47756E402206B89200B51037 /* bangumiSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bangumiSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47756E442206B89200B51037 /* bangumiSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bangumiSwiftUITests.swift; sourceTree = "<group>"; };
 		47756E462206B89200B51037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47756E522206C05A00B51037 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		47756E542206C35200B51037 /* BangumiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangumiServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		47756E212206B89000B51037 /* bangumiSwift */ = {
 			isa = PBXGroup;
 			children = (
+				47756E522206C05A00B51037 /* API.swift */,
+				47756E542206C35200B51037 /* BangumiServices.swift */,
 				47756E222206B89000B51037 /* AppDelegate.swift */,
 				47756E242206B89000B51037 /* MasterViewController.swift */,
 				47756E262206B89000B51037 /* DetailViewController.swift */,
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				47756E272206B89000B51037 /* DetailViewController.swift in Sources */,
+				47756E552206C35200B51037 /* BangumiServices.swift in Sources */,
+				47756E532206C05A00B51037 /* API.swift in Sources */,
 				47756E252206B89000B51037 /* MasterViewController.swift in Sources */,
 				47756E232206B89000B51037 /* AppDelegate.swift in Sources */,
 			);
@@ -367,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
