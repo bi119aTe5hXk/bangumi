@@ -1,32 +1,78 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-SDWebImage.framework/Headers
+## Build generated
+build/
+DerivedData/
 
-SDWebImage.framework/SDWebImage
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
 
-SDWebImage.framework/Versions/A/Headers/SDImageCache.h
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageCompat.h
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageDecoder.h
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageDownloader.h
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+# Package.resolved
+.build/
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageDownloaderOperation.h
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# Pods/
+#
+# Add this line if you want to avoid checking in source code from the Xcode workspace
+# *.xcworkspace
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageManager.h
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageOperation.h
+Carthage/Build
 
-SDWebImage.framework/Versions/A/Headers/SDWebImagePrefetcher.h
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-SDWebImage.framework/Versions/A/Headers/UIButton+WebCache.h
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
 
-SDWebImage.framework/Versions/A/Headers/UIImageView+WebCache.h
+# Code Injection
+#
+# After new code Injection tools there's a generated folder /iOSInjectionProject
+# https://github.com/johnno1962/injectionforxcode
 
-SDWebImage.framework/Versions/A/SDWebImage
-
-SDWebImage.framework/Versions/Current
-
-bangumi/MBProgressHUD.h
-
-bangumi/MBProgressHUD.m
+iOSInjectionProject/
