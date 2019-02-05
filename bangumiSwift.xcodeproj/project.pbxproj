@@ -24,7 +24,8 @@
 		8603CF6622094DA8006A1913 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6522094DA8006A1913 /* SettingsViewController.swift */; };
 		8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6722094DC4006A1913 /* ProgressListViewController.swift */; };
 		8603CF6A22094DE5006A1913 /* BGMDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */; };
-		8603CF6C22094E03006A1913 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6B22094E03006A1913 /* LoginViewController.swift */; };
+		8653A9A022095CDF00EF5C61 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8653A99F22095CDF00EF5C61 /* OAuthSwift.framework */; };
+		8653A9A22209653D00EF5C61 /* OauthLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653A9A12209653D00EF5C61 /* OauthLogin.swift */; };
 		D2EE87B1ECDF96EEC3394590 /* Pods_bangumiSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6949EFAD286FFA422D5E7985 /* Pods_bangumiSwiftTests.framework */; };
 		DF16AD056AFBCC16A610EE9C /* Pods_bangumiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */; };
 /* End PBXBuildFile section */
@@ -76,7 +77,8 @@
 		8603CF6522094DA8006A1913 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8603CF6722094DC4006A1913 /* ProgressListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressListViewController.swift; sourceTree = "<group>"; };
 		8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMDetailViewController.swift; sourceTree = "<group>"; };
-		8603CF6B22094E03006A1913 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8653A99F22095CDF00EF5C61 /* OAuthSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8653A9A12209653D00EF5C61 /* OauthLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OauthLogin.swift; path = bangumiSwift/OauthLogin.swift; sourceTree = SOURCE_ROOT; };
 		DAB37F82B106293D7ECC41F2 /* Pods_bangumiSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8653A9A022095CDF00EF5C61 /* OAuthSwift.framework in Frameworks */,
 				DF16AD056AFBCC16A610EE9C /* Pods_bangumiSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,9 +137,10 @@
 		47756E212206B89000B51037 /* bangumiSwift */ = {
 			isa = PBXGroup;
 			children = (
+				47756E222206B89000B51037 /* AppDelegate.swift */,
 				47756E522206C05A00B51037 /* API.swift */,
 				47756E542206C35200B51037 /* BangumiServices.swift */,
-				47756E222206B89000B51037 /* AppDelegate.swift */,
+				8653A9A12209653D00EF5C61 /* OauthLogin.swift */,
 				8603CF5B22094B97006A1913 /* Controller */,
 				8603CF5C22094BC9006A1913 /* View */,
 				47756E2B2206B89200B51037 /* Assets.xcassets */,
@@ -187,7 +191,6 @@
 				8603CF6522094DA8006A1913 /* SettingsViewController.swift */,
 				8603CF6722094DC4006A1913 /* ProgressListViewController.swift */,
 				8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */,
-				8603CF6B22094E03006A1913 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 		F210570861E70BEE47975318 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8653A99F22095CDF00EF5C61 /* OAuthSwift.framework */,
 				FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */,
 				6949EFAD286FFA422D5E7985 /* Pods_bangumiSwiftTests.framework */,
 				DAB37F82B106293D7ECC41F2 /* Pods_bangumiSwiftUITests.framework */,
@@ -437,7 +441,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8603CF6C22094E03006A1913 /* LoginViewController.swift in Sources */,
 				8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */,
 				8603CF6222094D5D006A1913 /* DaliyListViewController.swift in Sources */,
 				47756E552206C35200B51037 /* BangumiServices.swift in Sources */,
@@ -447,6 +450,7 @@
 				47756E232206B89000B51037 /* AppDelegate.swift in Sources */,
 				8603CF5E22094C9A006A1913 /* TabbarViewController.swift in Sources */,
 				8603CF5A22094B80006A1913 /* SplitViewController.swift in Sources */,
+				8653A9A22209653D00EF5C61 /* OauthLogin.swift in Sources */,
 				8603CF6A22094DE5006A1913 /* BGMDetailViewController.swift in Sources */,
 				8603CF6622094DA8006A1913 /* SettingsViewController.swift in Sources */,
 			);
