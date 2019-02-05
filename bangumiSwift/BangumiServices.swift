@@ -24,8 +24,6 @@ class BangumiServices {
 
 
 
-
-
     func createConnectionWithURL(_ url: String, _ method: String, _ data: Dictionary<String, String>?) {
         var request: URLRequest? = nil
 
