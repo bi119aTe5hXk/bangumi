@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		47756E232206B89000B51037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E222206B89000B51037 /* AppDelegate.swift */; };
-		47756E252206B89000B51037 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E242206B89000B51037 /* MasterViewController.swift */; };
-		47756E272206B89000B51037 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E262206B89000B51037 /* DetailViewController.swift */; };
 		47756E2A2206B89000B51037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47756E282206B89000B51037 /* Main.storyboard */; };
 		47756E2C2206B89200B51037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47756E2B2206B89200B51037 /* Assets.xcassets */; };
 		47756E2F2206B89200B51037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47756E2D2206B89200B51037 /* LaunchScreen.storyboard */; };
@@ -17,6 +15,15 @@
 		47756E452206B89200B51037 /* bangumiSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E442206B89200B51037 /* bangumiSwiftUITests.swift */; };
 		47756E532206C05A00B51037 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E522206C05A00B51037 /* API.swift */; };
 		47756E552206C35200B51037 /* BangumiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E542206C35200B51037 /* BangumiServices.swift */; };
+		8603CF5A22094B80006A1913 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5922094B80006A1913 /* SplitViewController.swift */; };
+		8603CF5E22094C9A006A1913 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5D22094C9A006A1913 /* TabbarViewController.swift */; };
+		8603CF6022094D40006A1913 /* WatchingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5F22094D40006A1913 /* WatchingListViewController.swift */; };
+		8603CF6222094D5D006A1913 /* DaliyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6122094D5D006A1913 /* DaliyListViewController.swift */; };
+		8603CF6422094D90006A1913 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6322094D90006A1913 /* SearchViewController.swift */; };
+		8603CF6622094DA8006A1913 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6522094DA8006A1913 /* SettingsViewController.swift */; };
+		8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6722094DC4006A1913 /* ProgressListViewController.swift */; };
+		8603CF6A22094DE5006A1913 /* BGMDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */; };
+		8603CF6C22094E03006A1913 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6B22094E03006A1913 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +46,6 @@
 /* Begin PBXFileReference section */
 		47756E1F2206B89000B51037 /* bangumiSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bangumiSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47756E222206B89000B51037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		47756E242206B89000B51037 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		47756E262206B89000B51037 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		47756E292206B89000B51037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47756E2B2206B89200B51037 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47756E2E2206B89200B51037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +58,15 @@
 		47756E462206B89200B51037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47756E522206C05A00B51037 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		47756E542206C35200B51037 /* BangumiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangumiServices.swift; sourceTree = "<group>"; };
+		8603CF5922094B80006A1913 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		8603CF5D22094C9A006A1913 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		8603CF5F22094D40006A1913 /* WatchingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListViewController.swift; sourceTree = "<group>"; };
+		8603CF6122094D5D006A1913 /* DaliyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaliyListViewController.swift; sourceTree = "<group>"; };
+		8603CF6322094D90006A1913 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8603CF6522094DA8006A1913 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8603CF6722094DC4006A1913 /* ProgressListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressListViewController.swift; sourceTree = "<group>"; };
+		8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMDetailViewController.swift; sourceTree = "<group>"; };
+		8603CF6B22094E03006A1913 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +120,9 @@
 				47756E522206C05A00B51037 /* API.swift */,
 				47756E542206C35200B51037 /* BangumiServices.swift */,
 				47756E222206B89000B51037 /* AppDelegate.swift */,
-				47756E242206B89000B51037 /* MasterViewController.swift */,
-				47756E262206B89000B51037 /* DetailViewController.swift */,
-				47756E282206B89000B51037 /* Main.storyboard */,
+				8603CF5B22094B97006A1913 /* Controller */,
+				8603CF5C22094BC9006A1913 /* View */,
 				47756E2B2206B89200B51037 /* Assets.xcassets */,
-				47756E2D2206B89200B51037 /* LaunchScreen.storyboard */,
 				47756E302206B89200B51037 /* Info.plist */,
 			);
 			path = bangumiSwift;
@@ -132,6 +144,31 @@
 				47756E462206B89200B51037 /* Info.plist */,
 			);
 			path = bangumiSwiftUITests;
+			sourceTree = "<group>";
+		};
+		8603CF5B22094B97006A1913 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8603CF5922094B80006A1913 /* SplitViewController.swift */,
+				8603CF5D22094C9A006A1913 /* TabbarViewController.swift */,
+				8603CF5F22094D40006A1913 /* WatchingListViewController.swift */,
+				8603CF6122094D5D006A1913 /* DaliyListViewController.swift */,
+				8603CF6322094D90006A1913 /* SearchViewController.swift */,
+				8603CF6522094DA8006A1913 /* SettingsViewController.swift */,
+				8603CF6722094DC4006A1913 /* ProgressListViewController.swift */,
+				8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */,
+				8603CF6B22094E03006A1913 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8603CF5C22094BC9006A1913 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47756E282206B89000B51037 /* Main.storyboard */,
+				47756E2D2206B89200B51037 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,11 +302,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47756E272206B89000B51037 /* DetailViewController.swift in Sources */,
+				8603CF6C22094E03006A1913 /* LoginViewController.swift in Sources */,
+				8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */,
+				8603CF6222094D5D006A1913 /* DaliyListViewController.swift in Sources */,
 				47756E552206C35200B51037 /* BangumiServices.swift in Sources */,
+				8603CF6422094D90006A1913 /* SearchViewController.swift in Sources */,
 				47756E532206C05A00B51037 /* API.swift in Sources */,
-				47756E252206B89000B51037 /* MasterViewController.swift in Sources */,
+				8603CF6022094D40006A1913 /* WatchingListViewController.swift in Sources */,
 				47756E232206B89000B51037 /* AppDelegate.swift in Sources */,
+				8603CF5E22094C9A006A1913 /* TabbarViewController.swift in Sources */,
+				8603CF5A22094B80006A1913 /* SplitViewController.swift in Sources */,
+				8603CF6A22094DE5006A1913 /* BGMDetailViewController.swift in Sources */,
+				8603CF6622094DA8006A1913 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

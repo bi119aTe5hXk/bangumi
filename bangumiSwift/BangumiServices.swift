@@ -10,6 +10,7 @@ import Foundation
 
 protocol BangumiServicesHandlerDelegate {
     func Completed(_ sender: BangumiServices, _ data: Any?)
+    func Failed(_ sender: BangumiServices, _ data: Any?)
 }
 
 class BangumiServices {
@@ -21,10 +22,13 @@ class BangumiServices {
         createConnectionWithURL(BangumiServices.masterURL+"calendar", "GET", nil)
     }
     
-    func createConnectionWithURL(_ url:String, _ method:String, _ data:Dictionary<String, String>?
-                                 ){
+    
+    
+    
+    
+    func createConnectionWithURL(_ url:String, _ method:String, _ data:Dictionary<String, String>?){
         var request:URLRequest?=nil
-
+        
         switch method
         {
         case "GET":
@@ -66,16 +70,20 @@ class BangumiServices {
             
             if (err != nil)
             {
-            do{
-                try v=JSONSerialization.jsonObject(with: data!, options: [])
-            }
-            catch{}
+                do{
+                    try v=JSONSerialization.jsonObject(with: data!, options: [])
+                    self.handlerDelegate?.Completed(self,v)
+                }
+                catch{
+                    self.handlerDelegate?.Failed(self, err?.localizedDescription)
+                }
             }
             else{
-                v=err
+                //v=err
+                self.handlerDelegate?.Failed(self, err?.localizedDescription)
             }
             
-        self.handlerDelegate?.Completed(self,v)
+            
         })
         
         
