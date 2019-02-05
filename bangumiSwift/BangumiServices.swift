@@ -15,77 +15,77 @@ protocol BangumiServicesHandlerDelegate {
 
 class BangumiServices {
     static let masterURL = "https://api.bgm.tv/"
-    
-    var handlerDelegate:BangumiServicesHandlerDelegate?
-    
-    func calendar(){
-        createConnectionWithURL(BangumiServices.masterURL+"calendar", "GET", nil)
+
+    var handlerDelegate: BangumiServicesHandlerDelegate?
+
+    func calendar() {
+        createConnectionWithURL(BangumiServices.masterURL + "calendar", "GET", nil)
     }
-    
-    
-    
-    
-    
-    func createConnectionWithURL(_ url:String, _ method:String, _ data:Dictionary<String, String>?){
-        var request:URLRequest?=nil
-        
+
+
+
+
+
+    func createConnectionWithURL(_ url: String, _ method: String, _ data: Dictionary<String, String>?) {
+        var request: URLRequest? = nil
+
         switch method
         {
         case "GET":
-            var components=URLComponents(string: url)
-            
+            var components = URLComponents(string: url)
+
             if(data != nil)
             {
-                for(k,v) in data!
+                for(k, v) in data!
                 {
-                    components?.queryItems?.append(URLQueryItem(name:k,value:v))
+                    components?.queryItems?.append(URLQueryItem(name: k, value: v))
                 }
             }
-            
-            request=URLRequest(url:(components?.url)!)
-            request?.httpMethod="GET"
-            
+
+            request = URLRequest(url: (components?.url)!)
+            request?.httpMethod = "GET"
+
             break
         case "POST":
-            let jsonEncoder=JSONEncoder()
-            
-            let urlObject=URL(string: url)
-            request=URLRequest(url: urlObject! )
-            request?.httpMethod="POST"
-            
-            do{
-                try request?.httpBody=jsonEncoder.encode(data)
+            let jsonEncoder = JSONEncoder()
+
+            let urlObject = URL(string: url)
+            request = URLRequest(url: urlObject!)
+            request?.httpMethod = "POST"
+
+            do {
+                try request?.httpBody = jsonEncoder.encode(data)
             }
-            catch{}
-            
+            catch { }
+
             break
         default:
             return;
         }
-        
-        let config=URLSessionConfiguration.default
-        let session=URLSession(configuration: config)
-        session.dataTask(with: request!, completionHandler: {(data, rep, err) in
-            var v:Any?=nil
-            
+
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        session.dataTask(with: request!, completionHandler: { (data, rep, err) in
+            var v: Any? = nil
+
             if (err != nil)
             {
-                do{
-                    try v=JSONSerialization.jsonObject(with: data!, options: [])
-                    self.handlerDelegate?.Completed(self,v)
+                do {
+                    try v = JSONSerialization.jsonObject(with: data!, options: [])
+                    self.handlerDelegate?.Completed(self, v)
                 }
-                catch{
+                catch {
                     self.handlerDelegate?.Failed(self, err?.localizedDescription)
                 }
             }
-            else{
+            else {
                 //v=err
                 self.handlerDelegate?.Failed(self, err?.localizedDescription)
             }
-            
-            
+
+
         })
-        
-        
+
+
     }
 }

@@ -8,7 +8,10 @@
 
 import UIKit
 
-class WatchingListViewController: UITableViewController {
+class WatchingListViewController: UITableViewController, BangumiServicesHandlerDelegate {
+    let bs = BangumiServices()
+    let bslist = Array.init([])
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +21,26 @@ class WatchingListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let refreshControl = UIRefreshControl.init()
+        refreshControl.addTarget(self, action: #selector(self.onRefresh), for: UIControl.Event.valueChanged)
+        self.refreshControl = refreshControl
+        bs.handlerDelegate = self
+        
+        
+    }
+    
+    @objc func onRefresh() {
+        
     }
 
+    func Completed(_ sender: BangumiServices, _ data: Any?) {
+        
+    }
+    
+    func Failed(_ sender: BangumiServices, _ data: Any?) {
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

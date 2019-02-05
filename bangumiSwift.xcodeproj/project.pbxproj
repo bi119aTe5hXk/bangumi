@@ -15,6 +15,7 @@
 		47756E452206B89200B51037 /* bangumiSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E442206B89200B51037 /* bangumiSwiftUITests.swift */; };
 		47756E532206C05A00B51037 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E522206C05A00B51037 /* API.swift */; };
 		47756E552206C35200B51037 /* BangumiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E542206C35200B51037 /* BangumiServices.swift */; };
+		7A172C98361E83355582B2C2 /* Pods_bangumiSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB37F82B106293D7ECC41F2 /* Pods_bangumiSwiftUITests.framework */; };
 		8603CF5A22094B80006A1913 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5922094B80006A1913 /* SplitViewController.swift */; };
 		8603CF5E22094C9A006A1913 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5D22094C9A006A1913 /* TabbarViewController.swift */; };
 		8603CF6022094D40006A1913 /* WatchingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5F22094D40006A1913 /* WatchingListViewController.swift */; };
@@ -24,6 +25,8 @@
 		8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6722094DC4006A1913 /* ProgressListViewController.swift */; };
 		8603CF6A22094DE5006A1913 /* BGMDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */; };
 		8603CF6C22094E03006A1913 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6B22094E03006A1913 /* LoginViewController.swift */; };
+		D2EE87B1ECDF96EEC3394590 /* Pods_bangumiSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6949EFAD286FFA422D5E7985 /* Pods_bangumiSwiftTests.framework */; };
+		DF16AD056AFBCC16A610EE9C /* Pods_bangumiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1890EB6EE948CDA93AB81E29 /* Pods-bangumiSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwift/Pods-bangumiSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		1DC988A6699E0258CE9D5B6D /* Pods-bangumiSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwiftUITests/Pods-bangumiSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2FB6148A4A8DFCAD86F931EE /* Pods-bangumiSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwiftTests/Pods-bangumiSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47756E1F2206B89000B51037 /* bangumiSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bangumiSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47756E222206B89000B51037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47756E292206B89000B51037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +64,10 @@
 		47756E462206B89200B51037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47756E522206C05A00B51037 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		47756E542206C35200B51037 /* BangumiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangumiServices.swift; sourceTree = "<group>"; };
+		63A0EA86F2BDE1662C03EF92 /* Pods-bangumiSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwift/Pods-bangumiSwift.release.xcconfig"; sourceTree = "<group>"; };
+		64D0507008A9A9D5B80AB968 /* Pods-bangumiSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwiftUITests/Pods-bangumiSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6949EFAD286FFA422D5E7985 /* Pods_bangumiSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DBADA4216798E5D0162400 /* Pods-bangumiSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwiftTests/Pods-bangumiSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		8603CF5922094B80006A1913 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		8603CF5D22094C9A006A1913 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		8603CF5F22094D40006A1913 /* WatchingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +77,8 @@
 		8603CF6722094DC4006A1913 /* ProgressListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressListViewController.swift; sourceTree = "<group>"; };
 		8603CF6922094DE5006A1913 /* BGMDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMDetailViewController.swift; sourceTree = "<group>"; };
 		8603CF6B22094E03006A1913 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DAB37F82B106293D7ECC41F2 /* Pods_bangumiSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF16AD056AFBCC16A610EE9C /* Pods_bangumiSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EE87B1ECDF96EEC3394590 /* Pods_bangumiSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A172C98361E83355582B2C2 /* Pods_bangumiSwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +116,8 @@
 				47756E382206B89200B51037 /* bangumiSwiftTests */,
 				47756E432206B89200B51037 /* bangumiSwiftUITests */,
 				47756E202206B89000B51037 /* Products */,
+				7B6DB144D60A401155548FA6 /* Pods */,
+				F210570861E70BEE47975318 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +163,19 @@
 			path = bangumiSwiftUITests;
 			sourceTree = "<group>";
 		};
+		7B6DB144D60A401155548FA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1890EB6EE948CDA93AB81E29 /* Pods-bangumiSwift.debug.xcconfig */,
+				63A0EA86F2BDE1662C03EF92 /* Pods-bangumiSwift.release.xcconfig */,
+				2FB6148A4A8DFCAD86F931EE /* Pods-bangumiSwiftTests.debug.xcconfig */,
+				80DBADA4216798E5D0162400 /* Pods-bangumiSwiftTests.release.xcconfig */,
+				64D0507008A9A9D5B80AB968 /* Pods-bangumiSwiftUITests.debug.xcconfig */,
+				1DC988A6699E0258CE9D5B6D /* Pods-bangumiSwiftUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8603CF5B22094B97006A1913 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +201,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F210570861E70BEE47975318 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */,
+				6949EFAD286FFA422D5E7985 /* Pods_bangumiSwiftTests.framework */,
+				DAB37F82B106293D7ECC41F2 /* Pods_bangumiSwiftUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47756E492206B89200B51037 /* Build configuration list for PBXNativeTarget "bangumiSwift" */;
 			buildPhases = (
+				AE9F8AC983A695AA9B643B35 /* [CP] Check Pods Manifest.lock */,
 				47756E1B2206B89000B51037 /* Sources */,
 				47756E1C2206B89000B51037 /* Frameworks */,
 				47756E1D2206B89000B51037 /* Resources */,
+				A97A6291E1AE01875B7CCB6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47756E4C2206B89200B51037 /* Build configuration list for PBXNativeTarget "bangumiSwiftTests" */;
 			buildPhases = (
+				6F4C345EE8BD20068ED120F8 /* [CP] Check Pods Manifest.lock */,
 				47756E312206B89200B51037 /* Sources */,
 				47756E322206B89200B51037 /* Frameworks */,
 				47756E332206B89200B51037 /* Resources */,
@@ -213,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47756E4F2206B89200B51037 /* Build configuration list for PBXNativeTarget "bangumiSwiftUITests" */;
 			buildPhases = (
+				9EB4AFBE74D3D42CB1D731D2 /* [CP] Check Pods Manifest.lock */,
 				47756E3C2206B89200B51037 /* Sources */,
 				47756E3D2206B89200B51037 /* Frameworks */,
 				47756E3E2206B89200B51037 /* Resources */,
@@ -296,6 +340,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F4C345EE8BD20068ED120F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bangumiSwiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EB4AFBE74D3D42CB1D731D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bangumiSwiftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A97A6291E1AE01875B7CCB6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-bangumiSwift/Pods-bangumiSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bangumiSwift/Pods-bangumiSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE9F8AC983A695AA9B643B35 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bangumiSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47756E1B2206B89000B51037 /* Sources */ = {
@@ -486,6 +621,7 @@
 		};
 		47756E4A2206B89200B51037 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1890EB6EE948CDA93AB81E29 /* Pods-bangumiSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +640,7 @@
 		};
 		47756E4B2206B89200B51037 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63A0EA86F2BDE1662C03EF92 /* Pods-bangumiSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +659,7 @@
 		};
 		47756E4D2206B89200B51037 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FB6148A4A8DFCAD86F931EE /* Pods-bangumiSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -543,6 +681,7 @@
 		};
 		47756E4E2206B89200B51037 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80DBADA4216798E5D0162400 /* Pods-bangumiSwiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -564,6 +703,7 @@
 		};
 		47756E502206B89200B51037 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64D0507008A9A9D5B80AB968 /* Pods-bangumiSwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -584,6 +724,7 @@
 		};
 		47756E512206B89200B51037 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DC988A6699E0258CE9D5B6D /* Pods-bangumiSwiftUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
