@@ -10,7 +10,7 @@ import UIKit
 
 class DaliyListViewController: UITableViewController, BangumiServicesHandlerDelegate {
     let bs = BangumiServices()
-    var daylist = Array.init([])
+    var daylist: Array<Dictionary<String, Any>>? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class DaliyListViewController: UITableViewController, BangumiServicesHandlerDele
         self.refreshControl = refreshControl
         bs.handlerDelegate = self
 
-        if (daylist.count <= 0) {
+        if (daylist!.count <= 0) {
             self.startGetDayBGMList()
         }
     }
@@ -35,20 +35,20 @@ class DaliyListViewController: UITableViewController, BangumiServicesHandlerDele
     }
     func startGetDayBGMList() {
         bs.calendar()
-        
+
     }
 
-    func Completed(_ sender: BangumiServices, _ data: Array<Any>?) {
+    func Completed(_ sender: BangumiServices, _ data: Any) {
         self.refreshControl?.endRefreshing()
-        daylist = data!
+        daylist = data as? Array<Dictionary<String, Any>>
         self.tableView.reloadData()
         jumpToToday()
     }
-    func jumpToToday(){
+    func jumpToToday() {
         let ip = IndexPath.init(row: 0, section: self.todayNum())
         self.tableView.scrollToRow(at: ip, at: UITableView.ScrollPosition.top, animated: true)
     }
-    func todayNum()->Int{
+    func todayNum() -> Int {
         let gregorian = Calendar.init(identifier: Calendar.Identifier.japanese)
         let comps = gregorian.component(Calendar.Component.weekday, from: Date.init())
         //var wd = comps.weekday
@@ -77,22 +77,32 @@ class DaliyListViewController: UITableViewController, BangumiServicesHandlerDele
         default:
             return 0
         }
-        
+
     }
 
-    func Failed(_ sender: BangumiServices, _ data: Any?) {
+    func Failed(_ sender: BangumiServices, _ data: Any) {
         self.refreshControl?.endRefreshing()
     }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return daylist.count
+        return (daylist != nil) ? daylist!.count : 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0//daylist[section]
+        if (daylist != nil)
+            {
+            let items = daylist![section]["items"] as? Array<Any>
+
+            if (items != nil)
+                {
+                return items!.count;
+            }
+        }
+
+        return 0;
     }
 
     /*

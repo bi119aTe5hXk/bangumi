@@ -9,8 +9,8 @@
 import Foundation
 import OAuthSwift
 protocol BangumiServicesHandlerDelegate {
-    func Completed(_ sender: BangumiServices, _ data: Array<Any>?)
-    func Failed(_ sender: BangumiServices, _ data: Any?)
+    func Completed(_ sender: BangumiServices, _ data: Any)
+    func Failed(_ sender: BangumiServices, _ data: Any)
 }
 
 class BangumiServices {
@@ -85,21 +85,21 @@ class BangumiServices {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         session.dataTask(with: request!, completionHandler: { (data, rep, err) in
-            var v: Any? = nil
+            var v: Any
 
             if (err != nil)
-            {
+                {
                 do {
                     try v = JSONSerialization.jsonObject(with: data!, options: [])
-                    self.handlerDelegate?.Completed(self, (v as! Array<Any>))
+                    self.handlerDelegate?.Completed(self, v)
                 }
                 catch {
-                    self.handlerDelegate?.Failed(self, err?.localizedDescription)
+                    self.handlerDelegate?.Failed(self, err!.localizedDescription)
                 }
             }
             else {
                 //v=err
-                self.handlerDelegate?.Failed(self, err?.localizedDescription)
+                self.handlerDelegate?.Failed(self, err!.localizedDescription)
             }
 
 
