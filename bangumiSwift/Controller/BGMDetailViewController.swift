@@ -8,7 +8,9 @@
 
 import UIKit
 
-class BGMDetailViewController: UIViewController {
+class BGMDetailViewController: UIViewController,BangumiServicesHandlerDelegate {
+    let bs = BangumiServices()
+    
     var detailItem:Any!
     var bgmidstr:String!
     
@@ -25,13 +27,23 @@ class BGMDetailViewController: UIViewController {
     @IBOutlet var bgmdetailbtn:UIButton!
     @IBOutlet var actionbtn:UIBarButtonItem!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        bs.handlerDelegate = self
+        
     }
     
-
+    func Completed(_ sender: BangumiServices, _ data: Any) {
+        <#code#>
+    }
+    
+    func Failed(_ sender: BangumiServices, _ data: Any) {
+        <#code#>
+    }
     /*
     // MARK: - Navigation
 
