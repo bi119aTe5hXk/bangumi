@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
+        print(url)
         if (url.host == "oauth-callback") {
             OAuthSwift.handle(url: url)
         }

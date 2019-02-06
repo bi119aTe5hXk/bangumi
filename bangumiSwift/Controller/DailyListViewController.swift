@@ -82,7 +82,6 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
     func Failed(_ sender: BangumiServices, _ data: Any) {
         DispatchQueue.main.async {
             self.refreshControl?.endRefreshing()
-            
         }
     }
     // MARK: - Table view data source

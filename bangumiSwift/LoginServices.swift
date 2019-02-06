@@ -14,6 +14,7 @@ class LoginServices: NSObject {
     
     static func isLogin() -> Bool {
         if (self.userdefaults.object(forKey: "oauthtoken") as? String)!.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+            print(self.userdefaults.object(forKey: "oauthtoken") as Any)
             return true
         }
         return false
@@ -28,11 +29,13 @@ class LoginServices: NSObject {
             consumerKey: AppID,
             consumerSecret: AppSecret,
             authorizeUrl: "https://bgm.tv/oauth/authorize",
-            responseType: "token"
+            accessTokenUrl: "https://bgm.tv/oauth/access_token",
+            responseType: "code"
         )
+        let state = generateState(withLength: 20)
         let handle = oauthswift.authorize(
-            withCallbackURL: URL(string: "obangumiplus://oauth-callback/")!,
-            scope: "", state: "panpanpan",
+            withCallbackURL: URL(string: "bangumiplus://oauth-callback/bgm")!,
+            scope: "mayday", state: state,
             success: { credential, response, parameters in
                 print(credential.oauthToken)
                 self.userdefaults.set(credential.oauthToken, forKey: "oauthtoken")
@@ -45,5 +48,19 @@ class LoginServices: NSObject {
     
     static func setLogout() {
         self.userdefaults.set("", forKey: "oauthtoken")
+    }
+    
+    static func generateState(withLength len: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let length = UInt32(letters.count)
+        
+        var randomString = ""
+        for _ in 0..<len {
+            let rand = arc4random_uniform(length)
+            let idx = letters.index(letters.startIndex, offsetBy: Int(rand))
+            let letter = letters[idx]
+            randomString += String(letter)
+        }
+        return randomString
     }
 }
