@@ -9,7 +9,22 @@
 import UIKit
 
 class BGMDetailViewController: UIViewController {
-
+    var detailItem:Any!
+    var bgmidstr:String!
+    
+    @IBOutlet var statusmanabtn:UIButton!
+    @IBOutlet var progressmanabtn:UIButton!
+    @IBOutlet var cover:UIImageView!
+    @IBOutlet var titlelabel:UILabel!
+    @IBOutlet var titlelabel_cn:UILabel!
+    @IBOutlet var ratscoretitle:UILabel!
+    @IBOutlet var ratscore:UILabel!
+    @IBOutlet var bgmsummary:UITextView!
+    @IBOutlet var ranktitle:UILabel!
+    @IBOutlet var rankscore:UILabel!
+    @IBOutlet var bgmdetailbtn:UIButton!
+    @IBOutlet var actionbtn:UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

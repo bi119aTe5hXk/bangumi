@@ -27,7 +27,9 @@ class TabbarViewController: UITabBarController {
     }
     */
     //optional func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool
-//    override func collapseSecondaryViewController(_ secondaryViewController: UIViewController, for splitViewController: UISplitViewController) {
-//
-//    }
+    func collapseSecondaryViewController(_ secondaryViewController: UIViewController, for splitViewController: UISplitViewController) -> Bool{
+        self.tabBar.invalidateIntrinsicContentSize()
+        
+        return true
+    }
 }

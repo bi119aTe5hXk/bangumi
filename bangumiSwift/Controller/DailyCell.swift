@@ -10,10 +10,10 @@ import UIKit
 
 class DailyCell: UITableViewCell {
 
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var ratscorelabel: UILabel!
-    @IBOutlet weak var sublabel: UILabel!
-    @IBOutlet weak var titlelabel: UILabel!
+    @IBOutlet var icon: UIImageView!
+    @IBOutlet var ratscorelabel: UILabel!
+    @IBOutlet var sublabel: UILabel!
+    @IBOutlet var titlelabel: UILabel!
 
 
     override func awakeFromNib() {

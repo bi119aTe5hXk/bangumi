@@ -21,7 +21,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPW-Hg-MoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-1947"/>
+            <point key="canvasLocation" x="-20" y="-1966"/>
         </scene>
         <!--bangumi+-->
         <scene sceneID="yrM-U1-ZlT">
@@ -499,7 +499,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="F6a-FY-dUL"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DailyCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DailyCell" rowHeight="69" id="W3C-95-vPC" customClass="DailyCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DailyCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DailyCell" rowHeight="69" id="W3C-95-vPC" customClass="DailyCell" customModule="bangumiSwift">
                                 <rect key="frame" x="0.0" y="22" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W3C-95-vPC" id="cTb-fs-Niw">
@@ -672,6 +672,6 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
         <image name="UITabBarStar.png" width="27" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eWt-bi-WaH"/>
+        <segue reference="brY-Fo-Wm4"/>
     </inferredMetricsTieBreakers>
 </document>

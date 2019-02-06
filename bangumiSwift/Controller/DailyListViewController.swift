@@ -10,7 +10,7 @@ import UIKit
 
 class DailyListViewController: UITableViewController, BangumiServicesHandlerDelegate {
     let bs = BangumiServices()
-    var daylist: Array<Dictionary<String, Any>>? = nil
+    var daylist: Array<Dictionary<String, Any>>? = Array.init([])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
         self.refreshControl = refreshControl
         bs.handlerDelegate = self
 
-        if (daylist!.count <= 0) {
+        if (daylist != nil && daylist!.count <= 0) {
             self.startGetDayBGMList()
         }
     }
@@ -39,10 +39,12 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
     }
 
     func Completed(_ sender: BangumiServices, _ data: Any) {
-        self.refreshControl?.endRefreshing()
         daylist = data as? Array<Dictionary<String, Any>>
-        self.tableView.reloadData()
-        jumpToToday()
+        DispatchQueue.main.async {
+            self.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+            self.jumpToToday()
+        }
     }
     func jumpToToday() {
         let ip = IndexPath.init(row: 0, section: self.todayNum())
@@ -50,9 +52,8 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
     }
     func todayNum() -> Int {
         let gregorian = Calendar.init(identifier: Calendar.Identifier.japanese)
-        let comps = gregorian.component(Calendar.Component.weekday, from: Date.init())
-        //var wd = comps.weekday
-        switch comps {
+        let wd = gregorian.component(Calendar.Component.weekday, from: Date())
+        switch wd {
         case 1:
             //sun
             return 6
@@ -81,7 +82,10 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
     }
 
     func Failed(_ sender: BangumiServices, _ data: Any) {
-        self.refreshControl?.endRefreshing()
+        DispatchQueue.main.async {
+            self.refreshControl?.endRefreshing()
+            
+        }
     }
     // MARK: - Table view data source
 
@@ -115,7 +119,19 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
 
         cell.titlelabel.text = (arr["name"] as! String)
         cell.sublabel.text = (arr["name_cn"] as! String)
-        cell.ratscorelabel.text = ((arr["rating"]as! Dictionary<String, Any>)["score"] as! String)
+        // let optionalInt: Int? = 5
+        
+//        if let constantInt = optionalInt {
+//            print("optionalInt has an integer value of \(constantInt).")
+//        } else {
+//            print("optionalInt is nil")
+//        }
+        if (arr["rating"] != nil) {
+            cell.ratscorelabel.text = (String((arr["rating"]as! Dictionary<String, Any>)["score"] as! Double))
+        }else{
+            cell.ratscorelabel.text = "0.0"
+        }
+        
         if (arr["images"] != nil) {
             let imgurlstr: String = (arr["images"]as! Dictionary<String, Any>)["small"] as! String
 

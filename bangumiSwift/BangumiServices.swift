@@ -14,6 +14,10 @@ protocol BangumiServicesHandlerDelegate {
 }
 
 class BangumiServices {
+
+    
+    var description: String = ""
+    
     static let masterURL = "https://api.bgm.tv/"
     var oauthswift: OAuthSwift?
 
@@ -47,7 +51,7 @@ class BangumiServices {
 
     func createConnectionWithURL(_ url: String, _ method: String, _ data: Dictionary<String, String>?) {
         var request: URLRequest? = nil
-
+        print(url)
         switch method
         {
         case "GET":
@@ -87,14 +91,15 @@ class BangumiServices {
         session.dataTask(with: request!, completionHandler: { (data, rep, err) in
             var v: Any
 
-            if (err != nil)
+            if (data != nil)
                 {
                 do {
                     try v = JSONSerialization.jsonObject(with: data!, options: [])
+                    print(v)
                     self.handlerDelegate?.Completed(self, v)
                 }
                 catch {
-                    self.handlerDelegate?.Failed(self, err!.localizedDescription)
+                    self.handlerDelegate?.Failed(self, error.localizedDescription)
                 }
             }
             else {
@@ -103,7 +108,7 @@ class BangumiServices {
             }
 
 
-        })
+        }).resume()
 
 
     }
