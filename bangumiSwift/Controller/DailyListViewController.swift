@@ -93,11 +93,11 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if (daylist != nil)
-            {
+        {
             let items = daylist![section]["items"] as? Array<Any>
 
             if (items != nil)
-                {
+            {
                 return items!.count;
             }
         }
@@ -105,16 +105,56 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
         return 0;
     }
 
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DailyCell", for: indexPath) as! DailyCell
+
+        let dic = daylist![indexPath.section]
+        var cont = dic["items"] as! Array<Any>
+        var arr = cont[indexPath.row] as! Dictionary<String, Any>
+
+        cell.titlelabel.text = (arr["name"] as! String)
+        cell.sublabel.text = (arr["name_cn"] as! String)
+        cell.ratscorelabel.text = ((arr["rating"]as! Dictionary<String, Any>)["score"] as! String)
+        if (arr["images"] != nil) {
+            let imgurlstr: String = (arr["images"]as! Dictionary<String, Any>)["small"] as! String
+
+            if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
+                cell.icon.image = nil
+                DispatchQueue.global().async {
+                    do {
+                        let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
+                        let image = UIImage.init(data: imgdata)
+
+                        DispatchQueue.main.async {
+                            cell.icon.image = image
+                        }
+                    } catch { }
+
+                }
+
+            }
+        }
+
+        return cell
+    }
+
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 68
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (daylist != nil)
+        {
+            let items = daylist![section]["weekday"] as? Dictionary<String, Any>
+
+            if (items != nil)
+            {
+                return (items!["cn"] as! String)
+            }
+        }
+        return "";
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -150,14 +190,15 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
      }
      */
 
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+
+    }
+
 
 }
