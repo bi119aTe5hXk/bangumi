@@ -10,12 +10,13 @@ import UIKit
 
 class WatchingListViewController: UITableViewController, BangumiServicesHandlerDelegate {
     let bs = BangumiServices()
+    let loginsv = LoginServices.self
     let bslist = Array.init([])
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController!.navigationItem.title  = "进度管理";
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,9 +28,20 @@ class WatchingListViewController: UITableViewController, BangumiServicesHandlerD
         self.refreshControl = refreshControl
         bs.handlerDelegate = self
         
-        
+        if (loginsv.isLogin() == false) {
+            self.notLoginMSG()
+        }else{
+            
+        }
     }
-    
+    func notLoginMSG() {
+        let alert = UIAlertController.init(title: "您需要登录才可继续操作", message: "请点击登录按钮跳转网页进行登录或注册操作.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction.init(title: "登录", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            self.loginsv.tryLogin()
+        }))
+        alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     @objc func onRefresh() {
         
     }

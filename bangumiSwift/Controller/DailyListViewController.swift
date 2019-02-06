@@ -12,14 +12,12 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
     let bs = BangumiServices()
     var daylist: Array<Dictionary<String, Any>>? = Array.init([])
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController!.navigationItem.title = "每日放送"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
 
         let refreshControl = UIRefreshControl.init()
         refreshControl.addTarget(self, action: #selector(self.onRefresh), for: UIControl.Event.valueChanged)
@@ -34,7 +32,7 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
         self.startGetDayBGMList()
     }
     func startGetDayBGMList() {
-        bs.calendar()
+        bs.getDailyList()
 
     }
 
@@ -213,7 +211,19 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-
+        let indexPath:IndexPath = self.tableView.indexPathForSelectedRow!
+        let dic = daylist![indexPath.section]
+        var cont = dic["items"] as! Array<Any>
+        var arr = cont[indexPath.row] as! Dictionary<String, Any>
+        let bgmid = String(arr["id"] as! Int)
+        
+        print("bgmid pass:" + bgmid)
+        
+        let destinationNavigationController = segue.destination as! UINavigationController
+        let detailview:BGMDetailViewController = destinationNavigationController.topViewController as! BGMDetailViewController
+        detailview.bgmidstr = bgmid
+        
+        
     }
 
 

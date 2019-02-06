@@ -31,6 +31,7 @@
 		8653A9AD2209777600EF5C61 /* UITabBarStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8653A9A82209777600EF5C61 /* UITabBarStar@2x.png */; };
 		8653A9AE2209777600EF5C61 /* UITabBarStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8653A9A92209777600EF5C61 /* UITabBarStar.png */; };
 		8653A9B1220AAF8E00EF5C61 /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653A9B0220AAF8E00EF5C61 /* DailyCell.swift */; };
+		86EAE58F220B0C3500C1F77E /* LoginServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EAE58E220B0C3500C1F77E /* LoginServices.swift */; };
 		D2EE87B1ECDF96EEC3394590 /* Pods_bangumiSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6949EFAD286FFA422D5E7985 /* Pods_bangumiSwiftTests.framework */; };
 		DF16AD056AFBCC16A610EE9C /* Pods_bangumiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		8653A9A82209777600EF5C61 /* UITabBarStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITabBarStar@2x.png"; sourceTree = "<group>"; };
 		8653A9A92209777600EF5C61 /* UITabBarStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarStar.png; sourceTree = "<group>"; };
 		8653A9B0220AAF8E00EF5C61 /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
+		86EAE58E220B0C3500C1F77E /* LoginServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServices.swift; sourceTree = "<group>"; };
 		DAB37F82B106293D7ECC41F2 /* Pods_bangumiSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 				47756E222206B89000B51037 /* AppDelegate.swift */,
 				47756E522206C05A00B51037 /* API.swift */,
 				47756E542206C35200B51037 /* BangumiServices.swift */,
+				86EAE58E220B0C3500C1F77E /* LoginServices.swift */,
 				8603CF5B22094B97006A1913 /* Controller */,
 				8603CF5C22094BC9006A1913 /* View */,
 				8653A9AF2209777F00EF5C61 /* Other */,
@@ -472,6 +475,7 @@
 				8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */,
 				8653A9B1220AAF8E00EF5C61 /* DailyCell.swift in Sources */,
 				8603CF6222094D5D006A1913 /* DailyListViewController.swift in Sources */,
+				86EAE58F220B0C3500C1F77E /* LoginServices.swift in Sources */,
 				47756E552206C35200B51037 /* BangumiServices.swift in Sources */,
 				8603CF6422094D90006A1913 /* SearchViewController.swift in Sources */,
 				47756E532206C05A00B51037 /* API.swift in Sources */,

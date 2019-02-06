@@ -7,46 +7,26 @@
 //
 
 import Foundation
-import OAuthSwift
+
 protocol BangumiServicesHandlerDelegate {
     func Completed(_ sender: BangumiServices, _ data: Any)
     func Failed(_ sender: BangumiServices, _ data: Any)
 }
 
 class BangumiServices {
-
-    
-    var description: String = ""
-    
     static let masterURL = "https://api.bgm.tv/"
-    var oauthswift: OAuthSwift?
+
 
     var handlerDelegate: BangumiServicesHandlerDelegate?
 
-    func tryLogin() {
-        let oauthswift = OAuth2Swift(
-            consumerKey: AppID,
-            consumerSecret: AppSecret,
-            authorizeUrl: "https://bgm.tv/oauth/authorize",
-            responseType: "token"
-        )
-        let handle = oauthswift.authorize(
-            withCallbackURL: URL(string: "obangumiplus://oauth-callback/")!,
-            scope: "", state: "panpanpan",
-            success: { credential, response, parameters in
-                print(credential.oauthToken)
-                // Do your request
-            },
-            failure: { error in
-                print(error.localizedDescription)
-            }
-        )
-    }
 
-    func calendar() {
+
+    func getDailyList() {
         createConnectionWithURL(BangumiServices.masterURL + "calendar", "GET", nil)
     }
-
+    func getBGMDetail(withID: String) {
+        createConnectionWithURL(BangumiServices.masterURL + "subject/" + withID, "GET", nil)
+    }
 
 
     func createConnectionWithURL(_ url: String, _ method: String, _ data: Dictionary<String, String>?) {
@@ -92,7 +72,7 @@ class BangumiServices {
             var v: Any
 
             if (data != nil)
-                {
+            {
                 do {
                     try v = JSONSerialization.jsonObject(with: data!, options: [])
                     print(v)

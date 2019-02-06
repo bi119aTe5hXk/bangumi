@@ -23,12 +23,12 @@
             </objects>
             <point key="canvasLocation" x="-20" y="-1966"/>
         </scene>
-        <!--bangumi+-->
+        <!--Tabbar View Controller-->
         <scene sceneID="yrM-U1-ZlT">
             <objects>
                 <tabBarController storyboardIdentifier="TabbarViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6BC-pE-EnD" customClass="TabbarViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="bangumi+" id="Jm1-Ca-xuU"/>
+                    <navigationItem key="navigationItem" id="Jm1-Ca-xuU"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" itemPositioning="fill" id="1Sg-en-clD">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -296,7 +296,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K94-kP-jtl">
-                                <rect key="frame" x="16" y="354" width="343" height="313"/>
+                                <rect key="frame" x="16" y="354" width="343" height="264"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -356,7 +356,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxU-2a-ywV">
-                                <rect key="frame" x="337" y="643" width="22" height="24"/>
+                                <rect key="frame" x="337" y="594" width="22" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="GMz-o6-HVb"/>
                                 </constraints>
@@ -410,6 +410,7 @@
                         <viewLayoutGuide key="safeArea" id="fg3-Dd-v2b"/>
                     </view>
                     <navigationItem key="navigationItem" title="番组详细" id="Eha-7E-jZ3">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="e4Z-Z6-Bna"/>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="action" id="xBD-1r-AKu">
                             <connections>
                                 <action selector="shareBTN:" destination="21z-P4-Iee" id="2mo-tB-RQn"/>
@@ -672,6 +673,6 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
         <image name="UITabBarStar.png" width="27" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UHi-ni-q6v"/>
+        <segue reference="kvx-WD-yuG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,21 +15,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        print("Init...")
+        print("Powered by")
+        print("██████╗  █████╗ ███╗   ██╗ ██████╗ ██╗   ██╗███╗   ███╗██╗")
+        print("██╔══██╗██╔══██╗████╗  ██║██╔════╝ ██║   ██║████╗ ████║██║")
+        print("██████╔╝███████║██╔██╗ ██║██║  ███╗██║   ██║██╔████╔██║██║")
+        print("██╔══██╗██╔══██║██║╚██╗██║██║   ██║██║   ██║██║╚██╔╝██║██║")
+        print("██████╔╝██║  ██║██║ ╚████║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║██║")
+        print("╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝")
+        print("Dev by ©bi119aTe5hXk & @xlfdll since 2019.")
+        print("なにこれ(°Д°)？！")
+        
         // Override point for customization after application launch.
 //        let splitViewController = window!.rootViewController as! UISplitViewController
 //        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
 //        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
 //        splitViewController.delegate = self
-        
-//        var bs=BangumiServices()
-//        bs.handlerDelegate=self
-//        bs.calendar()
+        let userdefaults = UserDefaults.standard
+        userdefaults.register(defaults: ["oauthtoken":""])
+        userdefaults.synchronize()
         return true
     }
     
-    func Completed(_ sender: BangumiServices, _ data: Any?)
-    {
-        
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handle(url: url)
+        }
+        return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -54,12 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
-        if (url.host == "oauth-callback") {
-            OAuthSwift.handle(url: url)
-        }
-        return true
-    }
+    
 
     // MARK: - Split view
 
