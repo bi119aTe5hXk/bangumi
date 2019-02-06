@@ -1,25 +1,83 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhj-4c-d60">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="aLM-a7-p3U">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                <viewController id="bhj-4c-d60" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5LQ-dQ-Oqm"/>
+                        <viewControllerLayoutGuide type="bottom" id="j0r-59-5fH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TPA-Ut-b0x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@bi119aTe5hXk. 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gql-tJ-azA">
+                                <rect key="frame" x="16" y="626" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3Wz-hp-Okx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="番组计划+" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="lMJ-pP-hkP">
+                                <rect key="frame" x="16" y="180" width="343" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="5fq-LT-p81"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangumi+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-W3-DBq">
+                                <rect key="frame" x="16" y="231" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="g0J-eL-K3I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-az-NSG">
+                                <rect key="frame" x="107" y="382" width="162" height="100"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="lMJ-pP-hkP" firstAttribute="top" secondItem="5LQ-dQ-Oqm" secondAttribute="bottom" constant="160" id="9Nu-SF-gcg"/>
+                            <constraint firstItem="5ru-az-NSG" firstAttribute="trailing" secondItem="gql-tJ-azA" secondAttribute="trailing" constant="-90" id="9Tj-NW-21a"/>
+                            <constraint firstItem="5ru-az-NSG" firstAttribute="top" secondItem="Dr0-W3-DBq" secondAttribute="bottom" constant="130" id="GvZ-7H-Hlk"/>
+                            <constraint firstItem="5ru-az-NSG" firstAttribute="leading" secondItem="gql-tJ-azA" secondAttribute="leading" constant="91" id="Iex-sv-7PU"/>
+                            <constraint firstItem="Dr0-W3-DBq" firstAttribute="leading" secondItem="5ru-az-NSG" secondAttribute="leading" constant="-91" id="Kvf-jY-o7E"/>
+                            <constraint firstItem="lMJ-pP-hkP" firstAttribute="leading" secondItem="Dr0-W3-DBq" secondAttribute="leading" id="PfV-6i-iSn"/>
+                            <constraint firstItem="lMJ-pP-hkP" firstAttribute="trailing" secondItem="Dr0-W3-DBq" secondAttribute="trailing" id="c6v-Zh-Xoq"/>
+                            <constraint firstItem="gql-tJ-azA" firstAttribute="top" secondItem="5ru-az-NSG" secondAttribute="bottom" constant="144" id="cBM-vt-YXK"/>
+                            <constraint firstAttribute="bottom" secondItem="gql-tJ-azA" secondAttribute="bottom" constant="20" symbolic="YES" id="fhV-2z-XqK"/>
+                            <constraint firstItem="Dr0-W3-DBq" firstAttribute="trailing" secondItem="5ru-az-NSG" secondAttribute="trailing" constant="90" id="gXU-DM-eLi"/>
+                            <constraint firstItem="lMJ-pP-hkP" firstAttribute="leading" secondItem="TPA-Ut-b0x" secondAttribute="leadingMargin" id="gmV-oH-KUi"/>
+                            <constraint firstItem="Dr0-W3-DBq" firstAttribute="top" secondItem="lMJ-pP-hkP" secondAttribute="bottom" constant="8" symbolic="YES" id="wfg-6Y-3EE"/>
+                            <constraint firstItem="lMJ-pP-hkP" firstAttribute="trailing" secondItem="TPA-Ut-b0x" secondAttribute="trailingMargin" id="yeR-dM-xEv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pwy-ar-qPF"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yeq-sy-2MJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="17" y="414"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash" width="512" height="512"/>
+    </resources>
 </document>

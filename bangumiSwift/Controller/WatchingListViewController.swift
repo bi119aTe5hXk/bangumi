@@ -34,7 +34,7 @@ class WatchingListViewController: UITableViewController, BangumiServicesHandlerD
         
     }
 
-    func Completed(_ sender: BangumiServices, _ data: Any?) {
+    func Completed(_ sender: BangumiServices, _ data: Array<Any>?) {
         
     }
     

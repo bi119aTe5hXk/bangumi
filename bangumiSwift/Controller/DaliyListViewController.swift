@@ -35,25 +35,64 @@ class DaliyListViewController: UITableViewController, BangumiServicesHandlerDele
     }
     func startGetDayBGMList() {
         bs.calendar()
+        
     }
 
-    func Completed(_ sender: BangumiServices, _ data: Any?) {
-
+    func Completed(_ sender: BangumiServices, _ data: Array<Any>?) {
+        self.refreshControl?.endRefreshing()
+        daylist = data!
+        self.tableView.reloadData()
+        jumpToToday()
+    }
+    func jumpToToday(){
+        let ip = IndexPath.init(row: 0, section: self.todayNum())
+        self.tableView.scrollToRow(at: ip, at: UITableView.ScrollPosition.top, animated: true)
+    }
+    func todayNum()->Int{
+        let gregorian = Calendar.init(identifier: Calendar.Identifier.japanese)
+        let comps = gregorian.component(Calendar.Component.weekday, from: Date.init())
+        //var wd = comps.weekday
+        switch comps {
+        case 1:
+            //sun
+            return 6
+        case 2:
+            //mon
+            return 0
+        case 3:
+            //tue
+            return 1
+        case 4:
+            //wen
+            return 2
+        case 5:
+            //tur
+            return 3
+        case 6:
+            //fri
+            return 4
+        case 7:
+            //sat
+            return 5
+        default:
+            return 0
+        }
+        
     }
 
     func Failed(_ sender: BangumiServices, _ data: Any?) {
-
+        self.refreshControl?.endRefreshing()
     }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return daylist.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 0//daylist[section]
     }
 
     /*

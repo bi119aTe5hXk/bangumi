@@ -13,7 +13,7 @@
         <!--Split View Controller-->
         <scene sceneID="uNF-y7-iYM">
             <objects>
-                <splitViewController storyboardIdentifier="SplitViewController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j1A-bg-jqo" customClass="SplitViewController" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="SplitViewController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j1A-bg-jqo" customClass="SplitViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <connections>
                         <segue destination="PfD-Tz-mbB" kind="relationship" relationship="detailViewController" id="UHi-ni-q6v"/>
                         <segue destination="iuC-v7-BJg" kind="relationship" relationship="masterViewController" id="J95-GG-4En"/>
@@ -21,12 +21,12 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPW-Hg-MoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205" y="-2727"/>
+            <point key="canvasLocation" x="442" y="-1947"/>
         </scene>
         <!--bangumi+-->
         <scene sceneID="yrM-U1-ZlT">
             <objects>
-                <tabBarController storyboardIdentifier="TabbarViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6BC-pE-EnD" customClass="TabbarViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabbarViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6BC-pE-EnD" customClass="TabbarViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="bangumi+" id="Jm1-Ca-xuU"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -51,7 +51,7 @@
         <!--搜索-->
         <scene sceneID="kmP-NP-tMe">
             <objects>
-                <tableViewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mx4-4v-eSo" customClass="SearchViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mx4-4v-eSo" customClass="SearchViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="GVa-2F-dmq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,12 +160,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AZ-S8-GHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-1636"/>
+            <point key="canvasLocation" x="401" y="-391"/>
         </scene>
         <!--进度管理-->
         <scene sceneID="8K8-7s-dWa">
             <objects>
-                <tableViewController storyboardIdentifier="WatchingListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y4y-Bx-CF7" customClass="WatchingListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WatchingListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y4y-Bx-CF7" customClass="WatchingListViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" id="TKh-ck-Jeu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +272,7 @@
         <!--番组详细-->
         <scene sceneID="J4t-De-EmT">
             <objects>
-                <viewController storyboardIdentifier="BGMDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="21z-P4-Iee" customClass="BGMDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BGMDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="21z-P4-Iee" customClass="BGMDetailViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bwP-CM-DRm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -296,7 +296,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K94-kP-jtl">
-                                <rect key="frame" x="20" y="354" width="374" height="382"/>
+                                <rect key="frame" x="20" y="354" width="374" height="333"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -356,7 +356,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxU-2a-ywV">
-                                <rect key="frame" x="372" y="712" width="22" height="24"/>
+                                <rect key="frame" x="372" y="663" width="22" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="GMz-o6-HVb"/>
                                 </constraints>
@@ -438,7 +438,7 @@
         <!--番组进度-->
         <scene sceneID="M4W-oT-Onb">
             <objects>
-                <tableViewController storyboardIdentifier="ProgressListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3IM-dG-boL" customClass="ProgressListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProgressListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3IM-dG-boL" customClass="ProgressListViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tn9-mS-vsS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,12 +487,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="za3-qB-62b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4301.449275362319" y="-1097.2826086956522"/>
+            <point key="canvasLocation" x="4772" y="-1418"/>
         </scene>
         <!--每日放送-->
         <scene sceneID="lYW-mV-8ur">
             <objects>
-                <tableViewController storyboardIdentifier="DaliyListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R2f-Mh-QPi" customClass="DaliyListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DaliyListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R2f-Mh-QPi" customClass="DaliyListViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="gdf-Xk-SpI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -576,7 +576,7 @@
         <!--设置-->
         <scene sceneID="pJZ-uK-VH7">
             <objects>
-                <tableViewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bdN-r0-S0v" customClass="SettingsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bdN-r0-S0v" customClass="SettingsViewController" customModule="bangumiSwift" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="GU6-MN-4JM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -668,10 +668,10 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="UITabBarList.png" width="16" height="16"/>
-        <image name="UITabBarStar.png" width="16" height="16"/>
+        <image name="UITabBarList.png" width="27" height="26"/>
+        <image name="UITabBarStar.png" width="27" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UHi-ni-q6v"/>
+        <segue reference="eWt-bi-WaH"/>
     </inferredMetricsTieBreakers>
 </document>

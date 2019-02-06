@@ -7,16 +7,37 @@
 //
 
 import Foundation
-
+import OAuthSwift
 protocol BangumiServicesHandlerDelegate {
-    func Completed(_ sender: BangumiServices, _ data: Any?)
+    func Completed(_ sender: BangumiServices, _ data: Array<Any>?)
     func Failed(_ sender: BangumiServices, _ data: Any?)
 }
 
 class BangumiServices {
     static let masterURL = "https://api.bgm.tv/"
+    var oauthswift: OAuthSwift?
 
     var handlerDelegate: BangumiServicesHandlerDelegate?
+
+    func tryLogin() {
+        let oauthswift = OAuth2Swift(
+            consumerKey: AppID,
+            consumerSecret: AppSecret,
+            authorizeUrl: "https://bgm.tv/oauth/authorize",
+            responseType: "token"
+        )
+        let handle = oauthswift.authorize(
+            withCallbackURL: URL(string: "obangumiplus://oauth-callback/")!,
+            scope: "", state: "panpanpan",
+            success: { credential, response, parameters in
+                print(credential.oauthToken)
+                // Do your request
+            },
+            failure: { error in
+                print(error.localizedDescription)
+            }
+        )
+    }
 
     func calendar() {
         createConnectionWithURL(BangumiServices.masterURL + "calendar", "GET", nil)
@@ -70,7 +91,7 @@ class BangumiServices {
             {
                 do {
                     try v = JSONSerialization.jsonObject(with: data!, options: [])
-                    self.handlerDelegate?.Completed(self, v)
+                    self.handlerDelegate?.Completed(self, (v as! Array<Any>))
                 }
                 catch {
                     self.handlerDelegate?.Failed(self, err?.localizedDescription)
