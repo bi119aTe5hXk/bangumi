@@ -18,7 +18,7 @@
 		8603CF5A22094B80006A1913 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5922094B80006A1913 /* SplitViewController.swift */; };
 		8603CF5E22094C9A006A1913 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5D22094C9A006A1913 /* TabbarViewController.swift */; };
 		8603CF6022094D40006A1913 /* WatchingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF5F22094D40006A1913 /* WatchingListViewController.swift */; };
-		8603CF6222094D5D006A1913 /* DaliyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6122094D5D006A1913 /* DaliyListViewController.swift */; };
+		8603CF6222094D5D006A1913 /* DailyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6122094D5D006A1913 /* DailyListViewController.swift */; };
 		8603CF6422094D90006A1913 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6322094D90006A1913 /* SearchViewController.swift */; };
 		8603CF6622094DA8006A1913 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6522094DA8006A1913 /* SettingsViewController.swift */; };
 		8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603CF6722094DC4006A1913 /* ProgressListViewController.swift */; };
@@ -75,7 +75,7 @@
 		8603CF5922094B80006A1913 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		8603CF5D22094C9A006A1913 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		8603CF5F22094D40006A1913 /* WatchingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListViewController.swift; sourceTree = "<group>"; };
-		8603CF6122094D5D006A1913 /* DaliyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaliyListViewController.swift; sourceTree = "<group>"; };
+		8603CF6122094D5D006A1913 /* DailyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListViewController.swift; sourceTree = "<group>"; };
 		8603CF6322094D90006A1913 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8603CF6522094DA8006A1913 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8603CF6722094DC4006A1913 /* ProgressListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressListViewController.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				8603CF5922094B80006A1913 /* SplitViewController.swift */,
 				8603CF5D22094C9A006A1913 /* TabbarViewController.swift */,
 				8603CF5F22094D40006A1913 /* WatchingListViewController.swift */,
-				8603CF6122094D5D006A1913 /* DaliyListViewController.swift */,
+				8603CF6122094D5D006A1913 /* DailyListViewController.swift */,
 				8603CF6322094D90006A1913 /* SearchViewController.swift */,
 				8603CF6522094DA8006A1913 /* SettingsViewController.swift */,
 				8603CF6722094DC4006A1913 /* ProgressListViewController.swift */,
@@ -467,7 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */,
-				8603CF6222094D5D006A1913 /* DaliyListViewController.swift in Sources */,
+				8603CF6222094D5D006A1913 /* DailyListViewController.swift in Sources */,
 				47756E552206C35200B51037 /* BangumiServices.swift in Sources */,
 				8603CF6422094D90006A1913 /* SearchViewController.swift in Sources */,
 				47756E532206C05A00B51037 /* API.swift in Sources */,

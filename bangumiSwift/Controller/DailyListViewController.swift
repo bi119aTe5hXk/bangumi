@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DaliyListViewController: UITableViewController, BangumiServicesHandlerDelegate {
+class DailyListViewController: UITableViewController, BangumiServicesHandlerDelegate {
     let bs = BangumiServices()
     var daylist: Array<Dictionary<String, Any>>? = nil
 
