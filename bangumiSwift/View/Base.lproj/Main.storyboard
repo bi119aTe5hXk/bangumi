@@ -296,7 +296,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K94-kP-jtl">
-                                <rect key="frame" x="16" y="354" width="343" height="264"/>
+                                <rect key="frame" x="16" y="354" width="343" height="313"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -356,7 +356,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxU-2a-ywV">
-                                <rect key="frame" x="337" y="594" width="22" height="24"/>
+                                <rect key="frame" x="337" y="643" width="22" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="GMz-o6-HVb"/>
                                 </constraints>
@@ -672,6 +672,6 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
         <image name="UITabBarStar.png" width="27" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="brY-Fo-Wm4"/>
+        <segue reference="UHi-ni-q6v"/>
     </inferredMetricsTieBreakers>
 </document>
