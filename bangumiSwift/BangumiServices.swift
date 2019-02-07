@@ -18,6 +18,10 @@ class BangumiServices {
 
 
     var handlerDelegate: BangumiServicesHandlerDelegate?
+    
+    func getUserID(withPre:Dictionary<String, String>?) {
+        createConnectionWithURL("https://bgm.tv/oauth/access_token", "POST", withPre)
+    }
 
 
 
@@ -27,6 +31,7 @@ class BangumiServices {
     func getBGMDetail(withID: String) {
         createConnectionWithURL(BangumiServices.masterURL + "subject/" + withID, "GET", ["responseGroup":"large"])
     }
+    
 
 
     func createConnectionWithURL(_ url: String, _ method: String, _ data: Dictionary<String, String>?) {

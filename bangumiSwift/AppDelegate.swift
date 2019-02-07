@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //        splitViewController.delegate = self
         
         userdefaults.register(defaults: ["oauthtoken":""])
+        userdefaults.register(defaults: ["refreshtoken":""])
+        userdefaults.register(defaults: ["userid":""])
+        userdefaults.register(defaults: ["expirestime":0.0])
+        
+        self.userdefaults.set("", forKey: "oauthtoken")
         userdefaults.synchronize()
         return true
     }
