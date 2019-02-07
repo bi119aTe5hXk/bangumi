@@ -32,6 +32,7 @@
 		8653A9AE2209777600EF5C61 /* UITabBarStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8653A9A92209777600EF5C61 /* UITabBarStar.png */; };
 		8653A9B1220AAF8E00EF5C61 /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653A9B0220AAF8E00EF5C61 /* DailyCell.swift */; };
 		86EAE58F220B0C3500C1F77E /* LoginServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EAE58E220B0C3500C1F77E /* LoginServices.swift */; };
+		86FB7342220C067E00C0239D /* WatchingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB7341220C067E00C0239D /* WatchingCell.swift */; };
 		D2EE87B1ECDF96EEC3394590 /* Pods_bangumiSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6949EFAD286FFA422D5E7985 /* Pods_bangumiSwiftTests.framework */; };
 		DF16AD056AFBCC16A610EE9C /* Pods_bangumiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		8653A9A92209777600EF5C61 /* UITabBarStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBarStar.png; sourceTree = "<group>"; };
 		8653A9B0220AAF8E00EF5C61 /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		86EAE58E220B0C3500C1F77E /* LoginServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServices.swift; sourceTree = "<group>"; };
+		86FB7341220C067E00C0239D /* WatchingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingCell.swift; sourceTree = "<group>"; };
 		DAB37F82B106293D7ECC41F2 /* Pods_bangumiSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF971CA3243016615056BF60 /* Pods_bangumiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bangumiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 				8603CF5922094B80006A1913 /* SplitViewController.swift */,
 				8603CF5D22094C9A006A1913 /* TabbarViewController.swift */,
 				8603CF5F22094D40006A1913 /* WatchingListViewController.swift */,
+				86FB7341220C067E00C0239D /* WatchingCell.swift */,
 				8603CF6122094D5D006A1913 /* DailyListViewController.swift */,
 				8653A9B0220AAF8E00EF5C61 /* DailyCell.swift */,
 				8603CF6322094D90006A1913 /* SearchViewController.swift */,
@@ -474,6 +477,7 @@
 			files = (
 				8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */,
 				8653A9B1220AAF8E00EF5C61 /* DailyCell.swift in Sources */,
+				86FB7342220C067E00C0239D /* WatchingCell.swift in Sources */,
 				8603CF6222094D5D006A1913 /* DailyListViewController.swift in Sources */,
 				86EAE58F220B0C3500C1F77E /* LoginServices.swift in Sources */,
 				47756E552206C35200B51037 /* BangumiServices.swift in Sources */,

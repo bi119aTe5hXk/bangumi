@@ -15,7 +15,7 @@ protocol LoginServicesHandlerDelegate {
 }
 
 class LoginServices: NSObject , BangumiServicesHandlerDelegate{
-    var handlerDelegate: LoginServicesHandlerDelegate?
+    static var handlerDelegate: LoginServicesHandlerDelegate?
     
     static var oauthswift: OAuth2Swift?
     static let bs = BangumiServices()
@@ -68,6 +68,7 @@ class LoginServices: NSObject , BangumiServicesHandlerDelegate{
             },
             failure: { error in
                 print(error.localizedDescription)
+                self.handlerDelegate?.LoginFailed(LoginServices.self(), error.localizedDescription)
             }
         )
     }
@@ -106,13 +107,13 @@ class LoginServices: NSObject , BangumiServicesHandlerDelegate{
             LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
             
         }
-        self.handlerDelegate?.LoginCompleted(self, true)
+        LoginServices.handlerDelegate?.LoginCompleted(self, true)
         
     }
     
     func Failed(_ sender: BangumiServices, _ data: Any) {
         print(data)
-        self.handlerDelegate?.LoginFailed(self, data)
+        LoginServices.handlerDelegate?.LoginFailed(self, data)
     }
     
     static func generateState(withLength len: Int) -> String {

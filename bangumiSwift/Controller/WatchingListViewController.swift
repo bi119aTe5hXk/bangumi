@@ -8,10 +8,12 @@
 
 import UIKit
 
-class WatchingListViewController: UITableViewController, BangumiServicesHandlerDelegate {
+class WatchingListViewController: UITableViewController, BangumiServicesHandlerDelegate, LoginServicesHandlerDelegate {
+   
+    
     let bs = BangumiServices()
-    let loginsv = LoginServices.self
-    let bslist = Array.init([])
+    let loginsv = LoginServices()
+    let watchinglist = Array.init([])
     
 
     override func viewDidLoad() {
@@ -27,28 +29,45 @@ class WatchingListViewController: UITableViewController, BangumiServicesHandlerD
         refreshControl.addTarget(self, action: #selector(self.onRefresh), for: UIControl.Event.valueChanged)
         self.refreshControl = refreshControl
         bs.handlerDelegate = self
-        
+        LoginServices.handlerDelegate = self
         self.checkLoginAndLoadList()
         
     }
     func checkLoginAndLoadList() {
-        if (loginsv.isLogin() == false) {
+        if (LoginServices.isLogin() == false) {
+            self.tabBarController!.navigationItem.title  = "未登录";
             self.notLoginMSG()
         }else{
-            
+            if (LoginServices.isNotExpire() == false){
+                LoginServices.tryRefreshToken()
+            }else{
+                loadWatchingList()
+            }
         }
     }
     func notLoginMSG() {
         self.refreshControl?.endRefreshing()
         let alert = UIAlertController.init(title: "您需要登录才可继续操作", message: "请点击登录按钮跳转网页进行登录或注册操作.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction.init(title: "登录", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-            self.loginsv.tryLogin()
+            LoginServices.tryLogin()
         }))
         alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     @objc func onRefresh() {
         self.checkLoginAndLoadList()
+    }
+    func LoginCompleted(_ sender: LoginServices, _ data: Any) {
+        loadWatchingList()
+    }
+    
+    func LoginFailed(_ sender: LoginServices, _ data: Any) {
+        let alert = UIAlertController.init(title: "登录失败", message: (data as! String), preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction.init(title: "重试", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            LoginServices.tryLogin()
+        }))
+        alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     func Completed(_ sender: BangumiServices, _ data: Any) {
@@ -62,6 +81,11 @@ class WatchingListViewController: UITableViewController, BangumiServicesHandlerD
             self.refreshControl?.endRefreshing()
         }
     }
+    
+    func loadWatchingList() {
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,15 +98,15 @@ class WatchingListViewController: UITableViewController, BangumiServicesHandlerD
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WatchingCell", for: indexPath) as! WatchingCell
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
