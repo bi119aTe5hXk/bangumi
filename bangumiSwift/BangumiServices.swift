@@ -25,7 +25,7 @@ class BangumiServices {
         createConnectionWithURL(BangumiServices.masterURL + "calendar", "GET", nil)
     }
     func getBGMDetail(withID: String) {
-        createConnectionWithURL(BangumiServices.masterURL + "subject/" + withID, "GET", nil)
+        createConnectionWithURL(BangumiServices.masterURL + "subject/" + withID, "GET", ["responseGroup":"large"])
     }
 
 

@@ -9,7 +9,7 @@
 import UIKit
 import OAuthSwift
 class LoginServices: NSObject {
-    static var oauthswift: OAuthSwift?
+    static var oauthswift: OAuth2Swift?
     static let userdefaults = UserDefaults.standard
     
     static func isLogin() -> Bool {
@@ -20,12 +20,9 @@ class LoginServices: NSObject {
         return false
     }
     
-    static func notLoginMSG(){
-        
-    }
 
     static func tryLogin() {
-        let oauthswift = OAuth2Swift(
+        oauthswift = OAuth2Swift(
             consumerKey: AppID,
             consumerSecret: AppSecret,
             authorizeUrl: "https://bgm.tv/oauth/authorize",
@@ -33,7 +30,7 @@ class LoginServices: NSObject {
             responseType: "code"
         )
         let state = generateState(withLength: 20)
-        let handle = oauthswift.authorize(
+        var handle = oauthswift!.authorize(
             withCallbackURL: URL(string: "bangumiplus://oauth-callback/bgm")!,
             scope: "mayday", state: state,
             success: { credential, response, parameters in

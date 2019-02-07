@@ -12,7 +12,7 @@ import OAuthSwift
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-
+    let userdefaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
 //        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
 //        splitViewController.delegate = self
-        let userdefaults = UserDefaults.standard
+        
         userdefaults.register(defaults: ["oauthtoken":""])
         userdefaults.synchronize()
         return true
@@ -40,9 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
         print(url)
-        if (url.host == "oauth-callback") {
-            OAuthSwift.handle(url: url)
-        }
+        OAuthSwift.handle(url: url)
+//        if (url.host == "oauth-callback") {
+//
+//        }
+        
         return true
     }
     
