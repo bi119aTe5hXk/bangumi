@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45FE2BEC220BFFE2002947A9 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE2BEB220BFFE2002947A9 /* NetworkHelper.swift */; };
 		47756E232206B89000B51037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47756E222206B89000B51037 /* AppDelegate.swift */; };
 		47756E2A2206B89000B51037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47756E282206B89000B51037 /* Main.storyboard */; };
 		47756E2F2206B89200B51037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47756E2D2206B89200B51037 /* LaunchScreen.storyboard */; };
@@ -58,6 +59,7 @@
 		1890EB6EE948CDA93AB81E29 /* Pods-bangumiSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwift/Pods-bangumiSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		1DC988A6699E0258CE9D5B6D /* Pods-bangumiSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwiftUITests/Pods-bangumiSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2FB6148A4A8DFCAD86F931EE /* Pods-bangumiSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bangumiSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bangumiSwiftTests/Pods-bangumiSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		45FE2BEB220BFFE2002947A9 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		47756E1F2206B89000B51037 /* bangumiSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bangumiSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47756E222206B89000B51037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47756E292206B89000B51037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45FE2BEA220BFFC3002947A9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				45FE2BEB220BFFE2002947A9 /* NetworkHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		47756E162206B88F00B51037 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		47756E212206B89000B51037 /* bangumiSwift */ = {
 			isa = PBXGroup;
 			children = (
+				45FE2BEA220BFFC3002947A9 /* Helpers */,
 				47756E222206B89000B51037 /* AppDelegate.swift */,
 				47756E522206C05A00B51037 /* API.swift */,
 				47756E542206C35200B51037 /* BangumiServices.swift */,
@@ -475,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45FE2BEC220BFFE2002947A9 /* NetworkHelper.swift in Sources */,
 				8603CF6822094DC4006A1913 /* ProgressListViewController.swift in Sources */,
 				8653A9B1220AAF8E00EF5C61 /* DailyCell.swift in Sources */,
 				86FB7342220C067E00C0239D /* WatchingCell.swift in Sources */,
