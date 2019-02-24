@@ -10,7 +10,7 @@ import Foundation
 
 let masterURL = "https://api.bgm.tv/"
 
-func getUserID(withPre: Dictionary<String, String>?, completion: @escaping ([String: Any]?, Error?) -> Void) {
+func getUserID(withPre: Dictionary<String, String>?, completion: @escaping (Any?, Error?) -> Void) {
     createConnectionWithURL("https://bgm.tv/oauth/access_token", "POST", withPre, completion: { (responseObject, error) in
         completion(responseObject, error)
     })
@@ -18,18 +18,18 @@ func getUserID(withPre: Dictionary<String, String>?, completion: @escaping ([Str
 
 
 
-func getDailyList(completion: @escaping ([String: Any]?, Error?) -> Void) {
+func getDailyList(completion: @escaping (Any?, Error?) -> Void) {
     createConnectionWithURL(masterURL + "calendar", "GET", nil, completion: { (responseObject, error) in
         completion(responseObject, error)
     })
 }
-func getBGMDetail(withID: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
+func getBGMDetail(withID: String, completion: @escaping (Any?, Error?) -> Void) {
     createConnectionWithURL(masterURL + "subject/" + withID, "GET", ["responseGroup": "large"], completion: { (responseObject, error) in
         completion(responseObject, error)
     })
 }
 
-private func createConnectionWithURL(_ url: String, _ method: String, _ data: Dictionary<String, String>?, completion: @escaping ([String: Any]?, Error?) -> Void) {
+private func createConnectionWithURL(_ url: String, _ method: String, _ data: Dictionary<String, String>?, completion: @escaping (Any?, Error?) -> Void) {
     var request: URLRequest? = nil
     print(url)
     switch method
@@ -81,7 +81,7 @@ private func createConnectionWithURL(_ url: String, _ method: String, _ data: Di
             return
         }
         print(rdata)
-        let responseObject = (try? JSONSerialization.jsonObject(with: rdata, options: [])) as? [String: Any]
+        let responseObject = (try? JSONSerialization.jsonObject(with: rdata, options: [])) as? Any
         print(responseObject)
         completion(responseObject, nil)
         //            var v: Any

@@ -64,10 +64,11 @@ class LoginServices: NSObject {
                                             return
                                         }
                                         //login success
-                                        LoginServices.userdefaults.set(responseObject["access_token"], forKey: "oauthtoken")
-                                        LoginServices.userdefaults.set(responseObject["refresh_token"], forKey: "refreshtoken")
-                                        LoginServices.userdefaults.set(responseObject["user_id"], forKey: "userid")
-                                        var expirestime = LoginServices.nowTime + (Double(responseObject["expires_in"] as! Int))
+                                        let dic = responseObject as! [String: Any]
+                                        LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
+                                        LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
+                                        LoginServices.userdefaults.set(dic["user_id"], forKey: "userid")
+                                        var expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
                                         LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
                                         completion(["login":"success"], nil)
                                         
@@ -92,9 +93,10 @@ class LoginServices: NSObject {
                                     return
                                 }
                                 //token renew success
-                                LoginServices.userdefaults.set(responseObject["access_token"], forKey: "oauthtoken")
-                                LoginServices.userdefaults.set(responseObject["refresh_token"], forKey: "refreshtoken")
-                                var expirestime = LoginServices.nowTime + (Double(responseObject["expires_in"] as! Int))
+                                let dic = responseObject as! [String: Any]
+                                LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
+                                LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
+                                var expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
                                 LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
                                 completion(["login":"success"], nil)
                                 
