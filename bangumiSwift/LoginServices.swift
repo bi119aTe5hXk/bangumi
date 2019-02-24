@@ -9,18 +9,13 @@
 import UIKit
 import OAuthSwift
 
-protocol LoginServicesHandlerDelegate {
-    func LoginCompleted(_ sender: LoginServices, _ data: Any)
-    func LoginFailed(_ sender: LoginServices, _ data: Any)
-}
 
-class LoginServices: NSObject , BangumiServicesHandlerDelegate{
-    static var handlerDelegate: LoginServicesHandlerDelegate?
+
+class LoginServices: NSObject {
     
     static var oauthswift: OAuth2Swift?
     static let bs = BangumiServices()
     static let userdefaults = UserDefaults.standard
-    static var requestType = ""
     static let nowTime = Date().timeIntervalSince1970
     
     static func isLogin() -> Bool {
@@ -63,12 +58,24 @@ class LoginServices: NSObject , BangumiServicesHandlerDelegate{
                                        "client_secret":AppSecret,
                                        "code":credential.oauthToken,
                                        "redirect_uri":"bangumiplus://oauth-callback/bgm",
-                                       "state":state])
-                requestType = "getToken"
+                                       "state":state]){ responseObject, error in
+                                        guard let responseObject = responseObject, error == nil else {
+                                            print(error ?? "Unknown error")
+                                            return
+                                        }
+                                        
+                                        LoginServices.userdefaults.set(responseObject["access_token"], forKey: "oauthtoken")
+                                        LoginServices.userdefaults.set(responseObject["refresh_token"], forKey: "refreshtoken")
+                                        LoginServices.userdefaults.set(responseObject["user_id"], forKey: "userid")
+                                        var expirestime = LoginServices.nowTime + (Double(responseObject["expires_in"] as! Int))
+                                        LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
+                                        
+                                        
+                }
             },
             failure: { error in
                 print(error.localizedDescription)
-                self.handlerDelegate?.LoginFailed(LoginServices.self(), error.localizedDescription)
+                //self.handlerDelegate?.LoginFailed(LoginServices.self(), error.localizedDescription)
             }
         )
     }
@@ -79,8 +86,18 @@ class LoginServices: NSObject , BangumiServicesHandlerDelegate{
                                "client_id":AppID,
                                "client_secret":AppSecret,
                                "refresh_token":rtoken!,
-                               "redirect_uri":"bangumiplus://oauth-callback/bgm"])
-        requestType = "refreshToken"
+                               "redirect_uri":"bangumiplus://oauth-callback/bgm"]){ responseObject, error in
+                                guard let responseObject = responseObject, error == nil else {
+                                    print(error ?? "Unknown error")
+                                    return
+                                }
+                                LoginServices.userdefaults.set(responseObject["access_token"], forKey: "oauthtoken")
+                                LoginServices.userdefaults.set(responseObject["refresh_token"], forKey: "refreshtoken")
+                                var expirestime = LoginServices.nowTime + (Double(responseObject["expires_in"] as! Int))
+                                LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
+                                
+        }
+        
     }
     
     static func setLogout() {
@@ -90,31 +107,7 @@ class LoginServices: NSObject , BangumiServicesHandlerDelegate{
         LoginServices.userdefaults.set("", forKey: "expirestime")
     }
     
-    func Completed(_ sender: BangumiServices, _ data: Any) {
-        var dic = (data as? Dictionary<String, Any>)!
-        if LoginServices.requestType == "getToken" {
-            LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
-            LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
-            LoginServices.userdefaults.set(dic["user_id"], forKey: "userid")
-            var expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
-            LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
-            
-        }
-        if LoginServices.requestType == "refreshToken" {
-            LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
-            LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
-            var expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
-            LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
-            
-        }
-        LoginServices.handlerDelegate?.LoginCompleted(self, true)
-        
-    }
     
-    func Failed(_ sender: BangumiServices, _ data: Any) {
-        print(data)
-        LoginServices.handlerDelegate?.LoginFailed(self, data)
-    }
     
     static func generateState(withLength len: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

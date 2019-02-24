@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WatchingListViewController: UITableViewController, BangumiServicesHandlerDelegate, LoginServicesHandlerDelegate {
+class WatchingListViewController: UITableViewController {
    
     
     let bs = BangumiServices()
@@ -28,8 +28,8 @@ class WatchingListViewController: UITableViewController, BangumiServicesHandlerD
         let refreshControl = UIRefreshControl.init()
         refreshControl.addTarget(self, action: #selector(self.onRefresh), for: UIControl.Event.valueChanged)
         self.refreshControl = refreshControl
-        bs.handlerDelegate = self
-        LoginServices.handlerDelegate = self
+//        bs.handlerDelegate = self
+//        LoginServices.handlerDelegate = self
         self.checkLoginAndLoadList()
         
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DailyListViewController: UITableViewController, BangumiServicesHandlerDelegate {
+class DailyListViewController: UITableViewController {
     let bs = BangumiServices()
     var daylist: Array<Dictionary<String, Any>>? = Array.init([])
 
@@ -22,7 +22,7 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
         let refreshControl = UIRefreshControl.init()
         refreshControl.addTarget(self, action: #selector(self.onRefresh), for: UIControl.Event.valueChanged)
         self.refreshControl = refreshControl
-        bs.handlerDelegate = self
+        //bs.handlerDelegate = self
 
         if (daylist != nil && daylist!.count <= 0) {
             self.startGetDayBGMList()
@@ -32,18 +32,25 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
         self.startGetDayBGMList()
     }
     func startGetDayBGMList() {
-        bs.getDailyList()
-
-    }
-
-    func Completed(_ sender: BangumiServices, _ data: Any) {
-        daylist = data as? Array<Dictionary<String, Any>>
-        DispatchQueue.main.async {
-            self.refreshControl?.endRefreshing()
-            self.tableView.reloadData()
-            self.jumpToToday()
+        bs.getDailyList(){ responseObject, error in
+            guard let responseObject = responseObject, error == nil else {
+                print(error ?? "Unknown error")
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                }
+                return
+            }
+            
+            self.daylist = (responseObject as! Array)
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+                self.tableView.reloadData()
+                self.jumpToToday()
+            }
         }
+
     }
+
     func jumpToToday() {
         let ip = IndexPath.init(row: 0, section: self.todayNum())
         self.tableView.scrollToRow(at: ip, at: UITableView.ScrollPosition.top, animated: true)
@@ -79,11 +86,6 @@ class DailyListViewController: UITableViewController, BangumiServicesHandlerDele
 
     }
 
-    func Failed(_ sender: BangumiServices, _ data: Any) {
-        DispatchQueue.main.async {
-            self.refreshControl?.endRefreshing()
-        }
-    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

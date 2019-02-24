@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BGMDetailViewController: UIViewController,BangumiServicesHandlerDelegate {
+class BGMDetailViewController: UIViewController {
     let bs = BangumiServices()
     var detailDic: Dictionary<String, Any>? = Dictionary.init()
     var detailItem:Any!
@@ -35,14 +35,67 @@ class BGMDetailViewController: UIViewController,BangumiServicesHandlerDelegate {
         //self.navigationItem.backBarButtonItem?.title = "返回"
         self.progressmanabtn.isHidden = true
         self.statusmanabtn.isHidden = true
-        bs.handlerDelegate = self
         
         
         
         
         if bgmidstr.lengthOfBytes(using: String.Encoding.utf8) > 0 {
             print("did get:" + bgmidstr)
-            bs.getBGMDetail(withID: bgmidstr)
+            bs.getBGMDetail(withID: bgmidstr){ responseObject, error in
+                guard let responseObject = responseObject, error == nil else {
+                    print(error ?? "Unknown error")
+                    return
+                }
+                
+                self.detailDic = (responseObject as? Dictionary<String, Any>)!
+                if (self.detailDic!["images"] != nil) {
+                    let imgurlstr: String = (self.detailDic!["images"]as! Dictionary<String, Any>)["large"] as! String
+                    
+                    if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
+                        DispatchQueue.main.async {
+                            self.cover.image = nil
+                        }
+                        
+                        DispatchQueue.global().async {
+                            do {
+                                let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
+                                let image = UIImage.init(data: imgdata)
+                                
+                                DispatchQueue.main.async {
+                                    self.cover.image = image
+                                }
+                            } catch { }
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.progressmanabtn.isHidden = false
+                    self.statusmanabtn.isHidden = false
+                    self.ratscore.isHidden = false
+                    self.ratscoretitle.isHidden = false
+                    self.rankscore.isHidden = false
+                    self.ranktitle.isHidden = false
+                    self.actionbtn.isEnabled = true
+                    self.bgmdetailbtn.isHidden = false
+                    
+                    self.titlelabel.text = (self.detailDic!["name"] as! String)
+                    self.titlelabel_cn.text = (self.detailDic!["name_cn"] as! String)
+                    self.bgmsummary.text = (self.detailDic!["summary"] as! String)
+                    
+                    if(self.detailDic!["rating"] != nil && (self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] != nil){
+                        self.ratscore.text = String((self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] as! Double) + "/10"
+                    }else{
+                        self.ratscore.text = "暂无评分"
+                    }
+                    
+                    if (self.detailDic!["rank"] != nil){
+                        self.rankscore.text = String(self.detailDic!["rank"] as! Int)
+                    }else{
+                        self.rankscore.text = "暂无排行"
+                    }
+                }
+                
+            }
         }else{
             let alert = UIAlertController.init(title: "出错了！", message: "BGMID长度为0。", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -50,61 +103,6 @@ class BGMDetailViewController: UIViewController,BangumiServicesHandlerDelegate {
         }
     }
     
-    func Completed(_ sender: BangumiServices, _ data: Any) {
-        detailDic = (data as? Dictionary<String, Any>)!
-        if (detailDic!["images"] != nil) {
-            let imgurlstr: String = (detailDic!["images"]as! Dictionary<String, Any>)["large"] as! String
-            
-            if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
-                DispatchQueue.main.async {
-                    self.cover.image = nil
-                }
-                
-                DispatchQueue.global().async {
-                    do {
-                        let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
-                        let image = UIImage.init(data: imgdata)
-                        
-                        DispatchQueue.main.async {
-                            self.cover.image = image
-                        }
-                    } catch { }
-                }
-            }
-        }
-        DispatchQueue.main.async {
-            self.progressmanabtn.isHidden = false
-            self.statusmanabtn.isHidden = false
-            self.ratscore.isHidden = false
-            self.ratscoretitle.isHidden = false
-            self.rankscore.isHidden = false
-            self.ranktitle.isHidden = false
-            self.actionbtn.isEnabled = true
-            self.bgmdetailbtn.isHidden = false
-            
-            self.titlelabel.text = (self.detailDic!["name"] as! String)
-            self.titlelabel_cn.text = (self.detailDic!["name_cn"] as! String)
-            self.bgmsummary.text = (self.detailDic!["summary"] as! String)
-            
-            if(self.detailDic!["rating"] != nil && (self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] != nil){
-                self.ratscore.text = String((self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] as! Double) + "/10"
-            }else{
-                self.ratscore.text = "暂无评分"
-            }
-            
-            if (self.detailDic!["rank"] != nil){
-                self.rankscore.text = String(self.detailDic!["rank"] as! Int)
-            }else{
-                self.rankscore.text = "暂无排行"
-            }
-        }
-        
-        
-    }
-    
-    func Failed(_ sender: BangumiServices, _ data: Any) {
-        
-    }
     /*
     // MARK: - Navigation
 
