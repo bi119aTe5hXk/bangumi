@@ -38,7 +38,7 @@ class LoginServices: NSObject {
     }
     
 
-    static func tryLogin() {
+    static func tryLogin(completion: @escaping ([String: Any]?, Error?) -> Void) {
         oauthswift = OAuth2Swift(
             consumerKey: AppID,
             consumerSecret: AppSecret,
@@ -61,26 +61,26 @@ class LoginServices: NSObject {
                                        "state":state]){ responseObject, error in
                                         guard let responseObject = responseObject, error == nil else {
                                             print(error ?? "Unknown error")
+                                            completion(nil, error)
                                             return
                                         }
-                                        
+                                        //login success
                                         LoginServices.userdefaults.set(responseObject["access_token"], forKey: "oauthtoken")
                                         LoginServices.userdefaults.set(responseObject["refresh_token"], forKey: "refreshtoken")
                                         LoginServices.userdefaults.set(responseObject["user_id"], forKey: "userid")
                                         var expirestime = LoginServices.nowTime + (Double(responseObject["expires_in"] as! Int))
                                         LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
-                                        
+                                        completion(["login":"success"], nil)
                                         
                 }
-            },
-            failure: { error in
+            },failure: { error in
                 print(error.localizedDescription)
-                //self.handlerDelegate?.LoginFailed(LoginServices.self(), error.localizedDescription)
+                completion(nil, error)
             }
         )
     }
     
-    static func tryRefreshToken(){
+    static func tryRefreshToken(completion: @escaping ([String: Any]?, Error?) -> Void){
         let rtoken = self.userdefaults.object(forKey: "refresh_token") as? String
         bs.getUserID(withPre: ["grant_type":"refresh_token",
                                "client_id":AppID,
@@ -89,12 +89,15 @@ class LoginServices: NSObject {
                                "redirect_uri":"bangumiplus://oauth-callback/bgm"]){ responseObject, error in
                                 guard let responseObject = responseObject, error == nil else {
                                     print(error ?? "Unknown error")
+                                    completion(nil, error)
                                     return
                                 }
+                                //token renew success
                                 LoginServices.userdefaults.set(responseObject["access_token"], forKey: "oauthtoken")
                                 LoginServices.userdefaults.set(responseObject["refresh_token"], forKey: "refreshtoken")
                                 var expirestime = LoginServices.nowTime + (Double(responseObject["expires_in"] as! Int))
                                 LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
+                                completion(["login":"success"], nil)
                                 
         }
         

@@ -39,7 +39,9 @@ class WatchingListViewController: UITableViewController {
             self.notLoginMSG()
         }else{
             if (LoginServices.isNotExpire() == false){
-                LoginServices.tryRefreshToken()
+                LoginServices.tryRefreshToken(){ result, error in
+                    
+                }
             }else{
                 loadWatchingList()
             }
@@ -49,7 +51,28 @@ class WatchingListViewController: UITableViewController {
         self.refreshControl?.endRefreshing()
         let alert = UIAlertController.init(title: "您需要登录才可继续操作", message: "请点击登录按钮跳转网页进行登录或注册操作.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction.init(title: "登录", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-            LoginServices.tryLogin()
+            LoginServices.tryLogin(){ result, error in
+                guard error == nil else {
+                    self.loginFailedMSG(error: error!)
+                    return
+                }
+                self.loadWatchingList()
+            }
+        }))
+        alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func loginFailedMSG(error:Error){
+        let alert = UIAlertController.init(title: "登录失败", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction.init(title: "重试", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            LoginServices.tryLogin(){ result, error in
+                guard error == nil else {
+                    self.loginFailedMSG(error: error!)
+                    return
+                }
+                self.loadWatchingList()
+            }
         }))
         alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -57,30 +80,18 @@ class WatchingListViewController: UITableViewController {
     @objc func onRefresh() {
         self.checkLoginAndLoadList()
     }
-    func LoginCompleted(_ sender: LoginServices, _ data: Any) {
-        loadWatchingList()
-    }
-    
-    func LoginFailed(_ sender: LoginServices, _ data: Any) {
-        let alert = UIAlertController.init(title: "登录失败", message: (data as! String), preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction.init(title: "重试", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-            LoginServices.tryLogin()
-        }))
-        alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
 
-    func Completed(_ sender: BangumiServices, _ data: Any) {
-        DispatchQueue.main.async {
-            self.refreshControl?.endRefreshing()
-        }
-    }
-    
-    func Failed(_ sender: BangumiServices, _ data: Any) {
-        DispatchQueue.main.async {
-            self.refreshControl?.endRefreshing()
-        }
-    }
+//    func Completed(_ sender: BangumiServices, _ data: Any) {
+//        DispatchQueue.main.async {
+//            self.refreshControl?.endRefreshing()
+//        }
+//    }
+//
+//    func Failed(_ sender: BangumiServices, _ data: Any) {
+//        DispatchQueue.main.async {
+//            self.refreshControl?.endRefreshing()
+//        }
+//    }
     
     func loadWatchingList() {
         
