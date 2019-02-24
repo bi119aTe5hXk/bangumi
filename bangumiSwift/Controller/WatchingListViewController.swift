@@ -11,7 +11,6 @@ import UIKit
 class WatchingListViewController: UITableViewController {
    
     
-    let bs = BangumiServices()
     let loginsv = LoginServices()
     let watchinglist = Array.init([])
     

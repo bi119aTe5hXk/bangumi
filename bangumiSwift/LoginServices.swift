@@ -14,7 +14,6 @@ import OAuthSwift
 class LoginServices: NSObject {
     
     static var oauthswift: OAuth2Swift?
-    static let bs = BangumiServices()
     static let userdefaults = UserDefaults.standard
     static let nowTime = Date().timeIntervalSince1970
     
@@ -53,7 +52,7 @@ class LoginServices: NSObject {
             success: { credential, response, parameters in
                 print(credential.oauthToken)
                 //self.userdefaults.set(credential.oauthToken, forKey: "oauthtoken")
-                bs.getUserID(withPre: ["grant_type":"authorization_code",
+                getUserID(withPre: ["grant_type":"authorization_code",
                                        "client_id":AppID,
                                        "client_secret":AppSecret,
                                        "code":credential.oauthToken,
@@ -82,7 +81,7 @@ class LoginServices: NSObject {
     
     static func tryRefreshToken(completion: @escaping ([String: Any]?, Error?) -> Void){
         let rtoken = self.userdefaults.object(forKey: "refresh_token") as? String
-        bs.getUserID(withPre: ["grant_type":"refresh_token",
+        getUserID(withPre: ["grant_type":"refresh_token",
                                "client_id":AppID,
                                "client_secret":AppSecret,
                                "refresh_token":rtoken!,

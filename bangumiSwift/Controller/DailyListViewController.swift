@@ -9,7 +9,6 @@
 import UIKit
 
 class DailyListViewController: UITableViewController {
-    let bs = BangumiServices()
     var daylist: Array<Dictionary<String, Any>>? = Array.init([])
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +31,7 @@ class DailyListViewController: UITableViewController {
         self.startGetDayBGMList()
     }
     func startGetDayBGMList() {
-        bs.getDailyList(){ responseObject, error in
+        getDailyList(){ responseObject, error in
             guard let responseObject = responseObject, error == nil else {
                 print(error ?? "Unknown error")
                 DispatchQueue.main.async {

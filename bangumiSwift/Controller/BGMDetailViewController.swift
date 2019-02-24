@@ -9,7 +9,6 @@
 import UIKit
 
 class BGMDetailViewController: UIViewController {
-    let bs = BangumiServices()
     var detailDic: Dictionary<String, Any>? = Dictionary.init()
     var detailItem:Any!
     var bgmidstr:String!
@@ -41,7 +40,7 @@ class BGMDetailViewController: UIViewController {
         
         if bgmidstr.lengthOfBytes(using: String.Encoding.utf8) > 0 {
             print("did get:" + bgmidstr)
-            bs.getBGMDetail(withID: bgmidstr){ responseObject, error in
+            getBGMDetail(withID: bgmidstr){ responseObject, error in
                 guard let responseObject = responseObject, error == nil else {
                     print(error ?? "Unknown error")
                     return
