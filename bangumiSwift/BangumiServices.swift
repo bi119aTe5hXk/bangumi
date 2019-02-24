@@ -64,7 +64,7 @@ private func createConnectionWithURL(_ url: String, _ method: String, _ data: Di
             try request?.httpBody = jsonEncoder.encode(data)
         }
         catch { }
-
+        
         break
     default:
         return;
@@ -80,8 +80,7 @@ private func createConnectionWithURL(_ url: String, _ method: String, _ data: Di
             completion(nil, err)
             return
         }
-        print(rdata)
-        let responseObject = (try? JSONSerialization.jsonObject(with: rdata, options: [])) as? Any
+        let responseObject = (try? JSONSerialization.jsonObject(with: rdata, options: []))
         print(responseObject)
         completion(responseObject, nil)
         //            var v: Any

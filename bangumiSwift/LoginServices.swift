@@ -59,7 +59,7 @@ class LoginServices: NSObject {
                                        "redirect_uri":"bangumiplus://oauth-callback/bgm",
                                        "state":state]){ responseObject, error in
                                         guard let responseObject = responseObject, error == nil else {
-                                            print(error ?? "Unknown error")
+                                            print(error ?? "login unknown error")
                                             completion(nil, error)
                                             return
                                         }
@@ -88,7 +88,7 @@ class LoginServices: NSObject {
                                "refresh_token":rtoken!,
                                "redirect_uri":"bangumiplus://oauth-callback/bgm"]){ responseObject, error in
                                 guard let responseObject = responseObject, error == nil else {
-                                    print(error ?? "Unknown error")
+                                    print(error ?? "relogin unknown error")
                                     completion(nil, error)
                                     return
                                 }
