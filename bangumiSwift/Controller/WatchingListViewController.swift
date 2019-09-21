@@ -62,8 +62,8 @@ class WatchingListViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func loginFailedMSG(error:Error){
-        let alert = UIAlertController.init(title: "登录失败", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+    func loginFailedMSG(error:String){
+        let alert = UIAlertController.init(title: "登录失败", message: error, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction.init(title: "重试", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
             LoginServices.tryLogin(){ result, error in
                 guard error == nil else {

@@ -11,7 +11,7 @@ import UIKit
 class BGMDetailViewController: UIViewController {
     var detailDic: Dictionary<String, Any>? = Dictionary.init()
     var detailItem:Any!
-    var bgmidstr:String!
+    var bgmidstr:String?
     
     @IBOutlet var statusmanabtn:UIButton!
     @IBOutlet var progressmanabtn:UIButton!
@@ -38,34 +38,40 @@ class BGMDetailViewController: UIViewController {
         
         
         
-        if bgmidstr.lengthOfBytes(using: String.Encoding.utf8) > 0 {
-            print("did get:" + bgmidstr)
-            getBGMDetail(withID: bgmidstr){ responseObject, error in
-                guard let responseObject = responseObject, error == nil else {
-                    print(error ?? "Unknown error")
-                    return
-                }
+        if bgmidstr != nil {
+            print("did get:" + bgmidstr!)
+            getBGMDetail(withID: bgmidstr!){ responseObject in
+                //guard let responseObject = responseObject, error == nil else {
+                //    print(error ?? "Unknown error")
+                //    return
+                //}
                 
                 self.detailDic = (responseObject as? Dictionary<String, Any>)!
-                if (self.detailDic!["images"] != nil) {
-                    let imgurlstr: String = (self.detailDic!["images"]as! Dictionary<String, Any>)["large"] as! String
-                    
-                    if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
-                        DispatchQueue.main.async {
-                            self.cover.image = nil
-                        }
+                if let dic = self.detailDic!["images"]{
+                    if dic is NSNull {
+                        // no img
+                        self.cover.image = nil
+                    }else{
+                        let imgurlstr: String = (dic as! Dictionary<String, Any>)["large"] as! String
                         
-                        DispatchQueue.global().async {
-                            do {
-                                let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
-                                let image = UIImage.init(data: imgdata)
-                                
-                                DispatchQueue.main.async {
-                                    self.cover.image = image
-                                }
-                            } catch { }
+                        if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
+                            DispatchQueue.main.async {
+                                self.cover.image = nil
+                            }
+                            
+                            DispatchQueue.global().async {
+                                do {
+                                    let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
+                                    let image = UIImage.init(data: imgdata)
+                                    
+                                    DispatchQueue.main.async {
+                                        self.cover.image = image
+                                    }
+                                } catch { }
+                            }
                         }
                     }
+                    
                 }
                 DispatchQueue.main.async {
                     self.progressmanabtn.isHidden = false
@@ -96,9 +102,9 @@ class BGMDetailViewController: UIViewController {
                 
             }
         }else{
-            let alert = UIAlertController.init(title: "出错了！", message: "BGMID长度为0。", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController.init(title: "出错了！", message: "BGMID长度为0。", preferredStyle: UIAlertController.Style.alert)
+//            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
         }
     }
     

@@ -31,14 +31,14 @@ class DailyListViewController: UITableViewController {
         self.startGetDayBGMList()
     }
     func startGetDayBGMList() {
-        getDailyList(){ responseObject, error in
-            guard let responseObject = responseObject, error == nil else {
-                print(error ?? "Unknown error")
-                DispatchQueue.main.async {
-                    self.refreshControl?.endRefreshing()
-                }
-                return
-            }
+        getDailyList(){ responseObject in
+            //guard let responseObject = responseObject, error == nil else {
+            //    print(error ?? "Unknown error")
+            //    DispatchQueue.main.async {
+            //        self.refreshControl?.endRefreshing()
+            //    }
+            //    return
+            //}
             
             self.daylist = (responseObject as! Array)
             DispatchQueue.main.async {
@@ -130,20 +130,31 @@ class DailyListViewController: UITableViewController {
             cell.ratscorelabel.text = "0.0"
         }
         
-        if (arr["images"] != nil) {
-            let imgurlstr: String = (arr["images"]as! Dictionary<String, Any>)["small"] as! String
-
-            if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
-                cell.icon.image = nil
-                DispatchQueue.global().async {
-                    do {
-                        let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
-                        let image = UIImage.init(data: imgdata)
-
-                        DispatchQueue.main.async {
-                            cell.icon.image = image
+        if let dic = arr["images"] {
+            //let imgurlstr = (dic as! Dictionary<String, Any>)["small"] as! String
+            //if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
+            if dic is NSNull {
+                //no img
+            }else{
+                if let imgurlstr = ((dic as! Dictionary<String, String>)["small"]) {
+                    if imgurlstr.lengthOfBytes(using: .utf8) <= 0{
+                        //no img
+                        cell.icon.image = nil
+                    }else{
+                        cell.icon.image = nil
+                        DispatchQueue.global().async {
+                            do {
+                                let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
+                                let image = UIImage.init(data: imgdata)
+                                
+                                DispatchQueue.main.async {
+                                    cell.icon.image = image
+                                }
+                            } catch { }
                         }
-                    } catch { }
+            }
+            
+                
 
                 }
 

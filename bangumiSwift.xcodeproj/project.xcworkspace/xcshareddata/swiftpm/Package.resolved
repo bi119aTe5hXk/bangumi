@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": "master",
+          "revision": "e61de31dd38ec5b9f2e42b74b8aa4fa6f2ba67b0",
+          "version": null
+        }
+      },
+      {
+        "package": "AlamofireImage",
+        "repositoryURL": "https://github.com/Alamofire/AlamofireImage",
+        "state": {
+          "branch": "master",
+          "revision": "8e635e6151212f8871a321bbdd980af7c31af73b",
+          "version": null
+        }
+      },
+      {
+        "package": "OAuthSwift",
+        "repositoryURL": "https://github.com/OAuthSwift/OAuthSwift.git",
+        "state": {
+          "branch": "master",
+          "revision": "b8941a23d1584ba17426c312bb957de355341f4a",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
