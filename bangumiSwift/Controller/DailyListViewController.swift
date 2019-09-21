@@ -31,7 +31,7 @@ class DailyListViewController: UITableViewController {
         self.startGetDayBGMList()
     }
     func startGetDayBGMList() {
-        getDailyList(){ responseObject in
+        getDailyList(){ isSuccess,result in
             //guard let responseObject = responseObject, error == nil else {
             //    print(error ?? "Unknown error")
             //    DispatchQueue.main.async {
@@ -39,13 +39,16 @@ class DailyListViewController: UITableViewController {
             //    }
             //    return
             //}
-            
-            self.daylist = (responseObject as! Array)
-            DispatchQueue.main.async {
-                self.refreshControl?.endRefreshing()
-                self.tableView.reloadData()
-                self.jumpToToday()
+            if isSuccess {
+                self.daylist = (result as! Array)
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                    self.tableView.reloadData()
+                    self.jumpToToday()
+                }
             }
+            
+            
         }
 
     }
@@ -112,8 +115,8 @@ class DailyListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DailyCell", for: indexPath) as! DailyCell
 
         let dic = daylist![indexPath.section]
-        var cont = dic["items"] as! Array<Any>
-        var arr = cont[indexPath.row] as! Dictionary<String, Any>
+        let cont = dic["items"] as! Array<Any>
+        let arr = cont[indexPath.row] as! Dictionary<String, Any>
 
         cell.titlelabel.text = (arr["name"] as! String)
         cell.sublabel.text = (arr["name_cn"] as! String)
@@ -135,27 +138,18 @@ class DailyListViewController: UITableViewController {
             //if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
             if dic is NSNull {
                 //no img
+                cell.icon.image = nil
             }else{
                 if let imgurlstr = ((dic as! Dictionary<String, String>)["small"]) {
-                    if imgurlstr.lengthOfBytes(using: .utf8) <= 0{
-                        //no img
-                        cell.icon.image = nil
-                    }else{
-                        cell.icon.image = nil
-                        DispatchQueue.global().async {
-                            do {
-                                let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
-                                let image = UIImage.init(data: imgdata)
-                                
-                                DispatchQueue.main.async {
-                                    cell.icon.image = image
-                                }
-                            } catch { }
-                        }
-            }
-            
-                
-
+                    cell.icon.af_setImage(withURL: URL(string: imgurlstr)!,
+                    placeholderImage: nil,
+                    filter: .none,
+                    progress: .none,
+                    progressQueue: .main,
+                    imageTransition: .noTransition,
+                    runImageTransitionIfCached: true) { (data) in
+//                      cell.iconView.roundedImage(corners: .allCorners, radius: 6)
+                    }
                 }
 
             }

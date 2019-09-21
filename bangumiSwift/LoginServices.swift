@@ -91,19 +91,22 @@ class LoginServices: NSObject {
                             "client_id": AppID,
                             "client_secret": AppSecret,
                             "refresh_token": rtoken!,
-                            "redirect_uri": "bangumiplus://oauth-callback/bgm"]) { responseObject in
+                            "redirect_uri": "bangumiplus://oauth-callback/bgm"]) { isSuccess,result in
             //guard let responseObject = responseObject, error == nil else {
             //    print(error ?? "relogin unknown error")
              //   completion(nil, error)
              //   return
             //}
-            //token renew success
-            let dic = responseObject as! [String: Any]
-            LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
-            LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
-            let expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
-            LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
-            completion(["login": "success"], nil)
+                                if isSuccess {
+                                    //token renew success
+                                    let dic = result as! [String: Any]
+                                    LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
+                                    LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
+                                    let expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
+                                    LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
+                                    completion(["login": "success"], nil)
+                                }
+            
 
         }
 

@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import AlamofireImage
 class BGMDetailViewController: UIViewController {
     var detailDic: Dictionary<String, Any>? = Dictionary.init()
     var detailItem:Any!
@@ -40,65 +41,62 @@ class BGMDetailViewController: UIViewController {
         
         if bgmidstr != nil {
             print("did get:" + bgmidstr!)
-            getBGMDetail(withID: bgmidstr!){ responseObject in
+            getBGMDetail(withID: bgmidstr!){ isSuccess,result in
                 //guard let responseObject = responseObject, error == nil else {
                 //    print(error ?? "Unknown error")
                 //    return
                 //}
-                
-                self.detailDic = (responseObject as? Dictionary<String, Any>)!
-                if let dic = self.detailDic!["images"]{
-                    if dic is NSNull {
-                        // no img
-                        self.cover.image = nil
-                    }else{
-                        let imgurlstr: String = (dic as! Dictionary<String, Any>)["large"] as! String
-                        
-                        if (imgurlstr.lengthOfBytes(using: String.Encoding.utf8) > 0) {
-                            DispatchQueue.main.async {
-                                self.cover.image = nil
-                            }
+                if isSuccess {
+                    self.detailDic = (result as? Dictionary<String, Any>)!
+                    if let dic = self.detailDic!["images"]{
+                        if dic is NSNull {
+                            // no img
+                            self.cover.image = nil
+                        }else{
+                            let imgurlstr: String = (dic as! Dictionary<String, Any>)["large"] as! String
                             
-                            DispatchQueue.global().async {
-                                do {
-                                    let imgdata = try Data.init(contentsOf: URL(string: imgurlstr)!)
-                                    let image = UIImage.init(data: imgdata)
-                                    
-                                    DispatchQueue.main.async {
-                                        self.cover.image = image
-                                    }
-                                } catch { }
+                            self.cover.af_setImage(withURL: URL(string: imgurlstr)!,
+                                                      placeholderImage: nil,
+                                                      filter: .none,
+                                                      progress: .none,
+                                                      progressQueue: .main,
+                                                      imageTransition: .noTransition,
+                                                      runImageTransitionIfCached: true) { (data) in
+                                                        
                             }
                         }
+                        
                     }
-                    
+                    DispatchQueue.main.async {
+                        self.progressmanabtn.isHidden = false
+                        self.statusmanabtn.isHidden = false
+                        self.ratscore.isHidden = false
+                        self.ratscoretitle.isHidden = false
+                        self.rankscore.isHidden = false
+                        self.ranktitle.isHidden = false
+                        self.actionbtn.isEnabled = true
+                        self.bgmdetailbtn.isHidden = false
+                        
+                        self.titlelabel.text = (self.detailDic!["name"] as! String)
+                        self.titlelabel_cn.text = (self.detailDic!["name_cn"] as! String)
+                        self.bgmsummary.text = (self.detailDic!["summary"] as! String)
+                        
+                        if(self.detailDic!["rating"] != nil && (self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] != nil){
+                            self.ratscore.text = String((self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] as! Double) + "/10"
+                        }else{
+                            self.ratscore.text = "暂无评分"
+                        }
+                        
+                        if (self.detailDic!["rank"] != nil){
+                            self.rankscore.text = String(self.detailDic!["rank"] as! Int)
+                        }else{
+                            self.rankscore.text = "暂无排行"
+                        }
+                    }
                 }
-                DispatchQueue.main.async {
-                    self.progressmanabtn.isHidden = false
-                    self.statusmanabtn.isHidden = false
-                    self.ratscore.isHidden = false
-                    self.ratscoretitle.isHidden = false
-                    self.rankscore.isHidden = false
-                    self.ranktitle.isHidden = false
-                    self.actionbtn.isEnabled = true
-                    self.bgmdetailbtn.isHidden = false
-                    
-                    self.titlelabel.text = (self.detailDic!["name"] as! String)
-                    self.titlelabel_cn.text = (self.detailDic!["name_cn"] as! String)
-                    self.bgmsummary.text = (self.detailDic!["summary"] as! String)
-                    
-                    if(self.detailDic!["rating"] != nil && (self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] != nil){
-                        self.ratscore.text = String((self.detailDic!["rating"] as! Dictionary<String,Any>)["score"] as! Double) + "/10"
-                    }else{
-                        self.ratscore.text = "暂无评分"
-                    }
-                    
-                    if (self.detailDic!["rank"] != nil){
-                        self.rankscore.text = String(self.detailDic!["rank"] as! Int)
-                    }else{
-                        self.rankscore.text = "暂无排行"
-                    }
-                }
+                
+                
+                
                 
             }
         }else{
