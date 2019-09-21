@@ -8,11 +8,9 @@
 
 1. 在bangumi的开放平台申请app获得各种key, 回调地址:bangumiplus://oauth-callback
 
-2. 安装好cocapods, 命令行进入project路径, 执行pod install
+2. 创建API.swift, 将申请来的两个key创建成AppID和AppSecret常量
 
-3. 打开xcworkspace文件, 修改代码签名(team和bundle identifier等)
+3. 更新Xcode内Swift包的依赖
 
-4. 创建API.swift, 将申请来的两个key创建成AppID和AppSecret常量
-
-5. build & run
+3. build & run
 
