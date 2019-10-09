@@ -14,6 +14,9 @@ class SplitViewController: UISplitViewController, UISplitViewControllerDelegate 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.delegate = self
+        self.splitViewController?.delegate = self
+        self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
     }
     
 
@@ -38,5 +41,15 @@ class SplitViewController: UISplitViewController, UISplitViewControllerDelegate 
 //            return false
 //        }
 
-
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+            //self.tabBar.invalidateIntrinsicContentSize()
+            print("heyyy")
+            guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+            guard let topAsDetailController = secondaryAsNavController.topViewController as? BGMDetailViewController else { return false }
+            if topAsDetailController.detailItem == nil {
+                // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+                return true
+            }
+            return false
+        }
 }

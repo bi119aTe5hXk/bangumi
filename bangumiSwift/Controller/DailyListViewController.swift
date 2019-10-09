@@ -218,8 +218,8 @@ class DailyListViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         let indexPath:IndexPath = self.tableView.indexPathForSelectedRow!
         let dic = daylist![indexPath.section]
-        var cont = dic["items"] as! Array<Any>
-        var arr = cont[indexPath.row] as! Dictionary<String, Any>
+        let cont = dic["items"] as! Array<Any>
+        let arr = cont[indexPath.row] as! Dictionary<String, Any>
         let bgmid = String(arr["id"] as! Int)
         
         print("bgmid pass:" + bgmid)

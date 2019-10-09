@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": "master",
-          "revision": "e61de31dd38ec5b9f2e42b74b8aa4fa6f2ba67b0",
+          "revision": "6afd00ef8bf800edd14cc141e0677045b5d02a67",
           "version": null
         }
       },
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/OAuthSwift/OAuthSwift.git",
         "state": {
           "branch": "master",
-          "revision": "b8941a23d1584ba17426c312bb957de355341f4a",
+          "revision": "e63546d7b8e2f1276cac7a5aa591373695485d65",
           "version": null
         }
       }
