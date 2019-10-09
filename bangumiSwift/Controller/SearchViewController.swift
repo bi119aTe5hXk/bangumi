@@ -9,7 +9,10 @@
 import UIKit
 
 class SearchViewController: UITableViewController {
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController!.navigationItem.title = "搜索"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

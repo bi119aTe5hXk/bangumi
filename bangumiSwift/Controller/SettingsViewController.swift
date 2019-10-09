@@ -10,6 +10,9 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController!.navigationItem.title = "更多"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

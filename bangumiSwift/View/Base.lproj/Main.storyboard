@@ -642,7 +642,7 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
                             <outlet property="delegate" destination="bdN-r0-S0v" id="iWA-cQ-EH2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="设置" image="gear" catalog="system" id="Xci-Y0-xlp"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="ellipsis" catalog="system" id="Xci-Y0-xlp"/>
                     <navigationItem key="navigationItem" title="设置" id="adK-Sz-bqR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZdQ-ge-N40" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -652,7 +652,7 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="ellipsis" catalog="system" width="64" height="18"/>
         <image name="list.bullet" catalog="system" width="64" height="44"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
