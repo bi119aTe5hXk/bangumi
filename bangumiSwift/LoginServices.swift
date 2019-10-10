@@ -19,10 +19,10 @@ class LoginServices: NSObject {
 
     static func isLogin() -> Bool {
         if (
-                ((self.userdefaults.object(forKey: "oauthtoken") as? String)!.lengthOfBytes(using: String.Encoding.utf8) > 0) &&
-                    ((self.userdefaults.object(forKey: "refreshtoken") as? String)!.lengthOfBytes(using: String.Encoding.utf8) > 0) &&
-                    ((self.userdefaults.object(forKey: "userid") as? String)!.lengthOfBytes(using: String.Encoding.utf8) > 0) &&
-                    (self.userdefaults.object(forKey: "expirestime") as! Double) > 0.00
+            ((self.userdefaults.object(forKey: "oauthtoken") as? String)!.lengthOfBytes(using: String.Encoding.utf8) > 0) &&
+                ((self.userdefaults.object(forKey: "refreshtoken") as? String)!.lengthOfBytes(using: String.Encoding.utf8) > 0) &&
+                ((self.userdefaults.object(forKey: "userid") as? String)!.lengthOfBytes(using: String.Encoding.utf8) > 0) &&
+                (self.userdefaults.object(forKey: "expirestime") as! Double) > 0.00
             ) {
             print(self.userdefaults.object(forKey: "oauthtoken") as Any)
             return true
@@ -46,67 +46,73 @@ class LoginServices: NSObject {
             responseType: "code"
         )
         let state = generateState(withLength: 20)
-        
-        var handle = oauthswift?.authorize(withCallbackURL: "bangumiplus://oauth-callback/bgm",
-                                           scope: "mayday",
-                                           state: state)
-        { result in
-            print(result)
+
+        var handle = oauthswift?.authorize(withCallbackURL: URL(string: "bangumiplus://oauth-callback/bgm")!, scope: "mayday", state: state) { (result) in
+            switch result {
+            case .success(let (credential, response, parameters)):
+                print(credential.oauthToken)
+                //self.userdefaults.set(credential.oauthToken, forKey: "oauthtoken")
+                let verifyresult = self.verifyLogin(token: credential.oauthToken,state: state)
+                if verifyresult {
+                    //login success
+                    let dic = result as! [String: Any]
+                    LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
+                    LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
+                    LoginServices.userdefaults.set(dic["user_id"], forKey: "userid")
+                    let expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
+                    LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
+                    completion(["login": "success"], nil)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+
+    }
+
+    static func verifyLogin(token: String, state: String) -> Bool {
+        var result = false
+        getUserID(withPre: ["grant_type": "authorization_code",
+            "client_id": AppID,
+            "client_secret": AppSecret,
+            "code": token,
+            "redirect_uri": "bangumiplus://oauth-callback/bgm",
+            "state": state]) { result, error in
+
+            if error != nil || result == false {
+                print(error ?? "login unknown error")
+                result = false
+            }else{
+                result = true
+                }
         }
         
-//        var handle = oauthswift.authorize(withCallbackURL: URL(string: "bangumiplus://oauth-callback/bgm")!, scope: "mayday", state: state, completionHandler: { (credential, response, parameters) in
-//                print(credential.oauthToken)
-//                //self.userdefaults.set(credential.oauthToken, forKey: "oauthtoken")
-//                getUserID(withPre: ["grant_type": "authorization_code",
-//                                    "client_id": AppID,
-//                                    "client_secret": AppSecret,
-//                                    "code": credential.oauthToken,
-//                                    "redirect_uri": "bangumiplus://oauth-callback/bgm",
-//                                    "state": state]) { responseObject, error in
-//                    guard let responseObject = responseObject, error == nil else {
-//                        print(error ?? "login unknown error")
-//                        completion(nil, error)
-//                        return
-//                    }
-//                    //login success
-//                    let dic = responseObject as! [String: Any]
-//                    LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
-//                    LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
-//                    LoginServices.userdefaults.set(dic["user_id"], forKey: "userid")
-//                    let expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
-//                    LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
-//                    completion(["login": "success"], nil)
-//
-//                }
-//            }, failure: { error in
-//                print(error.localizedDescription)
-//                completion(nil, error.localizedDescription)
-//            }
-//        )
+        return result
     }
 
     static func tryRefreshToken(completion: @escaping ([String: Any]?, String?) -> Void) {
         let rtoken = self.userdefaults.object(forKey: "refresh_token") as? String
         getUserID(withPre: ["grant_type": "refresh_token",
-                            "client_id": AppID,
-                            "client_secret": AppSecret,
-                            "refresh_token": rtoken!,
-                            "redirect_uri": "bangumiplus://oauth-callback/bgm"]) { isSuccess,result in
+            "client_id": AppID,
+            "client_secret": AppSecret,
+            "refresh_token": rtoken!,
+            "redirect_uri": "bangumiplus://oauth-callback/bgm"]) { isSuccess, result in
             //guard let responseObject = responseObject, error == nil else {
             //    print(error ?? "relogin unknown error")
-             //   completion(nil, error)
-             //   return
+            //   completion(nil, error)
+            //   return
             //}
-                                if isSuccess {
-                                    //token renew success
-                                    let dic = result as! [String: Any]
-                                    LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
-                                    LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
-                                    let expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
-                                    LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
-                                    completion(["login": "success"], nil)
-                                }
-            
+            if isSuccess {
+                //token renew success
+                let dic = result as! [String: Any]
+                LoginServices.userdefaults.set(dic["access_token"], forKey: "oauthtoken")
+                LoginServices.userdefaults.set(dic["refresh_token"], forKey: "refreshtoken")
+                let expirestime = LoginServices.nowTime + (Double(dic["expires_in"] as! Int))
+                LoginServices.userdefaults.set(expirestime, forKey: "expirestime")
+                completion(["login": "success"], nil)
+            }
+
 
         }
 
