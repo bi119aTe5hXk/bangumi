@@ -174,7 +174,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadRevalidatingCacheData
                                                        timeoutInterval:settimeout];
-#if TARGET_OS_IPHONE
+#ifdef TARGET_OS_IPHONE
     //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 #endif
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];

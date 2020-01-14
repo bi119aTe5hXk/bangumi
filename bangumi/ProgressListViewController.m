@@ -107,38 +107,38 @@
         
     }
     if ([request_type isEqualToString:@"updateProgress"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
         if ([[list valueForKey:@"error"] isEqualToString:@"OK"]) {
+            
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"已成功记录" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"已成功记录"
-//                                                            message:[list valueForKey:@"error"]
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"了解"
-//                                                  otherButtonTitles:nil, nil];
-//            [alert show];
+
             
         }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"记录失败" message:[list valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"记录失败"
-//                                                            message:[list valueForKey:@"error"]
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"了解"
-//                                                  otherButtonTitles:nil, nil];
-//            [alert show];
-            
+
+            });
         }
+            
         [self getList];
+            });
     }
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+                       
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
+    dispatch_async(dispatch_get_main_queue(), ^{
     [self.refreshControl endRefreshing];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+         });
     
 }
 
@@ -153,8 +153,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    dispatch_async(dispatch_get_main_queue(), ^{
     [self.refreshControl endRefreshing];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return self.progresslist.count;
@@ -338,6 +340,7 @@
 //    [alert setTag:233];
 //    [alert show];
 }
+
 //-(void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 //    if (actionSheet.tag == 233) {
 //        if (buttonIndex >0) {

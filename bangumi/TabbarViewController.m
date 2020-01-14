@@ -68,7 +68,9 @@
     //NSLog(@"intrinsicContentSize.height:%f",self.tabBar.safeAreaInsets.bottom);
     [self.tabBar invalidateIntrinsicContentSize];
 //    self.tabBar.heightAnchor
-    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[BGMDetailViewController class]] && ([(BGMDetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]] &&
+        [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[BGMDetailViewController class]] &&
+        ([(BGMDetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
         // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
         NSLog(@"handled the collapse by doing nothing; the secondary controller will be discarded.");
         return YES;

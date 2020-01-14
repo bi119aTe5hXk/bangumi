@@ -5,8 +5,9 @@
 //  Created by bi119aTe5hXk on 2017/10/04.
 //  Copyright © 2017 @bi119aTe5hXkL. All rights reserved.
 //
-
+#if !TARGET_OS_IOS
 #import <WatchKit/WatchKit.h>
+#endif
 #import <Foundation/Foundation.h>
 #import "BGMAPI.h"
 @interface StatusChangeInterfaceController : WKInterfaceController<BGMAPIDelegate>{

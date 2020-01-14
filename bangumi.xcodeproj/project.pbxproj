@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,10 +15,10 @@
 		4751E63A1921F521004143D3 /* UITabBarList.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6381921F521004143D3 /* UITabBarList.png */; };
 		4751E63B1921F521004143D3 /* UITabBarList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4751E6391921F521004143D3 /* UITabBarList@2x.png */; };
 		475D971E1DB7720400C034FE /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 475D971D1DB7720400C034FE /* Stickers.xcassets */; };
-		475D97221DB7720400C034FE /* bangumisticker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 475D971B1DB7720300C034FE /* bangumisticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		475D97221DB7720400C034FE /* bangumisticker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 475D971B1DB7720300C034FE /* bangumisticker.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4763B8571CB7D2780050B017 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4763B8561CB7D2780050B017 /* SplitViewController.m */; };
 		477E91F61CA1801B00C9E6C9 /* bangumi WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 478CEC091B7A2C9500BB2442 /* bangumi WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */; };
+		477E91F91CA1801B00C9E6C9 /* bangumi WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 478CEC181B7A2C9600BB2442 /* bangumi WatchKit App.app */; platformFilter = ios; };
 		477E91FD1CA1867F00C9E6C9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */; };
 		478A51831CDB1487003DF9BF /* BGMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E2718C190009E100304DED /* BGMAPI.m */; };
 		478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478B3B871902A2A1006C6E67 /* BGMDetailViewController.m */; };
@@ -40,7 +40,6 @@
 		47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD2B19113CAE0086A14B /* NormalCell.m */; };
 		47A923FE1916723600B3D10A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A923FD1916723600B3D10A /* SearchViewController.m */; };
 		47B72B6C1FB4059E0035D353 /* DailyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B72B6B1FB4059E0035D353 /* DailyCell.m */; };
-		47C3C7F01F849D77007A49FD /* StatusChangeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C7EF1F849D77007A49FD /* StatusChangeInterfaceController.m */; };
 		47C3C7F11F849D77007A49FD /* StatusChangeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C7EF1F849D77007A49FD /* StatusChangeInterfaceController.m */; };
 		47E271531900043300304DED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271521900043300304DED /* Foundation.framework */; };
 		47E271551900043300304DED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271541900043300304DED /* CoreGraphics.framework */; };
@@ -355,7 +354,6 @@
 				470FFA9519307306001CF488 /* ProgressCell.m */,
 				47E271AF1901666800304DED /* SettingsViewController.h */,
 				47E271B01901666800304DED /* SettingsViewController.m */,
-				47E2719119001AE000304DED /* Main.storyboard */,
 				477E91FC1CA1867F00C9E6C9 /* Launch Screen.storyboard */,
 				47E2716D1900043300304DED /* Images.xcassets */,
 				47E271591900043300304DED /* Supporting Files */,
@@ -366,6 +364,7 @@
 		47E271591900043300304DED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47E2719119001AE000304DED /* Main.storyboard */,
 				47A5DC54190940340086A14B /* MBProgressHUD.h */,
 				47A5DC55190940340086A14B /* MBProgressHUD.m */,
 				4751E62E191F84DA004143D3 /* HTMLEntityDecode.h */,
@@ -535,6 +534,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -624,7 +624,6 @@
 				47A923FE1916723600B3D10A /* SearchViewController.m in Sources */,
 				47E271A219015D9300304DED /* WatchingListViewController.m in Sources */,
 				47A5DD2C19113CAE0086A14B /* NormalCell.m in Sources */,
-				47C3C7F01F849D77007A49FD /* StatusChangeInterfaceController.m in Sources */,
 				4763B8571CB7D2780050B017 /* SplitViewController.m in Sources */,
 				47E2718D190009E100304DED /* BGMAPI.m in Sources */,
 				47E271631900043300304DED /* AppDelegate.m in Sources */,
@@ -644,6 +643,7 @@
 /* Begin PBXTargetDependency section */
 		475D97211DB7720400C034FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 475D971A1DB7720300C034FE /* bangumisticker */;
 			targetProxy = 475D97201DB7720400C034FE /* PBXContainerItemProxy */;
 		};
@@ -654,6 +654,7 @@
 		};
 		477E91F81CA1801B00C9E6C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 478CEC171B7A2C9600BB2442 /* bangumi WatchKit App */;
 			targetProxy = 477E91F71CA1801B00C9E6C9 /* PBXContainerItemProxy */;
 		};
@@ -700,13 +701,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = HR66SGQEZ4;
 				INFOPLIST_FILE = bangumisticker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.bangumisticker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -725,13 +727,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HR66SGQEZ4;
 				INFOPLIST_FILE = bangumisticker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.bangumisticker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -814,7 +817,11 @@
 				);
 				INFOPLIST_FILE = "bangumi WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp.watchkitextension;
@@ -824,7 +831,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -843,7 +850,11 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "bangumi WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -852,7 +863,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -902,7 +913,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -949,7 +960,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -965,6 +976,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202001141356;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = HR66SGQEZ4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -974,15 +987,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bangumi/bangumi-Prefix.pch";
 				INFOPLIST_FILE = "bangumi/bangumi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s arm64 arm64e x86_64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -992,9 +1006,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = bangumi/bangumi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202001141356;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = HR66SGQEZ4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1004,15 +1020,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bangumi/bangumi-Prefix.pch";
 				INFOPLIST_FILE = "bangumi/bangumi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HTandL.bgmclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 armv7s arm64 arm64e x86_64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -132,8 +132,9 @@
 ////                [self.navigationController presentViewController:self.splitview animated:YES completion:nil];
 //
 //            });
-            [self dismissViewControllerAnimated:YES completion:NULL];
-            
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self dismissViewControllerAnimated:YES completion:NULL];
+            });
             
         }else{
             [MBProgressHUD hideHUDForView:self.view animated:YES];

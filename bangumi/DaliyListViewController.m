@@ -72,19 +72,22 @@
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
+    daylist = list;
+    dispatch_async(dispatch_get_main_queue(),^{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];//
     [self.refreshControl endRefreshing];
-    daylist = list;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
+    [self.tableView reloadData];
     });
     [self jumpToToday];
     
 }
 -(void)jumpToToday{
-    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:[self todayNum]];
-    [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    if([daylist count] >= 7){
+        NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:[self todayNum]];
+        [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    
 }
 -(NSInteger)todayNum{
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierJapanese];

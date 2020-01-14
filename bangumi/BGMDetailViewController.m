@@ -91,6 +91,7 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if ([request_type isEqualToString:@"updateStatus"]) {
+        dispatch_async(dispatch_get_main_queue(),^{//get main thread
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"已成功记录" message:[[list valueForKey:@"status"] valueForKey:@"type"] preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
@@ -101,6 +102,7 @@
 //                                              otherButtonTitles:nil, nil];
 //
 //        [alert show];
+            });
     }
     
     
