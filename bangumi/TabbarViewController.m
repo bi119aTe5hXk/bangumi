@@ -32,6 +32,7 @@
 //    UINavigationController *navigationController = [self.splitViewController.viewControllers lastObject];
 //    navigationController.topViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     //self.navigationController.navigationBar.hidden = YES;
+    self.delegate = self;
     self.splitViewController.delegate = self;
     [self.splitViewController setPreferredDisplayMode: UISplitViewControllerDisplayModeAllVisible];
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -75,6 +76,7 @@
         NSLog(@"handled the collapse by doing nothing; the secondary controller will be discarded.");
         return YES;
     } else {
+        NSLog(@"handled the collapse in tabBarVC");
         return NO;
     }
 }

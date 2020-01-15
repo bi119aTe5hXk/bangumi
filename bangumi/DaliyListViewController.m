@@ -56,6 +56,7 @@
     [bgmapi cancelConnection];
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [self viewDidLoad];
     self.tabBarController.navigationItem.title = @"每日番组";
 }
 
