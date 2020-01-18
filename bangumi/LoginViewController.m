@@ -28,9 +28,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if (@available(iOS 11.0, *)) {
+        [self.usernamefield setTextContentType:UITextContentTypeUsername];
+        [self.passwordfield setTextContentType:UITextContentTypePassword];
+    }
     
     userdefaults = [[NSUserDefaults alloc] initWithSuiteName:groupName];
-    
     
     auth_urlencoded = [userdefaults stringForKey:@"auth_urlencoded"];
     auth = [userdefaults stringForKey:@"auth"];
@@ -102,15 +105,11 @@
         [bgmapi userLoginWithUserName:self.usernamefield.text WithPassword:self.passwordfield.text];
         request_type = @"login";
     }else{
+        dispatch_async(dispatch_get_main_queue(),^{
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入用户名和密码！" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入用户名和密码！"
-//                                                        message:nil
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil, nil];
-//        [alert show];
+});
     }
     
 }
@@ -137,20 +136,12 @@
             });
             
         }else{
+            dispatch_async(dispatch_get_main_queue(),^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户名密码错误！" message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
-//            dispatch_async(dispatch_get_main_queue(),^{
-//
-////                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用户名密码错误！"
-////                                                                message:nil
-////                                                               delegate:nil
-////                                                      cancelButtonTitle:@"OK"
-////                                                      otherButtonTitles:nil, nil];
-////                [alert show];
-//            });
-            
+            });
         }
     }
     

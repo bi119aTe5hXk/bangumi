@@ -35,7 +35,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="gry-82-ygi"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                 <connections>
                                     <outlet property="delegate" destination="kKC-iY-qY7" id="9d7-U3-74J"/>
                                 </connections>
@@ -45,7 +45,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="E2Y-PA-t02"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="kKC-iY-qY7" id="CZo-yt-G0I"/>
                                 </connections>
@@ -720,6 +720,6 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
         <image name="UITabBarStar.png" width="27.5" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Nl-sd-mUi"/>
+        <segue reference="Y44-sG-Vgs"/>
     </inferredMetricsTieBreakers>
 </document>

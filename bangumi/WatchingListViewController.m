@@ -342,6 +342,7 @@
     f=0;
     percent=0;
     
+    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
