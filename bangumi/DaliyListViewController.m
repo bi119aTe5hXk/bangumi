@@ -54,7 +54,18 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self viewDidLoad];
     self.tabBarController.navigationItem.title = @"每日番组";
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserActivityState:) name:kRestoreNoficationName object:nil];
+    
+    [self registHomeScreenQuickActions];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kRestoreNoficationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(getUserActivityState:) name:kRestoreNoficationName
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"shortCutNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(shortCutReceived:)
+                                                 name:@"shortCutNotification"
+                                               object:nil];
     
 }
 
@@ -281,7 +292,26 @@
     [detailVC startGetSubjectInfoWithID:bgmid];
     detailVC.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     detailVC.navigationItem.leftItemsSupplementBackButton = YES;
-    [self.navigationController pushViewController:detailVC animated:YES];
+    //[self.navigationController pushViewController:detailVC animated:YES];
+    [self.splitViewController showDetailViewController:detailVC sender:self];
+    
+    //[self.userActivity invalidate];
 }
-
+-(void)shortCutReceived:(NSNotification *)notification{
+    NSDictionary *userInfo = notification.userInfo;
+    if([[userInfo valueForKey:@"key1"]  isEqual: @"rakuen"] ){
+        SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:rakuenURL] entersReaderIfAvailable:NO];
+        safariVC.delegate = self;
+        [self presentViewController:safariVC animated:YES completion:nil];
+    }
+}
+-(void)registHomeScreenQuickActions{
+    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc]
+                                       initWithType:@"com.HTandL.bgmclient.test"
+                                       localizedTitle:@"打开超展开"
+                                       localizedSubtitle:nil
+                                        icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeFavorite]
+                                        userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"rakuen",@"key1", nil]];
+    [[UIApplication sharedApplication] setShortcutItems:@[item1]] ;
+}
 @end

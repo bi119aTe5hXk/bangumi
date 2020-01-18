@@ -58,9 +58,9 @@
 #pragma mark - User Activity methods
 -(void)restoreUserActivityState:(NSUserActivity *)activity {
     NSString *bgmid = activity.userInfo[@"bgmid"];
-    if (debugmode) {
+    //if (debugmode) {
         NSLog(@"restoreUserActivityState:%@ in SplitView",bgmid);
-    }
+    //}
     [[NSNotificationCenter defaultCenter] postNotificationName:kRestoreNoficationName object:nil userInfo:@{@"bgmid":bgmid}];
 }
 @end

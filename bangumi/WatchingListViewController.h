@@ -12,7 +12,7 @@
 #import "BGMDetailViewController.h"
 //#import "WebViewController.h"
 #import "LoginViewController.h"
-@interface WatchingListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UIAlertViewDelegate,SFSafariViewControllerDelegate>{
+@interface WatchingListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,BGMAPIDelegate,UIAlertViewDelegate>{
     NSUserDefaults *userdefault;
     BGMAPI *bgmapi;
     NSString *request_type;

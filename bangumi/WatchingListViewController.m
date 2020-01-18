@@ -31,11 +31,8 @@
     //self.title = @"进度管理";
     //self.navigationItem.title = @"进度管理";
     self.tabBarController.navigationItem.title  = @"进度管理";
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(shortCutReceived:)
-                                                 name:@"shortCutNotification"
-                                               object:nil];
-    [self registHomeScreenQuickActions];
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -484,22 +481,7 @@
     
 }
 
--(void)shortCutReceived:(NSNotification *)notification{
-    NSDictionary *userInfo = notification.userInfo;
-    if([[userInfo valueForKey:@"key1"]  isEqual: @"rakuen"] ){
-        SFSafariViewController *safariVC = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:rakuenURL] entersReaderIfAvailable:NO];
-        safariVC.delegate = self;
-        [self presentViewController:safariVC animated:YES completion:nil];
-    }
-}
 
--(void)registHomeScreenQuickActions{
-    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc]
-                                       initWithType:@"com.HTandL.bgmclient.test"
-                                       localizedTitle:@"打开超展开"
-                                       localizedSubtitle:nil
-                                        icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeFavorite]
-                                        userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"rakuen",@"key1", nil]];
-    [[UIApplication sharedApplication] setShortcutItems:@[item1]] ;
-}
+
+
 @end

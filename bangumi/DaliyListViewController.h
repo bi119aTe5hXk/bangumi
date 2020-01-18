@@ -10,7 +10,7 @@
 #import "BGMDetailViewController.h"
 //#import "NormalCell.h"
 #import "DailyCell.h"
-@interface DaliyListViewController : UITableViewController<BGMAPIDelegate>{
+@interface DaliyListViewController : UITableViewController<BGMAPIDelegate,SFSafariViewControllerDelegate>{
     BGMAPI *bgmapi;
     NSArray *daylist;
 }
