@@ -23,15 +23,11 @@
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
 //    UIButton* todayButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [todayButton setTitle:@"今日" forState:UIControlStateNormal];
@@ -58,6 +54,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self viewDidLoad];
     self.tabBarController.navigationItem.title = @"每日番组";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserActivityState:) name:kRestoreNoficationName object:nil];
+    
 }
 
 -(void)startGetDayBGMList{
@@ -78,15 +76,24 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];//
     [self.refreshControl endRefreshing];
-    [self.tableView reloadData];
+    
+        [UIView animateWithDuration:0 animations:^{
+           [self.tableView reloadData];
+        } completion:^(BOOL finished) {
+            [self jumpToToday];
+        }];
+    
     });
-    [self jumpToToday];
+    
     
 }
 -(void)jumpToToday{
     if([daylist count] >= 7){
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
         NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:[self todayNum]];
         [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            });
     }
     
 }
@@ -179,7 +186,6 @@
         [cell.icon setImage:[UIImage imageNamed:@"bgm38a1024.png"]];
     }
     
-
     
     return cell;
 }
@@ -190,6 +196,8 @@
 -(UIView *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [[[daylist objectAtIndex:section] valueForKey:@"weekday"] valueForKey:@"cn"];
 }
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -262,4 +270,18 @@
     detailview.navigationItem.leftItemsSupplementBackButton = YES;
     
 }
+-(void)getUserActivityState:(NSNotification *)notification{
+    NSDictionary *userInfo = [notification userInfo];
+    NSString *bgmid = userInfo[@"bgmid"];
+    BGMDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BGMDetailViewController"];
+    detailVC.bgmidstr = bgmid;
+    if (debugmode) {
+        NSLog(@"restoreUserActivityState:%@ in SplitView",bgmid);
+    }
+    [detailVC startGetSubjectInfoWithID:bgmid];
+    detailVC.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    detailVC.navigationItem.leftItemsSupplementBackButton = YES;
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
 @end

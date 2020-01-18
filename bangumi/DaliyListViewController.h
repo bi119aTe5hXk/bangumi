@@ -14,6 +14,6 @@
     BGMAPI *bgmapi;
     NSArray *daylist;
 }
-
+-(void)getUserActivityState:(NSNotification *)notification;
 
 @end

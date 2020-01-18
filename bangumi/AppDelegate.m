@@ -72,6 +72,25 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
+    [self.window.rootViewController restoreUserActivityState:userActivity];
+    //restorationHandler(@[]);
+    return YES;
+}
+- (BOOL)application:(UIApplication *)application willContinueUserActivityWithType:(nonnull NSString *)userActivityType{
+    if ([userActivityType isEqualToString:appIdentifier])
+        return YES;
+    return NO;
+}
+- (void)application:(UIApplication *)application didFailToContinueUserActivityWithType:(NSString *)userActivityType
+                                                                                 error:(NSError *)error {
+    NSLog(@"didFailToContinueUserActivityWithType:error:");
+    NSLog(@"%@", error);
+}
+
+
+
+
 -(void)application:(UIApplication *)application performActionForShortcutItem:(nonnull UIApplicationShortcutItem *)shortcutItem completionHandler:(nonnull void (^)(BOOL))completionHandler{
     if(debugmode == YES){
         NSLog(@"%@",shortcutItem);

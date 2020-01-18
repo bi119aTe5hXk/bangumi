@@ -34,6 +34,7 @@
     //self.navigationController.navigationBar.hidden = YES;
     self.delegate = self;
     self.splitViewController.delegate = self;
+    self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     [self.splitViewController setPreferredDisplayMode: UISplitViewControllerDisplayModeAllVisible];
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 //        self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;

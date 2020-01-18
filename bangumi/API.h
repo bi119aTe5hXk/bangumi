@@ -6,12 +6,15 @@
 //  Copyright (c) 2014年 bi119aTe5hXk. All rights reserved.
 //
 
-#define debugmode 0
+#define debugmode 1
 
 #define BaseLoginURL @"https://%@:%@@api.bgm.tv/auth"
 #define PostLoginURL @"https://api.bgm.tv/auth"
 #define appName @"BGMbi119aTe5hXk"
 #define groupName @"group.BGM"
+
+#define appIdentifier @"com.HTandL.bgmclient"
+#define kRestoreNoficationName @"restoreUserActivityState"
 
 #define rakuenURL @"https://bgm.tv/m"
 

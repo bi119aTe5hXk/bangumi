@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     self.delegate = self;
     self.splitViewController.delegate = self;
+    self.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     [self.splitViewController setPreferredDisplayMode: UISplitViewControllerDisplayModeAllVisible];
     
 }
@@ -54,5 +55,12 @@
     }
 }
 
-
+#pragma mark - User Activity methods
+-(void)restoreUserActivityState:(NSUserActivity *)activity {
+    NSString *bgmid = activity.userInfo[@"bgmid"];
+    if (debugmode) {
+        NSLog(@"restoreUserActivityState:%@ in SplitView",bgmid);
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRestoreNoficationName object:nil userInfo:@{@"bgmid":bgmid}];
+}
 @end

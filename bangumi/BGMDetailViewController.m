@@ -46,6 +46,8 @@
         [self.progressmanabtn setHidden:YES];
         [self.statusmanabtn setHidden:YES];
         bgmid1 = bgmid;
+        [self setHandOff];
+        
     }else{
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"出错了！" message:@"BGMID长度为0。" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
@@ -59,6 +61,17 @@
     }
     
 }
+-(void)setHandOff{
+    NSUserActivity *activity;
+    activity = [[NSUserActivity alloc] initWithActivityType:appIdentifier];
+    activity.title = @"Bangumi+";
+    activity.userInfo = @{@"bgmid" : bgmid1};
+    self.userActivity = activity;
+    [activity addUserInfoEntriesFromDictionary:@{@"bgmid" : bgmid1}];
+    [activity setEligibleForHandoff:YES];
+    [activity becomeCurrent];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -127,6 +140,7 @@
             [self.actionbtn setEnabled:YES];
             [self.rankscore setHidden:NO];
             [self.ranktitle setHidden:NO];
+            [self setHandOff];
         });
         
         

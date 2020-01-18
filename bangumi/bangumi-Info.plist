@@ -68,5 +68,9 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.HTandL.bgmclient</string>
+	</array>
 </dict>
 </plist>

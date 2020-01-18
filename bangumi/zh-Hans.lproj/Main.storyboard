@@ -139,7 +139,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5ae-6f-O74"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="jHE-g0-cqq">
-                            <rect key="frame" x="0.0" y="0.0" width="409" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -720,6 +720,6 @@ Pic, Icon &amp; Sticker: 林卯 @laoism &amp; @cinnamor.</string>
         <image name="UITabBarStar.png" width="27.5" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="16q-Or-RqZ"/>
+        <segue reference="2Nl-sd-mUi"/>
     </inferredMetricsTieBreakers>
 </document>
