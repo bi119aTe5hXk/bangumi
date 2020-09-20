@@ -107,8 +107,8 @@
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
     dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.refreshControl endRefreshing];
     });
     
