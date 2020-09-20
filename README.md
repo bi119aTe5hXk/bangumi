@@ -12,19 +12,29 @@
 
 [了解更多](http://chii.in/group/topic/32239)
 
+## 下载
+[![img](http://blog.bi119ate5hxk.net/wp-content/uploads/2014/05/Download_on_the_App_Store_Badge_US-UK-200x59.png)](https://itunes.apple.com/cn/app/fan-zu-ji-hua+/id878016314?mt=8)
+
+[Testflight](https://testflight.apple.com/join/TBQ7q19M)
 
 ## 预览
 ### iPhone/iPod
-![img1](http://a4.mzstatic.com/us/r30/Purple2/v4/8a/64/20/8a64201b-42c7-51c0-78f3-a179d91faf41/screen568x568.jpeg) ![img2](http://a5.mzstatic.com/us/r30/Purple/v4/e9/c4/1a/e9c41ace-47d9-d918-6643-33aa113f5cd6/screen568x568.jpeg) ![img3](http://a1.mzstatic.com/us/r30/Purple4/v4/0f/71/1f/0f711fc1-aa2e-feba-dcf7-23984cbbd9d1/screen568x568.jpeg)
+![img1](https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/45/08/0d/45080dbb-69e1-0379-89b1-564cfb347f38/pr_source.png/460x0w.png) 
+
+![img2](https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/71/94/ab/7194ab05-8989-f1b5-3e40-519c92b07b83/pr_source.png/460x0w.png) 
+
 
 ### iPad
-![img4](http://a3.mzstatic.com/us/r30/Purple71/v4/b2/0f/2d/b20f2da8-49c9-f599-666f-be5d04e7be84/sc552x414.jpeg)
+![img3](https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/5a/45/19/5a4519ac-4e4f-2239-2446-0e14dc9b72de/mzl.gpbyufwk.png/626x0w.png)
+
 
 ### AppleWatch
-![img5](http://a3.mzstatic.com/us/r30/Purple71/v4/68/26/71/682671d0-d591-3fd9-c6cc-a4db5b3f771a/screen390x390.jpeg)  ![img6](http://a5.mzstatic.com/us/r30/Purple71/v4/ac/33/8a/ac338a9c-0f2e-da1c-6f3e-264364e24258/screen390x390.jpeg)  ![img7](http://a1.mzstatic.com/us/r30/Purple71/v4/2d/3c/e4/2d3ce4e8-3585-a414-9fb7-3aae6741c66a/screen390x390.jpeg)
+![img4](https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/0e/4b/86/0e4b86de-96bf-331f-573c-d62497aa355c/mzl.plavcnzq.png/460x0w.png)  
 
-## 下载
-[![img](http://blog.bi119ate5hxk.net/wp-content/uploads/2014/05/Download_on_the_App_Store_Badge_US-UK-200x59.png)](https://itunes.apple.com/cn/app/fan-zu-ji-hua+/id878016314?mt=8)
+![img5](https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/b8/12/ba/b812ba98-c30b-90f7-6186-57d85575b00c/mzl.fusgtpct.png/460x0w.png)  
+
+![img6](https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/71/0b/9d/710b9d67-e76f-e2ea-f648-e49e7519172e/mzl.btawuwbb.png/460x0w.png)
+
 
 
 [捐助](http://blog.bi119ate5hxk.net/donate/)
