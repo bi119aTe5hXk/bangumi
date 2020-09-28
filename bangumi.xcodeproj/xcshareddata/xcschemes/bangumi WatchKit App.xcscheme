@@ -77,8 +77,10 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/&#x756a;&#x7ec4;&#x8ba1;&#x5212;+">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "478CEC171B7A2C9600BB2442"
@@ -86,7 +88,7 @@
             BlueprintName = "bangumi WatchKit App"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -94,8 +96,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/&#x756a;&#x7ec4;&#x8ba1;&#x5212;+">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "478CEC171B7A2C9600BB2442"
@@ -103,7 +107,16 @@
             BlueprintName = "bangumi WatchKit App"
             ReferencedContainer = "container:bangumi.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "478CEC171B7A2C9600BB2442"
+            BuildableName = "bangumi WatchKit App.app"
+            BlueprintName = "bangumi WatchKit App"
+            ReferencedContainer = "container:bangumi.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

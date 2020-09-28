@@ -237,13 +237,16 @@
     
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [self.refreshControl endRefreshing];
     if ([request_type isEqualToString:@"WatchingList"]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"订阅列表是空的！" message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.refreshControl endRefreshing];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"订阅列表是空的！" message:@"好像您没有订阅到任何番组，到每日放送里订阅一个吧～" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+           
             [bgmapi getNotifyCount];
             request_type = @"notifycount";
             bgmlist = [NSArray array];
