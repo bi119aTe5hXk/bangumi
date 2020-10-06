@@ -33,7 +33,6 @@
 		479E41CB1CB68D37001AA6EA /* MainListInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41B61CB68C99001AA6EA /* MainListInterfaceController.m */; };
 		479E41CC1CB68D37001AA6EA /* NotLoginInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E41B81CB68C99001AA6EA /* NotLoginInterfaceController.m */; };
 		479E41D01CB69CD3001AA6EA /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479E41CF1CB69CD3001AA6EA /* WatchConnectivity.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DC55190940340086A14B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		47A5DC58190AA7F10086A14B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DC57190AA7F10086A14B /* README.md */; };
 		47A5DD25191127150086A14B /* DaliyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A5DD24191127150086A14B /* DaliyListViewController.m */; };
 		47A5DD29191135BB0086A14B /* bgm38a1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A5DD28191135BB0086A14B /* bgm38a1024.png */; };
@@ -55,6 +54,7 @@
 		47E271B11901666800304DED /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E271B01901666800304DED /* SettingsViewController.m */; };
 		47E271B4190166C400304DED /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E271B3190166C400304DED /* TabbarViewController.m */; };
 		47E271B619016B9700304DED /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E271B519016B9700304DED /* ImageIO.framework */; };
+		865D96BF252C5BCD00EA2C1F /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 865D96BE252C5BCD00EA2C1F /* MBProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,8 +155,6 @@
 		479E41B71CB68C99001AA6EA /* NotLoginInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotLoginInterfaceController.h; path = "bangumi WatchKit Extension/NotLoginInterfaceController.h"; sourceTree = SOURCE_ROOT; };
 		479E41B81CB68C99001AA6EA /* NotLoginInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotLoginInterfaceController.m; path = "bangumi WatchKit Extension/NotLoginInterfaceController.m"; sourceTree = SOURCE_ROOT; };
 		479E41CF1CB69CD3001AA6EA /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		47A5DC54190940340086A14B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		47A5DC55190940340086A14B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		47A5DC57190AA7F10086A14B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		47A5DD23191127150086A14B /* DaliyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaliyListViewController.h; sourceTree = "<group>"; };
 		47A5DD24191127150086A14B /* DaliyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaliyListViewController.m; sourceTree = "<group>"; };
@@ -214,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865D96BF252C5BCD00EA2C1F /* MBProgressHUD in Frameworks */,
 				479E41D01CB69CD3001AA6EA /* WatchConnectivity.framework in Frameworks */,
 				47E271B619016B9700304DED /* ImageIO.framework in Frameworks */,
 				47E271551900043300304DED /* CoreGraphics.framework in Frameworks */,
@@ -367,8 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				47E2719119001AE000304DED /* Main.storyboard */,
-				47A5DC54190940340086A14B /* MBProgressHUD.h */,
-				47A5DC55190940340086A14B /* MBProgressHUD.m */,
 				4751E62E191F84DA004143D3 /* HTMLEntityDecode.h */,
 				4751E62F191F84DA004143D3 /* HTMLEntityDecode.m */,
 				47E2715A1900043300304DED /* bangumi-Info.plist */,
@@ -470,6 +467,9 @@
 				475D97211DB7720400C034FE /* PBXTargetDependency */,
 			);
 			name = bangumi;
+			packageProductDependencies = (
+				865D96BE252C5BCD00EA2C1F /* MBProgressHUD */,
+			);
 			productName = bangumi;
 			productReference = 47E2714F1900043300304DED /* bangumi.app */;
 			productType = "com.apple.product-type.application";
@@ -542,6 +542,9 @@
 				"zh-Hans",
 			);
 			mainGroup = 47E271461900043300304DED;
+			packageReferences = (
+				865D96BD252C5BCD00EA2C1F /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+			);
 			productRefGroup = 47E271501900043300304DED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -632,7 +635,6 @@
 				47E271B4190166C400304DED /* TabbarViewController.m in Sources */,
 				47E2715F1900043300304DED /* main.m in Sources */,
 				47E271A519015DBA00304DED /* BGMCell.m in Sources */,
-				47A5DC56190940340086A14B /* MBProgressHUD.m in Sources */,
 				47A5DD25191127150086A14B /* DaliyListViewController.m in Sources */,
 				470FFA9619307306001CF488 /* ProgressCell.m in Sources */,
 				478B3B881902A2A1006C6E67 /* BGMDetailViewController.m in Sources */,
@@ -1101,6 +1103,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		865D96BD252C5BCD00EA2C1F /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		865D96BE252C5BCD00EA2C1F /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 865D96BD252C5BCD00EA2C1F /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 47E271471900043300304DED /* Project object */;
 }

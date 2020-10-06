@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MBProgressHUD",
+        "repositoryURL": "https://github.com/jdg/MBProgressHUD",
+        "state": {
+          "branch": "master",
+          "revision": "9ce87e2a5456d795c798b31792928cc6a6d19954",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
