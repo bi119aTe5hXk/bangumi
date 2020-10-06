@@ -1,32 +1,69 @@
 
-SDWebImage.framework/Headers
 
-SDWebImage.framework/SDWebImage
+# Created by https://www.toptal.com/developers/gitignore/api/xcode,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode,macos
 
-SDWebImage.framework/Versions/A/Headers/SDImageCache.h
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageCompat.h
+# Icon must end with two \r
+Icon
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageDecoder.h
+# Thumbnails
+._*
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageDownloader.h
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageDownloaderOperation.h
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageManager.h
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-SDWebImage.framework/Versions/A/Headers/SDWebImageOperation.h
+## User settings
+xcuserdata/
 
-SDWebImage.framework/Versions/A/Headers/SDWebImagePrefetcher.h
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
+*.xccheckout
 
-SDWebImage.framework/Versions/A/Headers/UIButton+WebCache.h
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 
-SDWebImage.framework/Versions/A/Headers/UIImageView+WebCache.h
+## Gcc Patch
+/*.gcno
 
-SDWebImage.framework/Versions/A/SDWebImage
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
 
-SDWebImage.framework/Versions/Current
-
-bangumi/MBProgressHUD.h
-
-bangumi/MBProgressHUD.m
+# End of https://www.toptal.com/developers/gitignore/api/xcode,macos
