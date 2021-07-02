@@ -36,6 +36,7 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     //self.creditText.text = @"WebSite/API: @Sai \nDeveloper: @bi119aTe5hXk \nIcon: @cinnamor";
     self.tabBarController.navigationItem.title = @"设置";
     
@@ -86,6 +87,7 @@
     
 }
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [bgmapi cancelConnection];
 }
 - (void)didReceiveMemoryWarning
@@ -95,14 +97,18 @@
 }
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
     NSString *count = [NSString stringWithFormat:@"%@",[list valueForKey:@"count"]];
+    dispatch_async(dispatch_get_main_queue(),^{
     if ([count integerValue] >= 1) {
         [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%@",[list valueForKey:@"count"]]];
-        [self.rakuenbtn setTitle:[NSString stringWithFormat:@"超展开: %@条新信息",[list valueForKey:@"count"]] forState:UIControlStateNormal];
+        
+            [self.rakuenbtn setTitle:[NSString stringWithFormat:@"超展开: %@条新信息",[list valueForKey:@"count"]] forState:UIControlStateNormal];
+        
     }else{
         [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
         [self.rakuenbtn setTitle:@"超展开 Mobile" forState:UIControlStateNormal];
         
     }
+    });
 }
 -(void)api:(BGMAPI *)api requestFailedWithError:(NSError *)error{
     

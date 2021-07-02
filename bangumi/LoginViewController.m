@@ -77,10 +77,12 @@
 
 
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [bgmapi cancelConnection];
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.usernamefield.text = @"";
     self.passwordfield.text = @"";
 }
@@ -100,21 +102,24 @@
     [self presentViewController:safariVC animated:YES completion:nil];
 }
 -(IBAction)loginbtnpressd:(id)sender{
+    dispatch_async(dispatch_get_main_queue(),^{
     if ([self.usernamefield.text length] > 0 && [self.passwordfield.text length] > 0) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [bgmapi userLoginWithUserName:self.usernamefield.text WithPassword:self.passwordfield.text];
         request_type = @"login";
     }else{
-        dispatch_async(dispatch_get_main_queue(),^{
+        
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入用户名和密码！" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
-});
+
     }
+    });
     
 }
 
 -(void)api:(BGMAPI *)api readyWithList:(NSArray *)list{
+    dispatch_async(dispatch_get_main_queue(),^{//get main thread
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if ([request_type isEqualToString:@"login"]) {
         auth_urlencoded = [list valueForKey:@"auth_encode"];
@@ -144,6 +149,8 @@
             });
         }
     }
+        
+    });
     
     
 }

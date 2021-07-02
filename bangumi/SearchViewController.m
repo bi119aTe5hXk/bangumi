@@ -23,6 +23,7 @@
     return self;
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.tabBarController.navigationItem.title  = @"搜索";
     
     // Info button
@@ -64,6 +65,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     self.tabBarController.navigationItem.rightBarButtonItem = nil;
     [bgmapi cancelConnection];
